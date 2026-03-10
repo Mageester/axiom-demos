@@ -36,9 +36,9 @@ export const restaurantContent: DemoContent = {
         'Dietary and accessibility requests reviewed pre-arrival',
       ],
       image: {
-        src: pexelsPhoto('67468', 1800, 1200),
-        alt: 'Refined dining room with warmly lit table settings',
-        position: 'center',
+        src: pexelsPhoto('260922', 1800, 1200),
+        alt: 'Warmly lit premium dining room prepared for evening service',
+        position: 'center 42%',
       },
     },
     highlights: [
@@ -65,9 +65,9 @@ export const restaurantContent: DemoContent = {
         description:
           'Citrus-bright opener plated for shareable visual impact and light pacing.',
         image: {
-          src: pexelsPhoto('3763847', 1400, 1000),
-          alt: 'Plated scallop dish with citrus and herbs',
-          position: 'center',
+          src: pexelsPhoto('262978', 1400, 1000),
+          alt: 'First course plated in a premium dining setting with refined garnish',
+          position: 'center 72%',
         },
       },
       {
@@ -104,9 +104,9 @@ export const restaurantContent: DemoContent = {
       ],
       images: [
         {
-          src: pexelsPhoto('262978', 1200, 1400),
-          alt: 'Restaurant table with warm candlelight and place settings',
-          position: 'center',
+          src: pexelsPhoto('941861', 1200, 1400),
+          alt: 'Evening dining room scene with candlelight and refined table settings',
+          position: 'center 40%',
         },
         {
           src: pexelsPhoto('1267320', 1200, 900),
@@ -124,9 +124,9 @@ export const restaurantContent: DemoContent = {
         title: 'First Plates',
         note: 'Small-format dishes to open the evening.',
         image: {
-          src: pexelsPhoto('3763847', 1200, 900),
-          alt: 'Small plated appetizer with delicate garnish',
-          position: 'center 40%',
+          src: pexelsPhoto('2741458', 1200, 900),
+          alt: 'Savory first course plated with premium garnish detail',
+          position: 'center',
         },
         items: [
           {
@@ -271,7 +271,7 @@ export const restaurantContent: DemoContent = {
   },
   gallery: {
     intro:
-      'A preview of room atmosphere, plating detail, and private dining setups used to help guests choose the right visit format.',
+      'A visual preview of dining atmosphere, plating detail, and service moments before guests reserve.',
     collections: [
       {
         title: 'Main Dining Room',
@@ -279,9 +279,9 @@ export const restaurantContent: DemoContent = {
         description:
           'Natural wood surfaces, low-glare lighting, and table spacing designed for relaxed conversation.',
         image: {
-          src: pexelsPhoto('776538', 1200, 900),
-          alt: 'Main dining room with ambient lighting and set tables',
-          position: 'center',
+          src: pexelsPhoto('260922', 1200, 900),
+          alt: 'Main dining room set for evening service with warm ambient light',
+          position: 'center 46%',
         },
       },
       {
@@ -290,8 +290,8 @@ export const restaurantContent: DemoContent = {
         description:
           'Course presentation focused on texture contrast, ingredient clarity, and measured pacing.',
         image: {
-          src: pexelsPhoto('1352295', 1200, 900),
-          alt: 'Close-up of plated seasonal dish with refined garnish',
+          src: pexelsPhoto('262978', 1200, 900),
+          alt: 'Close-up of plated seasonal course with refined garnish',
           position: 'center',
         },
       },
@@ -302,8 +302,8 @@ export const restaurantContent: DemoContent = {
           'A separate room for hosted dinners, milestone events, and executive team gatherings.',
         image: {
           src: pexelsPhoto('1581384', 1200, 900),
-          alt: 'Private dining table prepared for a small group event',
-          position: 'center',
+          alt: 'Private dining room with warm materials and premium table setting',
+          position: 'center 55%',
         },
       },
       {
@@ -312,9 +312,9 @@ export const restaurantContent: DemoContent = {
         description:
           'Curated bottles and non-alcoholic pairings selected to support each weekly menu cycle.',
         image: {
-          src: pexelsPhoto('1267320', 1200, 900),
-          alt: 'Bar counter with cocktails and curated drink service',
-          position: 'center',
+          src: pexelsPhoto('3171837', 1200, 900),
+          alt: 'Guests toasting with cocktail glasses in a warm restaurant setting',
+          position: 'center 58%',
         },
       },
       {
@@ -325,7 +325,7 @@ export const restaurantContent: DemoContent = {
         image: {
           src: pexelsPhoto('628776', 1200, 900),
           alt: 'Chef plating in an open kitchen counter setting',
-          position: 'center',
+          position: 'center 45%',
         },
       },
       {
@@ -335,8 +335,30 @@ export const restaurantContent: DemoContent = {
           'Hosted arrival with clear reservation validation and dietary notes confirmed at entry.',
         image: {
           src: pexelsPhoto('67468', 1200, 900),
-          alt: 'Restaurant entry with host stand and evening ambience',
-          position: 'center 62%',
+          alt: 'Front dining view prepared for guest arrival and table greeting',
+          position: 'center 58%',
+        },
+      },
+      {
+        title: 'Late Evening Mood',
+        subtitle: 'After-dark atmosphere',
+        description:
+          'Lighting and room pacing tuned for quieter conversation as evening service continues.',
+        image: {
+          src: pexelsPhoto('776538', 1200, 900),
+          alt: 'Warm pendant lights over a moody restaurant interior at night',
+          position: 'center',
+        },
+      },
+      {
+        title: 'Kitchen Team Flow',
+        subtitle: 'Coordinated pass service',
+        description:
+          'Kitchen choreography focused on timing, consistency, and smooth course release.',
+        image: {
+          src: pexelsPhoto('3217156', 1200, 900),
+          alt: 'Chef team preparing dishes in a professional kitchen setting',
+          position: 'center',
         },
       },
     ],

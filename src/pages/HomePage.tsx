@@ -10,6 +10,8 @@ export function HomePage() {
   const { content, routes } = useContext(DemoConfigContext)
   const primaryAtmosphereImage =
     content.home.experience.images[0] ?? content.home.hero.image
+  const atmosphereMoments = content.gallery.collections.slice(0, 3)
+  const reservationVisual = content.gallery.collections[3]?.image ?? content.home.hero.image
   const featuredDish = content.home.featuredDishes[0]
   const supportingDishes = content.home.featuredDishes.slice(1)
 
@@ -68,6 +70,33 @@ export function HomePage() {
               </div>
             </aside>
           ) : null}
+        </div>
+      </Section>
+
+      <Section
+        className="section--atmosphere-strip"
+        description="A quick visual pass of room mood, plating style, and hosted dining format."
+        title="Evening atmosphere"
+      >
+        <div className="atmosphere-strip">
+          {atmosphereMoments.map((moment) => (
+            <figure className="atmosphere-strip__item" key={moment.title}>
+              <img
+                alt={moment.image.alt}
+                loading="lazy"
+                src={moment.image.src}
+                style={
+                  moment.image.position
+                    ? { objectPosition: moment.image.position }
+                    : undefined
+                }
+              />
+              <figcaption>
+                <p>{moment.title}</p>
+                <span>{moment.subtitle}</span>
+              </figcaption>
+            </figure>
+          ))}
         </div>
       </Section>
 
@@ -202,9 +231,23 @@ export function HomePage() {
               pacing details before arrival.
             </p>
             <p className="reservation-callout__meta">
-              Dinner service Tuesday-Sunday • Private room up to 12 guests
+              Dinner service Tuesday-Sunday | Private room up to 12 guests
             </p>
           </div>
+          {reservationVisual ? (
+            <figure className="reservation-callout__media">
+              <img
+                alt={reservationVisual.alt}
+                loading="lazy"
+                src={reservationVisual.src}
+                style={
+                  reservationVisual.position
+                    ? { objectPosition: reservationVisual.position }
+                    : undefined
+                }
+              />
+            </figure>
+          ) : null}
           <div className="reservation-callout__actions">
             <ButtonLink size="lg" to={routes.reservations}>
               Start reservation

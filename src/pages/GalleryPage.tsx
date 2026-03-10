@@ -8,9 +8,8 @@ export function GalleryPage() {
   const { content, routes } = useContext(DemoConfigContext)
   const [leadMoment, ...remainingMoments] = content.gallery.collections
   const supportMoments = remainingMoments.slice(0, 2)
-  const galleryWallMoments = [leadMoment, ...remainingMoments].filter(
-    (item): item is (typeof content.gallery.collections)[number] => Boolean(item)
-  )
+  const galleryWallMoments = remainingMoments.slice(2)
+  const reservationMoment = content.gallery.collections[content.gallery.collections.length - 1]
 
   return (
     <>
@@ -95,6 +94,46 @@ export function GalleryPage() {
               </figcaption>
             </figure>
           ))}
+        </div>
+      </Section>
+
+      <Section
+        className="section--gallery-reserve"
+        description="Select your preferred evening and reserve directly."
+        title="Ready to reserve"
+      >
+        <div className="reservation-callout reservation-callout--gallery">
+          <div className="reservation-callout__copy">
+            <p>
+              Use online booking for standard tables or contact concierge for
+              private studio seating and hosted occasions.
+            </p>
+            <p className="reservation-callout__meta">
+              Concierge support available daily before evening service
+            </p>
+          </div>
+          {reservationMoment ? (
+            <figure className="reservation-callout__media">
+              <img
+                alt={reservationMoment.image.alt}
+                loading="lazy"
+                src={reservationMoment.image.src}
+                style={
+                  reservationMoment.image.position
+                    ? { objectPosition: reservationMoment.image.position }
+                    : undefined
+                }
+              />
+            </figure>
+          ) : null}
+          <div className="reservation-callout__actions">
+            <ButtonLink size="lg" to={routes.reservations}>
+              Start reservation
+            </ButtonLink>
+            <ButtonLink size="lg" to={routes.contact} variant="secondary">
+              Contact concierge
+            </ButtonLink>
+          </div>
         </div>
       </Section>
     </>
