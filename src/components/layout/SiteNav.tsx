@@ -30,8 +30,15 @@ export function SiteNav() {
     <header className="site-nav-wrap">
       <div className="site-nav">
         <NavLink className="site-brand" to={homePath}>
-          <span className="site-brand__name">{content.brand.name}</span>
-          <span className="site-brand__city">{content.brand.city}</span>
+          {content.brand.logo ? (
+            <span className="site-brand__mark" aria-hidden="true">
+              <img alt="" src={content.brand.logo.src} />
+            </span>
+          ) : null}
+          <span className="site-brand__meta">
+            <span className="site-brand__name">{content.brand.name}</span>
+            <span className="site-brand__city">{content.brand.city}</span>
+          </span>
         </NavLink>
 
         <button

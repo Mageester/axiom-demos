@@ -8,6 +8,10 @@ export const restaurantContent: DemoContent = {
   brand: {
     name: 'Atelier Meridian',
     city: 'Toronto',
+    logo: {
+      src: '/brands/atelier-meridian-mark.svg',
+      alt: 'Atelier Meridian logo mark',
+    },
     tagline: 'Seasonal coastal dining by Toronto harbour',
     phone: '+1 (416) 555-0182',
     phoneHref: 'tel:+14165550182',

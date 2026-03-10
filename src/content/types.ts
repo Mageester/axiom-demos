@@ -68,6 +68,10 @@ export interface DemoContent {
   brand: {
     name: string
     city: string
+    logo?: {
+      src: string
+      alt: string
+    }
     tagline: string
     phone: string
     phoneHref: string
