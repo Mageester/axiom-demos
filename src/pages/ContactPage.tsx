@@ -14,15 +14,15 @@ export function ContactPage() {
         actions={
           <>
             <ButtonAnchor href={content.brand.phoneHref} variant="secondary">
-              Call concierge
+              Call reservations
             </ButtonAnchor>
-            <ButtonLink to={routes.reservations}>Reserve now</ButtonLink>
+            <ButtonLink to={routes.reservations}>Reserve a table</ButtonLink>
           </>
         }
         description={content.contact.intro}
         eyebrow="Contact"
         media={content.gallery.collections[5]?.image}
-        title="Reach the concierge team"
+        title="Contact reservations"
       />
 
       <Section title="Direct channels">
@@ -39,7 +39,7 @@ export function ContactPage() {
         </div>
       </Section>
 
-      <Section title="Before you contact us">
+      <Section title="Before you write">
         <div className="experience-panel">
           <ul className="check-list">
             {content.contact.notes.map((note) => (

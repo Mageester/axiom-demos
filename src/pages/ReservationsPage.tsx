@@ -27,12 +27,12 @@ export function ReservationsPage() {
     ].join('\n')
 
     const query = new URLSearchParams({
-      subject: `Reservation request from ${name || 'Guest'}`,
+      subject: `Reservation inquiry from ${name || 'Guest'}`,
       body,
     })
 
     window.location.href = `${content.brand.emailHref}?${query.toString()}`
-    setStatusMessage('Your email app is opening with the reservation request details.')
+    setStatusMessage('Your email app is opening with your reservation details.')
     event.currentTarget.reset()
   }
 
@@ -52,7 +52,7 @@ export function ReservationsPage() {
         description={content.reservations.intro}
         eyebrow="Reservations"
         media={content.home.experience.images[1]}
-        title="Reserve with confidence"
+        title="Reserve your table"
       />
 
       <Section title="Booking channels">
@@ -68,8 +68,8 @@ export function ReservationsPage() {
       </Section>
 
       <Section
-        description="Send preferences ahead of service. This request opens your mail client and drafts details for our concierge team."
-        title="Reservation request form"
+        description="Share your preferred date and party size. This form opens your mail client with your request prefilled."
+        title="Reservation request"
       >
         <div className="reservation-layout">
           <form className="reservation-form" onSubmit={onSubmit}>
@@ -108,7 +108,7 @@ export function ReservationsPage() {
             </ul>
             <p className="policy-panel__subtle">
               For large parties, private events, or accessibility requests, contact
-              our concierge directly at {content.brand.phone}.
+              our reservations team directly at {content.brand.phone}.
             </p>
           </aside>
         </div>

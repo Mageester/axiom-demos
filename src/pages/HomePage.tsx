@@ -1,117 +1,84 @@
 import { useContext } from 'react'
 import { DemoConfigContext } from '../config/demoConfig'
-import { ButtonAnchor } from '../components/ui/Button'
-import { ButtonLink } from '../components/ui/Button'
-import { Card } from '../components/ui/Card'
-import { PageHero } from '../components/ui/PageHero'
-import { Section } from '../components/ui/Section'
+import { ButtonAnchor, ButtonLink } from '../components/ui/Button'
 
 export function HomePage() {
   const { content, routes } = useContext(DemoConfigContext)
-  const primaryAtmosphereImage =
-    content.home.experience.images[0] ?? content.home.hero.image
-  const atmosphereMoments = content.gallery.collections.slice(2, 5)
-  const reservationVisual =
-    content.gallery.collections[content.gallery.collections.length - 1]?.image
-      ?? content.gallery.collections[1]?.image
-      ?? content.home.hero.image
+
   const featuredDish = content.home.featuredDishes[0]
-  const supportingDishes = content.home.featuredDishes.slice(1)
+  const supportingDishes = content.home.featuredDishes.slice(1, 3)
+  const atmosphereMoments = content.gallery.collections.slice(0, 3)
+  const privateDiningMoment =
+    content.gallery.collections.find((item) => item.title.includes('Private Dining'))
+    ?? content.gallery.collections[2]
+    ?? content.gallery.collections[0]
+  const philosophyMoment =
+    content.gallery.collections.find((item) => item.title.includes('Chef Counter'))
+    ?? content.gallery.collections[4]
+    ?? content.gallery.collections[0]
+  const reservationVisual =
+    content.home.experience.images[1]
+    ?? content.gallery.collections[content.gallery.collections.length - 1]?.image
+    ?? content.home.hero.image
+  const leadChef = content.about.team[0]
 
   return (
     <>
-      <PageHero
-        actions={
-          <>
+      <section className="restaurant-home-hero">
+        {content.home.hero.image ? (
+          <figure className="restaurant-home-hero__media">
+            <img
+              alt={content.home.hero.image.alt}
+              loading="eager"
+              src={content.home.hero.image.src}
+              style={
+                content.home.hero.image.position
+                  ? { objectPosition: content.home.hero.image.position }
+                  : undefined
+              }
+            />
+          </figure>
+        ) : null}
+
+        <div className="restaurant-home-hero__veil" />
+        <div className="restaurant-home-hero__content">
+          {content.home.hero.eyebrow ? (
+            <p className="restaurant-home-hero__eyebrow">{content.home.hero.eyebrow}</p>
+          ) : null}
+          <h1 className="restaurant-home-hero__title">{content.home.hero.title}</h1>
+          <p className="restaurant-home-hero__description">{content.home.hero.description}</p>
+
+          <div className="restaurant-home-hero__actions">
             <ButtonLink size="lg" to={routes.reservations}>
               {content.home.hero.primaryCta}
             </ButtonLink>
-            <ButtonLink size="lg" to={routes.menu} variant="secondary">
-              {content.home.hero.secondaryCta}
-            </ButtonLink>
-          </>
-        }
-        description={content.home.hero.description}
-        eyebrow={content.home.hero.eyebrow}
-        media={content.home.hero.image}
-        signals={content.home.hero.signals}
-        title={content.home.hero.title}
-      />
-
-      <Section
-        className="section--signature"
-        description="A calm, premium sequence that helps guests decide quickly and reserve with confidence."
-        title="Signature experience"
-      >
-        <div className="signature-layout">
-          <div className="card-grid card-grid--3">
-            {content.home.highlights.map((item) => (
-              <Card
-                description={item.description}
-                key={item.title}
-                title={item.title}
-              />
-            ))}
+            {content.home.hero.secondaryCta ? (
+              <ButtonLink className="restaurant-home-hero__quiet" size="lg" to={routes.menu} variant="quiet">
+                {content.home.hero.secondaryCta}
+              </ButtonLink>
+            ) : null}
           </div>
-          {primaryAtmosphereImage ? (
-            <aside className="signature-visual">
-              <img
-                alt={primaryAtmosphereImage.alt}
-                loading="lazy"
-                src={primaryAtmosphereImage.src}
-                style={
-                  primaryAtmosphereImage.position
-                    ? { objectPosition: primaryAtmosphereImage.position }
-                    : undefined
-                }
-              />
-              <div className="signature-visual__body">
-                <p className="signature-visual__eyebrow">Dining atmosphere</p>
-                <p className="signature-visual__title">
-                  Designed for intimate conversation and deliberate service pace.
-                </p>
-              </div>
-            </aside>
+
+          {content.home.hero.signals?.length ? (
+            <ul className="plain-list restaurant-home-hero__signals">
+              {content.home.hero.signals.map((signal) => (
+                <li key={signal}>{signal}</li>
+              ))}
+            </ul>
           ) : null}
         </div>
-      </Section>
+      </section>
 
-      <Section
-        className="section--atmosphere-strip"
-        description="A quick visual pass of room mood, plating style, and hosted dining format."
-        title="Evening atmosphere"
-      >
-        <div className="atmosphere-strip">
-          {atmosphereMoments.map((moment) => (
-            <figure className="atmosphere-strip__item" key={moment.title}>
-              <img
-                alt={moment.image.alt}
-                loading="lazy"
-                src={moment.image.src}
-                style={
-                  moment.image.position
-                    ? { objectPosition: moment.image.position }
-                    : undefined
-                }
-              />
-              <figcaption>
-                <p>{moment.title}</p>
-                <span>{moment.subtitle}</span>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
-      </Section>
+      <section className="restaurant-home-section">
+        <header className="restaurant-home-section__header">
+          <p className="restaurant-home-section__eyebrow">Tonight at {content.brand.name}</p>
+          <h2 className="restaurant-home-section__title">Signature dishes and seasonal plates</h2>
+        </header>
 
-      <Section
-        className="section--featured-dishes"
-        description="Selected dishes presented to show plating quality, pacing, and style."
-        title="Featured dishes"
-      >
-        <div className="dish-showcase">
+        <div className="restaurant-tonight-layout">
           {featuredDish ? (
-            <article className="dish-card dish-card--featured" key={featuredDish.name}>
-              <figure className="dish-card__media">
+            <article className="restaurant-dish-feature" key={featuredDish.name}>
+              <figure className="restaurant-dish-feature__media">
                 <img
                   alt={featuredDish.image.alt}
                   loading="lazy"
@@ -123,20 +90,21 @@ export function HomePage() {
                   }
                 />
               </figure>
-              <div className="dish-card__body">
-                <p className="dish-card__course">{featuredDish.course}</p>
-                <h3 className="dish-card__title">{featuredDish.name}</h3>
-                <p className="dish-card__description">{featuredDish.description}</p>
+              <div className="restaurant-dish-feature__body">
+                <p className="restaurant-dish-feature__course">{featuredDish.course}</p>
+                <h3>{featuredDish.name}</h3>
+                <p>{featuredDish.description}</p>
                 <ButtonLink to={routes.menu} variant="quiet">
                   View full menu
                 </ButtonLink>
               </div>
             </article>
           ) : null}
-          <div className="dish-grid dish-grid--secondary">
+
+          <div className="restaurant-dish-stack">
             {supportingDishes.map((dish) => (
-              <article className="dish-card" key={dish.name}>
-                <figure className="dish-card__media">
+              <article className="restaurant-dish-stack__item" key={dish.name}>
+                <figure>
                   <img
                     alt={dish.image.alt}
                     loading="lazy"
@@ -148,97 +116,134 @@ export function HomePage() {
                     }
                   />
                 </figure>
-                <div className="dish-card__body">
-                  <p className="dish-card__course">{dish.course}</p>
-                  <h3 className="dish-card__title">{dish.name}</h3>
-                  <p className="dish-card__description">{dish.description}</p>
+                <div>
+                  <p className="restaurant-dish-feature__course">{dish.course}</p>
+                  <h3>{dish.name}</h3>
+                  <p>{dish.description}</p>
                 </div>
               </article>
             ))}
           </div>
         </div>
-      </Section>
+      </section>
 
-      <Section
-        className="section--menu-preview"
-        description={content.menu.intro}
-        title="Seasonal menu preview"
-      >
-        <div className="menu-preview-grid">
-          {content.menu.sections.map((section) => (
-            <Card
-              image={section.image}
-              key={section.title}
-              title={section.title}
-            >
-              <p className="menu-preview-note">{section.note}</p>
-              <ul className="plain-list menu-preview-list">
-                {section.items.slice(0, 2).map((item) => (
-                  <li className="menu-preview-list__item" key={item.name}>
-                    <span>{item.name}</span>
-                    <span>${item.price}</span>
-                  </li>
-                ))}
-              </ul>
-            </Card>
+      <section className="restaurant-home-section">
+        <header className="restaurant-home-section__header">
+          <p className="restaurant-home-section__eyebrow">Dining atmosphere</p>
+          <h2 className="restaurant-home-section__title">A room set for long, easy dinners</h2>
+        </header>
+
+        <div className="restaurant-atmosphere-grid">
+          {atmosphereMoments.map((moment) => (
+            <figure className="restaurant-atmosphere-grid__item" key={moment.title}>
+              <img
+                alt={moment.image.alt}
+                loading="lazy"
+                src={moment.image.src}
+                style={
+                  moment.image.position
+                    ? { objectPosition: moment.image.position }
+                    : undefined
+                }
+              />
+              <figcaption>
+                <span>{moment.subtitle}</span>
+                <p>{moment.title}</p>
+              </figcaption>
+            </figure>
           ))}
         </div>
-      </Section>
+      </section>
 
-      <Section
-        className="section--experience"
-        description={content.home.experience.description}
-        title={content.home.experience.title}
-      >
-        <div className="experience-layout">
-          <div className="experience-panel">
-            <ul className="check-list">
-              {content.home.experience.points.map((point) => (
-                <li key={point}>{point}</li>
-              ))}
-            </ul>
-            <ul className="plain-list confidence-list">
+      {privateDiningMoment ? (
+        <section className="restaurant-home-section">
+          <div className="restaurant-private-layout">
+            <figure className="restaurant-private-layout__media">
+              <img
+                alt={privateDiningMoment.image.alt}
+                loading="lazy"
+                src={privateDiningMoment.image.src}
+                style={
+                  privateDiningMoment.image.position
+                    ? { objectPosition: privateDiningMoment.image.position }
+                    : undefined
+                }
+              />
+            </figure>
+            <div className="restaurant-private-layout__body">
+              <p className="restaurant-home-section__eyebrow">Private dining</p>
+              <h2 className="restaurant-home-section__title">A private room for celebrations and hosted tables</h2>
+              <p>{privateDiningMoment.description}</p>
+              <p>
+                For birthdays, business dinners, and family occasions, we can
+                help you plan a menu and service style that fits your evening.
+              </p>
+              <div className="restaurant-private-layout__actions">
+                <ButtonLink to={routes.reservations}>Reserve private dining</ButtonLink>
+                <ButtonAnchor href={content.brand.phoneHref} variant="secondary">
+                  Call reservations
+                </ButtonAnchor>
+              </div>
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      <section className="restaurant-home-section">
+        <div className="restaurant-story-layout">
+          <div className="restaurant-story-layout__copy">
+            <p className="restaurant-home-section__eyebrow">Kitchen and room philosophy</p>
+            <h2 className="restaurant-home-section__title">Chef-led cuisine with calm, deliberate service</h2>
+            <p>{content.about.intro}</p>
+            <p>{content.about.story[0]}</p>
+            {leadChef ? (
+              <div className="restaurant-story-layout__chef">
+                <p>{leadChef.name}</p>
+                <span>{leadChef.role}</span>
+              </div>
+            ) : null}
+          </div>
+
+          {philosophyMoment ? (
+            <figure className="restaurant-story-layout__media">
+              <img
+                alt={philosophyMoment.image.alt}
+                loading="lazy"
+                src={philosophyMoment.image.src}
+                style={
+                  philosophyMoment.image.position
+                    ? { objectPosition: philosophyMoment.image.position }
+                    : undefined
+                }
+              />
+            </figure>
+          ) : null}
+        </div>
+      </section>
+
+      <section className="restaurant-home-section">
+        <div className="restaurant-reservation-module">
+          <div className="restaurant-reservation-module__copy">
+            <p className="restaurant-home-section__eyebrow">Reservations</p>
+            <h2 className="restaurant-home-section__title">Reserve your table for dinner</h2>
+            <p>{content.reservations.intro}</p>
+            <ul className="plain-list restaurant-reservation-module__policies">
               {content.reservations.policies.slice(0, 2).map((policy) => (
                 <li key={policy}>{policy}</li>
               ))}
             </ul>
+            <div className="restaurant-reservation-module__actions">
+              <ButtonLink size="lg" to={routes.reservations}>
+                Reserve now
+              </ButtonLink>
+              <ButtonAnchor href={content.brand.phoneHref} size="lg" variant="secondary">
+                Call reservations
+              </ButtonAnchor>
+            </div>
           </div>
-          <div className="atmosphere-stack">
-            {content.home.experience.images.map((image, index) => (
-              <figure
-                className={`atmosphere-stack__item atmosphere-stack__item--${index + 1}`}
-                key={image.src}
-              >
-                <img
-                  alt={image.alt}
-                  loading="lazy"
-                  src={image.src}
-                  style={image.position ? { objectPosition: image.position } : undefined}
-                />
-              </figure>
-            ))}
-          </div>
-        </div>
-      </Section>
 
-      <Section
-        className="section--reservation-callout"
-        description="Reserve your table in under a minute or call concierge for private dining support."
-        title="Ready to book your evening"
-      >
-        <div className="reservation-callout">
-          <div className="reservation-callout__copy">
-            <p>
-              Secure your preferred service window now. For hosted dinners and
-              larger groups, our concierge team can coordinate table format and
-              pacing details before arrival.
-            </p>
-            <p className="reservation-callout__meta">
-              Dinner service Tuesday-Sunday | Private room up to 12 guests
-            </p>
-          </div>
           {reservationVisual ? (
-            <figure className="reservation-callout__media">
+            <figure className="restaurant-reservation-module__media">
               <img
                 alt={reservationVisual.alt}
                 loading="lazy"
@@ -251,16 +256,48 @@ export function HomePage() {
               />
             </figure>
           ) : null}
-          <div className="reservation-callout__actions">
-            <ButtonLink size="lg" to={routes.reservations}>
-              Start reservation
-            </ButtonLink>
-            <ButtonAnchor href={content.brand.phoneHref} size="lg" variant="secondary">
-              Call concierge
-            </ButtonAnchor>
-          </div>
         </div>
-      </Section>
+      </section>
+
+      <section className="restaurant-home-section restaurant-home-section--visit">
+        <header className="restaurant-home-section__header">
+          <p className="restaurant-home-section__eyebrow">Visit and service hours</p>
+          <h2 className="restaurant-home-section__title">Plan your evening at {content.brand.name}</h2>
+        </header>
+        <div className="restaurant-visit-grid">
+          <article className="restaurant-visit-grid__panel">
+            <h3>Location</h3>
+            <p>{content.brand.address}</p>
+            <ButtonAnchor href={content.contact.details[2]?.href ?? routes.contact} variant="quiet">
+              Open map
+            </ButtonAnchor>
+          </article>
+
+          <article className="restaurant-visit-grid__panel">
+            <h3>Service windows</h3>
+            <ul className="plain-list">
+              {content.brand.hours.slice(0, 3).map((hour) => (
+                <li key={hour}>{hour}</li>
+              ))}
+            </ul>
+          </article>
+
+          <article className="restaurant-visit-grid__panel">
+            <h3>Reservation channels</h3>
+            <ul className="plain-list">
+              <li>
+                <a href={content.brand.phoneHref}>{content.brand.phone}</a>
+              </li>
+              <li>
+                <a href={content.brand.emailHref}>{content.brand.email}</a>
+              </li>
+            </ul>
+            <ButtonLink to={routes.contact} variant="quiet">
+              Contact reservations
+            </ButtonLink>
+          </article>
+        </div>
+      </section>
     </>
   )
 }

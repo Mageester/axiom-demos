@@ -12,15 +12,15 @@ export function AboutPage() {
     <>
       <PageHero
         actions={
-          <ButtonLink to={routes.reservations}>Reserve your visit</ButtonLink>
+          <ButtonLink to={routes.reservations}>Reserve a table</ButtonLink>
         }
         description={content.about.intro}
         eyebrow="About"
         media={content.gallery.collections[0]?.image}
-        title="People, process, and place"
+        title="Our kitchen and dining room"
       />
 
-      <Section title="Our approach">
+      <Section title="Our story">
         <div className="story-layout">
           <div className="story-grid">
             {content.about.story.map((paragraph) => (
@@ -51,7 +51,7 @@ export function AboutPage() {
         </div>
       </Section>
 
-      <Section title="Operating values">
+      <Section title="What guides service">
         <div className="card-grid card-grid--3">
           {content.about.values.map((value) => (
             <Card
@@ -63,7 +63,7 @@ export function AboutPage() {
         </div>
       </Section>
 
-      <Section title="Leadership">
+      <Section title="Kitchen and floor team">
         <div className="team-grid">
           {content.about.team.map((member) => (
             <Card

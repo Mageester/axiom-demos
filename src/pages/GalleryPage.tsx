@@ -22,11 +22,11 @@ export function GalleryPage() {
         description={content.gallery.intro}
         eyebrow="Gallery"
         media={leadMoment?.image}
-        title="Atmosphere and service snapshots"
+        title="Evenings at Atelier Meridian"
       />
 
       <Section
-        description="An image-first look at room mood, plating style, and service details."
+        description="A closer look at the room, the plates, and the pace of dinner."
         title="Evening moments"
       >
         <div className="gallery-feature-grid">
@@ -72,8 +72,8 @@ export function GalleryPage() {
       </Section>
 
       <Section
-        description="Curated gallery wall designed to help guests choose the right visit format quickly."
-        title="Gallery wall"
+        description="Scenes from the dining room, bar, and kitchen as the night unfolds."
+        title="Around the room"
       >
         <div className="gallery-wall">
           {galleryWallMoments.map((item, index) => (
@@ -99,17 +99,17 @@ export function GalleryPage() {
 
       <Section
         className="section--gallery-reserve"
-        description="Select your preferred evening and reserve directly."
-        title="Ready to reserve"
+        description="If you already have a date in mind, we would be glad to host you."
+        title="Join us for dinner"
       >
         <div className="reservation-callout reservation-callout--gallery">
           <div className="reservation-callout__copy">
             <p>
-              Use online booking for standard tables or contact concierge for
-              private studio seating and hosted occasions.
+              Reserve online for standard tables, or contact our reservations
+              team for private room dinners and hosted occasions.
             </p>
             <p className="reservation-callout__meta">
-              Concierge support available daily before evening service
+              Reservations support available daily before dinner service
             </p>
           </div>
           {reservationMoment ? (
@@ -128,10 +128,10 @@ export function GalleryPage() {
           ) : null}
           <div className="reservation-callout__actions">
             <ButtonLink size="lg" to={routes.reservations}>
-              Start reservation
+              Reserve a table
             </ButtonLink>
             <ButtonLink size="lg" to={routes.contact} variant="secondary">
-              Contact concierge
+              Contact reservations
             </ButtonLink>
           </div>
         </div>

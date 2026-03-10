@@ -1380,18 +1380,36 @@ textarea:focus-visible {
 }
 
 body[data-demo-brand='hospitality'] .site-nav-wrap {
-  background: color-mix(in srgb, var(--color-bg) 88%, black);
-  backdrop-filter: blur(8px);
+  background: color-mix(in srgb, var(--color-bg) 92%, black);
+  backdrop-filter: blur(10px);
+  border-bottom-color: color-mix(in srgb, var(--color-border) 86%, black);
 }
 
 body[data-demo-brand='hospitality'] .site-brand__name {
   font-size: clamp(1.5rem, 2.1vw, 2rem);
-  letter-spacing: 0.01em;
+  letter-spacing: 0.015em;
 }
 
 body[data-demo-brand='hospitality'] .primary-nav__link {
-  font-size: 0.79rem;
-  letter-spacing: 0.08em;
+  border-radius: 9px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: none;
+}
+
+body[data-demo-brand='hospitality'] .primary-nav__link:hover {
+  background: color-mix(in srgb, var(--color-surface-strong) 62%, black);
+}
+
+body[data-demo-brand='hospitality'] .primary-nav__cta--hospitality {
+  border-color: color-mix(in srgb, var(--color-brand) 56%, var(--color-border));
+  color: color-mix(in srgb, var(--color-brand-strong) 88%, white);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin-left: var(--space-3);
+  text-transform: none;
 }
 
 body[data-demo-brand='hospitality'] .btn--primary {
@@ -1404,16 +1422,390 @@ body[data-demo-brand='hospitality'] .btn--primary {
     );
   border-color: color-mix(in srgb, var(--color-brand) 72%, #f4dcb0);
   box-shadow: 0 10px 26px rgb(10 12 7 / 32%);
+  text-transform: none;
 }
 
-body[data-demo-brand='hospitality'] .page-hero {
+body[data-demo-brand='hospitality'] .btn--secondary {
+  border-color: color-mix(in srgb, var(--color-brand) 42%, var(--color-border));
+}
+
+body[data-demo-brand='hospitality'] .btn--quiet {
+  color: color-mix(in srgb, var(--color-brand-strong) 90%, white);
+  font-size: 0.86rem;
+  letter-spacing: 0.04em;
+  text-transform: none;
+}
+
+body[data-demo-brand='hospitality'] .site-footer--hospitality {
   background:
-    radial-gradient(circle at 88% 6%, rgb(207 171 104 / 16%), transparent 32%),
     linear-gradient(
-      140deg,
-      color-mix(in srgb, var(--color-surface) 88%, black),
-      color-mix(in srgb, var(--color-surface-strong) 82%, black)
+      180deg,
+      color-mix(in srgb, var(--color-bg-soft) 92%, black),
+      color-mix(in srgb, var(--color-bg) 94%, black)
     );
+}
+
+body[data-demo-brand='hospitality'] .site-footer--hospitality .site-footer__brand {
+  font-size: clamp(1.55rem, 2.4vw, 2.1rem);
+}
+
+body[data-demo-brand='hospitality'] .site-footer--hospitality .site-footer__tagline {
+  max-width: 32ch;
+}
+
+.restaurant-home-hero {
+  border: 1px solid color-mix(in srgb, var(--color-border) 70%, black);
+  border-radius: calc(var(--radius-panel) + 4px);
+  margin-bottom: var(--space-section);
+  min-height: clamp(32rem, 78vh, 44rem);
+  overflow: hidden;
+  position: relative;
+}
+
+.restaurant-home-hero__media,
+.restaurant-home-hero__media img {
+  height: 100%;
+  width: 100%;
+}
+
+.restaurant-home-hero__media {
+  margin: 0;
+  position: absolute;
+  inset: 0;
+}
+
+.restaurant-home-hero__media img {
+  object-fit: cover;
+}
+
+.restaurant-home-hero__veil {
+  background:
+    linear-gradient(106deg, rgb(7 9 11 / 82%) 0%, rgb(7 9 11 / 66%) 34%, rgb(7 9 11 / 38%) 58%, transparent 100%),
+    linear-gradient(to top, rgb(7 9 11 / 88%), rgb(7 9 11 / 24%));
+  inset: 0;
+  position: absolute;
+}
+
+.restaurant-home-hero__content {
+  display: grid;
+  gap: var(--space-4);
+  max-width: 39rem;
+  padding: clamp(2rem, 5vw, 3.4rem);
+  position: relative;
+  z-index: 1;
+}
+
+.restaurant-home-hero__eyebrow {
+  color: color-mix(in srgb, var(--color-brand-strong) 85%, white);
+  font-size: var(--size-xs);
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.restaurant-home-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.3rem, 4.6vw, 4rem);
+  line-height: 1.02;
+  max-width: 15ch;
+}
+
+.restaurant-home-hero__description {
+  color: var(--color-text-secondary);
+  max-width: 58ch;
+}
+
+.restaurant-home-hero__actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.restaurant-home-hero__quiet {
+  padding-left: var(--space-1);
+}
+
+.restaurant-home-hero__signals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.restaurant-home-hero__signals li {
+  background: rgb(12 14 16 / 54%);
+  border: 1px solid color-mix(in srgb, var(--color-border) 72%, black);
+  border-radius: 999px;
+  color: color-mix(in srgb, var(--color-text-secondary) 96%, white);
+  font-size: var(--size-2xs);
+  letter-spacing: 0.04em;
+  padding: var(--space-2) var(--space-3);
+}
+
+.restaurant-home-section {
+  margin-bottom: var(--space-section);
+}
+
+.restaurant-home-section__header {
+  display: grid;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+
+.restaurant-home-section__eyebrow {
+  color: color-mix(in srgb, var(--color-brand-strong) 82%, white);
+  font-size: var(--size-2xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.restaurant-home-section__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 3.6vw, 2.8rem);
+  line-height: 1.08;
+  max-width: 20ch;
+}
+
+.restaurant-tonight-layout {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: 1.15fr 0.85fr;
+}
+
+.restaurant-dish-feature {
+  background: color-mix(in srgb, var(--color-surface) 90%, black);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-panel);
+  overflow: hidden;
+}
+
+.restaurant-dish-feature__media {
+  margin: 0;
+}
+
+.restaurant-dish-feature__media img {
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  width: 100%;
+}
+
+.restaurant-dish-feature__body {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-5);
+}
+
+.restaurant-dish-feature__body h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+  line-height: 1.06;
+}
+
+.restaurant-dish-feature__body p {
+  color: var(--color-text-secondary);
+}
+
+.restaurant-dish-feature__course {
+  color: color-mix(in srgb, var(--color-brand-strong) 82%, white);
+  font-size: var(--size-2xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.restaurant-dish-stack {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.restaurant-dish-stack__item {
+  background: color-mix(in srgb, var(--color-surface) 90%, black);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+
+.restaurant-dish-stack__item figure {
+  margin: 0;
+}
+
+.restaurant-dish-stack__item img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  width: 100%;
+}
+
+.restaurant-dish-stack__item > div {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-5) var(--space-5);
+}
+
+.restaurant-dish-stack__item h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  line-height: 1.08;
+}
+
+.restaurant-dish-stack__item p {
+  color: var(--color-text-secondary);
+}
+
+.restaurant-atmosphere-grid {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.restaurant-atmosphere-grid__item {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.restaurant-atmosphere-grid__item img {
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  width: 100%;
+}
+
+.restaurant-atmosphere-grid__item figcaption {
+  background: linear-gradient(to top, rgb(5 7 9 / 90%), transparent);
+  bottom: 0;
+  display: grid;
+  gap: var(--space-1);
+  inset-inline: 0;
+  padding: var(--space-4);
+  position: absolute;
+}
+
+.restaurant-atmosphere-grid__item span {
+  color: color-mix(in srgb, var(--color-brand-strong) 84%, white);
+  font-size: var(--size-2xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.restaurant-atmosphere-grid__item p {
+  color: var(--color-text-primary);
+  font-size: var(--size-sm);
+  font-weight: 600;
+}
+
+.restaurant-private-layout,
+.restaurant-story-layout,
+.restaurant-reservation-module {
+  background: color-mix(in srgb, var(--color-surface) 90%, black);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-panel);
+  display: grid;
+  gap: var(--space-5);
+  grid-template-columns: 1.05fr 0.95fr;
+  overflow: hidden;
+}
+
+.restaurant-private-layout__media,
+.restaurant-story-layout__media,
+.restaurant-reservation-module__media {
+  margin: 0;
+}
+
+.restaurant-private-layout__media img,
+.restaurant-story-layout__media img,
+.restaurant-reservation-module__media img {
+  height: 100%;
+  min-height: 22rem;
+  object-fit: cover;
+  width: 100%;
+}
+
+.restaurant-private-layout__body,
+.restaurant-story-layout__copy,
+.restaurant-reservation-module__copy {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-6);
+}
+
+.restaurant-private-layout__body p,
+.restaurant-story-layout__copy p,
+.restaurant-reservation-module__copy p {
+  color: var(--color-text-secondary);
+}
+
+.restaurant-private-layout__actions,
+.restaurant-reservation-module__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.restaurant-story-layout__chef {
+  border-top: 1px solid color-mix(in srgb, var(--color-border) 72%, black);
+  margin-top: var(--space-2);
+  padding-top: var(--space-4);
+}
+
+.restaurant-story-layout__chef p {
+  color: var(--color-text-primary);
+  font-size: var(--size-md);
+  font-weight: 600;
+}
+
+.restaurant-story-layout__chef span {
+  color: color-mix(in srgb, var(--color-brand-strong) 84%, white);
+  font-size: var(--size-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.restaurant-reservation-module__policies {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.restaurant-reservation-module__policies li {
+  color: var(--color-text-secondary);
+  padding-left: var(--space-4);
+  position: relative;
+}
+
+.restaurant-reservation-module__policies li::before {
+  color: color-mix(in srgb, var(--color-brand) 92%, white);
+  content: '\2022';
+  left: 0;
+  position: absolute;
+}
+
+.restaurant-home-section--visit .restaurant-home-section__title {
+  max-width: 24ch;
+}
+
+.restaurant-visit-grid {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.restaurant-visit-grid__panel {
+  background: color-mix(in srgb, var(--color-surface) 90%, black);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-5);
+}
+
+.restaurant-visit-grid__panel h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  line-height: 1.08;
+}
+
+.restaurant-visit-grid__panel p,
+.restaurant-visit-grid__panel li,
+.restaurant-visit-grid__panel a {
+  color: var(--color-text-secondary);
 }
 
 body[data-demo-brand='service'] .site-nav-wrap {
@@ -1512,6 +1904,8 @@ body[data-demo-brand='service'] .site-footer {
   .dish-grid,
   .gallery-mosaic,
   .menu-preview-grid,
+  .restaurant-atmosphere-grid,
+  .restaurant-visit-grid,
   .team-grid,
   .site-footer__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1526,6 +1920,10 @@ body[data-demo-brand='service'] .site-footer {
   .land-quote-band,
   .reservation-callout,
   .page-hero--media,
+  .restaurant-tonight-layout,
+  .restaurant-private-layout,
+  .restaurant-story-layout,
+  .restaurant-reservation-module,
   .story-layout,
   .signature-layout,
   .experience-layout {
@@ -1569,6 +1967,20 @@ body[data-demo-brand='service'] .site-footer {
 
   .reservation-layout {
     grid-template-columns: 1fr;
+  }
+
+  .restaurant-home-hero {
+    min-height: clamp(30rem, 68vh, 38rem);
+  }
+
+  .restaurant-home-hero__title {
+    max-width: 17ch;
+  }
+
+  .restaurant-private-layout__body,
+  .restaurant-story-layout__copy,
+  .restaurant-reservation-module__copy {
+    padding: var(--space-5);
   }
 }
 
@@ -1619,6 +2031,8 @@ body[data-demo-brand='service'] .site-footer {
   .gallery-wall,
   .gallery-mosaic,
   .menu-preview-grid,
+  .restaurant-atmosphere-grid,
+  .restaurant-visit-grid,
   .team-grid,
   .site-footer__grid {
     grid-template-columns: 1fr;
@@ -1634,6 +2048,25 @@ body[data-demo-brand='service'] .site-footer {
 
   .land-quote-band {
     padding: var(--space-5);
+  }
+
+  .restaurant-home-hero {
+    min-height: 30rem;
+  }
+
+  .restaurant-home-hero__content {
+    gap: var(--space-3);
+    padding: var(--space-5);
+  }
+
+  .restaurant-home-hero__signals li {
+    width: 100%;
+  }
+
+  .restaurant-private-layout__media img,
+  .restaurant-story-layout__media img,
+  .restaurant-reservation-module__media img {
+    min-height: 16rem;
   }
 
   .mobile-primary-cta {

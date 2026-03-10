@@ -5,7 +5,11 @@ import { ButtonLink } from '../ui/Button'
 
 export function SiteNav() {
   const [isOpen, setIsOpen] = useState(false)
-  const { content, homePath, navItems, primaryCta } = useContext(DemoConfigContext)
+  const { brandSystem, content, homePath, navItems, primaryCta } = useContext(DemoConfigContext)
+  const isHospitality = brandSystem === 'hospitality'
+  const desktopNavItems = isHospitality
+    ? navItems.filter((item) => item.path !== primaryCta.path)
+    : navItems
 
   return (
     <header className="site-nav-wrap">
@@ -30,7 +34,7 @@ export function SiteNav() {
           className={`primary-nav ${isOpen ? 'primary-nav--open' : ''}`}
           id="primary-nav"
         >
-          {navItems.map((item) => (
+          {desktopNavItems.map((item) => (
             <NavLink
               className={({ isActive }) =>
                 ['primary-nav__link', isActive ? 'primary-nav__link--active' : '']
@@ -44,9 +48,15 @@ export function SiteNav() {
               {item.label}
             </NavLink>
           ))}
-          <ButtonLink className="primary-nav__cta" size="md" to={primaryCta.path}>
-            {primaryCta.label}
-          </ButtonLink>
+          {isHospitality ? (
+            <ButtonLink className="primary-nav__cta primary-nav__cta--hospitality" size="md" to={primaryCta.path} variant="secondary">
+              {primaryCta.label}
+            </ButtonLink>
+          ) : (
+            <ButtonLink className="primary-nav__cta" size="md" to={primaryCta.path}>
+              {primaryCta.label}
+            </ButtonLink>
+          )}
         </nav>
       </div>
     </header>

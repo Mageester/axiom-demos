@@ -8,7 +8,7 @@ export const restaurantContent: DemoContent = {
   brand: {
     name: 'Atelier Meridian',
     city: 'Toronto',
-    tagline: 'Seasonal tasting house with coastal influence',
+    tagline: 'Seasonal coastal dining by Toronto harbour',
     phone: '+1 (416) 555-0182',
     phoneHref: 'tel:+14165550182',
     email: 'reservations@ateliermeridian.ca',
@@ -24,16 +24,16 @@ export const restaurantContent: DemoContent = {
   },
   home: {
     hero: {
-      eyebrow: 'Waterfront Dining - Toronto',
-      title: 'A reservation-first dining experience built for modern hospitality.',
+      eyebrow: 'Toronto Waterfront Dining',
+      title: 'An evening by the water, shaped by the season.',
       description:
-        'Atelier Meridian delivers a premium evening of precise plating, focused service, and ingredient-led menus designed around Ontario seasonality.',
+        'Atelier Meridian is a dining room for unhurried dinners, thoughtful service, and ingredient-led cooking from Ontario farms and Atlantic waters.',
       primaryCta: 'Reserve a table',
       secondaryCta: 'Explore menu',
       signals: [
-        'Dinner service Tuesday-Sunday',
-        'Private dining studio up to 12 guests',
-        'Dietary and accessibility requests reviewed pre-arrival',
+        'Dinner service Tuesday to Sunday',
+        'Private dining room for up to 12 guests',
+        'Dietary requests welcomed with advance notice',
       ],
       image: {
         src: pexelsPhoto('260922', 1800, 1200),
@@ -43,27 +43,27 @@ export const restaurantContent: DemoContent = {
     },
     highlights: [
       {
-        title: 'Chef-led tasting cadence',
+        title: 'Kitchen-led tasting flow',
         description:
-          'A rotating progression of small and full plates coordinated to your table pace.',
+          'Small and full plates arrive in a considered rhythm so the table never feels rushed.',
       },
       {
-        title: 'Curated beverage pairing',
+        title: 'Wine and zero-proof pairings',
         description:
-          'Low-intervention wines, signature zero-proof options, and guided pairings by course.',
+          'A focused list of low-intervention wines and house zero-proof pairings by course.',
       },
       {
-        title: 'Private dining studio',
+        title: 'Private room occasions',
         description:
-          'An intimate 12-seat room for celebrations, team dinners, and host-led experiences.',
+          'A 12-seat room for birthdays, business dinners, and hosted celebrations.',
       },
     ],
     featuredDishes: [
       {
         name: 'Scallop Crudo',
-        course: 'First plate',
+        course: 'To begin',
         description:
-          'Citrus-bright opener plated for shareable visual impact and light pacing.',
+          'Sliced day-boat scallops with citrus, herbs, and a clean saline finish.',
         image: {
           src: pexelsPhoto('262978', 1400, 1000),
           alt: 'First course plated in a premium dining setting with refined garnish',
@@ -72,9 +72,9 @@ export const restaurantContent: DemoContent = {
       },
       {
         name: 'Dry-Aged Duck Breast',
-        course: 'Main course',
+        course: 'Main',
         description:
-          'Signature composed plate balancing richness, acidity, and seasonal produce.',
+          'Duck aged in-house and served with sour cherry jus and peak-season vegetables.',
         image: {
           src: pexelsPhoto('3298637', 1400, 1000),
           alt: 'Elegant duck breast plate with reduction and vegetables',
@@ -83,9 +83,9 @@ export const restaurantContent: DemoContent = {
       },
       {
         name: 'Chocolate Tarte',
-        course: 'Dessert',
+        course: 'To finish',
         description:
-          'Final course designed with restrained sweetness and high visual finish.',
+          'Dark chocolate tart with espresso cream and a lightly salted praline crunch.',
         image: {
           src: pexelsPhoto('291528', 1400, 1000),
           alt: 'Chocolate dessert plated with modern presentation',
@@ -94,13 +94,13 @@ export const restaurantContent: DemoContent = {
       },
     ],
     experience: {
-      title: 'Designed for seamless booking and confident planning',
+      title: 'Service designed for an unhurried evening',
       description:
-        'The experience begins before arrival with clear reservation windows, party-size guidance, and direct contact channels.',
+        'From your welcome pour to the final course, each table is paced for conversation and comfort.',
       points: [
-        'Real-time reservation intake for dinner service',
-        'Dedicated concierge response for dietary and accessibility needs',
-        'Transparent pricing and cancellation guidance before booking',
+        'Reservations confirmed by our host team ahead of service',
+        'Menu guidance for allergies and dietary preferences',
+        'Attentive pacing from first plate through dessert',
       ],
       images: [
         {
@@ -118,11 +118,11 @@ export const restaurantContent: DemoContent = {
   },
   menu: {
     intro:
-      'Our menu is updated weekly based on regional harvests and fishery availability.',
+      'Our menu shifts with the week and the market, guided by seasonal harvests and fishery arrivals.',
     sections: [
       {
         title: 'First Plates',
-        note: 'Small-format dishes to open the evening.',
+        note: 'Smaller dishes for the opening rounds at the table.',
         image: {
           src: pexelsPhoto('2741458', 1200, 900),
           alt: 'Savory first course plated with premium garnish detail',
@@ -148,7 +148,7 @@ export const restaurantContent: DemoContent = {
       },
       {
         title: 'Main Courses',
-        note: 'Composed plates built around local proteins and produce.',
+        note: 'Composed mains built around seafood, game, and peak produce.',
         image: {
           src: pexelsPhoto('3298637', 1200, 900),
           alt: 'Main entree plate with seared protein and vegetables',
@@ -174,7 +174,7 @@ export const restaurantContent: DemoContent = {
       },
       {
         title: 'Dessert',
-        note: 'Final courses with restrained sweetness.',
+        note: 'Desserts with depth, texture, and a restrained finish.',
         image: {
           src: pexelsPhoto('291528', 1200, 900),
           alt: 'Fine dining dessert with berries and cream',
@@ -202,27 +202,27 @@ export const restaurantContent: DemoContent = {
   },
   about: {
     intro:
-      'Atelier Meridian was established to combine meticulous cuisine with calm, human hospitality.',
+      'Atelier Meridian is a waterfront dining room built around seasonal cooking and warm, attentive hospitality.',
     story: [
-      'Our kitchen works in short seasonal cycles. Menus are tested daily and adjusted to match the quality of incoming ingredients.',
-      'Service is paced to feel unhurried. We focus on host awareness, clear communication, and guest comfort over scripted formality.',
-      'The room was designed around natural textures and soft acoustics, creating an atmosphere that supports conversation and occasion.',
+      'Our menu is written in short seasonal cycles, with dishes changing as produce and seafood quality shifts through the month.',
+      'The floor team is trained to read the table, pace service naturally, and keep the evening comfortable without interruption.',
+      'Natural wood, soft acoustics, and low evening light were chosen to keep conversation easy from first course to last glass.',
     ],
     values: [
       {
-        title: 'Ingredient transparency',
+        title: 'Seasonal sourcing',
         description:
-          'We source from partner farms and fisheries with direct visibility into origin and harvest timing.',
+          'We work with growers and fisheries we know, and we adjust the menu when quality tells us to.',
       },
       {
-        title: 'Accessible premium dining',
+        title: 'Warm, attentive service',
         description:
-          'Every guest receives clear options for dietary accommodations and table accessibility.',
+          'Every guest should feel looked after, whether it is a quick dinner for two or a long celebratory table.',
       },
       {
-        title: 'Operational consistency',
+        title: 'Details that matter',
         description:
-          'From booking confirmations to final course delivery, we design each touchpoint for reliability.',
+          'From glassware to pacing, we care about the small decisions that shape how the night feels.',
       },
     ],
     team: [
@@ -245,7 +245,7 @@ export const restaurantContent: DemoContent = {
   },
   reservations: {
     intro:
-      'Reservations open 30 days in advance. For parties above eight guests, contact our concierge directly.',
+      'Reservations open 30 days ahead. For groups of nine or more, please contact our reservations team directly.',
     policies: [
       'A valid card is required to hold dinner reservations.',
       'Cancellations made within 24 hours may be subject to a per-seat fee.',
@@ -254,7 +254,7 @@ export const restaurantContent: DemoContent = {
     channels: [
       {
         label: 'Book online',
-        value: 'Open OpenTable profile',
+        value: 'Open our OpenTable page',
         href: 'https://www.opentable.com/',
       },
       {
@@ -263,7 +263,7 @@ export const restaurantContent: DemoContent = {
         href: 'tel:+14165550182',
       },
       {
-        label: 'Email concierge',
+        label: 'Email reservations',
         value: 'reservations@ateliermeridian.ca',
         href: 'mailto:reservations@ateliermeridian.ca',
       },
@@ -271,13 +271,13 @@ export const restaurantContent: DemoContent = {
   },
   gallery: {
     intro:
-      'A visual preview of dining atmosphere, plating detail, and service moments before guests reserve.',
+      'A look at the room, the plates, and the pace of service through the evening.',
     collections: [
       {
         title: 'Main Dining Room',
-        subtitle: 'Ambient evening service',
+        subtitle: 'Evening in the main room',
         description:
-          'Natural wood surfaces, low-glare lighting, and table spacing designed for relaxed conversation.',
+          'Warm light, generous table spacing, and a room set for long conversation.',
         image: {
           src: pexelsPhoto('260922', 1200, 900),
           alt: 'Main dining room set for evening service with warm ambient light',
@@ -286,9 +286,9 @@ export const restaurantContent: DemoContent = {
       },
       {
         title: 'Seasonal Plating',
-        subtitle: 'Chef-led progression',
+        subtitle: 'Plating from the kitchen',
         description:
-          'Course presentation focused on texture contrast, ingredient clarity, and measured pacing.',
+          'Seasonal ingredients plated with clean lines and a focus on flavour first.',
         image: {
           src: pexelsPhoto('262978', 1200, 900),
           alt: 'Close-up of plated seasonal course with refined garnish',
@@ -297,9 +297,9 @@ export const restaurantContent: DemoContent = {
       },
       {
         title: 'Private Dining Studio',
-        subtitle: 'Up to 12 guests',
+        subtitle: 'Hosted dinners',
         description:
-          'A separate room for hosted dinners, milestone events, and executive team gatherings.',
+          'A separate room for birthdays, hosted dinners, and private evening gatherings.',
         image: {
           src: pexelsPhoto('1581384', 1200, 900),
           alt: 'Private dining room with warm materials and premium table setting',
@@ -308,9 +308,9 @@ export const restaurantContent: DemoContent = {
       },
       {
         title: 'Bar & Pairings',
-        subtitle: 'Wine and zero-proof',
+        subtitle: 'Cocktail and wine service',
         description:
-          'Curated bottles and non-alcoholic pairings selected to support each weekly menu cycle.',
+          'A concise bar program with signature cocktails, by-the-glass wines, and zero-proof options.',
         image: {
           src: pexelsPhoto('3171837', 1200, 900),
           alt: 'Guests toasting with cocktail glasses in a warm restaurant setting',
@@ -319,9 +319,9 @@ export const restaurantContent: DemoContent = {
       },
       {
         title: 'Chef Counter',
-        subtitle: 'Interactive service',
+        subtitle: 'Open kitchen view',
         description:
-          'Limited counter seats with direct view of finishing techniques and final plating.',
+          'A closer view of finishing work and pass service in the heart of the kitchen.',
         image: {
           src: pexelsPhoto('628776', 1200, 900),
           alt: 'Chef plating in an open kitchen counter setting',
@@ -330,9 +330,9 @@ export const restaurantContent: DemoContent = {
       },
       {
         title: 'Arrival Experience',
-        subtitle: 'Guest check-in flow',
+        subtitle: 'Welcome at the door',
         description:
-          'Hosted arrival with clear reservation validation and dietary notes confirmed at entry.',
+          'Hosts greet each table at arrival and confirm any notes before seating.',
         image: {
           src: pexelsPhoto('67468', 1200, 900),
           alt: 'Front dining view prepared for guest arrival and table greeting',
@@ -341,9 +341,9 @@ export const restaurantContent: DemoContent = {
       },
       {
         title: 'Late Evening Mood',
-        subtitle: 'After-dark atmosphere',
+        subtitle: 'After-dark dining',
         description:
-          'Lighting and room pacing tuned for quieter conversation as evening service continues.',
+          'The room settles into a quieter mood as service moves into the late evening.',
         image: {
           src: pexelsPhoto('776538', 1200, 900),
           alt: 'Warm pendant lights over a moody restaurant interior at night',
@@ -352,9 +352,9 @@ export const restaurantContent: DemoContent = {
       },
       {
         title: 'Kitchen Team Flow',
-        subtitle: 'Coordinated pass service',
+        subtitle: 'On the pass',
         description:
-          'Kitchen choreography focused on timing, consistency, and smooth course release.',
+          'The kitchen team on the pass, timing each course for smooth table pacing.',
         image: {
           src: pexelsPhoto('3217156', 1200, 900),
           alt: 'Chef team preparing dishes in a professional kitchen setting',
@@ -365,10 +365,10 @@ export const restaurantContent: DemoContent = {
   },
   contact: {
     intro:
-      'Contact the concierge team for reservation changes, private event planning, or accessibility accommodations.',
+      'Contact our reservations team for booking changes, private dining inquiries, or accessibility details.',
     details: [
       {
-        label: 'Call concierge',
+        label: 'Call reservations',
         value: '+1 (416) 555-0182',
         href: 'tel:+14165550182',
       },
@@ -385,8 +385,8 @@ export const restaurantContent: DemoContent = {
     ],
     notes: [
       'Reservation modifications are best handled by phone for same-day service.',
-      'For private events over eight guests, include preferred date range and guest count in your email.',
-      'Dietary and accessibility accommodations are reviewed by the concierge before confirmation.',
+      'For private dining inquiries, include preferred dates and expected guest count in your message.',
+      'If you have dietary needs or accessibility requests, share them when you book so we can prepare in advance.',
     ],
   },
 }
