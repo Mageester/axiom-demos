@@ -1,7 +1,6 @@
 import { useContext } from 'react'
 import { DemoConfigContext } from '../config/demoConfig'
 import { ButtonLink } from '../components/ui/Button'
-import { Card } from '../components/ui/Card'
 import { PageHero } from '../components/ui/PageHero'
 import { Section } from '../components/ui/Section'
 
@@ -51,27 +50,25 @@ export function AboutPage() {
         </div>
       </Section>
 
-      <Section title="What guides service">
-        <div className="card-grid card-grid--3">
+      <Section title="What shapes the evening">
+        <div className="restaurant-values-grid">
           {content.about.values.map((value) => (
-            <Card
-              description={value.description}
-              key={value.title}
-              title={value.title}
-            />
+            <article className="restaurant-value-panel" key={value.title}>
+              <h3>{value.title}</h3>
+              <p>{value.description}</p>
+            </article>
           ))}
         </div>
       </Section>
 
-      <Section title="Kitchen and floor team">
-        <div className="team-grid">
+      <Section title="In the kitchen and dining room">
+        <div className="restaurant-team-grid">
           {content.about.team.map((member) => (
-            <Card
-              description={member.bio}
-              key={member.name}
-              meta={member.role}
-              title={member.name}
-            />
+            <article className="restaurant-team-panel" key={member.name}>
+              <p className="restaurant-team-panel__role">{member.role}</p>
+              <h3>{member.name}</h3>
+              <p>{member.bio}</p>
+            </article>
           ))}
         </div>
       </Section>

@@ -1412,6 +1412,25 @@ body[data-demo-brand='hospitality'] .primary-nav__cta--hospitality {
   text-transform: none;
 }
 
+body[data-demo-brand='hospitality'] .page-hero {
+  background:
+    radial-gradient(circle at 84% 22%, rgb(212 176 109 / 10%), transparent 28%),
+    linear-gradient(
+      144deg,
+      color-mix(in srgb, var(--color-surface) 94%, black),
+      color-mix(in srgb, var(--color-surface-strong) 88%, black)
+    );
+  border-radius: calc(var(--radius-panel) + 2px);
+}
+
+body[data-demo-brand='hospitality'] .page-hero__eyebrow {
+  color: color-mix(in srgb, var(--color-brand-strong) 84%, white);
+}
+
+body[data-demo-brand='hospitality'] .page-hero__title {
+  max-width: 14ch;
+}
+
 body[data-demo-brand='hospitality'] .btn--primary {
   background:
     linear-gradient(
@@ -1451,6 +1470,11 @@ body[data-demo-brand='hospitality'] .site-footer--hospitality .site-footer__bran
 
 body[data-demo-brand='hospitality'] .site-footer--hospitality .site-footer__tagline {
   max-width: 32ch;
+}
+
+body[data-demo-brand='hospitality'] .mobile-primary-cta {
+  background: color-mix(in srgb, var(--color-bg-soft) 92%, black);
+  backdrop-filter: blur(10px);
 }
 
 .restaurant-home-hero {
@@ -1808,6 +1832,63 @@ body[data-demo-brand='hospitality'] .site-footer--hospitality .site-footer__tagl
   color: var(--color-text-secondary);
 }
 
+.restaurant-values-grid,
+.restaurant-team-grid,
+.restaurant-link-grid {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.restaurant-values-grid,
+.restaurant-team-grid,
+.restaurant-link-grid--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.restaurant-value-panel,
+.restaurant-team-panel,
+.restaurant-link-panel {
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--color-surface) 92%, black),
+      color-mix(in srgb, var(--color-surface-strong) 88%, black)
+    );
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-5);
+}
+
+.restaurant-value-panel h3,
+.restaurant-team-panel h3,
+.restaurant-link-panel h3 {
+  color: var(--color-text-primary);
+  font-family: var(--font-display);
+  font-size: var(--size-lg);
+  line-height: 1.08;
+}
+
+.restaurant-value-panel p,
+.restaurant-team-panel p:not(.restaurant-team-panel__role) {
+  color: var(--color-text-secondary);
+}
+
+.restaurant-link-panel__eyebrow,
+.restaurant-team-panel__role {
+  color: color-mix(in srgb, var(--color-brand-strong) 84%, white);
+  font-size: var(--size-2xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.restaurant-link-panel .btn,
+.restaurant-team-panel .btn,
+.restaurant-value-panel .btn {
+  margin-top: var(--space-1);
+}
+
 body[data-demo-brand='service'] .site-nav-wrap {
   background: color-mix(in srgb, var(--color-bg-soft) 92%, black);
   border-bottom-color: color-mix(in srgb, var(--color-border) 88%, black);
@@ -1905,8 +1986,11 @@ body[data-demo-brand='service'] .site-footer {
   .gallery-mosaic,
   .menu-preview-grid,
   .restaurant-atmosphere-grid,
+  .restaurant-link-grid--3,
   .restaurant-visit-grid,
+  .restaurant-values-grid,
   .team-grid,
+  .restaurant-team-grid,
   .site-footer__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2032,8 +2116,11 @@ body[data-demo-brand='service'] .site-footer {
   .gallery-mosaic,
   .menu-preview-grid,
   .restaurant-atmosphere-grid,
+  .restaurant-link-grid--3,
   .restaurant-visit-grid,
+  .restaurant-values-grid,
   .team-grid,
+  .restaurant-team-grid,
   .site-footer__grid {
     grid-template-columns: 1fr;
   }

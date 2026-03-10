@@ -1,12 +1,27 @@
 import { useContext } from 'react'
 import { DemoConfigContext } from '../config/demoConfig'
 import { ButtonAnchor, ButtonLink } from '../components/ui/Button'
-import { Card } from '../components/ui/Card'
 import { PageHero } from '../components/ui/PageHero'
 import { Section } from '../components/ui/Section'
 
 export function ContactPage() {
   const { content, routes } = useContext(DemoConfigContext)
+
+  function contactActionLabel(label: string, href: string) {
+    if (href.startsWith('tel:')) {
+      return 'Call'
+    }
+
+    if (href.startsWith('mailto:')) {
+      return 'Email'
+    }
+
+    if (label.toLowerCase().includes('visit')) {
+      return 'View map'
+    }
+
+    return 'Open'
+  }
 
   return (
     <>
@@ -22,24 +37,26 @@ export function ContactPage() {
         description={content.contact.intro}
         eyebrow="Contact"
         media={content.gallery.collections[5]?.image}
-        title="Contact reservations"
+        title="Reservations and private dining"
       />
 
-      <Section title="Direct channels">
-        <div className="card-grid card-grid--3">
+      <Section description="For booking changes, private dining, or accessibility details, these are the fastest ways to reach us." title="How to reach us">
+        <div className="restaurant-link-grid restaurant-link-grid--3">
           {content.contact.details.map((detail) => (
-            <Card key={detail.label} meta={detail.label} title={detail.value}>
+            <article className="restaurant-link-panel" key={detail.label}>
+              <p className="restaurant-link-panel__eyebrow">{detail.label}</p>
+              <h3>{detail.value}</h3>
               {detail.href ? (
                 <ButtonAnchor href={detail.href} variant="quiet">
-                  Open
+                  {contactActionLabel(detail.label, detail.href)}
                 </ButtonAnchor>
               ) : null}
-            </Card>
+            </article>
           ))}
         </div>
       </Section>
 
-      <Section title="Before you write">
+      <Section title="Before you get in touch">
         <div className="experience-panel">
           <ul className="check-list">
             {content.contact.notes.map((note) => (

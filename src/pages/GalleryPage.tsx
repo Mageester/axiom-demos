@@ -21,7 +21,7 @@ export function GalleryPage() {
         }
         description={content.gallery.intro}
         eyebrow="Gallery"
-        media={leadMoment?.image}
+        media={content.gallery.collections[3]?.image ?? leadMoment?.image}
         title="Evenings at Atelier Meridian"
       />
 
@@ -131,7 +131,7 @@ export function GalleryPage() {
               Reserve a table
             </ButtonLink>
             <ButtonLink size="lg" to={routes.contact} variant="secondary">
-              Contact reservations
+              Private dining enquiry
             </ButtonLink>
           </div>
         </div>

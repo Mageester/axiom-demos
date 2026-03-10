@@ -2,13 +2,28 @@ import { type FormEvent, useContext, useState } from 'react'
 import { siteConfig } from '../config/siteConfig'
 import { DemoConfigContext } from '../config/demoConfig'
 import { Button, ButtonAnchor } from '../components/ui/Button'
-import { Card } from '../components/ui/Card'
 import { PageHero } from '../components/ui/PageHero'
 import { Section } from '../components/ui/Section'
 
 export function ReservationsPage() {
   const [statusMessage, setStatusMessage] = useState('')
   const { content } = useContext(DemoConfigContext)
+
+  function channelActionLabel(label: string, href: string) {
+    if (label.toLowerCase().includes('online')) {
+      return 'Book online'
+    }
+
+    if (href.startsWith('tel:')) {
+      return 'Call'
+    }
+
+    if (href.startsWith('mailto:')) {
+      return 'Email'
+    }
+
+    return 'Open'
+  }
 
   function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -32,7 +47,7 @@ export function ReservationsPage() {
     })
 
     window.location.href = `${content.brand.emailHref}?${query.toString()}`
-    setStatusMessage('Your email app is opening with your reservation details.')
+    setStatusMessage('Your email app is opening with your reservation request ready to send.')
     event.currentTarget.reset()
   }
 
@@ -55,21 +70,23 @@ export function ReservationsPage() {
         title="Reserve your table"
       />
 
-      <Section title="Booking channels">
-        <div className="card-grid card-grid--3">
+      <Section description="Reserve online, give us a call, or send a note to the reservations team." title="How to reserve">
+        <div className="restaurant-link-grid restaurant-link-grid--3">
           {content.reservations.channels.map((channel) => (
-            <Card key={channel.label} meta={channel.label} title={channel.value}>
+            <article className="restaurant-link-panel" key={channel.label}>
+              <p className="restaurant-link-panel__eyebrow">{channel.label}</p>
+              <h3>{channel.value}</h3>
               <ButtonAnchor href={channel.href} variant="quiet">
-                Open
+                {channelActionLabel(channel.label, channel.href)}
               </ButtonAnchor>
-            </Card>
+            </article>
           ))}
         </div>
       </Section>
 
       <Section
-        description="Share your preferred date and party size. This form opens your mail client with your request prefilled."
-        title="Reservation request"
+        description="Share a preferred date, time, and party size. When you send this form, your email app opens with the details already filled in."
+        title="Send a reservation request"
       >
         <div className="reservation-layout">
           <form className="reservation-form" onSubmit={onSubmit}>
@@ -95,20 +112,20 @@ export function ReservationsPage() {
             <label htmlFor="notes">Dietary notes</label>
             <textarea id="notes" name="notes" rows={4} />
 
-            <Button type="submit">Send request</Button>
+            <Button type="submit">Open email request</Button>
             {statusMessage ? <p className="form-status">{statusMessage}</p> : null}
           </form>
 
           <aside className="policy-panel">
-            <h3>Reservation policy</h3>
+            <h3>Before you book</h3>
             <ul>
               {content.reservations.policies.map((policy) => (
                 <li key={policy}>{policy}</li>
               ))}
             </ul>
             <p className="policy-panel__subtle">
-              For large parties, private events, or accessibility requests, contact
-              our reservations team directly at {content.brand.phone}.
+              For larger tables, private dinners, or accessibility requests, call
+              the reservations team directly at {content.brand.phone}.
             </p>
           </aside>
         </div>

@@ -66,8 +66,8 @@ export const restaurantContent: DemoContent = {
           'Sliced day-boat scallops with citrus, herbs, and a clean saline finish.',
         image: {
           src: pexelsPhoto('262978', 1400, 1000),
-          alt: 'First course plated in a premium dining setting with refined garnish',
-          position: 'center 72%',
+          alt: 'First course plated in a warm restaurant dining room',
+          position: 'center 68%',
         },
       },
       {
@@ -76,9 +76,9 @@ export const restaurantContent: DemoContent = {
         description:
           'Duck aged in-house and served with sour cherry jus and peak-season vegetables.',
         image: {
-          src: pexelsPhoto('3298637', 1400, 1000),
-          alt: 'Elegant duck breast plate with reduction and vegetables',
-          position: 'center',
+          src: pexelsPhoto('32083423', 1400, 1000),
+          alt: 'Elegant plated main course in a warm fine dining setting',
+          position: 'center 52%',
         },
       },
       {
@@ -87,9 +87,9 @@ export const restaurantContent: DemoContent = {
         description:
           'Dark chocolate tart with espresso cream and a lightly salted praline crunch.',
         image: {
-          src: pexelsPhoto('291528', 1400, 1000),
-          alt: 'Chocolate dessert plated with modern presentation',
-          position: 'center',
+          src: pexelsPhoto('34712611', 1400, 1000),
+          alt: 'Dark chocolate dessert plated for an evening restaurant service',
+          position: 'center 58%',
         },
       },
     ],
@@ -104,14 +104,14 @@ export const restaurantContent: DemoContent = {
       ],
       images: [
         {
-          src: pexelsPhoto('941861', 1200, 1400),
-          alt: 'Evening dining room scene with candlelight and refined table settings',
-          position: 'center 40%',
+          src: pexelsPhoto('18272528', 1200, 1400),
+          alt: 'Warm restaurant interior with softly lit tables in the evening',
+          position: 'center 52%',
         },
         {
-          src: pexelsPhoto('1267320', 1200, 900),
-          alt: 'Bar station with premium cocktails ready for service',
-          position: 'center 58%',
+          src: pexelsPhoto('4871188', 1200, 900),
+          alt: 'Wine being poured into glasses in a softly lit dining room',
+          position: 'center 45%',
         },
       ],
     },
@@ -124,9 +124,9 @@ export const restaurantContent: DemoContent = {
         title: 'First Plates',
         note: 'Smaller dishes for the opening rounds at the table.',
         image: {
-          src: pexelsPhoto('2741458', 1200, 900),
-          alt: 'Savory first course plated with premium garnish detail',
-          position: 'center',
+          src: pexelsPhoto('3645126', 1200, 900),
+          alt: 'Seared scallops plated for a first course',
+          position: 'center 56%',
         },
         items: [
           {
@@ -150,9 +150,9 @@ export const restaurantContent: DemoContent = {
         title: 'Main Courses',
         note: 'Composed mains built around seafood, game, and peak produce.',
         image: {
-          src: pexelsPhoto('3298637', 1200, 900),
-          alt: 'Main entree plate with seared protein and vegetables',
-          position: 'center 44%',
+          src: pexelsPhoto('32083423', 1200, 900),
+          alt: 'Main course plated in a refined restaurant dining room',
+          position: 'center 52%',
         },
         items: [
           {
@@ -176,9 +176,9 @@ export const restaurantContent: DemoContent = {
         title: 'Dessert',
         note: 'Desserts with depth, texture, and a restrained finish.',
         image: {
-          src: pexelsPhoto('291528', 1200, 900),
-          alt: 'Fine dining dessert with berries and cream',
-          position: 'center 55%',
+          src: pexelsPhoto('34712611', 1200, 900),
+          alt: 'Dark chocolate dessert plated for an evening restaurant service',
+          position: 'center 58%',
         },
         items: [
           {
@@ -254,7 +254,7 @@ export const restaurantContent: DemoContent = {
     channels: [
       {
         label: 'Book online',
-        value: 'Open our OpenTable page',
+        value: 'OpenTable reservations',
         href: 'https://www.opentable.com/',
       },
       {
@@ -279,9 +279,9 @@ export const restaurantContent: DemoContent = {
         description:
           'Warm light, generous table spacing, and a room set for long conversation.',
         image: {
-          src: pexelsPhoto('260922', 1200, 900),
-          alt: 'Main dining room set for evening service with warm ambient light',
-          position: 'center 46%',
+          src: pexelsPhoto('18272528', 1200, 900),
+          alt: 'Warmly lit restaurant interior viewed at night through the front window',
+          position: 'center 52%',
         },
       },
       {
@@ -290,9 +290,9 @@ export const restaurantContent: DemoContent = {
         description:
           'Seasonal ingredients plated with clean lines and a focus on flavour first.',
         image: {
-          src: pexelsPhoto('262978', 1200, 900),
-          alt: 'Close-up of plated seasonal course with refined garnish',
-          position: 'center',
+          src: pexelsPhoto('33033789', 1200, 900),
+          alt: 'Elegantly plated dish served in a fine dining restaurant',
+          position: 'center 50%',
         },
       },
       {
@@ -301,9 +301,9 @@ export const restaurantContent: DemoContent = {
         description:
           'A separate room for birthdays, hosted dinners, and private evening gatherings.',
         image: {
-          src: pexelsPhoto('1581384', 1200, 900),
-          alt: 'Private dining room with warm materials and premium table setting',
-          position: 'center 55%',
+          src: pexelsPhoto('28871005', 1200, 900),
+          alt: 'Elegant restaurant table set with warm ambient lighting',
+          position: 'center 48%',
         },
       },
       {
@@ -312,9 +312,9 @@ export const restaurantContent: DemoContent = {
         description:
           'A concise bar program with signature cocktails, by-the-glass wines, and zero-proof options.',
         image: {
-          src: pexelsPhoto('3171837', 1200, 900),
-          alt: 'Guests toasting with cocktail glasses in a warm restaurant setting',
-          position: 'center 58%',
+          src: pexelsPhoto('35233348', 1200, 900),
+          alt: 'Wine glasses raised in a candlelit restaurant setting',
+          position: 'center 46%',
         },
       },
       {
@@ -334,9 +334,9 @@ export const restaurantContent: DemoContent = {
         description:
           'Hosts greet each table at arrival and confirm any notes before seating.',
         image: {
-          src: pexelsPhoto('67468', 1200, 900),
-          alt: 'Front dining view prepared for guest arrival and table greeting',
-          position: 'center 58%',
+          src: pexelsPhoto('13085892', 1200, 900),
+          alt: 'Warm restaurant interior with ambient lighting and polished table settings',
+          position: 'center 46%',
         },
       },
       {
@@ -345,9 +345,9 @@ export const restaurantContent: DemoContent = {
         description:
           'The room settles into a quieter mood as service moves into the late evening.',
         image: {
-          src: pexelsPhoto('776538', 1200, 900),
-          alt: 'Warm pendant lights over a moody restaurant interior at night',
-          position: 'center',
+          src: pexelsPhoto('29819943', 1200, 900),
+          alt: 'Warm pendant lighting over a softly lit restaurant interior',
+          position: 'center 44%',
         },
       },
       {

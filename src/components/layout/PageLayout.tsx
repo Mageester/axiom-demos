@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
 import { DemoConfigContext } from '../../config/demoConfig'
 import { ButtonLink } from '../ui/Button'
 import { SiteFooter } from './SiteFooter'
@@ -7,6 +7,7 @@ import { SiteNav } from './SiteNav'
 
 export function PageLayout() {
   const { brandSystem, key, primaryCta, theme } = useContext(DemoConfigContext)
+  const location = useLocation()
 
   useEffect(() => {
     document.body.dataset.demoBrand = brandSystem
@@ -20,7 +21,7 @@ export function PageLayout() {
 
   return (
     <div className={`app-shell app-shell--${key}`}>
-      <SiteNav />
+      <SiteNav key={location.pathname} />
       <main className="page-main">
         <Outlet />
       </main>

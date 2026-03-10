@@ -1,4 +1,5 @@
-import type { ButtonHTMLAttributes, ReactNode } from 'react'
+import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from 'react'
+import type { LinkProps } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
 type ButtonVariant = 'primary' | 'secondary' | 'quiet'
@@ -14,12 +15,13 @@ interface SharedButtonProps {
 
 interface ButtonLinkProps extends SharedButtonProps {
   to: string
+  onClick?: LinkProps['onClick']
 }
 
-interface ButtonAnchorProps extends SharedButtonProps {
+interface ButtonAnchorProps
+  extends SharedButtonProps,
+    Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'className' | 'children' | 'href'> {
   href: string
-  target?: string
-  rel?: string
 }
 
 interface ButtonProps
@@ -50,10 +52,12 @@ export function ButtonLink({
   size = 'md',
   fullWidth = false,
   className,
+  onClick,
 }: ButtonLinkProps) {
   return (
     <Link
       className={buildButtonClass({ variant, size, fullWidth, className })}
+      onClick={onClick}
       to={to}
     >
       {children}
@@ -70,13 +74,15 @@ export function ButtonAnchor({
   className,
   target,
   rel,
+  ...anchorProps
 }: ButtonAnchorProps) {
   return (
     <a
       className={buildButtonClass({ variant, size, fullWidth, className })}
       href={href}
-      target={target}
       rel={rel}
+      target={target}
+      {...anchorProps}
     >
       {children}
     </a>

@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { DemoConfigContext } from '../../config/demoConfig'
 import { ButtonLink } from '../ui/Button'
@@ -10,6 +10,21 @@ export function SiteNav() {
   const desktopNavItems = isHospitality
     ? navItems.filter((item) => item.path !== primaryCta.path)
     : navItems
+
+  useEffect(() => {
+    if (!isOpen) {
+      return undefined
+    }
+
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        setIsOpen(false)
+      }
+    }
+
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [isOpen])
 
   return (
     <header className="site-nav-wrap">
@@ -49,11 +64,11 @@ export function SiteNav() {
             </NavLink>
           ))}
           {isHospitality ? (
-            <ButtonLink className="primary-nav__cta primary-nav__cta--hospitality" size="md" to={primaryCta.path} variant="secondary">
+            <ButtonLink className="primary-nav__cta primary-nav__cta--hospitality" onClick={() => setIsOpen(false)} size="md" to={primaryCta.path} variant="secondary">
               {primaryCta.label}
             </ButtonLink>
           ) : (
-            <ButtonLink className="primary-nav__cta" size="md" to={primaryCta.path}>
+            <ButtonLink className="primary-nav__cta" onClick={() => setIsOpen(false)} size="md" to={primaryCta.path}>
               {primaryCta.label}
             </ButtonLink>
           )}

@@ -234,7 +234,7 @@ export function HomePage() {
             </ul>
             <div className="restaurant-reservation-module__actions">
               <ButtonLink size="lg" to={routes.reservations}>
-                Reserve now
+                Reserve a table
               </ButtonLink>
               <ButtonAnchor href={content.brand.phoneHref} size="lg" variant="secondary">
                 Call reservations
@@ -269,7 +269,7 @@ export function HomePage() {
             <h3>Location</h3>
             <p>{content.brand.address}</p>
             <ButtonAnchor href={content.contact.details[2]?.href ?? routes.contact} variant="quiet">
-              Open map
+              View on map
             </ButtonAnchor>
           </article>
 
@@ -293,7 +293,7 @@ export function HomePage() {
               </li>
             </ul>
             <ButtonLink to={routes.contact} variant="quiet">
-              Contact reservations
+              Email reservations
             </ButtonLink>
           </article>
         </div>

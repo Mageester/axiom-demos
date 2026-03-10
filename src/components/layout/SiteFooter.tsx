@@ -8,7 +8,7 @@ export function SiteFooter() {
   const hoursHeading = isHospitality ? 'Dinner Service' : 'Hours'
   const contactHeading = isHospitality ? 'Reservations' : 'Contact'
   const brandTagline = isHospitality
-    ? `${content.brand.tagline}. Reservations recommended for evening service.`
+    ? `${content.brand.tagline}. Dinner reservations recommended.`
     : content.brand.tagline
 
   return (
