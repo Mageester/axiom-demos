@@ -1,5 +1,9 @@
 import type { DemoContent } from './types'
 
+function pexelsPhoto(id: string, width = 1600, height = 1100) {
+  return `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${width}&h=${height}&fit=crop`
+}
+
 export const restaurantContent: DemoContent = {
   brand: {
     name: 'Atelier Meridian',
@@ -20,12 +24,22 @@ export const restaurantContent: DemoContent = {
   },
   home: {
     hero: {
-      eyebrow: 'Axiom Flagship Demo',
+      eyebrow: 'Waterfront Dining - Toronto',
       title: 'A reservation-first dining experience built for modern hospitality.',
       description:
         'Atelier Meridian delivers a premium evening of precise plating, focused service, and ingredient-led menus designed around Ontario seasonality.',
       primaryCta: 'Reserve a table',
       secondaryCta: 'Explore menu',
+      signals: [
+        'Dinner service Tuesday-Sunday',
+        'Private dining studio up to 12 guests',
+        'Dietary and accessibility requests reviewed pre-arrival',
+      ],
+      image: {
+        src: pexelsPhoto('67468', 1800, 1200),
+        alt: 'Refined dining room with warmly lit table settings',
+        position: 'center',
+      },
     },
     highlights: [
       {
@@ -44,6 +58,41 @@ export const restaurantContent: DemoContent = {
           'An intimate 12-seat room for celebrations, team dinners, and host-led experiences.',
       },
     ],
+    featuredDishes: [
+      {
+        name: 'Scallop Crudo',
+        course: 'First plate',
+        description:
+          'Citrus-bright opener plated for shareable visual impact and light pacing.',
+        image: {
+          src: pexelsPhoto('3763847', 1400, 1000),
+          alt: 'Plated scallop dish with citrus and herbs',
+          position: 'center',
+        },
+      },
+      {
+        name: 'Dry-Aged Duck Breast',
+        course: 'Main course',
+        description:
+          'Signature composed plate balancing richness, acidity, and seasonal produce.',
+        image: {
+          src: pexelsPhoto('3298637', 1400, 1000),
+          alt: 'Elegant duck breast plate with reduction and vegetables',
+          position: 'center',
+        },
+      },
+      {
+        name: 'Chocolate Tarte',
+        course: 'Dessert',
+        description:
+          'Final course designed with restrained sweetness and high visual finish.',
+        image: {
+          src: pexelsPhoto('291528', 1400, 1000),
+          alt: 'Chocolate dessert plated with modern presentation',
+          position: 'center',
+        },
+      },
+    ],
     experience: {
       title: 'Designed for seamless booking and confident planning',
       description:
@@ -52,6 +101,18 @@ export const restaurantContent: DemoContent = {
         'Real-time reservation intake for dinner service',
         'Dedicated concierge response for dietary and accessibility needs',
         'Transparent pricing and cancellation guidance before booking',
+      ],
+      images: [
+        {
+          src: pexelsPhoto('262978', 1200, 1400),
+          alt: 'Restaurant table with warm candlelight and place settings',
+          position: 'center',
+        },
+        {
+          src: pexelsPhoto('1307698', 1200, 900),
+          alt: 'Bar station with premium cocktails ready for service',
+          position: 'center',
+        },
       ],
     },
   },
@@ -62,6 +123,11 @@ export const restaurantContent: DemoContent = {
       {
         title: 'First Plates',
         note: 'Small-format dishes to open the evening.',
+        image: {
+          src: pexelsPhoto('793765', 1200, 900),
+          alt: 'Small plated appetizer with delicate garnish',
+          position: 'center',
+        },
         items: [
           {
             name: 'East Coast Oysters',
@@ -83,6 +149,11 @@ export const restaurantContent: DemoContent = {
       {
         title: 'Main Courses',
         note: 'Composed plates built around local proteins and produce.',
+        image: {
+          src: pexelsPhoto('958545', 1200, 900),
+          alt: 'Main entree plate with seared protein and vegetables',
+          position: 'center',
+        },
         items: [
           {
             name: 'Dry-Aged Duck Breast',
@@ -104,6 +175,11 @@ export const restaurantContent: DemoContent = {
       {
         title: 'Dessert',
         note: 'Final courses with restrained sweetness.',
+        image: {
+          src: pexelsPhoto('3026808', 1200, 900),
+          alt: 'Fine dining dessert with berries and cream',
+          position: 'center',
+        },
         items: [
           {
             name: 'Chocolate Tarte',
@@ -202,36 +278,66 @@ export const restaurantContent: DemoContent = {
         subtitle: 'Ambient evening service',
         description:
           'Natural wood surfaces, low-glare lighting, and table spacing designed for relaxed conversation.',
+        image: {
+          src: pexelsPhoto('776538', 1200, 900),
+          alt: 'Main dining room with ambient lighting and set tables',
+          position: 'center',
+        },
       },
       {
         title: 'Seasonal Plating',
         subtitle: 'Chef-led progression',
         description:
           'Course presentation focused on texture contrast, ingredient clarity, and measured pacing.',
+        image: {
+          src: pexelsPhoto('1352295', 1200, 900),
+          alt: 'Close-up of plated seasonal dish with refined garnish',
+          position: 'center',
+        },
       },
       {
         title: 'Private Dining Studio',
         subtitle: 'Up to 12 guests',
         description:
           'A separate room for hosted dinners, milestone events, and executive team gatherings.',
+        image: {
+          src: pexelsPhoto('1581384', 1200, 900),
+          alt: 'Private dining table prepared for a small group event',
+          position: 'center',
+        },
       },
       {
         title: 'Bar & Pairings',
         subtitle: 'Wine and zero-proof',
         description:
           'Curated bottles and non-alcoholic pairings selected to support each weekly menu cycle.',
+        image: {
+          src: pexelsPhoto('1267320', 1200, 900),
+          alt: 'Bar counter with cocktails and curated drink service',
+          position: 'center',
+        },
       },
       {
         title: 'Chef Counter',
         subtitle: 'Interactive service',
         description:
           'Limited counter seats with direct view of finishing techniques and final plating.',
+        image: {
+          src: pexelsPhoto('628776', 1200, 900),
+          alt: 'Chef plating in an open kitchen counter setting',
+          position: 'center',
+        },
       },
       {
         title: 'Arrival Experience',
         subtitle: 'Guest check-in flow',
         description:
           'Hosted arrival with clear reservation validation and dietary notes confirmed at entry.',
+        image: {
+          src: pexelsPhoto('204221', 1200, 900),
+          alt: 'Restaurant entry with host stand and evening ambience',
+          position: 'center',
+        },
       },
     ],
   },

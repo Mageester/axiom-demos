@@ -3,12 +3,20 @@ export interface FeatureCardContent {
   description: string
 }
 
+export interface VisualAssetContent {
+  src: string
+  alt: string
+  position?: string
+}
+
 export interface HeroContent {
   eyebrow?: string
   title: string
   description: string
   primaryCta: string
   secondaryCta?: string
+  image?: VisualAssetContent
+  signals?: string[]
 }
 
 export interface MenuItemContent {
@@ -21,6 +29,7 @@ export interface MenuSectionContent {
   title: string
   note: string
   items: MenuItemContent[]
+  image?: VisualAssetContent
 }
 
 export interface ContactChannelContent {
@@ -35,10 +44,18 @@ export interface TeamMemberContent {
   bio: string
 }
 
+export interface HomeDishContent {
+  name: string
+  course: string
+  description: string
+  image: VisualAssetContent
+}
+
 export interface GalleryItemContent {
   title: string
   subtitle: string
   description: string
+  image: VisualAssetContent
 }
 
 export interface ContactDetailContent {
@@ -63,10 +80,12 @@ export interface DemoContent {
   home: {
     hero: HeroContent
     highlights: FeatureCardContent[]
+    featuredDishes: HomeDishContent[]
     experience: {
       title: string
       description: string
       points: string[]
+      images: VisualAssetContent[]
     }
   }
   menu: {

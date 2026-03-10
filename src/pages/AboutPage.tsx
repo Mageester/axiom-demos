@@ -17,16 +17,38 @@ export function AboutPage() {
         }
         description={content.about.intro}
         eyebrow="About"
+        media={content.gallery.collections[0]?.image}
         title="People, process, and place"
       />
 
       <Section title="Our approach">
-        <div className="story-grid">
-          {content.about.story.map((paragraph) => (
-            <p className="story-grid__paragraph" key={paragraph}>
-              {paragraph}
-            </p>
-          ))}
+        <div className="story-layout">
+          <div className="story-grid">
+            {content.about.story.map((paragraph) => (
+              <p className="story-grid__paragraph" key={paragraph}>
+                {paragraph}
+              </p>
+            ))}
+          </div>
+          <aside className="about-visual-stack">
+            {[content.gallery.collections[1], content.gallery.collections[3]].map((item) =>
+              item ? (
+                <figure className="about-visual-stack__item" key={item.title}>
+                  <img
+                    alt={item.image.alt}
+                    loading="lazy"
+                    src={item.image.src}
+                    style={
+                      item.image.position
+                        ? { objectPosition: item.image.position }
+                        : undefined
+                    }
+                  />
+                  <figcaption>{item.subtitle}</figcaption>
+                </figure>
+              ) : null
+            )}
+          </aside>
         </div>
       </Section>
 

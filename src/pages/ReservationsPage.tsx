@@ -46,6 +46,7 @@ export function ReservationsPage() {
         }
         description={content.reservations.intro}
         eyebrow="Reservations"
+        media={content.home.experience.images[1]}
         title="Reserve with confidence"
       />
 

@@ -19,17 +19,19 @@ export function GalleryPage() {
         }
         description={content.gallery.intro}
         eyebrow="Gallery"
+        media={content.gallery.collections[0]?.image}
         title="Atmosphere and service snapshots"
       />
 
       <Section
-        description="Structured gallery objects designed to be reused across hospitality and service demos."
+        description="A quick scan of atmosphere, plating, and service context before guests reserve."
         title="Curated moments"
       >
-        <div className="card-grid card-grid--3">
+        <div className="gallery-mosaic">
           {content.gallery.collections.map((item) => (
             <Card
               description={item.description}
+              image={item.image}
               key={item.title}
               meta={item.subtitle}
               title={item.title}

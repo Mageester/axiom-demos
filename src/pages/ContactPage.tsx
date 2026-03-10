@@ -22,6 +22,7 @@ export function ContactPage() {
         }
         description={content.contact.intro}
         eyebrow="Contact"
+        media={content.gallery.collections[5]?.image}
         title="Reach the concierge team"
       />
 
