@@ -25,6 +25,7 @@ import {
 } from './routes'
 
 export type DemoKey = 'restaurant' | 'landscaping'
+export type DemoBrandSystem = 'hospitality' | 'service'
 
 export interface DemoPageSet {
   HomePage: ComponentType
@@ -38,6 +39,7 @@ export interface DemoPageSet {
 export interface DemoConfig {
   key: DemoKey
   theme: DemoKey
+  brandSystem: DemoBrandSystem
   content: DemoContent
   routes: DemoRoutes
   navItems: NavItem[]
@@ -49,10 +51,11 @@ export interface DemoConfig {
   pages: DemoPageSet
 }
 
-export const demoConfigs: Record<DemoKey, DemoConfig> = {
+export const demoConfigsByKey: Record<DemoKey, DemoConfig> = {
   restaurant: {
     key: 'restaurant',
     theme: 'restaurant',
+    brandSystem: 'hospitality',
     content: restaurantContent,
     routes: restaurantRoutes,
     navItems: restaurantNavItems,
@@ -73,6 +76,7 @@ export const demoConfigs: Record<DemoKey, DemoConfig> = {
   landscaping: {
     key: 'landscaping',
     theme: 'landscaping',
+    brandSystem: 'service',
     content: landscapingContent,
     routes: landscapingRoutes,
     navItems: landscapingNavItems,
@@ -96,11 +100,27 @@ function isDemoKey(value: string): value is DemoKey {
   return value === 'restaurant' || value === 'landscaping'
 }
 
-const requestedDemoKey = (import.meta.env.VITE_ACTIVE_DEMO ?? '').toLowerCase()
-const selectedDemoKey: DemoKey = isDemoKey(requestedDemoKey)
-  ? requestedDemoKey
-  : 'landscaping'
+export const defaultDemoKey: DemoKey = 'restaurant'
+const rawDemoKey = (import.meta.env.VITE_DEMO_KEY ?? '').trim().toLowerCase()
 
-export const activeDemoConfig = demoConfigs[selectedDemoKey]
+function resolveDemoKey(value: string): DemoKey {
+  if (!value) {
+    return defaultDemoKey
+  }
+
+  if (isDemoKey(value)) {
+    return value
+  }
+
+  const allowedKeys = Object.keys(demoConfigsByKey).join(', ')
+  console.error(
+    `[demoConfig] Unknown VITE_DEMO_KEY "${value}". Falling back to "${defaultDemoKey}". Allowed keys: ${allowedKeys}.`
+  )
+  return defaultDemoKey
+}
+
+export const selectedDemoKey = resolveDemoKey(rawDemoKey)
+
+export const activeDemoConfig = demoConfigsByKey[selectedDemoKey]
 
 export const DemoConfigContext = createContext<DemoConfig>(activeDemoConfig)

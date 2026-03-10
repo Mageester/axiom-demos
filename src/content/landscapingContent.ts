@@ -19,7 +19,7 @@ export const landscapingContent: DemoContent = {
       'Saturday: 8:00 AM to 3:00 PM',
       'Sunday: By appointment only',
     ],
-    legalLine: 'Northline Outdoor Studio. Built in Axiom Demo System.',
+    legalLine: 'Northline Outdoor Studio. All rights reserved.',
   },
   home: {
     hero: {

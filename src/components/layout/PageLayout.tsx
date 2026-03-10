@@ -6,15 +6,17 @@ import { SiteFooter } from './SiteFooter'
 import { SiteNav } from './SiteNav'
 
 export function PageLayout() {
-  const { key, primaryCta, theme } = useContext(DemoConfigContext)
+  const { brandSystem, key, primaryCta, theme } = useContext(DemoConfigContext)
 
   useEffect(() => {
+    document.body.dataset.demoBrand = brandSystem
     document.body.dataset.demoTheme = theme
 
     return () => {
+      delete document.body.dataset.demoBrand
       delete document.body.dataset.demoTheme
     }
-  }, [theme])
+  }, [brandSystem, theme])
 
   return (
     <div className={`app-shell app-shell--${key}`}>

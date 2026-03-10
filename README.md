@@ -69,17 +69,41 @@ Routing/nav definitions live in `src/config/routes.ts` and are selected by the a
 
 Shared components must only consume the active content through `DemoConfigContext`.
 
+## Brand Separation Contract
+
+Demo pages share engineering primitives, but surface brand expression must stay demo-specific.
+
+### Shared under the hood
+
+- Routing contract and page shell mounting (`App.tsx`, `routes.ts`)
+- Layout primitives (`SiteNav`, `SiteFooter`, `PageLayout`)
+- UI primitives (`Button`, `Card`, `Section`, `PageHero`)
+- Design token plumbing (`tokens.css`, `base.css`, `components.css`)
+
+### Demo-specific at the surface
+
+- Brand voice and business copy (`src/content/*`)
+- Typography tone, color palette, CTA shape, and rhythm via `data-demo-theme` + `data-demo-brand`
+- Hero/media composition and atmosphere by niche page set
+- Contact/legal identity for each fictional business
+
+The rule: reuse components, not visual identity.
+
 ## Selecting The Active Demo
 
-Set `VITE_ACTIVE_DEMO` in your environment:
+Set `VITE_DEMO_KEY` in your environment:
 
 ```bash
-VITE_ACTIVE_DEMO=restaurant
+VITE_DEMO_KEY=restaurant
 # or
-VITE_ACTIVE_DEMO=landscaping
+VITE_DEMO_KEY=landscaping
 ```
 
-If unset, the app defaults to `landscaping`.
+Resolver behavior:
+
+- If `VITE_DEMO_KEY` is missing, fallback is `restaurant`.
+- If `VITE_DEMO_KEY` is unknown, the app logs a loud console error and falls back to `restaurant`.
+- Valid values are currently `restaurant` and `landscaping`.
 
 ## Adding Additional Demos
 
@@ -112,3 +136,35 @@ Configured for Cloudflare Workers with SPA fallback:
 - Deploy: `npm run deploy`
 
 For subdomain deployments (for example `restaurant.getaxiom.ca`), bind the domain at the Worker/zone level and keep route paths relative (already enforced in this repo).
+
+## Cloudflare Multi-Subdomain Checklist
+
+Use the same repository for both demos, but separate deployment targets (separate Cloudflare projects/Workers), each with its own build-time env.
+
+### 1. Restaurant target (`restaurant.getaxiom.ca`)
+
+1. Create or open the Cloudflare deployment target dedicated to restaurant.
+2. Connect it to this repo/branch.
+3. Set build command to include demo key:
+   - `VITE_DEMO_KEY=restaurant npm run build`
+4. Set output directory:
+   - `dist`
+5. Attach custom domain:
+   - `restaurant.getaxiom.ca`
+6. Deploy and verify nav/routes are restaurant-specific (`/menu`, `/gallery`, `/reservations`).
+
+### 2. Landscaping target (`landscaping.<your-domain>`)
+
+1. Create or open a second Cloudflare deployment target dedicated to landscaping.
+2. Connect it to the same repo/branch.
+3. Set build command:
+   - `VITE_DEMO_KEY=landscaping npm run build`
+4. Set output directory:
+   - `dist`
+5. Attach custom domain for landscaping (for example `landscaping.getaxiom.ca`).
+6. Deploy and verify nav/routes are landscaping-specific (`/services`, `/projects`, `/quote`).
+
+### 3. Critical isolation rule
+
+Never run both subdomains from one Cloudflare target with one shared build env.  
+Each subdomain must have its own target/project (or environment) with its own `VITE_DEMO_KEY`.

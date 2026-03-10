@@ -12,18 +12,28 @@ body,
 }
 
 body {
-  background: radial-gradient(circle at top right, #1f2c26, var(--color-bg) 45%);
+  background:
+    radial-gradient(circle at 88% 10%, rgb(89 116 92 / 20%), transparent 34%),
+    radial-gradient(circle at 6% 0%, rgb(217 186 124 / 12%), transparent 28%),
+    linear-gradient(180deg, #131a16, var(--color-bg) 42%);
   color: var(--color-text-primary);
   font-family: var(--font-body);
   font-size: var(--size-sm);
   line-height: 1.55;
 }
 
+body[data-demo-brand='hospitality'] {
+  background:
+    radial-gradient(circle at 88% 8%, rgb(190 143 70 / 15%), transparent 32%),
+    radial-gradient(circle at 10% 0%, rgb(104 135 108 / 14%), transparent 30%),
+    linear-gradient(180deg, #121814, var(--color-bg) 44%);
+}
+
 body[data-demo-theme='landscaping'] {
   background:
-    radial-gradient(circle at 8% 15%, rgb(80 114 74 / 24%), transparent 32%),
-    radial-gradient(circle at 88% 8%, rgb(170 206 119 / 18%), transparent 35%),
-    linear-gradient(180deg, #111913, var(--color-bg) 48%);
+    radial-gradient(circle at 10% 12%, rgb(87 131 84 / 26%), transparent 34%),
+    radial-gradient(circle at 88% 10%, rgb(163 201 117 / 16%), transparent 36%),
+    linear-gradient(180deg, #111a13, var(--color-bg) 48%);
 }
 
 a {

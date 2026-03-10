@@ -5,7 +5,7 @@
 .page-main {
   margin: 0 auto;
   max-width: var(--container-max);
-  padding: var(--space-7) var(--space-5) calc(var(--space-8) + 4.5rem);
+  padding: var(--space-section) var(--space-5) calc(var(--space-section) + 2.5rem);
 }
 
 .site-nav-wrap {
@@ -30,6 +30,7 @@
   display: inline-flex;
   flex-direction: column;
   gap: var(--space-1);
+  min-width: 0;
 }
 
 .site-brand__name {
@@ -48,9 +49,12 @@
 .mobile-menu-toggle {
   background: transparent;
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-chip);
   cursor: pointer;
   display: none;
+  font-family: var(--font-nav);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   padding: var(--space-2) var(--space-4);
 }
 
@@ -61,8 +65,12 @@
 }
 
 .primary-nav__link {
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-chip);
   color: var(--color-text-secondary);
+  font-family: var(--font-nav);
+  font-size: var(--size-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   padding: var(--space-2) var(--space-4);
 }
 
@@ -82,7 +90,7 @@
     color-mix(in srgb, var(--color-surface-strong) 82%, black)
   );
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-panel);
   box-shadow: var(--shadow-soft);
   display: grid;
   gap: var(--space-4);
@@ -158,7 +166,7 @@
 }
 
 .section {
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-section);
 }
 
 .section--featured-dishes,
@@ -202,7 +210,7 @@
 .card {
   background: color-mix(in srgb, var(--color-surface) 90%, black);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-card);
   display: flex;
   flex-direction: column;
   min-height: 100%;
@@ -256,9 +264,10 @@
 .btn {
   align-items: center;
   border: 1px solid transparent;
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-button);
   cursor: pointer;
   display: inline-flex;
+  font-family: var(--font-button);
   font-weight: 600;
   justify-content: center;
   letter-spacing: 0.02em;
@@ -1368,6 +1377,133 @@ textarea:focus-visible {
   position: fixed;
   right: 0;
   z-index: 50;
+}
+
+body[data-demo-brand='hospitality'] .site-nav-wrap {
+  background: color-mix(in srgb, var(--color-bg) 88%, black);
+  backdrop-filter: blur(8px);
+}
+
+body[data-demo-brand='hospitality'] .site-brand__name {
+  font-size: clamp(1.5rem, 2.1vw, 2rem);
+  letter-spacing: 0.01em;
+}
+
+body[data-demo-brand='hospitality'] .primary-nav__link {
+  font-size: 0.79rem;
+  letter-spacing: 0.08em;
+}
+
+body[data-demo-brand='hospitality'] .btn--primary {
+  background:
+    linear-gradient(
+      132deg,
+      color-mix(in srgb, var(--color-brand) 76%, #f4dcb0) 0%,
+      var(--color-brand) 58%,
+      color-mix(in srgb, var(--color-brand) 70%, #8e6b2d) 100%
+    );
+  border-color: color-mix(in srgb, var(--color-brand) 72%, #f4dcb0);
+  box-shadow: 0 10px 26px rgb(10 12 7 / 32%);
+}
+
+body[data-demo-brand='hospitality'] .page-hero {
+  background:
+    radial-gradient(circle at 88% 6%, rgb(207 171 104 / 16%), transparent 32%),
+    linear-gradient(
+      140deg,
+      color-mix(in srgb, var(--color-surface) 88%, black),
+      color-mix(in srgb, var(--color-surface-strong) 82%, black)
+    );
+}
+
+body[data-demo-brand='service'] .site-nav-wrap {
+  background: color-mix(in srgb, var(--color-bg-soft) 92%, black);
+  border-bottom-color: color-mix(in srgb, var(--color-border) 88%, black);
+  box-shadow: 0 8px 20px rgb(5 8 6 / 22%);
+}
+
+body[data-demo-brand='service'] .site-brand__name {
+  font-size: clamp(1.32rem, 1.7vw, 1.65rem);
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  text-transform: none;
+}
+
+body[data-demo-brand='service'] .site-brand__city {
+  letter-spacing: 0.08em;
+}
+
+body[data-demo-brand='service'] .primary-nav {
+  gap: var(--space-3);
+}
+
+body[data-demo-brand='service'] .primary-nav__link {
+  border: 1px solid transparent;
+  border-radius: 10px;
+  color: color-mix(in srgb, var(--color-text-primary) 88%, var(--color-text-muted));
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  padding: 0.52rem 0.8rem;
+}
+
+body[data-demo-brand='service'] .primary-nav__link:hover {
+  background: color-mix(in srgb, var(--color-surface-strong) 60%, black);
+  border-color: color-mix(in srgb, var(--color-border) 70%, var(--color-brand));
+}
+
+body[data-demo-brand='service'] .primary-nav__link--active {
+  background: color-mix(in srgb, var(--color-surface-strong) 74%, black);
+  border-color: color-mix(in srgb, var(--color-brand) 34%, var(--color-border));
+}
+
+body[data-demo-brand='service'] .btn {
+  font-size: var(--size-sm);
+  letter-spacing: 0.045em;
+}
+
+body[data-demo-brand='service'] .btn--primary {
+  background: linear-gradient(
+    136deg,
+    color-mix(in srgb, var(--color-brand) 84%, #d6f1af),
+    var(--color-brand),
+    color-mix(in srgb, var(--color-brand) 86%, #5f8d3b)
+  );
+  border-color: color-mix(in srgb, var(--color-brand) 76%, #d6f1af);
+  box-shadow: 0 10px 22px rgb(7 11 8 / 30%);
+  text-transform: uppercase;
+}
+
+body[data-demo-brand='service'] .btn--secondary {
+  border-color: color-mix(in srgb, var(--color-border) 88%, var(--color-brand));
+}
+
+body[data-demo-brand='service'] .page-hero {
+  background:
+    radial-gradient(circle at 8% 8%, rgb(156 201 111 / 13%), transparent 34%),
+    linear-gradient(
+      155deg,
+      color-mix(in srgb, var(--color-surface) 87%, black),
+      color-mix(in srgb, var(--color-surface-strong) 86%, black)
+    );
+  gap: var(--space-5);
+}
+
+body[data-demo-brand='service'] .page-hero__title {
+  max-width: 21ch;
+}
+
+body[data-demo-brand='service'] .section__title {
+  line-height: 1.14;
+}
+
+body[data-demo-brand='service'] .card {
+  background: color-mix(in srgb, var(--color-surface) 92%, black);
+  box-shadow: 0 10px 24px rgb(6 10 7 / 17%);
+}
+
+body[data-demo-brand='service'] .site-footer {
+  background: color-mix(in srgb, var(--color-bg-soft) 94%, black);
 }
 
 @media (max-width: 980px) {
