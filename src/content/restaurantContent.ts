@@ -20,7 +20,7 @@ export const restaurantContent: DemoContent = {
       'Sunday: 4:30 PM to 9:30 PM',
       'Monday: Closed',
     ],
-    legalLine: 'Atelier Meridian. Built in Axiom Demo System.',
+    legalLine: 'Atelier Meridian. All rights reserved.',
   },
   home: {
     hero: {
@@ -109,24 +109,24 @@ export const restaurantContent: DemoContent = {
           position: 'center',
         },
         {
-          src: pexelsPhoto('1307698', 1200, 900),
+          src: pexelsPhoto('1267320', 1200, 900),
           alt: 'Bar station with premium cocktails ready for service',
-          position: 'center',
+          position: 'center 58%',
         },
       ],
     },
   },
   menu: {
     intro:
-      'Our menu is updated weekly based on regional harvests and fishery availability. Sample offerings below.',
+      'Our menu is updated weekly based on regional harvests and fishery availability.',
     sections: [
       {
         title: 'First Plates',
         note: 'Small-format dishes to open the evening.',
         image: {
-          src: pexelsPhoto('793765', 1200, 900),
+          src: pexelsPhoto('3763847', 1200, 900),
           alt: 'Small plated appetizer with delicate garnish',
-          position: 'center',
+          position: 'center 40%',
         },
         items: [
           {
@@ -150,9 +150,9 @@ export const restaurantContent: DemoContent = {
         title: 'Main Courses',
         note: 'Composed plates built around local proteins and produce.',
         image: {
-          src: pexelsPhoto('958545', 1200, 900),
+          src: pexelsPhoto('3298637', 1200, 900),
           alt: 'Main entree plate with seared protein and vegetables',
-          position: 'center',
+          position: 'center 44%',
         },
         items: [
           {
@@ -176,9 +176,9 @@ export const restaurantContent: DemoContent = {
         title: 'Dessert',
         note: 'Final courses with restrained sweetness.',
         image: {
-          src: pexelsPhoto('3026808', 1200, 900),
+          src: pexelsPhoto('291528', 1200, 900),
           alt: 'Fine dining dessert with berries and cream',
-          position: 'center',
+          position: 'center 55%',
         },
         items: [
           {
@@ -254,7 +254,7 @@ export const restaurantContent: DemoContent = {
     channels: [
       {
         label: 'Book online',
-        value: 'Open reservation portal',
+        value: 'Open OpenTable profile',
         href: 'https://www.opentable.com/',
       },
       {
@@ -334,9 +334,9 @@ export const restaurantContent: DemoContent = {
         description:
           'Hosted arrival with clear reservation validation and dietary notes confirmed at entry.',
         image: {
-          src: pexelsPhoto('204221', 1200, 900),
+          src: pexelsPhoto('67468', 1200, 900),
           alt: 'Restaurant entry with host stand and evening ambience',
-          position: 'center',
+          position: 'center 62%',
         },
       },
     ],

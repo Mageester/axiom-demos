@@ -1,9 +1,9 @@
 import { useContext } from 'react'
-import { DemoConfigContext } from '../config/demoConfig'
-import { ButtonAnchor, ButtonLink } from '../components/ui/Button'
-import { Card } from '../components/ui/Card'
-import { PageHero } from '../components/ui/PageHero'
-import { Section } from '../components/ui/Section'
+import { DemoConfigContext } from '../../config/demoConfig'
+import { ButtonAnchor, ButtonLink } from '../../components/ui/Button'
+import { Card } from '../../components/ui/Card'
+import { PageHero } from '../../components/ui/PageHero'
+import { Section } from '../../components/ui/Section'
 
 export function ContactPage() {
   const { content, routes } = useContext(DemoConfigContext)
@@ -14,15 +14,15 @@ export function ContactPage() {
         actions={
           <>
             <ButtonAnchor href={content.brand.phoneHref} variant="secondary">
-              Call concierge
+              Call office
             </ButtonAnchor>
-            <ButtonLink to={routes.reservations}>Reserve now</ButtonLink>
+            <ButtonLink to={routes.reservations}>Request quote</ButtonLink>
           </>
         }
         description={content.contact.intro}
         eyebrow="Contact"
         media={content.gallery.collections[5]?.image}
-        title="Reach the concierge team"
+        title="Direct access to Northline project planning"
       />
 
       <Section title="Direct channels">
@@ -39,13 +39,22 @@ export function ContactPage() {
         </div>
       </Section>
 
-      <Section title="Before you contact us">
-        <div className="experience-panel">
-          <ul className="check-list">
+      <Section
+        description="Before your first call, include key details so we can confirm fit and timeline quickly."
+        title="Inquiry prep notes"
+      >
+        <div className="land-note-panel">
+          <ul>
             {content.contact.notes.map((note) => (
               <li key={note}>{note}</li>
             ))}
           </ul>
+          <div className="land-section-actions">
+            <ButtonLink to={routes.reservations}>Start quote request</ButtonLink>
+            <ButtonAnchor href={content.brand.phoneHref} variant="secondary">
+              Call {content.brand.phone}
+            </ButtonAnchor>
+          </div>
         </div>
       </Section>
     </>

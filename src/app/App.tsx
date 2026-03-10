@@ -1,14 +1,19 @@
+import { useContext } from 'react'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { PageLayout } from '../components/layout/PageLayout'
-import { routes } from '../config/routes'
-import { AboutPage } from '../pages/AboutPage'
-import { ContactPage } from '../pages/ContactPage'
-import { GalleryPage } from '../pages/GalleryPage'
-import { HomePage } from '../pages/HomePage'
-import { MenuPage } from '../pages/MenuPage'
-import { ReservationsPage } from '../pages/ReservationsPage'
+import { DemoConfigContext } from '../config/demoConfig'
 
 export default function App() {
+  const { pages, routes } = useContext(DemoConfigContext)
+  const {
+    AboutPage,
+    ContactPage,
+    GalleryPage,
+    HomePage,
+    MenuPage,
+    ReservationsPage,
+  } = pages
+
   return (
     <BrowserRouter>
       <Routes>

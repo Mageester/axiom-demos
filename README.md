@@ -2,14 +2,14 @@
 
 Axiom Demo Platform is the shared repository for premium business website demos.
 
-The current active demo is a restaurant flagship, but the architecture is organized so future demos can reuse shared UI, layout, and design system layers without forking one-off projects.
+The platform now supports multiple flagship demos (restaurant and landscaping) while reusing shared UI, layout, and design-system layers.
 
 ## Core Principles
 
 - Keep shared primitives in `src/components/ui` and `src/design-system`.
 - Keep shared shell/layout in `src/components/layout`.
 - Keep niche-specific content in `src/content/*`.
-- Keep active demo wiring in `src/config/demoConfig.tsx`.
+- Keep demo wiring and active selection in `src/config/demoConfig.ts`.
 - Avoid hardcoding niche values in shared components.
 
 ## Repository Structure
@@ -24,35 +24,32 @@ src/
   config/
     routes.ts                  # Route contract and nav paths
     siteConfig.ts              # Runtime settings (limits, locale, map)
-    demoConfig.tsx             # Active demo config + provider
+    demoConfig.ts              # Active demo config + provider
   content/
-    types.ts                   # Generic DemoContent schema
-    restaurantContent.ts       # Restaurant-specific content payload
+    types.ts                   # Shared content contract used by demo page sets
+    restaurantContent.ts       # Restaurant demo payload
+    landscapingContent.ts      # Landscaping demo payload
   design-system/
     tokens.css                 # Variables (color, type, spacing)
     base.css                   # Global reset/base
     components.css             # Component and layout classes
   pages/
-    HomePage.tsx
-    MenuPage.tsx
-    AboutPage.tsx
-    GalleryPage.tsx
-    ContactPage.tsx
-    ReservationsPage.tsx
+    *.tsx                      # Restaurant page set
+    landscaping/               # Landscaping page set
 ```
 
 ## Route Contract
 
-Every flagship demo should include these public routes:
+Each demo config maps these canonical route keys to niche-specific paths:
 
 - `/`
-- `/menu`
+- `/menu` (or `/services`)
 - `/about`
-- `/gallery`
+- `/gallery` (or `/projects`)
 - `/contact`
-- `/reservations`
+- `/reservations` (or `/quote`)
 
-Routing and nav labels are defined in `src/config/routes.ts`.
+Routing/nav definitions live in `src/config/routes.ts` and are selected by the active demo config.
 
 ## Shared vs Niche Boundaries
 
@@ -63,21 +60,34 @@ Routing and nav labels are defined in `src/config/routes.ts`.
 - `src/design-system/*`
 - `src/config/routes.ts`
 
-### Niche-specific
+### Demo-specific
 
 - `src/content/restaurantContent.ts`
-- Copy, menu items, team details, address, phone, email, policies, gallery collections
+- `src/content/landscapingContent.ts`
+- `src/pages/landscaping/*`
+- Copy, service entries, team details, address, phone, email, policies, project collections
 
-Shared components must only consume the active content through `useDemoConfig()`.
+Shared components must only consume the active content through `DemoConfigContext`.
 
-## Adding Demo Two
+## Selecting The Active Demo
+
+Set `VITE_ACTIVE_DEMO` in your environment:
+
+```bash
+VITE_ACTIVE_DEMO=restaurant
+# or
+VITE_ACTIVE_DEMO=landscaping
+```
+
+If unset, the app defaults to `landscaping`.
+
+## Adding Additional Demos
 
 1. Create a new content payload in `src/content/` that satisfies `DemoContent`.
-2. Add a new demo config object in `src/config/demoConfig.tsx`.
-3. Point `DemoConfigProvider` to the new config (or add env-based selection).
-4. Reuse existing pages/components where schema-compatible.
-5. Only create new page sections/components when they are genuinely cross-demo reusable or explicitly demo-specific.
-6. Keep shared files free of niche strings and niche business rules.
+2. Add a new page set under `src/pages/<demo-key>/`.
+3. Add route + nav definitions in `src/config/routes.ts`.
+4. Register the demo in `src/config/demoConfig.ts`.
+5. Keep shared files free of niche strings and niche business rules.
 
 ## Local Development
 

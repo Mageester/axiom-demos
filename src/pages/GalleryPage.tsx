@@ -1,41 +1,99 @@
 import { useContext } from 'react'
-import { routes } from '../config/routes'
 import { DemoConfigContext } from '../config/demoConfig'
 import { ButtonLink } from '../components/ui/Button'
-import { Card } from '../components/ui/Card'
 import { PageHero } from '../components/ui/PageHero'
 import { Section } from '../components/ui/Section'
 
 export function GalleryPage() {
-  const { content } = useContext(DemoConfigContext)
+  const { content, routes } = useContext(DemoConfigContext)
+  const [leadMoment, ...remainingMoments] = content.gallery.collections
+  const supportMoments = remainingMoments.slice(0, 2)
+  const galleryWallMoments = [leadMoment, ...remainingMoments].filter(
+    (item): item is (typeof content.gallery.collections)[number] => Boolean(item)
+  )
 
   return (
     <>
       <PageHero
         actions={
-          <ButtonLink to={routes.reservations} variant="secondary">
-            Reserve for this experience
+          <ButtonLink to={routes.reservations}>
+            Reserve a table
           </ButtonLink>
         }
         description={content.gallery.intro}
         eyebrow="Gallery"
-        media={content.gallery.collections[0]?.image}
+        media={leadMoment?.image}
         title="Atmosphere and service snapshots"
       />
 
       <Section
-        description="A quick scan of atmosphere, plating, and service context before guests reserve."
-        title="Curated moments"
+        description="An image-first look at room mood, plating style, and service details."
+        title="Evening moments"
       >
-        <div className="gallery-mosaic">
-          {content.gallery.collections.map((item) => (
-            <Card
-              description={item.description}
-              image={item.image}
-              key={item.title}
-              meta={item.subtitle}
-              title={item.title}
-            />
+        <div className="gallery-feature-grid">
+          {leadMoment ? (
+            <figure className="gallery-feature-main">
+              <img
+                alt={leadMoment.image.alt}
+                loading="eager"
+                src={leadMoment.image.src}
+                style={
+                  leadMoment.image.position
+                    ? { objectPosition: leadMoment.image.position }
+                    : undefined
+                }
+              />
+              <figcaption>
+                <p className="gallery-feature-main__title">{leadMoment.title}</p>
+                <p className="gallery-feature-main__meta">{leadMoment.subtitle}</p>
+              </figcaption>
+            </figure>
+          ) : null}
+          <div className="gallery-feature-stack">
+            {supportMoments.map((item) => (
+              <figure className="gallery-feature-stack__item" key={item.title}>
+                <img
+                  alt={item.image.alt}
+                  loading="lazy"
+                  src={item.image.src}
+                  style={
+                    item.image.position
+                      ? { objectPosition: item.image.position }
+                      : undefined
+                  }
+                />
+                <figcaption>
+                  <p>{item.title}</p>
+                  <span>{item.subtitle}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      <Section
+        description="Curated gallery wall designed to help guests choose the right visit format quickly."
+        title="Gallery wall"
+      >
+        <div className="gallery-wall">
+          {galleryWallMoments.map((item, index) => (
+            <figure className={`gallery-wall__item gallery-wall__item--${index + 1}`} key={item.title}>
+              <img
+                alt={item.image.alt}
+                loading="lazy"
+                src={item.image.src}
+                style={
+                  item.image.position
+                    ? { objectPosition: item.image.position }
+                    : undefined
+                }
+              />
+              <figcaption>
+                <p>{item.title}</p>
+                <span>{item.subtitle}</span>
+              </figcaption>
+            </figure>
           ))}
         </div>
       </Section>

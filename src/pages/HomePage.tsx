@@ -1,13 +1,13 @@
 import { useContext } from 'react'
-import { routes } from '../config/routes'
 import { DemoConfigContext } from '../config/demoConfig'
+import { ButtonAnchor } from '../components/ui/Button'
 import { ButtonLink } from '../components/ui/Button'
 import { Card } from '../components/ui/Card'
 import { PageHero } from '../components/ui/PageHero'
 import { Section } from '../components/ui/Section'
 
 export function HomePage() {
-  const { content } = useContext(DemoConfigContext)
+  const { content, routes } = useContext(DemoConfigContext)
   const primaryAtmosphereImage =
     content.home.experience.images[0] ?? content.home.hero.image
   const featuredDish = content.home.featuredDishes[0]
@@ -170,12 +170,6 @@ export function HomePage() {
                 <li key={policy}>{policy}</li>
               ))}
             </ul>
-            <div className="experience-panel__actions">
-              <ButtonLink to={routes.reservations}>Start reservation</ButtonLink>
-              <ButtonLink to={routes.about} variant="quiet">
-                Learn our story
-              </ButtonLink>
-            </div>
           </div>
           <div className="atmosphere-stack">
             {content.home.experience.images.map((image, index) => (
@@ -191,6 +185,33 @@ export function HomePage() {
                 />
               </figure>
             ))}
+          </div>
+        </div>
+      </Section>
+
+      <Section
+        className="section--reservation-callout"
+        description="Reserve your table in under a minute or call concierge for private dining support."
+        title="Ready to book your evening"
+      >
+        <div className="reservation-callout">
+          <div className="reservation-callout__copy">
+            <p>
+              Secure your preferred service window now. For hosted dinners and
+              larger groups, our concierge team can coordinate table format and
+              pacing details before arrival.
+            </p>
+            <p className="reservation-callout__meta">
+              Dinner service Tuesday-Sunday • Private room up to 12 guests
+            </p>
+          </div>
+          <div className="reservation-callout__actions">
+            <ButtonLink size="lg" to={routes.reservations}>
+              Start reservation
+            </ButtonLink>
+            <ButtonAnchor href={content.brand.phoneHref} size="lg" variant="secondary">
+              Call concierge
+            </ButtonAnchor>
           </div>
         </div>
       </Section>

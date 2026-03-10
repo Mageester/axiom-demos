@@ -1,24 +1,52 @@
-export const routes = {
-  home: '/',
-  menu: '/menu',
-  about: '/about',
-  gallery: '/gallery',
-  contact: '/contact',
-  reservations: '/reservations',
-} as const
+export interface DemoRoutes {
+  home: string
+  menu: string
+  about: string
+  gallery: string
+  contact: string
+  reservations: string
+}
 
-export type RoutePath = (typeof routes)[keyof typeof routes]
+export type RouteKey = keyof DemoRoutes
+export type RoutePath = string
 
 export interface NavItem {
   label: string
   path: RoutePath
 }
 
-export const navItems: NavItem[] = [
-  { label: 'Home', path: routes.home },
-  { label: 'Menu', path: routes.menu },
-  { label: 'About', path: routes.about },
-  { label: 'Gallery', path: routes.gallery },
-  { label: 'Contact', path: routes.contact },
-  { label: 'Reservations', path: routes.reservations },
+export const restaurantRoutes: DemoRoutes = {
+  home: '/',
+  menu: '/menu',
+  about: '/about',
+  gallery: '/gallery',
+  contact: '/contact',
+  reservations: '/reservations',
+}
+
+export const landscapingRoutes: DemoRoutes = {
+  home: '/',
+  menu: '/services',
+  about: '/about',
+  gallery: '/projects',
+  contact: '/contact',
+  reservations: '/quote',
+}
+
+export const restaurantNavItems: NavItem[] = [
+  { label: 'Home', path: restaurantRoutes.home },
+  { label: 'Menu', path: restaurantRoutes.menu },
+  { label: 'About', path: restaurantRoutes.about },
+  { label: 'Gallery', path: restaurantRoutes.gallery },
+  { label: 'Contact', path: restaurantRoutes.contact },
+  { label: 'Reservations', path: restaurantRoutes.reservations },
+]
+
+export const landscapingNavItems: NavItem[] = [
+  { label: 'Home', path: landscapingRoutes.home },
+  { label: 'Services', path: landscapingRoutes.menu },
+  { label: 'Projects', path: landscapingRoutes.gallery },
+  { label: 'About', path: landscapingRoutes.about },
+  { label: 'Contact', path: landscapingRoutes.contact },
+  { label: 'Request Quote', path: landscapingRoutes.reservations },
 ]

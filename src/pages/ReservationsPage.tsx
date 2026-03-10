@@ -40,9 +40,14 @@ export function ReservationsPage() {
     <>
       <PageHero
         actions={
-          <ButtonAnchor href={content.brand.phoneHref} variant="secondary">
-            Call reservations
-          </ButtonAnchor>
+          <>
+            <ButtonAnchor href={content.reservations.channels[0]?.href ?? content.brand.emailHref} variant="primary">
+              Book online
+            </ButtonAnchor>
+            <ButtonAnchor href={content.brand.phoneHref} variant="secondary">
+              Call reservations
+            </ButtonAnchor>
+          </>
         }
         description={content.reservations.intro}
         eyebrow="Reservations"

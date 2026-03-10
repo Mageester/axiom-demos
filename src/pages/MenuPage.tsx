@@ -1,23 +1,22 @@
 import { useContext } from 'react'
-import { routes } from '../config/routes'
 import { DemoConfigContext } from '../config/demoConfig'
 import { ButtonLink } from '../components/ui/Button'
 import { PageHero } from '../components/ui/PageHero'
 
 export function MenuPage() {
-  const { content } = useContext(DemoConfigContext)
+  const { content, routes } = useContext(DemoConfigContext)
 
   return (
     <>
       <PageHero
         actions={
-          <ButtonLink to={routes.reservations} variant="secondary">
-            Reserve for dinner
+          <ButtonLink to={routes.reservations}>
+            Start reservation
           </ButtonLink>
         }
         description={content.menu.intro}
         eyebrow="Menu"
-        media={content.menu.sections[1]?.image}
+        media={content.menu.sections[0]?.image}
         title="Current offerings"
       />
 

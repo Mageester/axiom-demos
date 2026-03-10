@@ -71,7 +71,7 @@
   color: var(--color-text-primary);
 }
 
-.primary-nav__reserve {
+.primary-nav__cta {
   margin-left: var(--space-2);
 }
 
@@ -254,6 +254,7 @@
 }
 
 .btn {
+  align-items: center;
   border: 1px solid transparent;
   border-radius: var(--radius-pill);
   cursor: pointer;
@@ -262,6 +263,11 @@
   justify-content: center;
   letter-spacing: 0.02em;
   text-align: center;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
 }
 
 .btn:focus-visible,
@@ -295,10 +301,20 @@ textarea:focus-visible {
   color: var(--color-brand-ink);
 }
 
+.btn--primary:hover {
+  background: var(--color-brand-strong);
+  border-color: var(--color-brand-strong);
+}
+
 .btn--secondary {
   background: transparent;
   border-color: var(--color-border);
   color: var(--color-text-primary);
+}
+
+.btn--secondary:hover {
+  background: color-mix(in srgb, var(--color-surface-strong) 65%, black);
+  border-color: color-mix(in srgb, var(--color-brand) 36%, var(--color-border));
 }
 
 .btn--quiet {
@@ -308,6 +324,14 @@ textarea:focus-visible {
   justify-content: flex-start;
   padding-left: 0;
   padding-right: 0;
+}
+
+.btn--quiet:hover {
+  color: var(--color-text-primary);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
 }
 
 .menu-preview-grid {
@@ -469,6 +493,10 @@ textarea:focus-visible {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-3);
+}
+
+.experience-panel__actions .btn {
+  min-width: 12rem;
 }
 
 .experience-layout {
@@ -690,6 +718,172 @@ textarea:focus-visible {
   aspect-ratio: 16 / 9;
 }
 
+.gallery-feature-grid {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: 1.2fr 0.8fr;
+}
+
+.gallery-feature-main {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-feature-main img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  width: 100%;
+}
+
+.gallery-feature-main figcaption {
+  background: linear-gradient(to top, rgb(4 6 8 / 88%), transparent);
+  bottom: 0;
+  display: grid;
+  gap: var(--space-1);
+  left: 0;
+  padding: var(--space-5);
+  position: absolute;
+  right: 0;
+}
+
+.gallery-feature-main__title {
+  color: var(--color-text-primary);
+  font-family: var(--font-display);
+  font-size: var(--size-xl);
+}
+
+.gallery-feature-main__meta {
+  color: var(--color-brand-strong);
+  font-size: var(--size-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.gallery-feature-stack {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.gallery-feature-stack__item {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-feature-stack__item img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  width: 100%;
+}
+
+.gallery-feature-stack__item figcaption {
+  background: linear-gradient(to top, rgb(4 6 8 / 92%), transparent);
+  bottom: 0;
+  display: grid;
+  gap: var(--space-1);
+  left: 0;
+  padding: var(--space-4);
+  position: absolute;
+  right: 0;
+}
+
+.gallery-feature-stack__item p,
+.gallery-wall__item p {
+  color: var(--color-text-primary);
+  font-size: var(--size-sm);
+  font-weight: 600;
+}
+
+.gallery-feature-stack__item span,
+.gallery-wall__item span {
+  color: var(--color-brand-strong);
+  font-size: var(--size-2xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.gallery-wall {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.gallery-wall__item {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-wall__item img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  width: 100%;
+}
+
+.gallery-wall__item figcaption {
+  background: linear-gradient(to top, rgb(4 6 8 / 90%), transparent);
+  bottom: 0;
+  display: grid;
+  gap: var(--space-1);
+  left: 0;
+  padding: var(--space-4);
+  position: absolute;
+  right: 0;
+}
+
+.gallery-wall__item--1,
+.gallery-wall__item--4 {
+  grid-column: span 2;
+}
+
+.gallery-wall__item--1 img,
+.gallery-wall__item--4 img {
+  aspect-ratio: 16 / 9;
+}
+
+.reservation-callout {
+  align-items: center;
+  background: linear-gradient(
+    130deg,
+    color-mix(in srgb, var(--color-surface) 92%, black),
+    color-mix(in srgb, var(--color-surface-strong) 88%, black)
+  );
+  border: 1px solid color-mix(in srgb, var(--color-brand) 40%, var(--color-border));
+  border-radius: var(--radius-lg);
+  display: grid;
+  gap: var(--space-5);
+  grid-template-columns: 1.3fr 0.7fr;
+  padding: var(--space-6);
+}
+
+.reservation-callout__copy {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.reservation-callout__copy p {
+  color: var(--color-text-secondary);
+}
+
+.reservation-callout__meta {
+  color: var(--color-text-muted);
+  font-size: var(--size-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.reservation-callout__actions {
+  display: grid;
+  gap: var(--space-3);
+}
+
 .reservation-form,
 .policy-panel {
   background: color-mix(in srgb, var(--color-surface) 90%, black);
@@ -744,6 +938,315 @@ textarea:focus-visible {
   font-size: var(--size-xs);
 }
 
+.land-service-showcase {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: 1.15fr 0.85fr;
+}
+
+.land-service-focus {
+  background: color-mix(in srgb, var(--color-surface) 92%, black);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.land-service-focus__media {
+  margin: 0;
+}
+
+.land-service-focus__media img {
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  width: 100%;
+}
+
+.land-service-focus__body {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-5);
+}
+
+.land-service-focus__eyebrow {
+  color: var(--color-brand-strong);
+  font-size: var(--size-2xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.land-service-focus__title {
+  font-family: var(--font-display);
+  font-size: clamp(var(--size-xl), 3vw, var(--size-2xl));
+  line-height: 1.08;
+}
+
+.land-service-focus__description {
+  color: var(--color-text-secondary);
+}
+
+.land-service-compact-grid {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.land-service-compact-grid .card__title {
+  font-size: var(--size-md);
+}
+
+.land-service-compact-grid .card__description {
+  font-size: var(--size-xs);
+}
+
+.land-transformation {
+  background: color-mix(in srgb, var(--color-surface) 88%, black);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+}
+
+.land-transformation__layout {
+  display: grid;
+  gap: var(--space-5);
+  grid-template-columns: 1.1fr 0.9fr;
+}
+
+.land-transformation__visuals {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.land-transformation__item {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  margin: 0;
+  overflow: hidden;
+}
+
+.land-transformation__item img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  width: 100%;
+}
+
+.land-transformation__caption {
+  color: var(--color-text-muted);
+  display: block;
+  font-size: var(--size-2xs);
+  letter-spacing: 0.08em;
+  padding: var(--space-3) var(--space-4) var(--space-4);
+  text-transform: uppercase;
+}
+
+.land-transformation__body {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.land-transformation__body p {
+  color: var(--color-text-secondary);
+}
+
+.land-section-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.land-process-layout {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: 1.15fr 0.85fr;
+}
+
+.land-process-media {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.land-process-media__item {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  margin: 0;
+  overflow: hidden;
+}
+
+.land-process-media__item img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  width: 100%;
+}
+
+.land-quote-band {
+  align-items: start;
+  background: linear-gradient(
+    130deg,
+    color-mix(in srgb, var(--color-surface-strong) 92%, black),
+    color-mix(in srgb, var(--color-surface) 92%, black)
+  );
+  border: 1px solid color-mix(in srgb, var(--color-brand) 28%, var(--color-border));
+  border-radius: var(--radius-lg);
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: 1.2fr 0.8fr;
+  padding: var(--space-6);
+}
+
+.land-quote-band p {
+  color: var(--color-text-secondary);
+}
+
+.land-quote-band__meta {
+  color: var(--color-text-muted);
+  font-size: var(--size-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.land-service-sections {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.land-service-section {
+  background: color-mix(in srgb, var(--color-surface) 88%, black);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.land-service-section__media {
+  margin: 0;
+}
+
+.land-service-section__media img {
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  width: 100%;
+}
+
+.land-service-section__header {
+  border-bottom: 1px solid var(--color-border);
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-5);
+}
+
+.land-service-section__header h2 {
+  font-family: var(--font-display);
+  font-size: var(--size-xl);
+}
+
+.land-service-section__header p {
+  color: var(--color-text-secondary);
+}
+
+.land-service-list {
+  display: grid;
+  gap: var(--space-2);
+  list-style: none;
+  padding: var(--space-4) var(--space-5) var(--space-5);
+}
+
+.land-service-item {
+  border: 1px solid color-mix(in srgb, var(--color-border) 80%, black);
+  border-radius: var(--radius-sm);
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-4);
+}
+
+.land-service-item__header {
+  align-items: baseline;
+  display: flex;
+  gap: var(--space-3);
+  justify-content: space-between;
+}
+
+.land-service-item__header h3 {
+  font-size: var(--size-md);
+}
+
+.land-service-item__meta {
+  color: var(--color-brand-strong);
+  font-size: var(--size-xs);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.land-service-item p {
+  color: var(--color-text-secondary);
+}
+
+.land-feature-project {
+  background: color-mix(in srgb, var(--color-surface) 90%, black);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  display: grid;
+  gap: var(--space-5);
+  grid-template-columns: 1.1fr 0.9fr;
+  overflow: hidden;
+}
+
+.land-feature-project__media {
+  margin: 0;
+}
+
+.land-feature-project__media img {
+  height: 100%;
+  min-height: 20rem;
+  object-fit: cover;
+  width: 100%;
+}
+
+.land-feature-project__body {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-6) var(--space-6) var(--space-6) 0;
+}
+
+.land-feature-project__body p {
+  color: var(--color-text-secondary);
+}
+
+.land-feature-project__meta {
+  color: var(--color-brand-strong);
+  font-size: var(--size-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.land-feature-project__title {
+  font-family: var(--font-display);
+  font-size: clamp(var(--size-xl), 3vw, var(--size-2xl));
+  line-height: 1.08;
+}
+
+.land-note-panel {
+  background: color-mix(in srgb, var(--color-surface) 88%, black);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  display: grid;
+  gap: var(--space-4);
+  padding: var(--space-5);
+}
+
+.land-note-panel h3 {
+  font-family: var(--font-display);
+  font-size: var(--size-lg);
+}
+
+.land-note-panel p,
+.land-note-panel li {
+  color: var(--color-text-secondary);
+}
+
+.land-note-panel ul {
+  display: grid;
+  gap: var(--space-3);
+  padding-left: var(--space-5);
+}
+
 .site-footer {
   background: color-mix(in srgb, var(--color-bg-soft) 88%, black);
   border-top: 1px solid var(--color-border);
@@ -792,7 +1295,7 @@ textarea:focus-visible {
   padding-top: var(--space-4);
 }
 
-.mobile-reserve-bar {
+.mobile-primary-cta {
   background: color-mix(in srgb, var(--color-bg-soft) 86%, black);
   border-top: 1px solid var(--color-border);
   bottom: 0;
@@ -815,6 +1318,13 @@ textarea:focus-visible {
   }
 
   .dish-showcase,
+  .gallery-feature-grid,
+  .land-feature-project,
+  .land-process-layout,
+  .land-service-showcase,
+  .land-transformation__layout,
+  .land-quote-band,
+  .reservation-callout,
   .page-hero--media,
   .story-layout,
   .signature-layout,
@@ -832,6 +1342,19 @@ textarea:focus-visible {
 
   .atmosphere-stack {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .land-transformation__visuals {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-wall {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gallery-wall__item--1,
+  .gallery-wall__item--4 {
+    grid-column: span 1;
   }
 
   .section--signature .card-grid .card:first-child,
@@ -869,11 +1392,11 @@ textarea:focus-visible {
   }
 
   .primary-nav__link,
-  .primary-nav__reserve {
+  .primary-nav__cta {
     width: 100%;
   }
 
-  .primary-nav__reserve {
+  .primary-nav__cta {
     margin-left: 0;
     margin-top: var(--space-2);
   }
@@ -888,6 +1411,7 @@ textarea:focus-visible {
 
   .card-grid--3,
   .dish-grid,
+  .gallery-wall,
   .gallery-mosaic,
   .menu-preview-grid,
   .team-grid,
@@ -899,7 +1423,15 @@ textarea:focus-visible {
     grid-template-columns: 1fr;
   }
 
-  .mobile-reserve-bar {
+  .land-feature-project__body {
+    padding: 0 var(--space-5) var(--space-5);
+  }
+
+  .land-quote-band {
+    padding: var(--space-5);
+  }
+
+  .mobile-primary-cta {
     display: block;
   }
 }

@@ -1,9 +1,9 @@
 import { useContext } from 'react'
-import { DemoConfigContext } from '../config/demoConfig'
-import { ButtonLink } from '../components/ui/Button'
-import { Card } from '../components/ui/Card'
-import { PageHero } from '../components/ui/PageHero'
-import { Section } from '../components/ui/Section'
+import { DemoConfigContext } from '../../config/demoConfig'
+import { ButtonLink } from '../../components/ui/Button'
+import { Card } from '../../components/ui/Card'
+import { PageHero } from '../../components/ui/PageHero'
+import { Section } from '../../components/ui/Section'
 
 export function AboutPage() {
   const { content, routes } = useContext(DemoConfigContext)
@@ -11,16 +11,14 @@ export function AboutPage() {
   return (
     <>
       <PageHero
-        actions={
-          <ButtonLink to={routes.reservations}>Reserve your visit</ButtonLink>
-        }
+        actions={<ButtonLink to={routes.reservations}>Request consultation</ButtonLink>}
         description={content.about.intro}
         eyebrow="About"
-        media={content.gallery.collections[0]?.image}
-        title="People, process, and place"
+        media={content.gallery.collections[2]?.image}
+        title="A focused team built for premium residential landscaping"
       />
 
-      <Section title="Our approach">
+      <Section title="Operating model">
         <div className="story-layout">
           <div className="story-grid">
             {content.about.story.map((paragraph) => (
@@ -29,8 +27,9 @@ export function AboutPage() {
               </p>
             ))}
           </div>
+
           <aside className="about-visual-stack">
-            {[content.gallery.collections[1], content.gallery.collections[3]].map((item) =>
+            {[content.gallery.collections[3], content.gallery.collections[4]].map((item) =>
               item ? (
                 <figure className="about-visual-stack__item" key={item.title}>
                   <img
@@ -45,13 +44,13 @@ export function AboutPage() {
                   />
                   <figcaption>{item.subtitle}</figcaption>
                 </figure>
-              ) : null
+              ) : null,
             )}
           </aside>
         </div>
       </Section>
 
-      <Section title="Operating values">
+      <Section title="Build standards">
         <div className="card-grid card-grid--3">
           {content.about.values.map((value) => (
             <Card
@@ -63,7 +62,7 @@ export function AboutPage() {
         </div>
       </Section>
 
-      <Section title="Leadership">
+      <Section title="Leadership team">
         <div className="team-grid">
           {content.about.team.map((member) => (
             <Card

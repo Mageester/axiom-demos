@@ -18,6 +18,7 @@ export function SiteNav() {
         <button
           aria-controls="primary-nav"
           aria-expanded={isOpen}
+          aria-label={isOpen ? 'Close menu' : 'Open menu'}
           className="mobile-menu-toggle"
           onClick={() => setIsOpen((open) => !open)}
           type="button"
@@ -43,7 +44,7 @@ export function SiteNav() {
               {item.label}
             </NavLink>
           ))}
-          <ButtonLink className="primary-nav__reserve" size="md" to={primaryCta.path}>
+          <ButtonLink className="primary-nav__cta" size="md" to={primaryCta.path}>
             {primaryCta.label}
           </ButtonLink>
         </nav>
