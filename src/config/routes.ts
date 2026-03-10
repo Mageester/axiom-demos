@@ -2,6 +2,8 @@ export const routes = {
   home: '/',
   menu: '/menu',
   about: '/about',
+  gallery: '/gallery',
+  contact: '/contact',
   reservations: '/reservations',
 } as const
 
@@ -16,5 +18,7 @@ export const navItems: NavItem[] = [
   { label: 'Home', path: routes.home },
   { label: 'Menu', path: routes.menu },
   { label: 'About', path: routes.about },
+  { label: 'Gallery', path: routes.gallery },
+  { label: 'Contact', path: routes.contact },
   { label: 'Reservations', path: routes.reservations },
 ]

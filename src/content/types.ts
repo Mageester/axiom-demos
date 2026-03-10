@@ -3,6 +3,14 @@ export interface FeatureCardContent {
   description: string
 }
 
+export interface HeroContent {
+  eyebrow?: string
+  title: string
+  description: string
+  primaryCta: string
+  secondaryCta?: string
+}
+
 export interface MenuItemContent {
   name: string
   description: string
@@ -27,24 +35,33 @@ export interface TeamMemberContent {
   bio: string
 }
 
-export interface RestaurantContent {
+export interface GalleryItemContent {
+  title: string
+  subtitle: string
+  description: string
+}
+
+export interface ContactDetailContent {
+  label: string
+  value: string
+  href?: string
+}
+
+export interface DemoContent {
   brand: {
     name: string
     city: string
     tagline: string
     phone: string
+    phoneHref: string
     email: string
+    emailHref: string
     address: string
     hours: string[]
+    legalLine: string
   }
   home: {
-    hero: {
-      eyebrow: string
-      title: string
-      description: string
-      primaryCta: string
-      secondaryCta: string
-    }
+    hero: HeroContent
     highlights: FeatureCardContent[]
     experience: {
       title: string
@@ -66,5 +83,14 @@ export interface RestaurantContent {
     intro: string
     policies: string[]
     channels: ContactChannelContent[]
+  }
+  gallery: {
+    intro: string
+    collections: GalleryItemContent[]
+  }
+  contact: {
+    intro: string
+    details: ContactDetailContent[]
+    notes: string[]
   }
 }

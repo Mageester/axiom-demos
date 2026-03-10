@@ -1,27 +1,30 @@
+import { useContext } from 'react'
 import { routes } from '../config/routes'
-import { restaurantContent } from '../content/restaurantContent'
+import { DemoConfigContext } from '../config/demoConfig'
 import { ButtonLink } from '../components/ui/Button'
 import { Card } from '../components/ui/Card'
 import { PageHero } from '../components/ui/PageHero'
 import { Section } from '../components/ui/Section'
 
 export function HomePage() {
+  const { content } = useContext(DemoConfigContext)
+
   return (
     <>
       <PageHero
         actions={
           <>
             <ButtonLink size="lg" to={routes.reservations}>
-              {restaurantContent.home.hero.primaryCta}
+              {content.home.hero.primaryCta}
             </ButtonLink>
             <ButtonLink size="lg" to={routes.menu} variant="secondary">
-              {restaurantContent.home.hero.secondaryCta}
+              {content.home.hero.secondaryCta}
             </ButtonLink>
           </>
         }
-        description={restaurantContent.home.hero.description}
-        eyebrow={restaurantContent.home.hero.eyebrow}
-        title={restaurantContent.home.hero.title}
+        description={content.home.hero.description}
+        eyebrow={content.home.hero.eyebrow}
+        title={content.home.hero.title}
       />
 
       <Section
@@ -29,7 +32,7 @@ export function HomePage() {
         title="Signature experience"
       >
         <div className="card-grid card-grid--3">
-          {restaurantContent.home.highlights.map((item) => (
+          {content.home.highlights.map((item) => (
             <Card
               description={item.description}
               key={item.title}
@@ -40,11 +43,11 @@ export function HomePage() {
       </Section>
 
       <Section
-        description={restaurantContent.menu.intro}
+        description={content.menu.intro}
         title="Seasonal menu preview"
       >
         <div className="menu-preview-grid">
-          {restaurantContent.menu.sections.map((section) => (
+          {content.menu.sections.map((section) => (
             <Card key={section.title} title={section.title}>
               <p className="menu-preview-note">{section.note}</p>
               <ul className="plain-list menu-preview-list">
@@ -61,12 +64,12 @@ export function HomePage() {
       </Section>
 
       <Section
-        description={restaurantContent.home.experience.description}
-        title={restaurantContent.home.experience.title}
+        description={content.home.experience.description}
+        title={content.home.experience.title}
       >
         <div className="experience-panel">
           <ul className="check-list">
-            {restaurantContent.home.experience.points.map((point) => (
+            {content.home.experience.points.map((point) => (
               <li key={point}>{point}</li>
             ))}
           </ul>

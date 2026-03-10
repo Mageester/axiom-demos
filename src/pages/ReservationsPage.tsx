@@ -1,6 +1,6 @@
-import { type FormEvent, useState } from 'react'
+import { type FormEvent, useContext, useState } from 'react'
 import { siteConfig } from '../config/siteConfig'
-import { restaurantContent } from '../content/restaurantContent'
+import { DemoConfigContext } from '../config/demoConfig'
 import { Button, ButtonAnchor } from '../components/ui/Button'
 import { Card } from '../components/ui/Card'
 import { PageHero } from '../components/ui/PageHero'
@@ -8,6 +8,7 @@ import { Section } from '../components/ui/Section'
 
 export function ReservationsPage() {
   const [statusMessage, setStatusMessage] = useState('')
+  const { content } = useContext(DemoConfigContext)
 
   function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -30,7 +31,7 @@ export function ReservationsPage() {
       body,
     })
 
-    window.location.href = `mailto:${restaurantContent.brand.email}?${query.toString()}`
+    window.location.href = `${content.brand.emailHref}?${query.toString()}`
     setStatusMessage('Your email app is opening with the reservation request details.')
     event.currentTarget.reset()
   }
@@ -39,18 +40,18 @@ export function ReservationsPage() {
     <>
       <PageHero
         actions={
-          <ButtonAnchor href="tel:+14165550182" variant="secondary">
+          <ButtonAnchor href={content.brand.phoneHref} variant="secondary">
             Call reservations
           </ButtonAnchor>
         }
-        description={restaurantContent.reservations.intro}
+        description={content.reservations.intro}
         eyebrow="Reservations"
         title="Reserve with confidence"
       />
 
       <Section title="Booking channels">
         <div className="card-grid card-grid--3">
-          {restaurantContent.reservations.channels.map((channel) => (
+          {content.reservations.channels.map((channel) => (
             <Card key={channel.label} meta={channel.label} title={channel.value}>
               <ButtonAnchor href={channel.href} variant="quiet">
                 Open
@@ -95,13 +96,13 @@ export function ReservationsPage() {
           <aside className="policy-panel">
             <h3>Reservation policy</h3>
             <ul>
-              {restaurantContent.reservations.policies.map((policy) => (
+              {content.reservations.policies.map((policy) => (
                 <li key={policy}>{policy}</li>
               ))}
             </ul>
             <p className="policy-panel__subtle">
               For large parties, private events, or accessibility requests, contact
-              our concierge directly at {restaurantContent.brand.phone}.
+              our concierge directly at {content.brand.phone}.
             </p>
           </aside>
         </div>

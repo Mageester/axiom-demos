@@ -291,7 +291,7 @@ textarea:focus-visible {
 
 .check-list li::before {
   color: var(--color-success);
-  content: '•';
+  content: '\2022';
   left: 0;
   position: absolute;
 }

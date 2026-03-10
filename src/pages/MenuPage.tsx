@@ -1,9 +1,12 @@
+import { useContext } from 'react'
 import { routes } from '../config/routes'
-import { restaurantContent } from '../content/restaurantContent'
+import { DemoConfigContext } from '../config/demoConfig'
 import { ButtonLink } from '../components/ui/Button'
 import { PageHero } from '../components/ui/PageHero'
 
 export function MenuPage() {
+  const { content } = useContext(DemoConfigContext)
+
   return (
     <>
       <PageHero
@@ -12,13 +15,13 @@ export function MenuPage() {
             Reserve for dinner
           </ButtonLink>
         }
-        description={restaurantContent.menu.intro}
+        description={content.menu.intro}
         eyebrow="Menu"
         title="Current offerings"
       />
 
       <div className="menu-sections">
-        {restaurantContent.menu.sections.map((section) => (
+        {content.menu.sections.map((section) => (
           <section className="menu-section" key={section.title}>
             <header className="menu-section__header">
               <h2>{section.title}</h2>

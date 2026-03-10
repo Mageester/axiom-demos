@@ -1,18 +1,18 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import { navItems, routes } from '../../config/routes'
-import { restaurantContent } from '../../content/restaurantContent'
+import { DemoConfigContext } from '../../config/demoConfig'
 import { ButtonLink } from '../ui/Button'
 
 export function SiteNav() {
   const [isOpen, setIsOpen] = useState(false)
+  const { content, homePath, navItems, primaryCta } = useContext(DemoConfigContext)
 
   return (
     <header className="site-nav-wrap">
       <div className="site-nav">
-        <NavLink className="site-brand" to={routes.home}>
-          <span className="site-brand__name">{restaurantContent.brand.name}</span>
-          <span className="site-brand__city">{restaurantContent.brand.city}</span>
+        <NavLink className="site-brand" to={homePath}>
+          <span className="site-brand__name">{content.brand.name}</span>
+          <span className="site-brand__city">{content.brand.city}</span>
         </NavLink>
 
         <button
@@ -43,8 +43,8 @@ export function SiteNav() {
               {item.label}
             </NavLink>
           ))}
-          <ButtonLink className="primary-nav__reserve" size="md" to={routes.reservations}>
-            Reserve
+          <ButtonLink className="primary-nav__reserve" size="md" to={primaryCta.path}>
+            {primaryCta.label}
           </ButtonLink>
         </nav>
       </div>

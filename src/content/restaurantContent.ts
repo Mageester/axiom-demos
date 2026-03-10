@@ -1,12 +1,14 @@
-import type { RestaurantContent } from './types'
+import type { DemoContent } from './types'
 
-export const restaurantContent: RestaurantContent = {
+export const restaurantContent: DemoContent = {
   brand: {
     name: 'Atelier Meridian',
     city: 'Toronto',
     tagline: 'Seasonal tasting house with coastal influence',
     phone: '+1 (416) 555-0182',
+    phoneHref: 'tel:+14165550182',
     email: 'reservations@ateliermeridian.ca',
+    emailHref: 'mailto:reservations@ateliermeridian.ca',
     address: '112 Harbor Lane, Toronto, ON M5V 2L6',
     hours: [
       'Tuesday to Thursday: 5:00 PM to 10:00 PM',
@@ -14,6 +16,7 @@ export const restaurantContent: RestaurantContent = {
       'Sunday: 4:30 PM to 9:30 PM',
       'Monday: Closed',
     ],
+    legalLine: 'Atelier Meridian. Built in Axiom Demo System.',
   },
   home: {
     hero: {
@@ -188,6 +191,74 @@ export const restaurantContent: RestaurantContent = {
         value: 'reservations@ateliermeridian.ca',
         href: 'mailto:reservations@ateliermeridian.ca',
       },
+    ],
+  },
+  gallery: {
+    intro:
+      'A preview of room atmosphere, plating detail, and private dining setups used to help guests choose the right visit format.',
+    collections: [
+      {
+        title: 'Main Dining Room',
+        subtitle: 'Ambient evening service',
+        description:
+          'Natural wood surfaces, low-glare lighting, and table spacing designed for relaxed conversation.',
+      },
+      {
+        title: 'Seasonal Plating',
+        subtitle: 'Chef-led progression',
+        description:
+          'Course presentation focused on texture contrast, ingredient clarity, and measured pacing.',
+      },
+      {
+        title: 'Private Dining Studio',
+        subtitle: 'Up to 12 guests',
+        description:
+          'A separate room for hosted dinners, milestone events, and executive team gatherings.',
+      },
+      {
+        title: 'Bar & Pairings',
+        subtitle: 'Wine and zero-proof',
+        description:
+          'Curated bottles and non-alcoholic pairings selected to support each weekly menu cycle.',
+      },
+      {
+        title: 'Chef Counter',
+        subtitle: 'Interactive service',
+        description:
+          'Limited counter seats with direct view of finishing techniques and final plating.',
+      },
+      {
+        title: 'Arrival Experience',
+        subtitle: 'Guest check-in flow',
+        description:
+          'Hosted arrival with clear reservation validation and dietary notes confirmed at entry.',
+      },
+    ],
+  },
+  contact: {
+    intro:
+      'Contact the concierge team for reservation changes, private event planning, or accessibility accommodations.',
+    details: [
+      {
+        label: 'Call concierge',
+        value: '+1 (416) 555-0182',
+        href: 'tel:+14165550182',
+      },
+      {
+        label: 'Email reservations',
+        value: 'reservations@ateliermeridian.ca',
+        href: 'mailto:reservations@ateliermeridian.ca',
+      },
+      {
+        label: 'Visit',
+        value: '112 Harbor Lane, Toronto, ON M5V 2L6',
+        href: 'https://maps.google.com/?q=112+Harbor+Lane+Toronto+ON',
+      },
+    ],
+    notes: [
+      'Reservation modifications are best handled by phone for same-day service.',
+      'For private events over eight guests, include preferred date range and guest count in your email.',
+      'Dietary and accessibility accommodations are reviewed by the concierge before confirmation.',
     ],
   },
 }
