@@ -10,8 +10,11 @@ export function HomePage() {
   const { content, routes } = useContext(DemoConfigContext)
   const primaryAtmosphereImage =
     content.home.experience.images[0] ?? content.home.hero.image
-  const atmosphereMoments = content.gallery.collections.slice(0, 3)
-  const reservationVisual = content.gallery.collections[3]?.image ?? content.home.hero.image
+  const atmosphereMoments = content.gallery.collections.slice(2, 5)
+  const reservationVisual =
+    content.gallery.collections[content.gallery.collections.length - 1]?.image
+      ?? content.gallery.collections[1]?.image
+      ?? content.home.hero.image
   const featuredDish = content.home.featuredDishes[0]
   const supportingDishes = content.home.featuredDishes.slice(1)
 
