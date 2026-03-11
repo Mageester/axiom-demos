@@ -8,6 +8,7 @@ interface PageHeroProps {
   actions?: ReactNode
   media?: VisualAssetContent
   signals?: string[]
+  className?: string
 }
 
 export function PageHero({
@@ -17,9 +18,10 @@ export function PageHero({
   actions,
   media,
   signals,
+  className,
 }: PageHeroProps) {
   return (
-    <section className={`page-hero ${media ? 'page-hero--media' : ''}`}>
+    <section className={['page-hero', media ? 'page-hero--media' : '', className ?? ''].filter(Boolean).join(' ')}>
       <div className="page-hero__copy">
         {eyebrow ? <p className="page-hero__eyebrow">{eyebrow}</p> : null}
         <h1 className="page-hero__title">{title}</h1>

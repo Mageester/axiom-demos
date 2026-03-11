@@ -2,7 +2,11 @@
 
 Axiom Demo Platform is the shared repository for premium business website demos.
 
-The platform now supports multiple flagship demos (restaurant and landscaping) while reusing shared UI, layout, and design-system layers.
+The platform currently supports three deployable demos, all built from the same shared repo:
+
+- `restaurant`
+- `landscaping`
+- `roofing`
 
 ## Core Principles
 
@@ -29,6 +33,7 @@ src/
     types.ts                   # Shared content contract used by demo page sets
     restaurantContent.ts       # Restaurant demo payload
     landscapingContent.ts      # Landscaping demo payload
+    roofingContent.ts          # Roofing demo payload
   design-system/
     tokens.css                 # Variables (color, type, spacing)
     base.css                   # Global reset/base
@@ -36,6 +41,7 @@ src/
   pages/
     *.tsx                      # Restaurant page set
     landscaping/               # Landscaping page set
+    roofing/                   # Roofing page set
 ```
 
 ## Route Contract
@@ -47,7 +53,7 @@ Each demo config maps these canonical route keys to niche-specific paths:
 - `/about`
 - `/gallery` (or `/projects`)
 - `/contact`
-- `/reservations` (or `/quote`)
+- `/reservations` (or `/quote` or `/inspection`)
 
 Routing/nav definitions live in `src/config/routes.ts` and are selected by the active demo config.
 
@@ -64,7 +70,9 @@ Routing/nav definitions live in `src/config/routes.ts` and are selected by the a
 
 - `src/content/restaurantContent.ts`
 - `src/content/landscapingContent.ts`
+- `src/content/roofingContent.ts`
 - `src/pages/landscaping/*`
+- `src/pages/roofing/*`
 - Copy, service entries, team details, address, phone, email, policies, project collections
 
 Shared components must only consume the active content through `DemoConfigContext`.
@@ -97,13 +105,15 @@ Set `VITE_DEMO_KEY` in your environment:
 VITE_DEMO_KEY=restaurant
 # or
 VITE_DEMO_KEY=landscaping
+# or
+VITE_DEMO_KEY=roofing
 ```
 
 Resolver behavior:
 
 - If `VITE_DEMO_KEY` is missing, fallback is `restaurant`.
 - If `VITE_DEMO_KEY` is unknown, the app logs a loud console error and falls back to `restaurant`.
-- Valid values are currently `restaurant` and `landscaping`.
+- Valid values are currently `restaurant`, `landscaping`, and `roofing`.
 
 ## Adding Additional Demos
 
@@ -120,51 +130,115 @@ npm install
 npm run dev
 ```
 
+Optional local selection:
+
+1. Copy `.env.example` to `.env.local`.
+2. Set `VITE_DEMO_KEY` to `restaurant`, `landscaping`, or `roofing`.
+
 ## Quality Checks
 
 ```bash
 npm run lint
 npm run build
+npm run build:all
 ```
 
 ## Deployment
 
-Configured for Cloudflare Workers with SPA fallback:
+For immediate multi-subdomain deployment, use separate Cloudflare Pages projects.
 
-- Config: `wrangler.jsonc`
-- Build: `npm run build`
-- Deploy: `npm run deploy`
+Why Pages projects are the right approach:
 
-For subdomain deployments (for example `restaurant.getaxiom.ca`), bind the domain at the Worker/zone level and keep route paths relative (already enforced in this repo).
+- each Pages project builds one static `dist` output
+- each demo needs a different build-time `VITE_DEMO_KEY`
+- each demo needs its own custom domain and release lifecycle
 
-## Cloudflare Multi-Subdomain Checklist
+A single Pages project is incorrect for this repo because one Pages build can only output one branded demo at a time. If you reuse one project for all three subdomains, whichever demo was built last becomes the active output for every bound domain.
 
-Use the same repository for both demos, but separate deployment targets (separate Cloudflare projects/Workers), each with its own build-time env.
+`wrangler.jsonc` remains useful for Worker-based local preview or alternate deployment flows, but it is not the recommended multi-subdomain setup for these branded demo sites.
 
-### 1. Restaurant target (`restaurant.getaxiom.ca`)
+## Cloudflare Pages Deployment Matrix
 
-1. Create or open the Cloudflare deployment target dedicated to restaurant.
-2. Connect it to this repo/branch.
-3. Set build command to include demo key:
-   - `VITE_DEMO_KEY=restaurant npm run build`
-4. Set output directory:
-   - `dist`
-5. Attach custom domain:
+### Shared settings for all three Pages projects
+
+- Repo: `Mageester/axiom-demos`
+- Branch: the branch that contains the released demo state you want live
+  - current working branch in this repo: `codex/landscaping-launch-pass`
+- Framework preset: `None` or `Vite` are both acceptable
+- Build command: use the dedicated per-demo script listed below
+- Build output directory: `dist`
+- Root directory: repository root
+- Node compatibility: no extra runtime bindings required
+
+### Restaurant Pages project
+
+- Pages project name: `axiom-demos-restaurant`
+- Repo: `Mageester/axiom-demos`
+- Branch: the release branch that contains the restaurant deployment you want live
+- Build command: `npm run build:restaurant`
+- Output directory: `dist`
+- Required env vars:
+  - none if you use the recommended build command above
+  - equivalent manual override: `VITE_DEMO_KEY=restaurant`
+- Custom domain: `restaurant.getaxiom.ca`
+- Expected route profile:
+  - `/menu`
+  - `/gallery`
+  - `/reservations`
+
+### Landscaping Pages project
+
+- Pages project name: `axiom-demos-landscaping`
+- Repo: `Mageester/axiom-demos`
+- Branch: the release branch that contains the landscaping deployment you want live
+- Build command: `npm run build:landscaping`
+- Output directory: `dist`
+- Required env vars:
+  - none if you use the recommended build command above
+  - equivalent manual override: `VITE_DEMO_KEY=landscaping`
+- Custom domain: `landscaping.getaxiom.ca`
+- Expected route profile:
+  - `/services`
+  - `/projects`
+  - `/quote`
+
+### Roofing Pages project
+
+- Pages project name: `axiom-demos-roofing`
+- Repo: `Mageester/axiom-demos`
+- Branch: the release branch that contains the roofing deployment you want live
+- Build command: `npm run build:roofing`
+- Output directory: `dist`
+- Required env vars:
+  - none if you use the recommended build command above
+  - equivalent manual override: `VITE_DEMO_KEY=roofing`
+- Custom domain: `roofing.getaxiom.ca`
+- Expected route profile:
+  - `/services`
+  - `/projects`
+  - `/inspection`
+
+## Manual Cloudflare Steps After Code Changes
+
+1. Create three separate Cloudflare Pages projects.
+2. Connect each project to the same repo and branch.
+3. Set the project-specific build command:
+   - `npm run build:restaurant`
+   - `npm run build:landscaping`
+   - `npm run build:roofing`
+4. Set the output directory to `dist` for all three.
+5. Attach the correct custom domain to each project:
    - `restaurant.getaxiom.ca`
-6. Deploy and verify nav/routes are restaurant-specific (`/menu`, `/gallery`, `/reservations`).
+   - `landscaping.getaxiom.ca`
+   - `roofing.getaxiom.ca`
+6. Trigger an initial deploy for each project.
+7. Verify each subdomain resolves to the correct demo and route set.
 
-### 2. Landscaping target (`landscaping.<your-domain>`)
+## Local Verification Commands
 
-1. Create or open a second Cloudflare deployment target dedicated to landscaping.
-2. Connect it to the same repo/branch.
-3. Set build command:
-   - `VITE_DEMO_KEY=landscaping npm run build`
-4. Set output directory:
-   - `dist`
-5. Attach custom domain for landscaping (for example `landscaping.getaxiom.ca`).
-6. Deploy and verify nav/routes are landscaping-specific (`/services`, `/projects`, `/quote`).
-
-### 3. Critical isolation rule
-
-Never run both subdomains from one Cloudflare target with one shared build env.  
-Each subdomain must have its own target/project (or environment) with its own `VITE_DEMO_KEY`.
+```bash
+npm run lint
+npm run build:restaurant
+npm run build:landscaping
+npm run build:roofing
+```

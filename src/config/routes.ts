@@ -33,6 +33,15 @@ export const landscapingRoutes: DemoRoutes = {
   reservations: '/quote',
 }
 
+export const roofingRoutes: DemoRoutes = {
+  home: '/',
+  menu: '/services',
+  about: '/about',
+  gallery: '/projects',
+  contact: '/contact',
+  reservations: '/inspection',
+}
+
 export const restaurantNavItems: NavItem[] = [
   { label: 'Home', path: restaurantRoutes.home },
   { label: 'Menu', path: restaurantRoutes.menu },
@@ -48,5 +57,14 @@ export const landscapingNavItems: NavItem[] = [
   { label: 'Projects', path: landscapingRoutes.gallery },
   { label: 'About', path: landscapingRoutes.about },
   { label: 'Contact', path: landscapingRoutes.contact },
-  { label: 'Request Quote', path: landscapingRoutes.reservations },
+  { label: 'Estimate', path: landscapingRoutes.reservations },
+]
+
+export const roofingNavItems: NavItem[] = [
+  { label: 'Home', path: roofingRoutes.home },
+  { label: 'Services', path: roofingRoutes.menu },
+  { label: 'Projects', path: roofingRoutes.gallery },
+  { label: 'About', path: roofingRoutes.about },
+  { label: 'Contact', path: roofingRoutes.contact },
+  { label: 'Inspection', path: roofingRoutes.reservations },
 ]

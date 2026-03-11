@@ -97,3 +97,27 @@ body[data-demo-theme='landscaping'] {
   --shadow-elevated: 0 18px 44px rgb(4 7 5 / 32%);
   --font-display: 'Fraunces', Georgia, serif;
 }
+
+body[data-demo-theme='roofing'] {
+  --color-bg: #0f1319;
+  --color-bg-soft: #161d26;
+  --color-surface: #202936;
+  --color-surface-strong: #2b3746;
+  --color-border: #435267;
+  --color-text-primary: #edf3f8;
+  --color-text-secondary: #c8d2dc;
+  --color-text-muted: #90a0b2;
+  --color-brand: #d67d42;
+  --color-brand-strong: #f2b266;
+  --color-brand-ink: #22150d;
+  --color-success: #84b592;
+  --font-display: 'Manrope', 'Segoe UI', sans-serif;
+  --font-nav: 'Manrope', 'Segoe UI', sans-serif;
+  --font-button: 'Manrope', 'Segoe UI', sans-serif;
+  --space-section: 4.5rem;
+  --radius-button: 10px;
+  --radius-card: 10px;
+  --radius-panel: 14px;
+  --shadow-soft: 0 14px 34px rgb(7 10 14 / 30%);
+  --shadow-elevated: 0 20px 46px rgb(5 8 11 / 34%);
+}

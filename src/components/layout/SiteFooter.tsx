@@ -4,12 +4,15 @@ import { DemoConfigContext } from '../../config/demoConfig'
 export function SiteFooter() {
   const { brandSystem, content } = useContext(DemoConfigContext)
   const isHospitality = brandSystem === 'hospitality'
-  const visitHeading = isHospitality ? 'Visit The Dining Room' : 'Visit'
-  const hoursHeading = isHospitality ? 'Dinner Service' : 'Hours'
-  const contactHeading = isHospitality ? 'Reservations' : 'Contact'
+  const isRoofing = brandSystem === 'roofing'
+  const visitHeading = isHospitality ? 'Visit The Dining Room' : 'Service Area'
+  const hoursHeading = isHospitality ? 'Dinner Service' : isRoofing ? 'Office Hours' : 'Consultation Hours'
+  const contactHeading = isHospitality ? 'Reservations' : isRoofing ? 'Inspection Desk' : 'Estimate Desk'
   const brandTagline = isHospitality
     ? `${content.brand.tagline}. Dinner reservations recommended.`
-    : content.brand.tagline
+    : isRoofing
+      ? `${content.brand.tagline}. Inspection visits are scheduled after issue and service-area fit are confirmed.`
+      : `${content.brand.tagline}. Site visits are scheduled after scope fit is confirmed.`
 
   return (
     <footer className={`site-footer ${isHospitality ? 'site-footer--hospitality' : ''}`}>

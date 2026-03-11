@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Northline Outdoor Studio logo mark</title>
+  <desc id="desc">A refined N monogram with a leaf detail.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#172018" />
+      <stop offset="100%" stop-color="#243226" />
+    </linearGradient>
+    <linearGradient id="leaf" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#d7e7b3" />
+      <stop offset="100%" stop-color="#9bc26f" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="18" fill="url(#bg)" />
+  <path d="M18 46V18h6.5l15 19.2V18H46v28h-6L24.5 26.2V46Z" fill="#edf6ef" />
+  <path d="M44.5 14.5c-5.9 1.1-9.4 4.9-10.5 11.3 5.1-.9 8.7-4.6 10.5-11.3Z" fill="url(#leaf)" />
+  <path d="M34.2 25.2c2.1-2.8 5.1-5 9-6.5" fill="none" stroke="#9bc26f" stroke-linecap="round" stroke-width="2.2" />
+</svg>

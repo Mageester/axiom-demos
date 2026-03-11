@@ -30,6 +30,7 @@ export interface MenuSectionContent {
   note: string
   items: MenuItemContent[]
   image?: VisualAssetContent
+  highlights?: string[]
 }
 
 export interface ContactChannelContent {
@@ -56,6 +57,7 @@ export interface GalleryItemContent {
   subtitle: string
   description: string
   image: VisualAssetContent
+  facts?: string[]
 }
 
 export interface ContactDetailContent {
@@ -72,6 +74,9 @@ export interface DemoContent {
       src: string
       alt: string
     }
+    favicon?: string
+    browserTitle?: string
+    metaDescription?: string
     tagline: string
     phone: string
     phoneHref: string

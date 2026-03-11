@@ -7,9 +7,7 @@ export function SiteNav() {
   const [isOpen, setIsOpen] = useState(false)
   const { brandSystem, content, homePath, navItems, primaryCta } = useContext(DemoConfigContext)
   const isHospitality = brandSystem === 'hospitality'
-  const desktopNavItems = isHospitality
-    ? navItems.filter((item) => item.path !== primaryCta.path)
-    : navItems
+  const visibleNavItems = navItems.filter((item) => item.path !== primaryCta.path)
 
   useEffect(() => {
     if (!isOpen) {
@@ -56,7 +54,7 @@ export function SiteNav() {
           className={`primary-nav ${isOpen ? 'primary-nav--open' : ''}`}
           id="primary-nav"
         >
-          {desktopNavItems.map((item) => (
+          {visibleNavItems.map((item) => (
             <NavLink
               className={({ isActive }) =>
                 ['primary-nav__link', isActive ? 'primary-nav__link--active' : '']

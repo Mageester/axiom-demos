@@ -4,30 +4,23 @@ import { Button, ButtonAnchor } from '../../components/ui/Button'
 import { PageHero } from '../../components/ui/PageHero'
 import { Section } from '../../components/ui/Section'
 
+const issueOptions = [
+  'Active leak or water entry',
+  'Storm or wind damage concern',
+  'Aging roof needing inspection',
+  'Siding, soffit, or fascia issue',
+  'Eavestrough or drainage concern',
+  'Planning a full replacement',
+]
+
 const timelineOptions = [
+  'As soon as possible',
   'Within 30 days',
   '1 to 3 months',
-  '3 to 6 months',
   'Flexible planning horizon',
 ]
 
-const budgetOptions = [
-  'Under $7k',
-  '$7k to $15k',
-  '$15k to $30k',
-  '$30k+',
-  'Need guidance',
-]
-
-function getChannelAction(label: string) {
-  const normalized = label.toLowerCase()
-  if (normalized.includes('call')) return 'Call office'
-  if (normalized.includes('email')) return 'Email request'
-  if (normalized.includes('map')) return 'View map'
-  return 'Open'
-}
-
-export function QuotePage() {
+export function InspectionPage() {
   const [statusMessage, setStatusMessage] = useState('')
   const { content } = useContext(DemoConfigContext)
 
@@ -39,9 +32,8 @@ export function QuotePage() {
     const email = (formData.get('email') as string)?.trim() ?? ''
     const phone = (formData.get('phone') as string)?.trim() ?? ''
     const address = (formData.get('address') as string)?.trim() ?? ''
-    const service = (formData.get('service') as string)?.trim() ?? ''
+    const issue = (formData.get('issue') as string)?.trim() ?? ''
     const timeline = (formData.get('timeline') as string)?.trim() ?? ''
-    const budget = (formData.get('budget') as string)?.trim() ?? ''
     const notes = (formData.get('notes') as string)?.trim() ?? ''
 
     const body = [
@@ -49,19 +41,18 @@ export function QuotePage() {
       `Email: ${email || 'Not provided'}`,
       `Phone: ${phone || 'Not provided'}`,
       `Property Address: ${address || 'Not provided'}`,
-      `Primary Service: ${service || 'Not provided'}`,
-      `Preferred Timeline: ${timeline || 'Not provided'}`,
-      `Budget Band: ${budget || 'Not provided'}`,
-      `Project Notes: ${notes || 'None'}`,
+      `Primary Concern: ${issue || 'Not provided'}`,
+      `Preferred Timing: ${timeline || 'Not provided'}`,
+      `Inspection Notes: ${notes || 'None'}`,
     ].join('\n')
 
     const query = new URLSearchParams({
-      subject: `Estimate request from ${name || 'Homeowner'}`,
+      subject: `Inspection request from ${name || 'Homeowner'}`,
       body,
     })
 
     window.location.href = `${content.brand.emailHref}?${query.toString()}`
-    setStatusMessage('Your email app is opening with your estimate request details.')
+    setStatusMessage('Your email app is opening with your inspection request details.')
     event.currentTarget.reset()
   }
 
@@ -73,26 +64,26 @@ export function QuotePage() {
             Call office
           </ButtonAnchor>
         }
-        className="land-page-hero"
+        className="roof-page-hero"
         description={content.reservations.intro}
-        eyebrow="Estimate"
+        eyebrow="Inspection"
         media={content.home.hero.image}
-        signals={['Service-area review first', 'Scope fit before site visit', 'Clear labour and material visibility']}
-        title="Start with a clear project-fit review"
+        signals={['Inspection-led recommendations', 'Repair or replacement clarity', 'Photo-backed next steps']}
+        title="Request a roof or exterior inspection"
       />
 
       <Section
-        description="If you already know your service area and basic scope, these channels will get you to the right next step quickly."
+        description="If the issue is active water entry or recent storm damage, call directly. For everything else, use the channel that best fits your timeline."
         eyebrow="Direct options"
-        title="Estimate channels"
+        title="Inspection channels"
       >
-        <div className="land-contact-grid">
+        <div className="roof-contact-grid">
           {content.reservations.channels.map((channel) => (
-            <article className="land-contact-panel" key={channel.label}>
-              <p className="land-contact-panel__eyebrow">{channel.label}</p>
+            <article className="roof-contact-panel" key={channel.label}>
+              <p className="roof-section-eyebrow">{channel.label}</p>
               <h3>{channel.value}</h3>
               <ButtonAnchor href={channel.href} variant="secondary">
-                {getChannelAction(channel.label)}
+                {channel.label.toLowerCase().includes('call') ? 'Call office' : channel.label.toLowerCase().includes('email') ? 'Email request' : 'View map'}
               </ButtonAnchor>
             </article>
           ))}
@@ -100,12 +91,12 @@ export function QuotePage() {
       </Section>
 
       <Section
-        description="Share the practical details first so we can confirm scope fit, service area, and the right next scheduling step."
+        description="Send the core details first so Blackridge can confirm urgency, service-area fit, and the right next step before a site visit is booked."
         eyebrow="Form"
-        title="Estimate request form"
+        title="Inspection request form"
       >
-        <div className="reservation-layout reservation-layout--landscaping">
-          <form className="reservation-form reservation-form--landscaping" onSubmit={onSubmit}>
+        <div className="reservation-layout reservation-layout--roofing">
+          <form className="reservation-form reservation-form--roofing" onSubmit={onSubmit}>
             <label htmlFor="name">Full name</label>
             <input id="name" name="name" required type="text" />
 
@@ -118,19 +109,19 @@ export function QuotePage() {
             <label htmlFor="address">Property address</label>
             <input id="address" name="address" required type="text" />
 
-            <label htmlFor="service">Primary service focus</label>
-            <select id="service" name="service" required>
-              <option value="">Select service</option>
-              {content.menu.sections.map((section) => (
-                <option key={section.title} value={section.title}>
-                  {section.title}
+            <label htmlFor="issue">Primary concern</label>
+            <select id="issue" name="issue" required>
+              <option value="">Select concern</option>
+              {issueOptions.map((option) => (
+                <option key={option} value={option}>
+                  {option}
                 </option>
               ))}
             </select>
 
-            <label htmlFor="timeline">Preferred timeline</label>
+            <label htmlFor="timeline">Preferred timing</label>
             <select id="timeline" name="timeline" required>
-              <option value="">Select timeline</option>
+              <option value="">Select timing</option>
               {timelineOptions.map((option) => (
                 <option key={option} value={option}>
                   {option}
@@ -138,32 +129,22 @@ export function QuotePage() {
               ))}
             </select>
 
-            <label htmlFor="budget">Budget range</label>
-            <select id="budget" name="budget" required>
-              <option value="">Select range</option>
-              {budgetOptions.map((option) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
-              ))}
-            </select>
-
-            <label htmlFor="notes">Project notes</label>
+            <label htmlFor="notes">Inspection notes</label>
             <textarea id="notes" name="notes" rows={5} />
 
-            <Button type="submit">Send estimate request</Button>
+            <Button type="submit">Send inspection request</Button>
             {statusMessage ? <p className="form-status">{statusMessage}</p> : null}
           </form>
 
-          <aside className="policy-panel policy-panel--landscaping">
-            <h3>Before we schedule</h3>
+          <aside className="policy-panel policy-panel--roofing">
+            <h3>What happens next</h3>
             <ul>
               {content.reservations.policies.map((policy) => (
                 <li key={policy}>{policy}</li>
               ))}
             </ul>
             <p className="policy-panel__subtle">
-              If your timing is urgent, call {content.brand.phone} so we can confirm service-area fit and availability faster.
+              For active leaks or recent storm damage, call {content.brand.phone} so we can determine whether the request should be prioritized.
             </p>
           </aside>
         </div>

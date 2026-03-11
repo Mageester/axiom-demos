@@ -12,6 +12,10 @@ export const restaurantContent: DemoContent = {
       src: '/brands/atelier-meridian-mark.svg',
       alt: 'Atelier Meridian logo mark',
     },
+    favicon: '/favicon.svg',
+    browserTitle: 'Atelier Meridian | Toronto Restaurant',
+    metaDescription:
+      'Seasonal coastal dining on the Toronto waterfront with warm evening service, private dining, and reservations available Tuesday to Sunday.',
     tagline: 'Seasonal coastal dining by Toronto harbour',
     phone: '+1 (416) 555-0182',
     phoneHref: 'tel:+14165550182',

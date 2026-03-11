@@ -7,6 +7,12 @@ import { HomePage as LandscapingHomePage } from '../pages/landscaping/HomePage'
 import { ProjectsPage as LandscapingProjectsPage } from '../pages/landscaping/ProjectsPage'
 import { QuotePage as LandscapingQuotePage } from '../pages/landscaping/QuotePage'
 import { ServicesPage as LandscapingServicesPage } from '../pages/landscaping/ServicesPage'
+import { AboutPage as RoofingAboutPage } from '../pages/roofing/AboutPage'
+import { ContactPage as RoofingContactPage } from '../pages/roofing/ContactPage'
+import { HomePage as RoofingHomePage } from '../pages/roofing/HomePage'
+import { InspectionPage as RoofingInspectionPage } from '../pages/roofing/InspectionPage'
+import { ProjectsPage as RoofingProjectsPage } from '../pages/roofing/ProjectsPage'
+import { ServicesPage as RoofingServicesPage } from '../pages/roofing/ServicesPage'
 import { AboutPage as RestaurantAboutPage } from '../pages/AboutPage'
 import { ContactPage as RestaurantContactPage } from '../pages/ContactPage'
 import { GalleryPage as RestaurantGalleryPage } from '../pages/GalleryPage'
@@ -14,9 +20,12 @@ import { HomePage as RestaurantHomePage } from '../pages/HomePage'
 import { MenuPage as RestaurantMenuPage } from '../pages/MenuPage'
 import { ReservationsPage as RestaurantReservationsPage } from '../pages/ReservationsPage'
 import { landscapingContent } from '../content/landscapingContent'
+import { roofingContent } from '../content/roofingContent'
 import {
   landscapingNavItems,
   landscapingRoutes,
+  roofingNavItems,
+  roofingRoutes,
   restaurantNavItems,
   restaurantRoutes,
   type DemoRoutes,
@@ -24,8 +33,8 @@ import {
   type RoutePath,
 } from './routes'
 
-export type DemoKey = 'restaurant' | 'landscaping'
-export type DemoBrandSystem = 'hospitality' | 'service'
+export type DemoKey = 'restaurant' | 'landscaping' | 'roofing'
+export type DemoBrandSystem = 'hospitality' | 'service' | 'roofing'
 
 export interface DemoPageSet {
   HomePage: ComponentType
@@ -82,7 +91,7 @@ export const demoConfigsByKey: Record<DemoKey, DemoConfig> = {
     navItems: landscapingNavItems,
     homePath: landscapingRoutes.home,
     primaryCta: {
-      label: 'Request a quote',
+      label: 'Request estimate',
       path: landscapingRoutes.reservations,
     },
     pages: {
@@ -94,10 +103,31 @@ export const demoConfigsByKey: Record<DemoKey, DemoConfig> = {
       ReservationsPage: LandscapingQuotePage,
     },
   },
+  roofing: {
+    key: 'roofing',
+    theme: 'roofing',
+    brandSystem: 'roofing',
+    content: roofingContent,
+    routes: roofingRoutes,
+    navItems: roofingNavItems,
+    homePath: roofingRoutes.home,
+    primaryCta: {
+      label: 'Request inspection',
+      path: roofingRoutes.reservations,
+    },
+    pages: {
+      HomePage: RoofingHomePage,
+      MenuPage: RoofingServicesPage,
+      AboutPage: RoofingAboutPage,
+      GalleryPage: RoofingProjectsPage,
+      ContactPage: RoofingContactPage,
+      ReservationsPage: RoofingInspectionPage,
+    },
+  },
 }
 
 function isDemoKey(value: string): value is DemoKey {
-  return value === 'restaurant' || value === 'landscaping'
+  return value === 'restaurant' || value === 'landscaping' || value === 'roofing'
 }
 
 export const defaultDemoKey: DemoKey = 'restaurant'

@@ -5,6 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "build:demo": "node scripts/build-demo.mjs",
+    "build:restaurant": "npm run build:demo -- restaurant",
+    "build:landscaping": "npm run build:demo -- landscaping",
+    "build:roofing": "npm run build:demo -- roofing",
+    "build:all": "npm run build:demo -- restaurant landscaping roofing",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "npm run build && wrangler dev",
