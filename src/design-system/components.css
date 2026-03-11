@@ -1339,6 +1339,433 @@ textarea:focus-visible {
   padding-left: var(--space-5);
 }
 
+.land-home-hero {
+  border: 1px solid color-mix(in srgb, var(--color-border) 88%, black);
+  border-radius: calc(var(--radius-panel) + 6px);
+  display: grid;
+  gap: var(--space-5);
+  grid-template-columns: minmax(0, 1.2fr) minmax(20rem, 0.8fr);
+  margin-bottom: var(--space-6);
+  min-height: clamp(32rem, 78vh, 46rem);
+  overflow: hidden;
+  position: relative;
+}
+
+.land-home-hero__media,
+.land-home-hero__media img {
+  height: 100%;
+  width: 100%;
+}
+
+.land-home-hero__media {
+  inset: 0;
+  margin: 0;
+  position: absolute;
+}
+
+.land-home-hero__media img {
+  object-fit: cover;
+}
+
+.land-home-hero__veil {
+  background:
+    linear-gradient(108deg, rgb(7 11 8 / 84%) 0%, rgb(7 11 8 / 64%) 38%, rgb(7 11 8 / 34%) 62%, transparent 100%),
+    linear-gradient(to top, rgb(8 12 9 / 88%), rgb(8 12 9 / 28%));
+  inset: 0;
+  position: absolute;
+}
+
+.land-home-hero__content,
+.land-home-hero__panel {
+  position: relative;
+  z-index: 1;
+}
+
+.land-home-hero__content {
+  align-content: end;
+  display: grid;
+  gap: var(--space-4);
+  max-width: 42rem;
+  padding: clamp(2.25rem, 5vw, 4rem);
+}
+
+.land-home-hero__eyebrow,
+.land-home-hero__panel-eyebrow,
+.land-project-band__eyebrow,
+.land-project-card__eyebrow,
+.land-service-card__eyebrow,
+.land-standard-panel__eyebrow,
+.land-contact-panel__eyebrow,
+.land-service-section__eyebrow,
+.land-note-panel__eyebrow,
+.land-proof-strip__index {
+  color: color-mix(in srgb, var(--color-brand-strong) 86%, white);
+  font-size: var(--size-2xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.land-home-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.4rem);
+  line-height: 0.98;
+  max-width: 11ch;
+}
+
+.land-home-hero__description {
+  color: var(--color-text-secondary);
+  font-size: 1.04rem;
+  max-width: 58ch;
+}
+
+.land-home-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.land-home-hero__panel {
+  align-self: end;
+  background:
+    linear-gradient(180deg, rgb(14 20 15 / 92%), rgb(14 20 15 / 84%));
+  backdrop-filter: blur(12px);
+  border-left: 1px solid color-mix(in srgb, var(--color-border) 78%, black);
+  display: grid;
+  gap: var(--space-4);
+  min-height: 100%;
+  padding: clamp(1.75rem, 4vw, 2.6rem);
+}
+
+.land-home-hero__panel-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 2.3vw, 2rem);
+  line-height: 1.08;
+}
+
+.land-home-hero__signal-list {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.land-home-hero__signal-list li {
+  border-top: 1px solid color-mix(in srgb, var(--color-border) 72%, black);
+  color: var(--color-text-secondary);
+  padding-top: var(--space-3);
+}
+
+.land-home-hero__panel-meta {
+  border-top: 1px solid color-mix(in srgb, var(--color-border) 72%, black);
+  color: var(--color-text-muted);
+  display: grid;
+  gap: var(--space-2);
+  font-size: var(--size-xs);
+  padding-top: var(--space-4);
+}
+
+.land-proof-strip {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: var(--space-section);
+}
+
+.land-proof-strip__item {
+  background: color-mix(in srgb, var(--color-surface) 94%, black);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-5);
+}
+
+.land-proof-strip__item h2 {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  line-height: 1.1;
+}
+
+.land-proof-strip__item p:last-child {
+  color: var(--color-text-secondary);
+}
+
+.land-service-card {
+  background: color-mix(in srgb, var(--color-surface) 92%, black);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+
+.land-service-card__media,
+.land-service-card__media img {
+  width: 100%;
+}
+
+.land-service-card__media {
+  margin: 0;
+}
+
+.land-service-card__media img {
+  aspect-ratio: 16 / 11;
+  object-fit: cover;
+}
+
+.land-service-card__body {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-5) var(--space-5);
+}
+
+.land-service-card__body h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  line-height: 1.08;
+}
+
+.land-service-card__body p:last-child,
+.land-project-card__body p,
+.land-contact-panel p:not(.land-contact-panel__eyebrow),
+.land-fit-panel p,
+.land-team-panel p,
+.land-project-band__feature-body p,
+.land-project-band__item p {
+  color: var(--color-text-secondary);
+}
+
+.land-project-band {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.land-project-band__feature {
+  background: color-mix(in srgb, var(--color-surface) 92%, black);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-panel);
+  display: grid;
+  gap: var(--space-5);
+  grid-template-columns: 1.15fr 0.85fr;
+  overflow: hidden;
+}
+
+.land-project-band__feature-media,
+.land-project-band__feature-media img {
+  height: 100%;
+  width: 100%;
+}
+
+.land-project-band__feature-media {
+  margin: 0;
+}
+
+.land-project-band__feature-media img {
+  min-height: 26rem;
+  object-fit: cover;
+}
+
+.land-project-band__feature-body,
+.land-project-band__item > div {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.land-project-band__feature-body {
+  align-content: center;
+  padding: var(--space-6);
+}
+
+.land-project-band__feature-body h3,
+.land-project-band__item h3,
+.land-project-card__body h3,
+.land-fit-panel h3,
+.land-contact-panel h3,
+.land-team-panel h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 2.4vw, 2rem);
+  line-height: 1.06;
+}
+
+.land-project-band__stack {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.land-project-band__item {
+  background: color-mix(in srgb, var(--color-surface) 94%, black);
+  border: 1px solid color-mix(in srgb, var(--color-border) 80%, black);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+
+.land-project-band__item figure,
+.land-project-card__media {
+  margin: 0;
+}
+
+.land-project-band__item img,
+.land-project-card__media img {
+  aspect-ratio: 16 / 11;
+  object-fit: cover;
+  width: 100%;
+}
+
+.land-project-band__item > div {
+  padding: var(--space-4) var(--space-5) var(--space-5);
+}
+
+.land-project-cards,
+.land-project-grid,
+.land-fit-grid,
+.land-contact-grid,
+.land-team-grid {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.land-project-cards,
+.land-contact-grid,
+.land-team-grid,
+.land-fit-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.land-project-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.land-project-card {
+  background: color-mix(in srgb, var(--color-surface) 92%, black);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+
+.land-project-card--wide {
+  grid-column: span 2;
+}
+
+.land-project-card--wide .land-project-card__media img {
+  aspect-ratio: 21 / 9;
+}
+
+.land-project-card__body,
+.land-fit-panel,
+.land-contact-panel,
+.land-team-panel {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-5);
+}
+
+.land-fit-panel,
+.land-contact-panel,
+.land-team-panel {
+  background: color-mix(in srgb, var(--color-surface) 92%, black);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+}
+
+.land-team-panel__role {
+  color: color-mix(in srgb, var(--color-brand-strong) 84%, white);
+  font-size: var(--size-2xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.land-inline-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.land-inline-facts li {
+  background: color-mix(in srgb, var(--color-surface-strong) 68%, black);
+  border: 1px solid color-mix(in srgb, var(--color-border) 74%, black);
+  border-radius: 999px;
+  color: var(--color-text-secondary);
+  font-size: var(--size-2xs);
+  letter-spacing: 0.04em;
+  padding: 0.45rem 0.7rem;
+}
+
+.land-inline-facts--compact li {
+  font-size: 0.7rem;
+}
+
+.land-standard-layout {
+  align-items: start;
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: 0.9fr 0.7fr 0.8fr;
+}
+
+.land-standard-panel {
+  min-height: 100%;
+}
+
+.land-standard-panel--muted {
+  background: color-mix(in srgb, var(--color-surface-strong) 82%, black);
+}
+
+.land-service-section {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+}
+
+.land-service-section--reverse {
+  grid-template-columns: 1.1fr 0.9fr;
+}
+
+.land-service-section--reverse .land-service-section__media {
+  order: 2;
+}
+
+.land-service-section--reverse .land-service-section__content {
+  order: 1;
+}
+
+.land-service-section__content {
+  display: grid;
+  min-height: 100%;
+}
+
+.land-service-section__header {
+  padding-bottom: var(--space-5);
+}
+
+.land-service-section__eyebrow {
+  color: var(--color-text-secondary);
+}
+
+.land-contact-panel .btn,
+.land-team-panel .btn,
+.land-fit-panel .btn {
+  margin-top: var(--space-1);
+}
+
+.land-note-panel--split {
+  grid-template-columns: 1.1fr 0.9fr;
+}
+
+.land-note-panel__aside {
+  border-left: 1px solid color-mix(in srgb, var(--color-border) 78%, black);
+  display: grid;
+  gap: var(--space-3);
+  padding-left: var(--space-5);
+}
+
+.land-page-hero {
+  border-radius: calc(var(--radius-panel) + 4px);
+}
+
+.reservation-layout--landscaping .policy-panel {
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--color-surface) 92%, black),
+      color-mix(in srgb, var(--color-surface-strong) 88%, black)
+    );
+}
+
 .site-footer {
   background: color-mix(in srgb, var(--color-bg-soft) 88%, black);
   border-top: 1px solid var(--color-border);
@@ -1936,6 +2363,21 @@ body[data-demo-brand='service'] .site-brand__name {
   text-transform: none;
 }
 
+body[data-demo-brand='service'] .site-brand__mark {
+  background: linear-gradient(180deg, rgb(24 34 26 / 88%), rgb(18 26 20 / 92%));
+  border: 1px solid color-mix(in srgb, var(--color-brand) 26%, var(--color-border));
+  border-radius: 14px;
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 5%),
+    0 8px 18px rgb(6 10 7 / 22%);
+  overflow: hidden;
+}
+
+body[data-demo-brand='service'] .site-brand__mark img {
+  height: 2.7rem;
+  width: 2.7rem;
+}
+
 body[data-demo-brand='service'] .site-brand__city {
   letter-spacing: 0.08em;
 }
@@ -1966,28 +2408,31 @@ body[data-demo-brand='service'] .primary-nav__link--active {
 
 body[data-demo-brand='service'] .btn {
   font-size: var(--size-sm);
-  letter-spacing: 0.045em;
+  letter-spacing: 0.02em;
 }
 
 body[data-demo-brand='service'] .btn--primary {
   background: linear-gradient(
     136deg,
-    color-mix(in srgb, var(--color-brand) 84%, #d6f1af),
-    var(--color-brand),
-    color-mix(in srgb, var(--color-brand) 86%, #5f8d3b)
+    color-mix(in srgb, var(--color-brand) 68%, #dcecc0),
+    color-mix(in srgb, var(--color-brand) 92%, #95ba67),
+    color-mix(in srgb, var(--color-brand) 80%, #6d8f48)
   );
-  border-color: color-mix(in srgb, var(--color-brand) 76%, #d6f1af);
-  box-shadow: 0 10px 22px rgb(7 11 8 / 30%);
-  text-transform: uppercase;
+  border-color: color-mix(in srgb, var(--color-brand) 62%, #dcecc0);
+  box-shadow: 0 12px 24px rgb(7 11 8 / 28%);
+  font-weight: 700;
+  text-transform: none;
 }
 
 body[data-demo-brand='service'] .btn--secondary {
+  background: rgb(17 24 18 / 36%);
   border-color: color-mix(in srgb, var(--color-border) 88%, var(--color-brand));
 }
 
 body[data-demo-brand='service'] .page-hero {
   background:
     radial-gradient(circle at 8% 8%, rgb(156 201 111 / 13%), transparent 34%),
+    radial-gradient(circle at 88% 22%, rgb(194 214 148 / 10%), transparent 30%),
     linear-gradient(
       155deg,
       color-mix(in srgb, var(--color-surface) 87%, black),
@@ -2013,12 +2458,595 @@ body[data-demo-brand='service'] .site-footer {
   background: color-mix(in srgb, var(--color-bg-soft) 94%, black);
 }
 
+body[data-demo-brand='service'] .mobile-primary-cta {
+  background: color-mix(in srgb, var(--color-bg-soft) 94%, black);
+  backdrop-filter: blur(8px);
+}
+
+.roof-section-eyebrow,
+.roof-home-hero__eyebrow,
+.roof-home-hero__panel-eyebrow,
+.roof-proof-strip__index,
+.roof-team-panel__role {
+  color: color-mix(in srgb, var(--color-brand-strong) 88%, white);
+  font-size: var(--size-2xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.roof-home-hero {
+  border: 1px solid color-mix(in srgb, var(--color-border) 88%, black);
+  border-radius: calc(var(--radius-panel) + 4px);
+  display: grid;
+  gap: var(--space-5);
+  grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.85fr);
+  margin-bottom: var(--space-6);
+  min-height: clamp(31rem, 74vh, 42rem);
+  overflow: hidden;
+  position: relative;
+}
+
+.roof-home-hero__media,
+.roof-home-hero__media img {
+  height: 100%;
+  width: 100%;
+}
+
+.roof-home-hero__media {
+  inset: 0;
+  margin: 0;
+  position: absolute;
+}
+
+.roof-home-hero__media img {
+  object-fit: cover;
+}
+
+.roof-home-hero__veil {
+  background:
+    linear-gradient(106deg, rgb(8 11 16 / 86%) 0%, rgb(8 11 16 / 62%) 42%, rgb(8 11 16 / 34%) 64%, transparent 100%),
+    linear-gradient(to top, rgb(8 11 16 / 88%), rgb(8 11 16 / 32%));
+  inset: 0;
+  position: absolute;
+}
+
+.roof-home-hero__content,
+.roof-home-hero__panel {
+  position: relative;
+  z-index: 1;
+}
+
+.roof-home-hero__content {
+  align-content: end;
+  display: grid;
+  gap: var(--space-4);
+  max-width: 43rem;
+  padding: clamp(2rem, 5vw, 3.6rem);
+}
+
+.roof-home-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.35rem, 4.6vw, 4rem);
+  font-weight: 700;
+  line-height: 1.02;
+  max-width: 12ch;
+}
+
+.roof-home-hero__description {
+  color: var(--color-text-secondary);
+  max-width: 60ch;
+}
+
+.roof-home-hero__actions,
+.roof-section-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.roof-home-hero__panel {
+  align-self: stretch;
+  background:
+    linear-gradient(
+      180deg,
+      rgb(12 16 22 / 92%),
+      rgb(12 16 22 / 84%)
+    );
+  border-left: 1px solid color-mix(in srgb, var(--color-border) 80%, black);
+  display: grid;
+  gap: var(--space-4);
+  padding: clamp(1.6rem, 3.6vw, 2.2rem);
+}
+
+.roof-home-hero__signal-list {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.roof-home-hero__signal-list li {
+  border-top: 1px solid color-mix(in srgb, var(--color-border) 72%, black);
+  color: var(--color-text-secondary);
+  padding-top: var(--space-3);
+}
+
+.roof-home-hero__panel-meta {
+  border-top: 1px solid color-mix(in srgb, var(--color-border) 72%, black);
+  color: var(--color-text-muted);
+  display: grid;
+  gap: var(--space-2);
+  font-size: var(--size-xs);
+  padding-top: var(--space-4);
+}
+
+.roof-proof-strip,
+.roof-contact-grid,
+.roof-fit-grid,
+.roof-team-grid {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.roof-proof-strip {
+  margin-bottom: var(--space-section);
+}
+
+.roof-proof-strip__item,
+.roof-fit-panel,
+.roof-contact-panel,
+.roof-team-panel {
+  background: color-mix(in srgb, var(--color-surface) 94%, black);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-5);
+}
+
+.roof-proof-strip__item h2,
+.roof-fit-panel h3,
+.roof-contact-panel h3,
+.roof-team-panel h3,
+.roof-service-band__body h3,
+.roof-service-card__body h3,
+.roof-project-feature__body h3,
+.roof-project-feature__item h3,
+.roof-project-spotlight__body h2,
+.roof-project-card__body h3,
+.roof-service-panel__header h2,
+.roof-service-list__item h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+  font-weight: 700;
+  line-height: 1.08;
+}
+
+.roof-proof-strip__item p:last-child,
+.roof-fit-panel p,
+.roof-contact-panel p:not(.roof-section-eyebrow),
+.roof-team-panel p:not(.roof-team-panel__role),
+.roof-service-band__body p:last-child,
+.roof-service-card__body p:last-child,
+.roof-project-feature__body p,
+.roof-project-feature__item p,
+.roof-project-spotlight__body p,
+.roof-project-card__body p,
+.roof-service-panel__header p,
+.roof-service-list__item p,
+.roof-note-panel p,
+.roof-note-panel li,
+.roof-story-layout__copy p {
+  color: var(--color-text-secondary);
+}
+
+.roof-service-band {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: 1.2fr 0.8fr;
+}
+
+.roof-service-band__feature,
+.roof-project-feature__main,
+.roof-project-spotlight {
+  background: color-mix(in srgb, var(--color-surface) 92%, black);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-panel);
+  display: grid;
+  gap: var(--space-5);
+  grid-template-columns: 1.08fr 0.92fr;
+  overflow: hidden;
+}
+
+.roof-service-band__media,
+.roof-project-feature__media,
+.roof-project-spotlight__media {
+  margin: 0;
+}
+
+.roof-service-band__media img,
+.roof-project-feature__media img,
+.roof-project-spotlight__media img {
+  height: 100%;
+  min-height: 22rem;
+  object-fit: cover;
+  width: 100%;
+}
+
+.roof-service-band__body,
+.roof-project-feature__body,
+.roof-project-spotlight__body {
+  align-content: center;
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-6);
+}
+
+.roof-service-band__stack,
+.roof-project-feature__stack {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.roof-service-card,
+.roof-project-feature__item,
+.roof-project-card,
+.roof-service-panel {
+  background: color-mix(in srgb, var(--color-surface) 92%, black);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+
+.roof-service-card__media,
+.roof-project-feature__item figure,
+.roof-project-card__media,
+.roof-service-panel__media {
+  margin: 0;
+}
+
+.roof-service-card__media img,
+.roof-project-feature__item img,
+.roof-project-card__media img {
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  width: 100%;
+}
+
+.roof-service-card__body,
+.roof-project-feature__item > div,
+.roof-project-card__body {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5) var(--space-5);
+}
+
+.roof-inline-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.roof-inline-facts li {
+  background: color-mix(in srgb, var(--color-surface-strong) 74%, black);
+  border: 1px solid color-mix(in srgb, var(--color-border) 70%, black);
+  border-radius: 8px;
+  color: var(--color-text-secondary);
+  font-size: var(--size-2xs);
+  letter-spacing: 0.04em;
+  padding: 0.45rem 0.7rem;
+  text-transform: uppercase;
+}
+
+.roof-inline-facts--compact li {
+  font-size: 0.68rem;
+}
+
+.roof-project-grid {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.roof-project-card--wide {
+  grid-column: span 2;
+}
+
+.roof-project-card--wide .roof-project-card__media img {
+  aspect-ratio: 21 / 9;
+}
+
+.roof-process-grid {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: 0.85fr 0.8fr 0.85fr;
+}
+
+.roof-process-panel {
+  background: color-mix(in srgb, var(--color-surface) 94%, black);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  display: grid;
+  gap: var(--space-4);
+  padding: var(--space-5);
+}
+
+.roof-process-panel--muted {
+  background: color-mix(in srgb, var(--color-surface-strong) 82%, black);
+}
+
+.roof-process-media {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.roof-process-media__item {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  margin: 0;
+  overflow: hidden;
+}
+
+.roof-process-media__item img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  width: 100%;
+}
+
+.roof-callout-band {
+  align-items: start;
+  background:
+    linear-gradient(
+      140deg,
+      color-mix(in srgb, var(--color-surface-strong) 90%, black),
+      color-mix(in srgb, var(--color-surface) 92%, black)
+    );
+  border: 1px solid color-mix(in srgb, var(--color-brand) 34%, var(--color-border));
+  border-radius: var(--radius-panel);
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: 1.15fr 0.85fr;
+  padding: var(--space-6);
+}
+
+.roof-callout-band__meta {
+  color: var(--color-text-muted);
+  font-size: var(--size-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.roof-service-sections {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.roof-service-panel {
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+}
+
+.roof-service-panel__media img {
+  height: 100%;
+  min-height: 20rem;
+  object-fit: cover;
+  width: 100%;
+}
+
+.roof-service-panel__content {
+  display: grid;
+}
+
+.roof-service-panel__header {
+  border-bottom: 1px solid var(--color-border);
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-5);
+}
+
+.roof-service-list {
+  display: grid;
+  gap: var(--space-2);
+  list-style: none;
+  padding: var(--space-4) var(--space-5) var(--space-5);
+}
+
+.roof-service-list__item {
+  border: 1px solid color-mix(in srgb, var(--color-border) 78%, black);
+  border-radius: 8px;
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-4);
+}
+
+.roof-service-list__row {
+  align-items: baseline;
+  display: flex;
+  gap: var(--space-3);
+  justify-content: space-between;
+}
+
+.roof-service-list__row span {
+  color: var(--color-brand-strong);
+  font-size: var(--size-xs);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.roof-story-layout {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: 1fr 0.9fr;
+}
+
+.roof-story-layout__copy,
+.roof-story-layout__visuals {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.roof-story-layout__item {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  margin: 0;
+  overflow: hidden;
+}
+
+.roof-story-layout__item img {
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  width: 100%;
+}
+
+.roof-story-layout__item figcaption {
+  color: var(--color-text-muted);
+  font-size: var(--size-2xs);
+  letter-spacing: 0.08em;
+  padding: var(--space-3) var(--space-4) var(--space-4);
+  text-transform: uppercase;
+}
+
+.roof-note-panel {
+  background: color-mix(in srgb, var(--color-surface) 92%, black);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-panel);
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: 1fr 0.9fr;
+  padding: var(--space-5);
+}
+
+.roof-note-panel ul {
+  display: grid;
+  gap: var(--space-3);
+  padding-left: var(--space-5);
+}
+
+.roof-note-panel__aside {
+  border-left: 1px solid color-mix(in srgb, var(--color-border) 78%, black);
+  display: grid;
+  gap: var(--space-3);
+  padding-left: var(--space-5);
+}
+
+body[data-demo-brand='roofing'] .site-nav-wrap {
+  background: color-mix(in srgb, var(--color-bg-soft) 95%, black);
+  border-bottom-color: color-mix(in srgb, var(--color-border) 88%, black);
+  box-shadow: 0 10px 20px rgb(6 9 13 / 24%);
+}
+
+body[data-demo-brand='roofing'] .site-brand__mark {
+  background: linear-gradient(180deg, rgb(18 23 31 / 94%), rgb(13 18 25 / 96%));
+  border: 1px solid color-mix(in srgb, var(--color-brand) 34%, var(--color-border));
+  border-radius: 10px;
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 4%),
+    0 10px 18px rgb(7 10 14 / 24%);
+  overflow: hidden;
+}
+
+body[data-demo-brand='roofing'] .site-brand__mark img {
+  height: 2.7rem;
+  width: 2.7rem;
+}
+
+body[data-demo-brand='roofing'] .site-brand__name {
+  font-size: clamp(1.25rem, 1.55vw, 1.55rem);
+  font-weight: 700;
+  letter-spacing: 0.015em;
+  text-transform: none;
+}
+
+body[data-demo-brand='roofing'] .primary-nav {
+  gap: var(--space-3);
+}
+
+body[data-demo-brand='roofing'] .primary-nav__link {
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: color-mix(in srgb, var(--color-text-primary) 90%, var(--color-text-muted));
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  padding: 0.52rem 0.8rem;
+}
+
+body[data-demo-brand='roofing'] .primary-nav__link:hover {
+  background: color-mix(in srgb, var(--color-surface-strong) 60%, black);
+  border-color: color-mix(in srgb, var(--color-brand) 34%, var(--color-border));
+}
+
+body[data-demo-brand='roofing'] .primary-nav__link--active {
+  background: color-mix(in srgb, var(--color-surface-strong) 76%, black);
+  border-color: color-mix(in srgb, var(--color-brand) 34%, var(--color-border));
+}
+
+body[data-demo-brand='roofing'] .btn {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+body[data-demo-brand='roofing'] .btn--primary {
+  background: linear-gradient(
+    136deg,
+    color-mix(in srgb, var(--color-brand) 84%, #f3bc7f),
+    var(--color-brand),
+    color-mix(in srgb, var(--color-brand) 78%, #bd6535)
+  );
+  border-color: color-mix(in srgb, var(--color-brand) 70%, #f3bc7f);
+  box-shadow: 0 12px 24px rgb(8 10 14 / 28%);
+  text-transform: uppercase;
+}
+
+body[data-demo-brand='roofing'] .btn--secondary {
+  background: rgb(16 22 29 / 32%);
+  border-color: color-mix(in srgb, var(--color-border) 90%, var(--color-brand));
+}
+
+body[data-demo-brand='roofing'] .page-hero {
+  background:
+    radial-gradient(circle at 84% 20%, rgb(214 125 66 / 12%), transparent 28%),
+    radial-gradient(circle at 12% 8%, rgb(92 112 138 / 14%), transparent 34%),
+    linear-gradient(
+      150deg,
+      color-mix(in srgb, var(--color-surface) 90%, black),
+      color-mix(in srgb, var(--color-surface-strong) 88%, black)
+    );
+}
+
+body[data-demo-brand='roofing'] .page-hero__title {
+  max-width: 18ch;
+}
+
+body[data-demo-brand='roofing'] .card {
+  background: color-mix(in srgb, var(--color-surface) 94%, black);
+  box-shadow: 0 12px 24px rgb(7 10 14 / 18%);
+}
+
+body[data-demo-brand='roofing'] .site-footer {
+  background: color-mix(in srgb, var(--color-bg-soft) 96%, black);
+}
+
+body[data-demo-brand='roofing'] .mobile-primary-cta {
+  background: color-mix(in srgb, var(--color-bg-soft) 96%, black);
+  backdrop-filter: blur(8px);
+}
+
 @media (max-width: 980px) {
   .card-grid--3,
   .atmosphere-strip,
   .dish-grid,
   .gallery-mosaic,
+  .land-contact-grid,
+  .land-fit-grid,
+  .land-proof-strip,
+  .land-project-cards,
+  .land-team-grid,
   .menu-preview-grid,
+  .roof-contact-grid,
+  .roof-fit-grid,
+  .roof-proof-strip,
+  .roof-team-grid,
   .restaurant-atmosphere-grid,
   .restaurant-link-grid--3,
   .restaurant-visit-grid,
@@ -2031,11 +3059,26 @@ body[data-demo-brand='service'] .site-footer {
 
   .dish-showcase,
   .gallery-feature-grid,
+  .land-home-hero,
+  .land-note-panel--split,
+  .land-project-band__feature,
+  .land-service-section,
+  .land-service-section--reverse,
+  .land-standard-layout,
   .land-feature-project,
   .land-process-layout,
   .land-service-showcase,
   .land-transformation__layout,
   .land-quote-band,
+  .roof-callout-band,
+  .roof-home-hero,
+  .roof-note-panel,
+  .roof-project-feature__main,
+  .roof-project-spotlight,
+  .roof-process-grid,
+  .roof-service-band,
+  .roof-service-panel,
+  .roof-story-layout,
   .reservation-callout,
   .page-hero--media,
   .restaurant-tonight-layout,
@@ -2062,6 +3105,15 @@ body[data-demo-brand='service'] .site-footer {
 
   .land-transformation__visuals {
     grid-template-columns: 1fr;
+  }
+
+  .land-project-band__stack,
+  .land-project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .roof-project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .gallery-wall {
@@ -2093,6 +3145,43 @@ body[data-demo-brand='service'] .site-footer {
 
   .restaurant-home-hero__title {
     max-width: 17ch;
+  }
+
+  .land-home-hero__content,
+  .land-home-hero__panel {
+    padding: var(--space-5);
+  }
+
+  .land-home-hero__panel {
+    border-left: 0;
+    border-top: 1px solid color-mix(in srgb, var(--color-border) 78%, black);
+  }
+
+  .land-note-panel__aside {
+    border-left: 0;
+    border-top: 1px solid color-mix(in srgb, var(--color-border) 78%, black);
+    padding-left: 0;
+    padding-top: var(--space-4);
+  }
+
+  .roof-home-hero__content,
+  .roof-home-hero__panel,
+  .roof-project-feature__body,
+  .roof-project-spotlight__body,
+  .roof-service-band__body {
+    padding: var(--space-5);
+  }
+
+  .roof-home-hero__panel {
+    border-left: 0;
+    border-top: 1px solid color-mix(in srgb, var(--color-border) 78%, black);
+  }
+
+  .roof-note-panel__aside {
+    border-left: 0;
+    border-top: 1px solid color-mix(in srgb, var(--color-border) 78%, black);
+    padding-left: 0;
+    padding-top: var(--space-4);
   }
 
   .restaurant-private-layout__body,
@@ -2157,7 +3246,19 @@ body[data-demo-brand='service'] .site-footer {
   .dish-grid,
   .gallery-wall,
   .gallery-mosaic,
+  .land-contact-grid,
+  .land-fit-grid,
+  .land-proof-strip,
+  .land-project-band__stack,
+  .land-project-cards,
+  .land-project-grid,
+  .land-team-grid,
   .menu-preview-grid,
+  .roof-contact-grid,
+  .roof-fit-grid,
+  .roof-proof-strip,
+  .roof-project-grid,
+  .roof-team-grid,
   .restaurant-atmosphere-grid,
   .restaurant-link-grid--3,
   .restaurant-visit-grid,
@@ -2178,6 +3279,58 @@ body[data-demo-brand='service'] .site-footer {
 
   .land-quote-band {
     padding: var(--space-5);
+  }
+
+  .land-home-hero {
+    min-height: 34rem;
+  }
+
+  .land-home-hero__title {
+    max-width: 12ch;
+  }
+
+  .land-home-hero__actions,
+  .land-section-actions,
+  .experience-panel__actions {
+    width: 100%;
+  }
+
+  .land-home-hero__actions .btn,
+  .land-section-actions .btn,
+  .experience-panel__actions .btn {
+    width: 100%;
+  }
+
+  .land-project-card--wide {
+    grid-column: span 1;
+  }
+
+  .land-project-band__feature-media img {
+    min-height: 16rem;
+  }
+
+  .roof-home-hero {
+    min-height: 33rem;
+  }
+
+  .roof-home-hero__title {
+    max-width: 13ch;
+  }
+
+  .roof-home-hero__actions .btn,
+  .roof-section-actions .btn {
+    width: 100%;
+  }
+
+  .roof-project-card--wide {
+    grid-column: span 1;
+  }
+
+  .roof-project-feature__media img,
+  .roof-project-spotlight__media img,
+  .roof-service-band__media img,
+  .roof-service-panel__media img {
+    min-height: 16rem;
   }
 
   .restaurant-home-hero {

@@ -8,6 +8,14 @@ export const landscapingContent: DemoContent = {
   brand: {
     name: 'Northline Outdoor Studio',
     city: 'Toronto & West GTA',
+    logo: {
+      src: '/brands/northline-outdoor-mark.svg',
+      alt: 'Northline Outdoor Studio logo mark',
+    },
+    favicon: '/brands/northline-outdoor-favicon.svg',
+    browserTitle: 'Northline Outdoor Studio | Premium Landscaping',
+    metaDescription:
+      'Premium residential landscaping and outdoor living for Toronto and the West GTA. Patios, planting, lighting, and curb appeal upgrades with clear project planning.',
     tagline: 'Premium residential landscaping and outdoor living builds',
     phone: '+1 (647) 555-0139',
     phoneHref: 'tel:+16475550139',
@@ -23,16 +31,16 @@ export const landscapingContent: DemoContent = {
   },
   home: {
     hero: {
-      eyebrow: 'Design-Build Landscaping | Toronto & West GTA',
-      title: 'Outdoor spaces designed to elevate curb appeal and everyday living.',
+      eyebrow: 'Premium Landscaping | Toronto & West GTA',
+      title: 'Outdoor spaces that look sharper, live better, and hold up season after season.',
       description:
-        'Northline plans and builds premium residential landscapes with disciplined scope, durable materials, and a clear quote-to-completion process.',
-      primaryCta: 'Request a quote',
+        'Northline designs and builds refined patios, front entries, planting plans, and lighting upgrades for homeowners who want stronger curb appeal and a better way to use the property.',
+      primaryCta: 'Request estimate',
       secondaryCta: 'Explore services',
       signals: [
-        'Licensed and insured project crews',
-        'Drainage and grading reviewed before install',
-        'Single-point communication from site visit to handoff',
+        'Patios, planting, lighting, and curb appeal upgrades',
+        'Projects planned around property conditions before materials are chosen',
+        'Service area fit confirmed before on-site consultations are booked',
       ],
       image: {
         src: pexelsPhoto('1029599', 1800, 1200),
@@ -42,19 +50,19 @@ export const landscapingContent: DemoContent = {
     },
     highlights: [
       {
-        title: 'Scope-first site planning',
+        title: 'Design-build planning',
         description:
-          'Measurements, grade, and drainage are locked before design recommendations so projects avoid avoidable rework.',
+          'Layouts, drainage, and material direction are resolved before installation starts, so the finished work feels intentional from every angle.',
       },
       {
-        title: 'Craft-grade installation standards',
+        title: 'Clean, controlled installs',
         description:
-          'Hardscape base prep, edge control, and planting depth are executed to hold performance through seasonal cycles.',
+          'Crews protect access points, keep the site orderly, and close each phase with the same care visible in the final result.',
       },
       {
-        title: 'Tight communication cadence',
+        title: 'Built for Ontario seasons',
         description:
-          'Homeowners get transparent scheduling updates, clean job-site expectations, and a structured final walkthrough.',
+          'Base prep, edge restraint, lighting, and planting choices are made to keep the property performing through real seasonal cycles.',
       },
     ],
     featuredDishes: [
@@ -62,7 +70,7 @@ export const landscapingContent: DemoContent = {
         name: 'Custom Patios & Entertaining Zones',
         course: 'Outdoor living',
         description:
-          'Stone and porcelain patio builds designed for hosting flow, furniture layout, and long-term durability.',
+          'Stone and porcelain patio builds planned around furniture layout, circulation, and a cleaner hosting experience.',
         image: {
           src: pexelsPhoto('2132227', 1400, 1000),
           alt: 'Stone patio with seating and layered garden beds',
@@ -71,9 +79,9 @@ export const landscapingContent: DemoContent = {
       },
       {
         name: 'Front Entry & Curb Appeal Upgrades',
-        course: 'Residential frontage',
+        course: 'Arrival and frontage',
         description:
-          'Driveway borders, pathways, and planting plans that sharpen first impression and property presence.',
+          'Walkways, borders, and planting plans that give the property a stronger first read before anyone reaches the door.',
         image: {
           src: pexelsPhoto('2802293', 1400, 1000),
           alt: 'Refined front yard landscaping with walkway lighting and planting',
@@ -82,9 +90,9 @@ export const landscapingContent: DemoContent = {
       },
       {
         name: 'Landscape Lighting & Planting Refresh',
-        course: 'After-dark ambience',
+        course: 'Evening presence',
         description:
-          'Low-voltage lighting and seasonal plant strategy to keep the property polished day and night.',
+          'Low-voltage lighting and seasonal planting updates that keep the yard polished after dark and through peak season.',
         image: {
           src: pexelsPhoto('1453499', 1400, 1000),
           alt: 'Residential garden with warm pathway lighting at dusk',
@@ -93,13 +101,13 @@ export const landscapingContent: DemoContent = {
       },
     ],
     experience: {
-      title: 'A controlled delivery model for premium outdoor projects',
+      title: 'A disciplined project path from first walk-through to final handoff',
       description:
-        'Every project follows a clear sequence so homeowners can compare options confidently and move from quote to completion without guesswork.',
+        'Every Northline project is structured to keep site decisions clear, installation quality visible, and communication easy for the homeowner.',
       points: [
-        'On-site discovery visit with constraints, access, and condition review',
-        'Material and layout recommendations with staged scope options',
-        'Build schedule, milestone check-ins, and final quality walkthrough',
+        'Property walk-through with constraints, access, drainage, and grading reviewed on site',
+        'Layout and material recommendations shaped around how the yard will actually be used',
+        'Build schedule, site updates, and a final quality walkthrough before closeout',
       ],
       images: [
         {
@@ -117,11 +125,12 @@ export const landscapingContent: DemoContent = {
   },
   menu: {
     intro:
-      'Service lines are organized to cover planning, installation, and seasonal upkeep for premium residential properties.',
+      'Northline handles planning, installation, and seasonal refinement for premium residential properties across Toronto and the west end.',
     sections: [
       {
         title: 'Design & Planning',
-        note: 'Pre-build clarity to protect budget, timeline, and final finish quality.',
+        note: 'Early clarity on layout, grade, drainage, and material direction before any build decisions are locked.',
+        highlights: ['Best for full-property planning', 'Site-led layout decisions', 'Material direction before install'],
         image: {
           src: pexelsPhoto('2739666', 1200, 900),
           alt: 'Landscape planning table with material samples and drawings',
@@ -147,7 +156,8 @@ export const landscapingContent: DemoContent = {
       },
       {
         title: 'Build & Installation',
-        note: 'Core outdoor construction for high-use residential spaces.',
+        note: 'Core hardscape and planting work for outdoor spaces that need to look polished and perform reliably.',
+        highlights: ['Patios and walkways', 'Walls, steps, and grade transitions', 'Softscape finishing and lawn reset'],
         image: {
           src: pexelsPhoto('1028599', 1200, 900),
           alt: 'Completed backyard hardscape with patio and retaining wall',
@@ -173,7 +183,8 @@ export const landscapingContent: DemoContent = {
       },
       {
         title: 'Seasonal Care & Refresh',
-        note: 'Ongoing upkeep to preserve curb appeal after installation.',
+        note: 'Property upkeep and targeted refresh work that protects the finish after the major install is complete.',
+        highlights: ['Spring reset', 'Peak-season polish visits', 'Autumn protection and cleanup'],
         image: {
           src: pexelsPhoto('2132171', 1200, 900),
           alt: 'Maintained garden bed and lawn at a residential property',
@@ -201,53 +212,53 @@ export const landscapingContent: DemoContent = {
   },
   about: {
     intro:
-      'Northline was built for homeowners who want premium outdoor spaces without messy communication or uncertain execution.',
+      'Northline was built for homeowners who want premium outdoor work delivered with cleaner planning, calmer communication, and stronger finish quality.',
     story: [
-      'We approach landscaping as design-build work, not one-off labour. Each project starts with goals, constraints, and a clear sequence.',
-      'Our crews focus on clean workmanship and controlled site conduct. We protect access points, communicate schedule shifts early, and close each day with a reset standard.',
-      'The result is an outdoor space that feels intentional, raises property confidence, and performs season after season.',
+      'We approach landscaping as design-build work. The first decisions are about how the property should function, where the constraints are, and what will still look right years from now.',
+      'Our crews are measured by more than the visible surface. Site conduct, access protection, tidy handoff between phases, and clear homeowner communication are part of the finished product.',
+      'The goal is simple: an exterior that feels more composed, is easier to live with, and gives the property a stronger presence from the street to the back fence.',
     ],
     values: [
       {
         title: 'Craft before speed',
         description:
-          'We prioritize proper prep, level accuracy, and detail finish over rushing through visible surfaces.',
+          'Prep, level accuracy, and finish detailing come before rushed installs or shortcuts that only look good on day one.',
       },
       {
-        title: 'Transparent project control',
+        title: 'Clear project control',
         description:
-          'Scope, materials, and milestones are documented clearly so homeowners know exactly what is being delivered.',
+          'Scope, materials, and milestones are documented clearly so homeowners know what is being delivered and when.',
       },
       {
         title: 'Respect for the property',
         description:
-          'Crew conduct, site cleanliness, and final handoff standards are treated as part of the build quality.',
+          'Clean site conduct, careful access management, and a proper handoff are treated as part of the job, not extras.',
       },
     ],
     team: [
       {
         name: 'Evan North',
         role: 'Founder & Build Lead',
-        bio: 'Evan oversees scope planning and hardscape execution for premium residential installations.',
+        bio: 'Evan leads site planning, hardscape execution, and final quality review across Northline projects.',
       },
       {
         name: 'Alana Reyes',
         role: 'Design Coordinator',
-        bio: 'Alana guides concept layouts, material direction, and planting strategy aligned to each property.',
+        bio: 'Alana shapes layout direction, planting strategy, and material combinations that suit each property.',
       },
       {
         name: 'Noel Chen',
         role: 'Project Operations',
-        bio: 'Noel manages schedule communication, supplier coordination, and final walkthrough delivery.',
+        bio: 'Noel manages schedule communication, supplier coordination, and homeowner handoff from first visit through closeout.',
       },
     ],
   },
   reservations: {
     intro:
-      'Share your property goals, service area, and timing. We respond with a clear next step and scope fit guidance.',
+      'Tell us what part of the property you want to improve, where you are located, and your timing. We will confirm service-area fit and recommend the right next step.',
     policies: [
-      'New inquiries are typically reviewed within one business day.',
-      'On-site consultations are booked after scope and area fit are confirmed.',
+      'New quote requests are usually reviewed within one business day.',
+      'On-site consultations are scheduled after scope fit and service area are confirmed.',
       'Quotes are staged with clear labour and material visibility before approval.',
     ],
     channels: [
@@ -257,7 +268,7 @@ export const landscapingContent: DemoContent = {
         href: 'tel:+16475550139',
       },
       {
-        label: 'Email quotes',
+        label: 'Email estimate request',
         value: 'quotes@northlineoutdoor.ca',
         href: 'mailto:quotes@northlineoutdoor.ca',
       },
@@ -270,13 +281,14 @@ export const landscapingContent: DemoContent = {
   },
   gallery: {
     intro:
-      'Recent demonstration projects showing patios, curb appeal upgrades, and outdoor living transformations.',
+      'A selection of residential projects focused on curb appeal, outdoor living, and stronger day-to-day use of the property.',
     collections: [
       {
         title: 'Backyard Entertaining Terrace',
-        subtitle: 'Patio + planting package',
+        subtitle: 'Patio and planting package',
         description:
-          'Porcelain patio zone with layered planters and integrated circulation for hosting flow.',
+          'Porcelain patio zone with layered planters and integrated circulation for a cleaner hosting layout.',
+        facts: ['Rear-yard focus', 'Porcelain paving', 'Planting and circulation'],
         image: {
           src: pexelsPhoto('280215', 1200, 900),
           alt: 'Backyard patio with clean paving and modern landscaping',
@@ -287,7 +299,8 @@ export const landscapingContent: DemoContent = {
         title: 'Front Approach Refresh',
         subtitle: 'Curb appeal upgrade',
         description:
-          'Entry path rebuild with structured planting and elevation transitions for stronger first impression.',
+          'Entry path rebuild with structured planting and elevation transitions for a stronger arrival sequence.',
+        facts: ['Walkway rebuild', 'Front-bed framing', 'Improved first impression'],
         image: {
           src: pexelsPhoto('2662116', 1200, 900),
           alt: 'Front yard pathway redesign with planting and stonework',
@@ -296,9 +309,10 @@ export const landscapingContent: DemoContent = {
       },
       {
         title: 'Garden Retaining Wall System',
-        subtitle: 'Grade control + visual structure',
+        subtitle: 'Grade control and visual structure',
         description:
-          'Terraced retaining walls and defined beds that improve drainage and property composition.',
+          'Terraced retaining walls and defined beds that improve drainage while giving the yard stronger composition.',
+        facts: ['Retaining wall system', 'Drainage-aware planning', 'Layered garden beds'],
         image: {
           src: pexelsPhoto('1402787', 1200, 900),
           alt: 'Residential retaining wall and layered garden beds',
@@ -309,7 +323,8 @@ export const landscapingContent: DemoContent = {
         title: 'Outdoor Lounge Lighting',
         subtitle: 'Evening-ready ambience',
         description:
-          'Low-voltage path and feature lighting that supports safety while elevating night presence.',
+          'Low-voltage path and feature lighting that supports safety while elevating the property after dark.',
+        facts: ['Low-voltage lighting', 'Path and feature layers', 'Night presence'],
         image: {
           src: pexelsPhoto('2906509', 1200, 900),
           alt: 'Landscape lighting around a patio and garden at dusk',
@@ -320,7 +335,8 @@ export const landscapingContent: DemoContent = {
         title: 'Seasonal Planting Refresh',
         subtitle: 'Colour and texture reset',
         description:
-          'Targeted planting updates and mulch detailing to sharpen property appearance through peak season.',
+          'Targeted planting updates and mulch detailing to sharpen the property through peak season.',
+        facts: ['Softscape refresh', 'Mulch detailing', 'Peak-season polish'],
         image: {
           src: pexelsPhoto('1903964', 1200, 900),
           alt: 'Fresh seasonal planting with flowers and clean mulch beds',
@@ -331,7 +347,8 @@ export const landscapingContent: DemoContent = {
         title: 'Complete Front-to-Back Upgrade',
         subtitle: 'Design-build transformation',
         description:
-          'Integrated hardscape, lawn, and planting program delivered as a single coordinated build.',
+          'Integrated hardscape, lawn, and planting work delivered as one coordinated property-wide build.',
+        facts: ['Full property scope', 'Hardscape and softscape', 'Single coordinated install'],
         image: {
           src: pexelsPhoto('1591447', 1200, 900),
           alt: 'Residential property with completed front and backyard landscaping',
@@ -342,7 +359,7 @@ export const landscapingContent: DemoContent = {
   },
   contact: {
     intro:
-      'Use direct channels to discuss scope fit, service area, and timeline before scheduling your site consultation.',
+      'Reach Northline directly to confirm service area, discuss scope, or plan a site visit.',
     details: [
       {
         label: 'Call office',
@@ -350,20 +367,20 @@ export const landscapingContent: DemoContent = {
         href: 'tel:+16475550139',
       },
       {
-        label: 'Email quotes',
+        label: 'Email estimate request',
         value: 'quotes@northlineoutdoor.ca',
         href: 'mailto:quotes@northlineoutdoor.ca',
       },
       {
-        label: 'Office / service area',
+        label: 'Office and service area',
         value: '85 Cedarview Avenue, Etobicoke, ON',
         href: 'https://maps.google.com/?q=85+Cedarview+Avenue+Etobicoke+ON',
       },
     ],
     notes: [
-      'Include property address and target service area in your first message for faster scope fit review.',
-      'If you have target completion timing, add it upfront so we can recommend practical project sequencing.',
-      'Photo references of the current yard help us prepare a more accurate consultation call.',
+      'Include the property address and target scope in your first message so we can confirm fit quickly.',
+      'If you have a target completion window, add it early and we can recommend a realistic project sequence.',
+      'Current photos of the yard or frontage help us prepare for a more useful first call.',
     ],
   },
 }

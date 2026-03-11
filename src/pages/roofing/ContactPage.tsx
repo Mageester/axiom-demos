@@ -7,7 +7,7 @@ import { Section } from '../../components/ui/Section'
 function getActionLabel(label: string) {
   const normalized = label.toLowerCase()
   if (normalized.includes('call')) return 'Call office'
-  if (normalized.includes('email')) return 'Email Northline'
+  if (normalized.includes('email')) return 'Email Blackridge'
   if (normalized.includes('map') || normalized.includes('service area') || normalized.includes('office')) {
     return 'View map'
   }
@@ -25,26 +25,26 @@ export function ContactPage() {
             <ButtonAnchor href={content.brand.phoneHref} variant="secondary">
               Call office
             </ButtonAnchor>
-            <ButtonLink to={routes.reservations}>Request estimate</ButtonLink>
+            <ButtonLink to={routes.reservations}>Request inspection</ButtonLink>
           </>
         }
-        className="land-page-hero"
+        className="roof-page-hero"
         description={content.contact.intro}
         eyebrow="Contact"
         media={content.gallery.collections[5]?.image}
-        signals={['Service area fit first', 'Quote replies within one business day', 'On-site visits booked after review']}
-        title="Talk through service area, scope, and project timing"
+        signals={['Inspection replies within one business day', 'Urgent leak calls prioritized when possible', 'Service-area fit confirmed first']}
+        title="Speak with Blackridge about your roof or exterior concern"
       />
 
       <Section
-        description="Use the channel that fits your next step best. If you already know the property address and target scope, include them right away."
-        eyebrow="Direct contact"
-        title="Northline contact channels"
+        description="Use the direct channel that best fits the urgency of the issue and how much you already know about the property condition."
+        eyebrow="Direct channels"
+        title="Contact Blackridge"
       >
-        <div className="land-contact-grid">
+        <div className="roof-contact-grid">
           {content.contact.details.map((detail) => (
-            <article className="land-contact-panel" key={detail.label}>
-              <p className="land-contact-panel__eyebrow">{detail.label}</p>
+            <article className="roof-contact-panel" key={detail.label}>
+              <p className="roof-section-eyebrow">{detail.label}</p>
               <h3>{detail.value}</h3>
               {detail.href ? (
                 <ButtonAnchor href={detail.href} variant="secondary">
@@ -57,24 +57,24 @@ export function ContactPage() {
       </Section>
 
       <Section
-        description="A strong first inquiry usually includes the property address, the area you want to improve, and any timing constraints."
-        eyebrow="Before you reach out"
+        description="A better first message includes the property address, what you are seeing, and whether the issue is active damage or preventative planning."
+        eyebrow="Before you call"
         title="What to include"
       >
-        <div className="land-note-panel land-note-panel--split">
+        <div className="roof-note-panel">
           <ul>
             {content.contact.notes.map((note) => (
               <li key={note}>{note}</li>
             ))}
           </ul>
-          <div className="land-note-panel__aside">
-            <p className="land-note-panel__eyebrow">Best fit</p>
+          <div className="roof-note-panel__aside">
+            <p className="roof-section-eyebrow">Best fit</p>
             <p>
-              Northline is strongest on premium residential projects in Toronto and the west end where finish quality,
-              curb appeal, and cleaner project control matter.
+              Blackridge is strongest on residential roofing and exterior scopes where inspection, clear options,
+              and stronger site control matter more than a vague low-end quote.
             </p>
-            <div className="land-section-actions">
-              <ButtonLink to={routes.reservations}>Start estimate request</ButtonLink>
+            <div className="roof-section-actions">
+              <ButtonLink to={routes.reservations}>Start inspection request</ButtonLink>
               <ButtonAnchor href={content.brand.phoneHref} variant="secondary">
                 Call {content.brand.phone}
               </ButtonAnchor>
