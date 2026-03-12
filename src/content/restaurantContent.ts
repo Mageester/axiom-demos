@@ -7,13 +7,13 @@ function pexelsPhoto(id: string, width = 1600, height = 1100) {
 export const restaurantContent: DemoContent = {
   brand: {
     name: 'Atelier Meridian',
-    city: 'Toronto',
+    city: 'Harbourfront, Toronto',
     logo: {
       src: '/brands/atelier-meridian-mark.svg',
       alt: 'Atelier Meridian logo mark',
     },
     favicon: '/favicon.svg',
-    browserTitle: 'Atelier Meridian | Toronto Restaurant',
+    browserTitle: 'Atelier Meridian | Harbourfront Restaurant',
     metaDescription:
       'Seasonal coastal dining on the Toronto waterfront with warm evening service, private dining, and reservations available Tuesday to Sunday.',
     tagline: 'Seasonal coastal dining by Toronto harbour',

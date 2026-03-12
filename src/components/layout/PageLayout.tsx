@@ -50,8 +50,8 @@ export function PageLayout() {
         <Outlet />
       </main>
       <SiteFooter />
-      <div className="mobile-primary-cta">
-        <ButtonLink fullWidth size="lg" to={primaryCta.path}>
+      <div className={`mobile-primary-cta ${brandSystem === 'hospitality' ? 'mobile-primary-cta--hospitality' : brandSystem === 'service' ? 'mobile-primary-cta--service' : ''}`}>
+        <ButtonLink fullWidth size="lg" to={primaryCta.path} variant={brandSystem === 'hospitality' ? 'secondary' : 'primary'}>
           {primaryCta.label}
         </ButtonLink>
       </div>

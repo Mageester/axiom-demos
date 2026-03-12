@@ -7,6 +7,7 @@ export function SiteNav() {
   const [isOpen, setIsOpen] = useState(false)
   const { brandSystem, content, homePath, navItems, primaryCta } = useContext(DemoConfigContext)
   const isHospitality = brandSystem === 'hospitality'
+  const isService = brandSystem === 'service'
   const visibleNavItems = navItems.filter((item) => item.path !== primaryCta.path)
 
   useEffect(() => {
@@ -26,7 +27,7 @@ export function SiteNav() {
 
   return (
     <header className="site-nav-wrap">
-      <div className="site-nav">
+      <div className={`site-nav ${isHospitality ? 'site-nav--hospitality' : ''} ${isService ? 'site-nav--service' : ''}`}>
         <NavLink className="site-brand" to={homePath}>
           {content.brand.logo ? (
             <span className="site-brand__mark" aria-hidden="true">
@@ -50,34 +51,71 @@ export function SiteNav() {
           Menu
         </button>
 
-        <nav
-          className={`primary-nav ${isOpen ? 'primary-nav--open' : ''}`}
-          id="primary-nav"
-        >
-          {visibleNavItems.map((item) => (
-            <NavLink
-              className={({ isActive }) =>
-                ['primary-nav__link', isActive ? 'primary-nav__link--active' : '']
-                  .filter(Boolean)
-                  .join(' ')
-              }
-              key={item.path}
-              onClick={() => setIsOpen(false)}
-              to={item.path}
+        {isService ? (
+          <div className={`site-nav__service-shell ${isOpen ? 'site-nav__service-shell--open' : ''}`}>
+            <div className="site-nav__service-utility">
+              <div>
+                <p className="site-nav__service-label">Serving</p>
+                <p className="site-nav__service-meta">{content.brand.city}</p>
+              </div>
+              <a className="site-nav__service-phone" href={content.brand.phoneHref}>
+                {content.brand.phone}
+              </a>
+            </div>
+
+            <nav
+              className={`primary-nav ${isOpen ? 'primary-nav--open' : ''}`}
+              id="primary-nav"
             >
-              {item.label}
-            </NavLink>
-          ))}
-          {isHospitality ? (
-            <ButtonLink className="primary-nav__cta primary-nav__cta--hospitality" onClick={() => setIsOpen(false)} size="md" to={primaryCta.path} variant="secondary">
-              {primaryCta.label}
-            </ButtonLink>
-          ) : (
-            <ButtonLink className="primary-nav__cta" onClick={() => setIsOpen(false)} size="md" to={primaryCta.path}>
-              {primaryCta.label}
-            </ButtonLink>
-          )}
-        </nav>
+              {visibleNavItems.map((item) => (
+                <NavLink
+                  className={({ isActive }) =>
+                    ['primary-nav__link', isActive ? 'primary-nav__link--active' : '']
+                      .filter(Boolean)
+                      .join(' ')
+                  }
+                  key={item.path}
+                  onClick={() => setIsOpen(false)}
+                  to={item.path}
+                >
+                  {item.label}
+                </NavLink>
+              ))}
+              <ButtonLink className="primary-nav__cta" onClick={() => setIsOpen(false)} size="md" to={primaryCta.path}>
+                {primaryCta.label}
+              </ButtonLink>
+            </nav>
+          </div>
+        ) : (
+          <nav
+            className={`primary-nav ${isOpen ? 'primary-nav--open' : ''}`}
+            id="primary-nav"
+          >
+            {visibleNavItems.map((item) => (
+              <NavLink
+                className={({ isActive }) =>
+                  ['primary-nav__link', isActive ? 'primary-nav__link--active' : '']
+                    .filter(Boolean)
+                    .join(' ')
+                }
+                key={item.path}
+                onClick={() => setIsOpen(false)}
+                to={item.path}
+              >
+                {item.label}
+              </NavLink>
+            ))}
+            {isHospitality ? (
+              <ButtonLink className="primary-nav__cta primary-nav__cta--hospitality" onClick={() => setIsOpen(false)} size="md" to={primaryCta.path} variant="secondary">
+                {primaryCta.label}
+              </ButtonLink>
+            ) : (
+              <ButtonLink className="primary-nav__cta" onClick={() => setIsOpen(false)} size="md" to={primaryCta.path}>
+                {primaryCta.label}
+              </ButtonLink>
+            )}
+          </nav>
+        )}
       </div>
     </header>
   )

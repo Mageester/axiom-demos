@@ -103,6 +103,41 @@
   margin-left: var(--space-2);
 }
 
+.site-nav__service-shell {
+  align-items: center;
+  display: flex;
+  gap: var(--space-4);
+  margin-left: auto;
+}
+
+.site-nav__service-utility {
+  align-items: flex-end;
+  display: grid;
+  gap: 0.15rem;
+  text-align: right;
+}
+
+.site-nav__service-label {
+  color: var(--color-text-muted);
+  font-size: var(--size-2xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.site-nav__service-meta {
+  color: var(--color-text-primary);
+  font-size: var(--size-sm);
+  font-weight: 600;
+}
+
+.site-nav__service-phone {
+  color: var(--color-text-primary);
+  font-family: var(--font-nav);
+  font-size: var(--size-xs);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
 .page-hero {
   background: linear-gradient(
     140deg,
@@ -1801,7 +1836,10 @@ textarea:focus-visible {
 
 .site-footer__grid p,
 .site-footer__grid li,
-.site-footer__grid a {
+.site-footer__grid a,
+.site-footer__service-grid p,
+.site-footer__service-grid li,
+.site-footer__service-grid a {
   color: var(--color-text-secondary);
 }
 
@@ -1812,6 +1850,26 @@ textarea:focus-visible {
   margin: var(--space-6) auto 0;
   max-width: var(--container-max);
   padding-top: var(--space-4);
+}
+
+.site-footer__service-top,
+.site-footer__service-grid {
+  margin: 0 auto;
+  max-width: var(--container-max);
+}
+
+.site-footer__service-top {
+  align-items: center;
+  display: flex;
+  gap: var(--space-5);
+  justify-content: space-between;
+  margin-bottom: var(--space-6);
+}
+
+.site-footer__service-grid {
+  display: grid;
+  gap: var(--space-5);
+  grid-template-columns: 1.2fr 1fr 1fr;
 }
 
 .mobile-primary-cta {
@@ -1832,9 +1890,21 @@ body[data-demo-brand='hospitality'] .site-nav-wrap {
   border-bottom-color: color-mix(in srgb, var(--color-border) 86%, black);
 }
 
+body[data-demo-brand='hospitality'] .site-nav--hospitality {
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: auto 1fr auto;
+}
+
 body[data-demo-brand='hospitality'] .site-brand__name {
   font-size: clamp(1.5rem, 2.1vw, 2rem);
   letter-spacing: 0.015em;
+}
+
+body[data-demo-brand='hospitality'] .site-brand__city {
+  color: color-mix(in srgb, var(--color-text-muted) 84%, white);
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
 }
 
 body[data-demo-brand='hospitality'] .site-brand__mark {
@@ -1857,6 +1927,11 @@ body[data-demo-brand='hospitality'] .primary-nav__link {
   font-weight: 500;
   letter-spacing: 0.04em;
   text-transform: none;
+}
+
+body[data-demo-brand='hospitality'] .primary-nav {
+  gap: var(--space-3);
+  justify-self: center;
 }
 
 body[data-demo-brand='hospitality'] .primary-nav__link:hover {
@@ -1925,6 +2000,10 @@ body[data-demo-brand='hospitality'] .site-footer--hospitality {
     );
 }
 
+body[data-demo-brand='hospitality'] .site-footer--hospitality .site-footer__grid {
+  column-gap: clamp(2rem, 4vw, 4rem);
+}
+
 body[data-demo-brand='hospitality'] .site-footer--hospitality .site-footer__brand {
   font-size: clamp(1.55rem, 2.4vw, 2.1rem);
 }
@@ -1936,6 +2015,12 @@ body[data-demo-brand='hospitality'] .site-footer--hospitality .site-footer__tagl
 body[data-demo-brand='hospitality'] .mobile-primary-cta {
   background: color-mix(in srgb, var(--color-bg-soft) 92%, black);
   backdrop-filter: blur(10px);
+}
+
+body[data-demo-brand='hospitality'] .mobile-primary-cta--hospitality .btn {
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+  text-transform: none;
 }
 
 .restaurant-home-hero {
@@ -2357,6 +2442,11 @@ body[data-demo-brand='service'] .site-nav-wrap {
   backdrop-filter: blur(10px);
 }
 
+body[data-demo-brand='service'] .site-nav--service {
+  align-items: center;
+  gap: var(--space-5);
+}
+
 body[data-demo-brand='service'] .site-brand__name {
   font-size: clamp(1.32rem, 1.7vw, 1.65rem);
   font-weight: 600;
@@ -2381,6 +2471,19 @@ body[data-demo-brand='service'] .site-brand__mark img {
 
 body[data-demo-brand='service'] .site-brand__city {
   letter-spacing: 0.08em;
+}
+
+body[data-demo-brand='service'] .site-nav__service-shell {
+  gap: var(--space-5);
+}
+
+body[data-demo-brand='service'] .site-nav__service-utility {
+  border-right: 1px solid color-mix(in srgb, var(--color-border) 84%, white);
+  padding-right: var(--space-4);
+}
+
+body[data-demo-brand='service'] .site-nav__service-phone {
+  color: color-mix(in srgb, var(--color-brand-strong) 80%, #1d2d1f);
 }
 
 body[data-demo-brand='service'] .primary-nav {
@@ -2431,6 +2534,11 @@ body[data-demo-brand='service'] .btn--secondary {
   color: var(--color-text-primary);
 }
 
+body[data-demo-brand='service'] .btn--primary,
+body[data-demo-brand='service'] .btn--secondary {
+  border-radius: 12px;
+}
+
 body[data-demo-brand='service'] .page-hero {
   background:
     radial-gradient(circle at 8% 8%, rgb(126 158 120 / 10%), transparent 34%),
@@ -2461,9 +2569,30 @@ body[data-demo-brand='service'] .site-footer {
   background: color-mix(in srgb, var(--color-bg-soft) 72%, white);
 }
 
+body[data-demo-brand='service'] .site-footer--service {
+  border-top-color: color-mix(in srgb, var(--color-border) 88%, white);
+}
+
+body[data-demo-brand='service'] .site-footer--service .site-footer__brand {
+  font-size: clamp(1.45rem, 2vw, 1.9rem);
+}
+
+body[data-demo-brand='service'] .site-footer--service .site-footer__tagline {
+  max-width: 34rem;
+}
+
+body[data-demo-brand='service'] .site-footer__service-cta {
+  min-width: 12rem;
+}
+
 body[data-demo-brand='service'] .mobile-primary-cta {
   background: color-mix(in srgb, var(--color-surface) 88%, white);
   backdrop-filter: blur(8px);
+}
+
+body[data-demo-brand='service'] .mobile-primary-cta--service {
+  background: color-mix(in srgb, var(--color-surface) 92%, white);
+  box-shadow: 0 -8px 22px rgb(74 84 69 / 10%);
 }
 
 .land-home-intro {
@@ -2472,6 +2601,37 @@ body[data-demo-brand='service'] .mobile-primary-cta {
   gap: var(--space-6);
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   margin-bottom: var(--space-section);
+}
+
+.land-home-section {
+  margin-bottom: var(--space-section);
+}
+
+.land-home-section__header {
+  display: grid;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+  max-width: 48rem;
+}
+
+.land-home-section__eyebrow {
+  color: color-mix(in srgb, var(--color-brand-strong) 88%, white);
+  font-size: var(--size-2xs);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.land-home-section__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.6vw, 3.2rem);
+  line-height: 1.02;
+  max-width: 15ch;
+}
+
+.land-home-section__description {
+  color: var(--color-text-secondary);
+  max-width: 60ch;
 }
 
 .land-home-intro__copy {
@@ -3554,7 +3714,8 @@ body[data-demo-brand='roofing'] .mobile-primary-cta {
   .restaurant-values-grid,
   .team-grid,
   .restaurant-team-grid,
-  .site-footer__grid {
+  .site-footer__grid,
+  .site-footer__service-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -3690,6 +3851,11 @@ body[data-demo-brand='roofing'] .mobile-primary-cta {
   .restaurant-reservation-module__copy {
     padding: var(--space-5);
   }
+
+  .site-footer__service-top {
+    align-items: start;
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 760px) {
@@ -3708,6 +3874,27 @@ body[data-demo-brand='roofing'] .mobile-primary-cta {
 
   .mobile-menu-toggle {
     display: inline-flex;
+  }
+
+  .site-nav__service-shell {
+    border-top: 1px solid var(--color-border);
+    display: none;
+    flex-direction: column;
+    gap: var(--space-3);
+    margin-top: var(--space-2);
+    padding-top: var(--space-3);
+    width: 100%;
+  }
+
+  .site-nav__service-shell--open {
+    display: flex;
+  }
+
+  .site-nav__service-utility {
+    align-items: flex-start;
+    border-right: 0;
+    padding-right: 0;
+    text-align: left;
   }
 
   .primary-nav {
@@ -3766,7 +3953,8 @@ body[data-demo-brand='roofing'] .mobile-primary-cta {
   .restaurant-values-grid,
   .team-grid,
   .restaurant-team-grid,
-  .site-footer__grid {
+  .site-footer__grid,
+  .site-footer__service-grid {
     grid-template-columns: 1fr;
   }
 

@@ -1,7 +1,6 @@
 import { useContext } from 'react'
 import { DemoConfigContext } from '../../config/demoConfig'
 import { ButtonAnchor, ButtonLink } from '../../components/ui/Button'
-import { Section } from '../../components/ui/Section'
 
 export function HomePage() {
   const { content, routes } = useContext(DemoConfigContext)
@@ -9,14 +8,10 @@ export function HomePage() {
   const supportingServices = content.home.featuredDishes.slice(1)
   const featuredProject = content.gallery.collections[0]
   const supportingProjects = content.gallery.collections.slice(1, 4)
-  const fitImages = [
+  const processImages = [
     content.home.experience.images[0],
     content.home.experience.images[1] ?? content.gallery.collections[3]?.image,
   ].filter(Boolean)
-  const mapHref = content.contact.details.find((detail) => {
-    const normalizedLabel = detail.label.toLowerCase()
-    return normalizedLabel.includes('service area') || normalizedLabel.includes('map') || normalizedLabel.includes('office')
-  })?.href
 
   return (
     <>
@@ -81,11 +76,14 @@ export function HomePage() {
         ))}
       </section>
 
-      <Section
-        description="Northline handles the residential landscaping work people usually call about when the property needs a more finished look and a better layout."
-        eyebrow="Services"
-        title="Landscaping work for the front yard, backyard, and around the house"
-      >
+      <section className="land-home-section">
+        <header className="land-home-section__header">
+          <p className="land-home-section__eyebrow">Services</p>
+          <h2 className="land-home-section__title">Landscaping work for the front yard, backyard, and around the house</h2>
+          <p className="land-home-section__description">
+            Northline handles the residential landscaping work people usually call about when the property needs a more finished look and a better layout.
+          </p>
+        </header>
         <div className="land-service-showcase">
           {featuredService ? (
             <article className="land-service-focus">
@@ -135,14 +133,17 @@ export function HomePage() {
             Request a quote
           </ButtonLink>
         </div>
-      </Section>
+      </section>
 
       {featuredProject ? (
-        <Section
-          description="A sample of the type of front-yard, backyard, and outdoor-living work Northline is built to take on."
-          eyebrow="Recent work"
-          title="Projects that clean up the whole property"
-        >
+        <section className="land-home-section">
+          <header className="land-home-section__header">
+            <p className="land-home-section__eyebrow">Recent work</p>
+            <h2 className="land-home-section__title">Projects that clean up the whole property</h2>
+            <p className="land-home-section__description">
+              A sample of the type of front-yard, backyard, and outdoor-living work Northline is built to take on.
+            </p>
+          </header>
           <div className="land-project-band">
             <article className="land-project-band__feature">
               <figure className="land-project-band__feature-media">
@@ -197,58 +198,58 @@ export function HomePage() {
               ))}
             </div>
           </div>
-        </Section>
+        </section>
       ) : null}
 
-      <Section
-        description="Most Northline inquiries come from homeowners planning a real exterior upgrade, not a quick one-day patch."
-        eyebrow="Typical projects"
-        title="The kind of properties we usually get called for"
-      >
-        <div className="land-transformation">
-          <div className="land-transformation__layout">
-            <div className="land-transformation__visuals">
-              {fitImages.map((image) => (
-                <figure className="land-transformation__item" key={image.src}>
-                  <img
-                    alt={image.alt}
-                    loading="lazy"
-                    src={image.src}
-                    style={image.position ? { objectPosition: image.position } : undefined}
-                  />
-                  <span className="land-transformation__caption">{image.alt}</span>
-                </figure>
-              ))}
-            </div>
-
-            <div className="land-transformation__body">
-              <p>
-                Northline is usually brought in when the front of the house needs a better first impression,
-                the backyard needs to be easier to use, or the whole property still feels unfinished.
-              </p>
+      <section className="land-home-section">
+        <header className="land-home-section__header">
+          <p className="land-home-section__eyebrow">What to expect</p>
+          <h2 className="land-home-section__title">What happens before work starts</h2>
+          <p className="land-home-section__description">
+            Most Northline jobs start with the address, a quick conversation about the yard, and a site review before a price is finalized.
+          </p>
+        </header>
+        <div className="land-process-layout">
+          <div className="land-fit-grid">
+            {content.home.experience.points.map((point, index) => (
+              <article className="land-fit-panel" key={point}>
+                <p className="land-home-section__eyebrow">Step 0{index + 1}</p>
+                <p>{point}</p>
+              </article>
+            ))}
+            <article className="land-fit-panel">
+              <p className="land-home-section__eyebrow">Before we schedule</p>
               <ul className="plain-list confidence-list">
-                <li>Front-yard upgrades that improve arrival, curb appeal, and day-to-day upkeep</li>
-                <li>Backyard patios and walkways that make the space easier to use and host in</li>
-                <li>Planting, lighting, and grading work that needs to hold together as one project</li>
+                {content.reservations.policies.map((policy) => (
+                  <li key={policy}>{policy}</li>
+                ))}
               </ul>
-              <div className="land-section-actions">
-                <ButtonLink to={routes.about}>About Northline</ButtonLink>
-                {mapHref ? (
-                  <ButtonAnchor href={mapHref} variant="secondary">
-                    View service area
-                  </ButtonAnchor>
-                ) : null}
-              </div>
-            </div>
+            </article>
+          </div>
+
+          <div className="land-process-media">
+            {processImages.map((image) => (
+              <figure className="land-process-media__item" key={image.src}>
+                <img
+                  alt={image.alt}
+                  loading="lazy"
+                  src={image.src}
+                  style={image.position ? { objectPosition: image.position } : undefined}
+                />
+              </figure>
+            ))}
           </div>
         </div>
-      </Section>
+      </section>
 
-      <Section
-        description="Start with the property address, the part of the yard you want to improve, and any timing constraints."
-        eyebrow="Request a quote"
-        title="Tell us what you want to change"
-      >
+      <section className="land-home-section">
+        <header className="land-home-section__header">
+          <p className="land-home-section__eyebrow">Request a quote</p>
+          <h2 className="land-home-section__title">Tell us what you want to change</h2>
+          <p className="land-home-section__description">
+            Start with the property address, the part of the yard you want to improve, and any timing constraints.
+          </p>
+        </header>
         <div className="land-quote-band">
           <div>
             <p>
@@ -264,7 +265,7 @@ export function HomePage() {
           </div>
           <p className="land-quote-band__meta">Serving Toronto, Etobicoke, Mississauga, and Oakville</p>
         </div>
-      </Section>
+      </section>
     </>
   )
 }

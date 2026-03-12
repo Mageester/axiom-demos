@@ -1,9 +1,11 @@
 import { useContext } from 'react'
 import { DemoConfigContext } from '../../config/demoConfig'
+import { ButtonLink } from '../ui/Button'
 
 export function SiteFooter() {
-  const { brandSystem, content } = useContext(DemoConfigContext)
+  const { brandSystem, content, primaryCta } = useContext(DemoConfigContext)
   const isHospitality = brandSystem === 'hospitality'
+  const isService = brandSystem === 'service'
   const isRoofing = brandSystem === 'roofing'
   const visitHeading = isHospitality ? 'Visit The Dining Room' : 'Service Area'
   const hoursHeading = isHospitality ? 'Dinner Service' : isRoofing ? 'Office Hours' : 'Consultation Hours'
@@ -13,6 +15,54 @@ export function SiteFooter() {
     : isRoofing
       ? `${content.brand.tagline}. Inspection visits are scheduled after issue and service-area fit are confirmed.`
       : `${content.brand.tagline}. Site visits are scheduled after scope fit is confirmed.`
+
+  if (isService) {
+    return (
+      <footer className="site-footer site-footer--service">
+        <div className="site-footer__service-top">
+          <div>
+            <h2 className="site-footer__brand">{content.brand.name}</h2>
+            <p className="site-footer__tagline">{content.brand.tagline}</p>
+          </div>
+          <ButtonLink className="site-footer__service-cta" size="md" to={primaryCta.path}>
+            {primaryCta.label}
+          </ButtonLink>
+        </div>
+
+        <div className="site-footer__service-grid">
+          <div>
+            <h3 className="site-footer__heading">Areas We Serve</h3>
+            <p>{content.brand.city}</p>
+            <p>{content.brand.address}</p>
+          </div>
+
+          <div>
+            <h3 className="site-footer__heading">Office Hours</h3>
+            <ul className="plain-list">
+              {content.brand.hours.map((hour) => (
+                <li key={hour}>{hour}</li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="site-footer__heading">Call Or Email</h3>
+            <ul className="plain-list">
+              <li>
+                <a href={content.brand.phoneHref}>{content.brand.phone}</a>
+              </li>
+              <li>
+                <a href={content.brand.emailHref}>{content.brand.email}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p className="site-footer__legal">
+          {new Date().getFullYear()} {content.brand.legalLine}
+        </p>
+      </footer>
+    )
+  }
 
   return (
     <footer className={`site-footer ${isHospitality ? 'site-footer--hospitality' : ''}`}>
