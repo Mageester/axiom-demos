@@ -111,8 +111,14 @@ VITE_DEMO_KEY=roofing
 
 Resolver behavior:
 
-- If `VITE_DEMO_KEY` is missing, fallback is `restaurant`.
-- If `VITE_DEMO_KEY` is unknown, the app logs a loud console error and falls back to `restaurant`.
+- If `VITE_DEMO_KEY` is valid, it wins.
+- If `VITE_DEMO_KEY` is missing, the app next checks the runtime hostname.
+- Recognized hostnames currently include:
+  - `restaurant.getaxiom.ca`
+  - `landscaping.getaxiom.ca`
+  - `roofing.getaxiom.ca`
+- If `VITE_DEMO_KEY` is unknown, the app logs a loud console error and prefers a recognized hostname over the default fallback.
+- If neither env nor hostname resolves a demo, fallback is `restaurant`.
 - Valid values are currently `restaurant`, `landscaping`, and `roofing`.
 
 ## Adding Additional Demos
@@ -153,7 +159,7 @@ Why Pages projects are the right approach:
 - each demo needs a different build-time `VITE_DEMO_KEY`
 - each demo needs its own custom domain and release lifecycle
 
-A single Pages project is incorrect for this repo because one Pages build can only output one branded demo at a time. If you reuse one project for all three subdomains, whichever demo was built last becomes the active output for every bound domain.
+The app now also has a hostname-based runtime safety net, so a missed or invalid `VITE_DEMO_KEY` does not silently collapse every subdomain to restaurant. Separate Pages projects are still the recommended setup because they keep releases, custom domains, and rollback decisions isolated per demo.
 
 `wrangler.jsonc` remains useful for Worker-based local preview or alternate deployment flows, but it is not the recommended multi-subdomain setup for these branded demo sites.
 
@@ -233,6 +239,19 @@ A single Pages project is incorrect for this repo because one Pages build can on
    - `roofing.getaxiom.ca`
 6. Trigger an initial deploy for each project.
 7. Verify each subdomain resolves to the correct demo and route set.
+
+## If Every Subdomain Shows Restaurant
+
+Check these in order:
+
+1. Confirm the deployment is running a build that includes the current `demoConfig.ts` hostname resolver.
+2. Confirm the intended subdomain is actually attached to the expected Cloudflare Pages project.
+3. Confirm the project build command matches the demo:
+   - `npm run build:restaurant`
+   - `npm run build:landscaping`
+   - `npm run build:roofing`
+4. If you are using raw env-based builds instead of the dedicated scripts, confirm `VITE_DEMO_KEY` is set correctly per project.
+5. Redeploy after any Cloudflare project or custom-domain change.
 
 ## Local Verification Commands
 
