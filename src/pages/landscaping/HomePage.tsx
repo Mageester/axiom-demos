@@ -6,24 +6,45 @@ import { Section } from '../../components/ui/Section'
 export function HomePage() {
   const { content, routes } = useContext(DemoConfigContext)
   const featuredService = content.home.featuredDishes[0]
-  const serviceCards = content.home.featuredDishes.slice(1)
+  const supportingServices = content.home.featuredDishes.slice(1)
   const featuredProject = content.gallery.collections[0]
-  const supportingProjects = content.gallery.collections.slice(1, 3)
+  const supportingProjects = content.gallery.collections.slice(1, 4)
+  const fitImages = [
+    content.home.experience.images[0],
+    content.home.experience.images[1] ?? content.gallery.collections[3]?.image,
+  ].filter(Boolean)
   const mapHref = content.contact.details.find((detail) => {
     const normalizedLabel = detail.label.toLowerCase()
-    return normalizedLabel.includes('service area') || normalizedLabel.includes('map')
+    return normalizedLabel.includes('service area') || normalizedLabel.includes('map') || normalizedLabel.includes('office')
   })?.href
 
   return (
     <>
-      <section className="land-home-intro">
-        <div className="land-home-intro__copy">
+      <section className="land-home-hero">
+        {content.home.hero.image ? (
+          <figure className="land-home-hero__media">
+            <img
+              alt={content.home.hero.image.alt}
+              loading="eager"
+              src={content.home.hero.image.src}
+              style={
+                content.home.hero.image.position
+                  ? { objectPosition: content.home.hero.image.position }
+                  : undefined
+              }
+            />
+          </figure>
+        ) : null}
+
+        <div className="land-home-hero__veil" />
+
+        <div className="land-home-hero__content">
           {content.home.hero.eyebrow ? (
-            <p className="land-home-intro__eyebrow">{content.home.hero.eyebrow}</p>
+            <p className="land-home-hero__eyebrow">{content.home.hero.eyebrow}</p>
           ) : null}
-          <h1 className="land-home-intro__title">{content.home.hero.title}</h1>
-          <p className="land-home-intro__description">{content.home.hero.description}</p>
-          <div className="land-home-intro__actions">
+          <h1 className="land-home-hero__title">{content.home.hero.title}</h1>
+          <p className="land-home-hero__description">{content.home.hero.description}</p>
+          <div className="land-home-hero__actions">
             <ButtonLink size="lg" to={routes.reservations}>
               {content.home.hero.primaryCta}
             </ButtonLink>
@@ -31,68 +52,100 @@ export function HomePage() {
               View projects
             </ButtonLink>
           </div>
-          <ul className="plain-list land-home-intro__signals">
+        </div>
+
+        <aside className="land-home-hero__panel">
+          <p className="land-home-hero__panel-eyebrow">What Northline handles</p>
+          <h2 className="land-home-hero__panel-title">
+            Front yards, backyards, patios, planting, and outdoor living upgrades for homes across the west end.
+          </h2>
+          <ul className="plain-list land-home-hero__signal-list">
             {content.home.hero.signals?.map((signal) => (
               <li key={signal}>{signal}</li>
             ))}
           </ul>
-        </div>
-
-        <div className="land-home-intro__visuals">
-          {content.home.hero.image ? (
-            <figure className="land-home-intro__media">
-              <img
-                alt={content.home.hero.image.alt}
-                loading="eager"
-                src={content.home.hero.image.src}
-                style={
-                  content.home.hero.image.position
-                    ? { objectPosition: content.home.hero.image.position }
-                    : undefined
-                }
-              />
-            </figure>
-          ) : null}
-
-          <div className="land-home-intro__fact-grid">
-            <article className="land-home-intro__fact-card">
-              <p className="land-home-intro__fact-label">Service area</p>
-              <h2>{content.brand.city}</h2>
-              <p>Premium residential projects across Toronto, Etobicoke, Mississauga, and Oakville.</p>
-            </article>
-            <article className="land-home-intro__fact-card">
-              <p className="land-home-intro__fact-label">What we build</p>
-              <h2>Patios, front yards, lighting, planting, and full property upgrades.</h2>
-              <p>Best fit for homeowners planning a real landscaping project, not a quick cosmetic patch.</p>
-            </article>
-            <article className="land-home-intro__fact-card land-home-intro__fact-card--accent">
-              <p className="land-home-intro__fact-label">Quote process</p>
-              <h2>Tell us about the property before we book a site visit.</h2>
-              <p>We confirm service area, job type, and timing first so the next step makes sense.</p>
-            </article>
+          <div className="land-home-hero__panel-meta">
+            <p>Service area: {content.brand.city}</p>
+            <p>Quotes start with the address, scope, and a few current photos.</p>
           </div>
-        </div>
+        </aside>
       </section>
 
-      <section className="land-cred-strip" aria-label="Northline standards">
+      <section className="land-proof-strip" aria-label="Northline landscaping standards">
         {content.home.highlights.map((highlight, index) => (
-          <article className="land-cred-strip__item" key={highlight.title}>
-            <p className="land-cred-strip__index">0{index + 1}</p>
+          <article className="land-proof-strip__item" key={highlight.title}>
+            <p className="land-proof-strip__index">0{index + 1}</p>
             <h2>{highlight.title}</h2>
             <p>{highlight.description}</p>
           </article>
         ))}
       </section>
 
+      <Section
+        description="Northline handles the residential landscaping work people usually call about when the property needs a more finished look and a better layout."
+        eyebrow="Services"
+        title="Landscaping work for the front yard, backyard, and around the house"
+      >
+        <div className="land-service-showcase">
+          {featuredService ? (
+            <article className="land-service-focus">
+              <figure className="land-service-focus__media">
+                <img
+                  alt={featuredService.image.alt}
+                  loading="lazy"
+                  src={featuredService.image.src}
+                  style={
+                    featuredService.image.position
+                      ? { objectPosition: featuredService.image.position }
+                      : undefined
+                  }
+                />
+              </figure>
+              <div className="land-service-focus__body">
+                <p className="land-service-focus__eyebrow">{featuredService.course}</p>
+                <h3 className="land-service-focus__title">{featuredService.name}</h3>
+                <p className="land-service-focus__description">{featuredService.description}</p>
+              </div>
+            </article>
+          ) : null}
+
+          <div className="land-service-compact-grid">
+            {supportingServices.map((service) => (
+              <article className="land-service-card" key={service.name}>
+                <figure className="land-service-card__media">
+                  <img
+                    alt={service.image.alt}
+                    loading="lazy"
+                    src={service.image.src}
+                    style={service.image.position ? { objectPosition: service.image.position } : undefined}
+                  />
+                </figure>
+                <div className="land-service-card__body">
+                  <p className="land-service-card__eyebrow">{service.course}</p>
+                  <h3>{service.name}</h3>
+                  <p>{service.description}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+        <div className="land-section-actions">
+          <ButtonLink to={routes.menu}>Review all services</ButtonLink>
+          <ButtonLink to={routes.reservations} variant="secondary">
+            Request a quote
+          </ButtonLink>
+        </div>
+      </Section>
+
       {featuredProject ? (
         <Section
-          description="A look at the kind of front-yard, backyard, and outdoor-living work Northline is built to handle."
-          eyebrow="Featured projects"
-          title="Recent landscaping work"
+          description="A sample of the type of front-yard, backyard, and outdoor-living work Northline is built to take on."
+          eyebrow="Recent work"
+          title="Projects that clean up the whole property"
         >
-          <div className="land-portfolio-lead">
-            <article className="land-portfolio-lead__feature">
-              <figure className="land-portfolio-lead__media">
+          <div className="land-project-band">
+            <article className="land-project-band__feature">
+              <figure className="land-project-band__feature-media">
                 <img
                   alt={featuredProject.image.alt}
                   loading="lazy"
@@ -104,8 +157,8 @@ export function HomePage() {
                   }
                 />
               </figure>
-              <div className="land-portfolio-lead__body">
-                <p className="land-portfolio-lead__eyebrow">{featuredProject.subtitle}</p>
+              <div className="land-project-band__feature-body">
+                <p className="land-project-band__eyebrow">{featuredProject.subtitle}</p>
                 <h3>{featuredProject.title}</h3>
                 <p>{featuredProject.description}</p>
                 {featuredProject.facts?.length ? (
@@ -124,9 +177,9 @@ export function HomePage() {
               </div>
             </article>
 
-            <div className="land-portfolio-lead__stack">
+            <div className="land-project-band__stack">
               {supportingProjects.map((project) => (
-                <article className="land-portfolio-lead__item" key={project.title}>
+                <article className="land-project-band__item" key={project.title}>
                   <figure>
                     <img
                       alt={project.image.alt}
@@ -136,7 +189,7 @@ export function HomePage() {
                     />
                   </figure>
                   <div>
-                    <p className="land-portfolio-lead__eyebrow">{project.subtitle}</p>
+                    <p className="land-project-band__eyebrow">{project.subtitle}</p>
                     <h3>{project.title}</h3>
                     <p>{project.description}</p>
                   </div>
@@ -148,143 +201,68 @@ export function HomePage() {
       ) : null}
 
       <Section
-        description="Northline focuses on the landscaping work most homeowners call about when they want the property to feel cleaner, sharper, and easier to use."
-        eyebrow="Services"
-        title="Services homeowners call us for"
+        description="Most Northline inquiries come from homeowners planning a real exterior upgrade, not a quick one-day patch."
+        eyebrow="Typical projects"
+        title="The kind of properties we usually get called for"
       >
-        <div className="land-service-matrix">
-          {featuredService ? (
-            <article className="land-service-matrix__feature">
-              <figure className="land-service-matrix__feature-media">
-                <img
-                  alt={featuredService.image.alt}
-                  loading="lazy"
-                  src={featuredService.image.src}
-                  style={
-                    featuredService.image.position
-                      ? { objectPosition: featuredService.image.position }
-                      : undefined
-                  }
-                />
-              </figure>
-              <div className="land-service-matrix__feature-body">
-                <p className="land-service-matrix__eyebrow">{featuredService.course}</p>
-                <h3>{featuredService.name}</h3>
-                <p>{featuredService.description}</p>
-              </div>
-            </article>
-          ) : null}
-
-          {serviceCards.map((service) => (
-            <article className="land-service-matrix__card" key={service.name}>
-              <figure className="land-service-matrix__card-media">
-                <img
-                  alt={service.image.alt}
-                  loading="lazy"
-                  src={service.image.src}
-                  style={service.image.position ? { objectPosition: service.image.position } : undefined}
-                />
-              </figure>
-              <div className="land-service-matrix__card-body">
-                <p className="land-service-matrix__eyebrow">{service.course}</p>
-                <h3>{service.name}</h3>
-                <p>{service.description}</p>
-              </div>
-            </article>
-          ))}
-
-          <aside className="land-service-matrix__panel">
-            <p className="land-service-matrix__panel-label">What usually brings people to us</p>
-            <ul className="plain-list land-service-matrix__panel-list">
-              <li>Stronger curb appeal before a full renovation or resale cycle</li>
-              <li>Cleaner patio and walkway flow for everyday use and hosting</li>
-              <li>Lighting, planting, and grading that make the yard feel finished</li>
-            </ul>
-            <div className="land-section-actions">
-              <ButtonLink to={routes.menu}>Review services</ButtonLink>
-              <ButtonLink to={routes.contact} variant="secondary">
-                Ask about your project
-              </ButtonLink>
-            </div>
-          </aside>
-        </div>
-      </Section>
-
-      <Section
-        description="Homeowners want to know how the work will be planned, how the property will be handled, and what happens before construction starts."
-        eyebrow="Process"
-        title="How the process works"
-      >
-        <div className="land-process-band">
-          <article className="land-process-band__steps">
-            {content.home.experience.points.map((point, index) => (
-              <div className="land-process-band__step" key={point}>
-                <p className="land-process-band__step-index">0{index + 1}</p>
-                <p>{point}</p>
-              </div>
-            ))}
-          </article>
-
-          <aside className="land-process-band__standards">
-            <p className="land-process-band__label">What homeowners can expect</p>
-            <ul className="plain-list confidence-list">
-              {content.reservations.policies.map((policy) => (
-                <li key={policy}>{policy}</li>
+        <div className="land-transformation">
+          <div className="land-transformation__layout">
+            <div className="land-transformation__visuals">
+              {fitImages.map((image) => (
+                <figure className="land-transformation__item" key={image.src}>
+                  <img
+                    alt={image.alt}
+                    loading="lazy"
+                    src={image.src}
+                    style={image.position ? { objectPosition: image.position } : undefined}
+                  />
+                  <span className="land-transformation__caption">{image.alt}</span>
+                </figure>
               ))}
-            </ul>
-          </aside>
+            </div>
 
-          <div className="land-process-band__media">
-            {content.home.experience.images.map((image) => (
-              <figure className="land-process-band__media-item" key={image.src}>
-                <img
-                  alt={image.alt}
-                  loading="lazy"
-                  src={image.src}
-                  style={image.position ? { objectPosition: image.position } : undefined}
-                />
-              </figure>
-            ))}
+            <div className="land-transformation__body">
+              <p>
+                Northline is usually brought in when the front of the house needs a better first impression,
+                the backyard needs to be easier to use, or the whole property still feels unfinished.
+              </p>
+              <ul className="plain-list confidence-list">
+                <li>Front-yard upgrades that improve arrival, curb appeal, and day-to-day upkeep</li>
+                <li>Backyard patios and walkways that make the space easier to use and host in</li>
+                <li>Planting, lighting, and grading work that needs to hold together as one project</li>
+              </ul>
+              <div className="land-section-actions">
+                <ButtonLink to={routes.about}>About Northline</ButtonLink>
+                {mapHref ? (
+                  <ButtonAnchor href={mapHref} variant="secondary">
+                    View service area
+                  </ButtonAnchor>
+                ) : null}
+              </div>
+            </div>
           </div>
         </div>
       </Section>
 
       <Section
-        description="Start with a quick quote request so the first conversation is about the property, the scope, and the right next step."
+        description="Start with the property address, the part of the yard you want to improve, and any timing constraints."
         eyebrow="Request a quote"
-        title="Tell us about the property"
+        title="Tell us what you want to change"
       >
-        <div className="land-estimate-callout">
-          <div className="land-estimate-callout__copy">
-            <h3>Send the property address, the area you want to improve, and your target timing.</h3>
+        <div className="land-quote-band">
+          <div>
             <p>
-              We will confirm service-area fit, look at the type of work you are planning,
-              and let you know whether the next step should be a call, a quote discussion,
-              or an on-site visit.
-            </p>
-            <ul className="plain-list land-estimate-callout__list">
-              <li>Address or neighbourhood</li>
-              <li>Main outdoor priority</li>
-              <li>Desired completion window</li>
-            </ul>
-          </div>
-
-          <div className="land-estimate-callout__aside">
-            <div className="land-section-actions">
-              <ButtonLink to={routes.reservations}>Request a quote</ButtonLink>
-              <ButtonAnchor href={content.brand.phoneHref} variant="secondary">
-                Call office
-              </ButtonAnchor>
-              {mapHref ? (
-                <ButtonAnchor href={mapHref} variant="secondary">
-                  View service area
-                </ButtonAnchor>
-              ) : null}
-            </div>
-            <p className="land-estimate-callout__meta">
-              Service area: {content.brand.city}
+              We review service area, scope, and timing first, then let you know whether the next step should be a call,
+              a quote discussion, or an on-site visit.
             </p>
           </div>
+          <div className="land-section-actions">
+            <ButtonLink to={routes.reservations}>Request a quote</ButtonLink>
+            <ButtonAnchor href={content.brand.phoneHref} variant="secondary">
+              Call office
+            </ButtonAnchor>
+          </div>
+          <p className="land-quote-band__meta">Serving Toronto, Etobicoke, Mississauga, and Oakville</p>
         </div>
       </Section>
     </>

@@ -32,14 +32,14 @@ export function ContactPage() {
         description={content.contact.intro}
         eyebrow="Contact"
         media={content.gallery.collections[5]?.image}
-        signals={['Service area fit first', 'Quote replies within one business day', 'On-site visits booked after review']}
-        title="Get in touch about your landscaping project"
+        signals={['Service area reviewed first', 'Quote replies within one business day', 'On-site visits booked after review']}
+        title="Talk with us about the property and what you want to change"
       />
 
       <Section
-        description="Use the contact method that fits your next step best. If you already know the property address and the type of work you want, include that right away."
+        description="Use the contact method that works best for you. If you already know the property address and the type of work you want, include that right away."
         eyebrow="Direct contact"
-        title="How to reach us"
+        title="Call, email, or send the project details"
       >
         <div className="land-contact-grid">
           {content.contact.details.map((detail) => (
@@ -59,7 +59,7 @@ export function ContactPage() {
       <Section
         description="A strong first inquiry usually includes the property address, the area you want to improve, and any timing constraints."
         eyebrow="Before you reach out"
-        title="What to include in your message"
+        title="Helpful details for a first call"
       >
         <div className="land-note-panel land-note-panel--split">
           <ul>
@@ -68,7 +68,7 @@ export function ContactPage() {
             ))}
           </ul>
           <div className="land-note-panel__aside">
-            <p className="land-note-panel__eyebrow">Best fit</p>
+            <p className="land-note-panel__eyebrow">Typical project</p>
             <p>
               Northline is strongest on residential landscaping projects in Toronto and the west end where finish quality,
               curb appeal, and cleaner project control matter.

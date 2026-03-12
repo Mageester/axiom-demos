@@ -25,7 +25,7 @@ export function ProjectsPage() {
         eyebrow="Projects"
         media={featuredProject?.image}
         signals={['Patios and walkways', 'Front-yard upgrades', 'Planting and lighting']}
-        title="Recent projects across patios, front yards, and outdoor living spaces"
+        title="Recent landscaping projects across patios, front yards, and outdoor living spaces"
       />
 
       {featuredProject ? (
@@ -105,9 +105,9 @@ export function ProjectsPage() {
       </Section>
 
       <Section
-        description="If your property goals line up with this kind of scope and finish, the next step is a quick quote review before we book an on-site consultation."
+        description="If your property goals line up with this kind of scope and finish, the next step is a quick quote review before we book a site visit."
         eyebrow="Next step"
-        title="Planning a similar project"
+        title="Request a quote for similar work"
       >
         <div className="land-quote-band">
           <div>

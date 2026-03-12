@@ -31,16 +31,16 @@ export const landscapingContent: DemoContent = {
   },
   home: {
     hero: {
-      eyebrow: 'Landscaping and outdoor living | Toronto & West GTA',
-      title: 'Landscaping that makes the property look better and work better.',
+      eyebrow: 'Residential landscaping | Toronto & West GTA',
+      title: 'Landscaping that makes the whole property feel finished.',
       description:
-        'Northline handles patios, walkways, front-yard upgrades, planting, lighting, and outdoor living projects for homeowners who want a cleaner, more finished property.',
+        'Northline handles patios, walkways, front-yard upgrades, planting, lighting, and outdoor living projects for homeowners across Toronto and the west end.',
       primaryCta: 'Request a quote',
       secondaryCta: 'View projects',
       signals: [
-        'Patios, front entries, planting, lighting, and curb appeal upgrades',
-        'Property conditions and drainage reviewed before work is priced',
-        'We confirm service area and scope before booking a site visit',
+        'Patios, planting, lighting, front entries, and outdoor living',
+        'Residential projects across Toronto, Etobicoke, Mississauga, and Oakville',
+        'Quote review before we book a site visit',
       ],
       image: {
         src: pexelsPhoto('1029599', 1800, 1200),
@@ -50,19 +50,19 @@ export const landscapingContent: DemoContent = {
     },
     highlights: [
       {
-        title: 'Planned for the property',
+        title: 'Residential focus',
         description:
-          'We look at grade, drainage, access, and how you want to use the space before materials or layout decisions are locked in.',
+          'Northline is built for homeowners improving the front yard, backyard, or overall outdoor living setup, not commercial grounds contracts.',
       },
       {
-        title: 'Clean work on site',
+        title: 'Planned around the property',
         description:
-          'Crews protect access points, keep the site orderly, and leave each phase in good shape instead of treating cleanup like an afterthought.',
+          'Grade, drainage, access, and day-to-day use of the yard are reviewed before materials and layout are finalized.',
       },
       {
-        title: 'Built for local conditions',
+        title: 'Clean site conduct',
         description:
-          'Base prep, edge restraint, planting choices, and lighting are selected for real Ontario weather and seasonal wear.',
+          'Crews protect access points, keep the site orderly, and leave the property looking cared for while the job is underway.',
       },
     ],
     featuredDishes: [
@@ -255,11 +255,11 @@ export const landscapingContent: DemoContent = {
   },
   reservations: {
     intro:
-      'Tell us what part of the property you want to improve, where you are located, and your timing. We will confirm service-area fit and let you know the best next step.',
+      'Tell us what part of the property you want to improve, where you are located, and your timing. We will confirm the service area and let you know the best next step.',
     policies: [
-      'New quote requests are usually reviewed within one business day.',
-      'Site visits are scheduled after service area and project scope are confirmed.',
-      'Quotes are broken out clearly before any work is approved.',
+      'Most quote requests are reviewed within one business day.',
+      'If the property is in our service area, we confirm the next step before booking a visit.',
+      'Quotes are written clearly so homeowners know what is included.',
     ],
     channels: [
       {
@@ -378,7 +378,7 @@ export const landscapingContent: DemoContent = {
       },
     ],
     notes: [
-      'Include the property address and the part of the yard you want to improve so we can confirm fit quickly.',
+      'Include the property address and the part of the yard you want to improve so we can confirm the service area quickly.',
       'If you have a target completion window, add it early and we can recommend a realistic next step.',
       'Current photos of the front yard, backyard, or problem area help us prepare for a more useful first call.',
     ],

@@ -77,14 +77,14 @@ export function QuotePage() {
         description={content.reservations.intro}
         eyebrow="Request a quote"
         media={content.home.hero.image}
-        signals={['Service-area review first', 'Scope fit before site visit', 'Clear labour and material visibility']}
-        title="Start with a clear quote request"
+        signals={['Service area reviewed first', 'Scope reviewed before site visit', 'Clear written quotes before work begins']}
+        title="Request a quote for your property"
       />
 
       <Section
-        description="If you already know your service area and basic scope, these channels will get you to the right next step quickly."
+        description="If you already know the property address and the kind of work you want priced, these channels will get you to the right next step quickly."
         eyebrow="Direct options"
-        title="Quote request options"
+        title="Start by phone or email"
       >
         <div className="land-contact-grid">
           {content.reservations.channels.map((channel) => (
@@ -100,9 +100,9 @@ export function QuotePage() {
       </Section>
 
       <Section
-        description="Share the practical details first so we can confirm scope fit, service area, and the right next scheduling step."
+        description="Share the practical details first so we can confirm scope, service area, and the right next scheduling step."
         eyebrow="Form"
-        title="Quote request form"
+        title="Project details"
       >
         <div className="reservation-layout reservation-layout--landscaping">
           <form className="reservation-form reservation-form--landscaping" onSubmit={onSubmit}>
@@ -156,14 +156,14 @@ export function QuotePage() {
           </form>
 
           <aside className="policy-panel policy-panel--landscaping">
-            <h3>Before we schedule</h3>
+            <h3>Before we book a site visit</h3>
             <ul>
               {content.reservations.policies.map((policy) => (
                 <li key={policy}>{policy}</li>
               ))}
             </ul>
             <p className="policy-panel__subtle">
-              If your timing is urgent, call {content.brand.phone} so we can confirm service-area fit and availability faster.
+              If your timing is urgent, call {content.brand.phone} so we can confirm the service area and availability faster.
             </p>
           </aside>
         </div>
