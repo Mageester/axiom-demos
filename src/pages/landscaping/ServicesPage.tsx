@@ -12,7 +12,7 @@ export function ServicesPage() {
       <PageHero
         actions={
           <>
-            <ButtonLink to={routes.reservations}>Request estimate</ButtonLink>
+            <ButtonLink to={routes.reservations}>Request a quote</ButtonLink>
             <ButtonLink to={routes.gallery} variant="secondary">
               View projects
             </ButtonLink>
@@ -23,17 +23,17 @@ export function ServicesPage() {
         eyebrow="Services"
         media={content.menu.sections[1]?.image}
         signals={[
-          'Premium residential scope',
-          'Design-build planning',
+          'Front yards, backyards, and outdoor living',
+          'Patios, planting, and lighting',
           'Toronto and West GTA service area',
         ]}
-        title="Design-build services for premium residential exteriors"
+        title="Landscaping services for front yards, backyards, and outdoor living"
       />
 
       <Section
-        description="Each service line is structured to keep scope, finish quality, and homeowner expectations clear from the start."
-        eyebrow="Scope"
-        title="Service categories"
+        description="A clear breakdown of the landscaping work Northline handles most often for residential properties."
+        eyebrow="Services"
+        title="What we do"
       >
         <div className="land-service-sections">
           {content.menu.sections.map((section, index) => (
@@ -87,9 +87,9 @@ export function ServicesPage() {
       </Section>
 
       <Section
-        description="Northline is typically the right fit when the project needs cleaner planning, premium finish quality, and a more disciplined delivery path than a basic install crew."
-        eyebrow="Fit"
-        title="When this service model makes sense"
+        description="Northline is usually the right fit when the project needs proper planning, strong finish quality, and a cleaner overall result."
+        eyebrow="Good fit"
+        title="Who we work best with"
       >
         <div className="land-fit-grid">
           <article className="land-fit-panel">
@@ -115,7 +115,7 @@ export function ServicesPage() {
           </article>
         </div>
         <div className="land-section-actions">
-          <ButtonLink to={routes.reservations}>Start estimate request</ButtonLink>
+          <ButtonLink to={routes.reservations}>Start your quote</ButtonLink>
           <ButtonLink to={routes.contact} variant="secondary">
             Contact office
           </ButtonLink>

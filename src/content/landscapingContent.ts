@@ -6,41 +6,41 @@ function pexelsPhoto(id: string, width = 1600, height = 1100) {
 
 export const landscapingContent: DemoContent = {
   brand: {
-    name: 'Northline Outdoor Studio',
+    name: 'Northline Landscaping',
     city: 'Toronto & West GTA',
     logo: {
       src: '/brands/northline-outdoor-mark.svg',
-      alt: 'Northline Outdoor Studio logo mark',
+      alt: 'Northline Landscaping logo mark',
     },
     favicon: '/brands/northline-outdoor-favicon.svg',
-    browserTitle: 'Northline Outdoor Studio | Premium Landscaping',
+    browserTitle: 'Northline Landscaping | Landscaping and Outdoor Living',
     metaDescription:
-      'Premium residential landscaping and outdoor living for Toronto and the West GTA. Patios, planting, lighting, and curb appeal upgrades with clear project planning.',
-    tagline: 'Design-build landscaping for premium residential properties',
+      'Northline Landscaping handles patios, planting, outdoor lighting, front-yard upgrades, and outdoor living projects across Toronto and the West GTA.',
+    tagline: 'Landscaping, patios, planting, and outdoor living for Toronto homes',
     phone: '+1 (647) 555-0139',
     phoneHref: 'tel:+16475550139',
-    email: 'quotes@northlineoutdoor.ca',
-    emailHref: 'mailto:quotes@northlineoutdoor.ca',
+    email: 'quotes@northlinelandscaping.ca',
+    emailHref: 'mailto:quotes@northlinelandscaping.ca',
     address: '85 Cedarview Avenue, Etobicoke, ON M8X 1A4',
     hours: [
       'Monday to Friday: 7:30 AM to 6:00 PM',
       'Saturday: 8:00 AM to 3:00 PM',
       'Sunday: By appointment only',
     ],
-    legalLine: 'Northline Outdoor Studio. All rights reserved.',
+    legalLine: 'Northline Landscaping. All rights reserved.',
   },
   home: {
     hero: {
-      eyebrow: 'Design-Build Landscaping | Toronto & West GTA',
-      title: 'Landscape upgrades that make the whole property read better.',
+      eyebrow: 'Landscaping and outdoor living | Toronto & West GTA',
+      title: 'Landscaping that makes the property look better and work better.',
       description:
-        'Northline plans and builds patios, front approaches, planting, lighting, and full-property exterior improvements for homeowners who want a sharper first impression and a better way to use the yard.',
-      primaryCta: 'Request estimate',
+        'Northline handles patios, walkways, front-yard upgrades, planting, lighting, and outdoor living projects for homeowners who want a cleaner, more finished property.',
+      primaryCta: 'Request a quote',
       secondaryCta: 'View projects',
       signals: [
-        'Patios, steps, planting, lighting, and curb appeal upgrades',
-        'Site conditions and drainage reviewed before material scope is finalized',
-        'Service-area fit and project intent confirmed before site visits are booked',
+        'Patios, front entries, planting, lighting, and curb appeal upgrades',
+        'Property conditions and drainage reviewed before work is priced',
+        'We confirm service area and scope before booking a site visit',
       ],
       image: {
         src: pexelsPhoto('1029599', 1800, 1200),
@@ -50,19 +50,19 @@ export const landscapingContent: DemoContent = {
     },
     highlights: [
       {
-        title: 'Site-first planning',
+        title: 'Planned for the property',
         description:
-          'Layout, grade, drainage, and material direction are worked through before install, so the finished property feels deliberate instead of pieced together.',
+          'We look at grade, drainage, access, and how you want to use the space before materials or layout decisions are locked in.',
       },
       {
-        title: 'Clean project delivery',
+        title: 'Clean work on site',
         description:
-          'Access points stay protected, the site stays organized, and each phase closes in a way that still reflects the finish standard.',
+          'Crews protect access points, keep the site orderly, and leave each phase in good shape instead of treating cleanup like an afterthought.',
       },
       {
-        title: 'Built for the local climate',
+        title: 'Built for local conditions',
         description:
-          'Base prep, edge restraint, planting choices, and lighting are selected to perform through real Ontario freeze-thaw cycles.',
+          'Base prep, edge restraint, planting choices, and lighting are selected for real Ontario weather and seasonal wear.',
       },
     ],
     featuredDishes: [
@@ -70,7 +70,7 @@ export const landscapingContent: DemoContent = {
         name: 'Custom Patios & Entertaining Zones',
         course: 'Outdoor living',
         description:
-          'Stone and porcelain patio builds planned around furniture layout, circulation, and a cleaner outdoor-living setup.',
+          'Stone and porcelain patio builds planned around seating, circulation, and how the yard will actually be used.',
         image: {
           src: pexelsPhoto('2132227', 1400, 1000),
           alt: 'Stone patio with seating and layered garden beds',
@@ -81,7 +81,7 @@ export const landscapingContent: DemoContent = {
         name: 'Front Entry & Curb Appeal Upgrades',
         course: 'Arrival and frontage',
         description:
-          'Walkways, borders, and planting plans that give the front of the home a stronger first read before anyone reaches the door.',
+          'Walkways, borders, and planting plans that make the front of the property feel cleaner and more finished.',
         image: {
           src: pexelsPhoto('2802293', 1400, 1000),
           alt: 'Refined front yard landscaping with walkway lighting and planting',
@@ -92,7 +92,7 @@ export const landscapingContent: DemoContent = {
         name: 'Landscape Lighting & Planting Refresh',
         course: 'Evening presence',
         description:
-          'Low-voltage lighting and seasonal planting updates that keep the property finished after dark and through peak season.',
+          'Low-voltage lighting and planting updates that keep the property looking finished after dark and through the busy season.',
         image: {
           src: pexelsPhoto('1453499', 1400, 1000),
           alt: 'Residential garden with warm pathway lighting at dusk',
@@ -103,7 +103,7 @@ export const landscapingContent: DemoContent = {
     experience: {
       title: 'A disciplined project path from first walk-through to final handoff',
       description:
-        'Every Northline project is structured to keep site decisions clear, installation quality visible, and communication easy for the homeowner.',
+        'Every Northline project is set up to keep site decisions clear, installation quality visible, and communication straightforward for the homeowner.',
       points: [
         'Property walk-through with constraints, access, drainage, and grading reviewed on site',
         'Layout and material recommendations shaped around how the yard will actually be used',
@@ -125,11 +125,11 @@ export const landscapingContent: DemoContent = {
   },
   menu: {
     intro:
-      'Northline handles planning, installation, and targeted seasonal refinement for premium residential properties across Toronto and the west end.',
+      'Northline handles landscaping and outdoor-living work for residential properties across Toronto and the west end.',
     sections: [
       {
-        title: 'Design & Planning',
-        note: 'Early clarity on layout, grade, drainage, and material direction before any build decisions are locked.',
+        title: 'Planning & Layout',
+        note: 'Early clarity on layout, grading, drainage, and material direction before the job is priced or scheduled.',
         highlights: ['Best for full-property planning', 'Site-led layout decisions', 'Material direction before install'],
         image: {
           src: pexelsPhoto('2739666', 1200, 900),
@@ -156,7 +156,7 @@ export const landscapingContent: DemoContent = {
       },
       {
         title: 'Build & Installation',
-        note: 'Core hardscape and planting work for outdoor spaces that need to look polished and perform reliably.',
+        note: 'Core hardscape and planting work for front yards, backyards, and outdoor spaces that need to look polished and hold up.',
         highlights: ['Patios and walkways', 'Walls, steps, and grade transitions', 'Softscape finishing and lawn reset'],
         image: {
           src: pexelsPhoto('1028599', 1200, 900),
@@ -183,7 +183,7 @@ export const landscapingContent: DemoContent = {
       },
       {
         title: 'Seasonal Care & Refresh',
-        note: 'Property upkeep and targeted refresh work that protects the finish after the major install is complete.',
+        note: 'Property upkeep and targeted refresh work that protects the finish after the main install is complete.',
         highlights: ['Spring reset', 'Peak-season polish visits', 'Autumn protection and cleanup'],
         image: {
           src: pexelsPhoto('2132171', 1200, 900),
@@ -212,11 +212,11 @@ export const landscapingContent: DemoContent = {
   },
   about: {
     intro:
-      'Northline was built for homeowners who want premium outdoor work delivered with stronger planning, calmer communication, and cleaner finish quality.',
+      'Northline is built for homeowners who want a landscaping company that plans well, communicates clearly, and leaves the property looking finished.',
     story: [
-      'We approach landscaping as property design-build work. The first decisions are about how the yard should function, where the constraints sit, and what will still look right several seasons from now.',
-      'Northline is not set up like a volume install crew. Scope, access, grading, drainage, and finish standards are clarified early so the build does not drift once materials arrive.',
-      'The goal is straightforward: an exterior that looks more composed, works better day to day, and gives the property a stronger presence from the curb to the back fence.',
+      'We treat landscaping as more than a list of install items. The first conversation is about how the property should function, what needs to improve, and what will still make sense a few seasons from now.',
+      'Northline is not built around squeezing as many jobs through the calendar as possible. Scope, access, grading, drainage, and finish standards are worked out early so the project stays under control once work starts.',
+      'The end result should feel simple: a property that looks sharper, is easier to enjoy, and gives the house a stronger overall first impression.',
     ],
     values: [
       {
@@ -227,7 +227,7 @@ export const landscapingContent: DemoContent = {
       {
         title: 'Clear project control',
         description:
-          'Scope, materials, and milestones are documented clearly so homeowners know what is being delivered and when.',
+          'Scope, materials, and milestones are laid out clearly so homeowners know what is happening and when.',
       },
       {
         title: 'Respect for the property',
@@ -238,39 +238,39 @@ export const landscapingContent: DemoContent = {
     team: [
       {
         name: 'Evan North',
-        role: 'Founder & Build Lead',
-        bio: 'Evan leads site planning, hardscape execution, and final quality review across Northline projects.',
+        role: 'Owner & Build Lead',
+        bio: 'Evan leads site planning, hardscape execution, and final quality review across Northline jobs.',
       },
       {
         name: 'Alana Reyes',
-        role: 'Design Coordinator',
+        role: 'Landscape Design Coordinator',
         bio: 'Alana shapes layout direction, planting strategy, and material combinations that suit each property.',
       },
       {
         name: 'Noel Chen',
-        role: 'Project Operations',
+        role: 'Project Coordinator',
         bio: 'Noel manages schedule communication, supplier coordination, and homeowner handoff from first visit through closeout.',
       },
     ],
   },
   reservations: {
     intro:
-      'Tell us what part of the property you want to improve, where you are located, and your timing. We will confirm service-area fit and recommend the right next step.',
+      'Tell us what part of the property you want to improve, where you are located, and your timing. We will confirm service-area fit and let you know the best next step.',
     policies: [
       'New quote requests are usually reviewed within one business day.',
-      'On-site consultations are scheduled after scope fit and service area are confirmed.',
-      'Quotes are staged with clear labour and material visibility before approval.',
+      'Site visits are scheduled after service area and project scope are confirmed.',
+      'Quotes are broken out clearly before any work is approved.',
     ],
     channels: [
       {
-        label: 'Call office',
+        label: 'Call for a quote',
         value: '+1 (647) 555-0139',
         href: 'tel:+16475550139',
       },
       {
-        label: 'Email estimate request',
-        value: 'quotes@northlineoutdoor.ca',
-        href: 'mailto:quotes@northlineoutdoor.ca',
+        label: 'Email quote request',
+        value: 'quotes@northlinelandscaping.ca',
+        href: 'mailto:quotes@northlinelandscaping.ca',
       },
       {
         label: 'Service area map',
@@ -281,7 +281,7 @@ export const landscapingContent: DemoContent = {
   },
   gallery: {
     intro:
-      'A selection of residential project directions focused on curb appeal, outdoor living, and stronger day-to-day use of the property.',
+      'A selection of residential projects focused on curb appeal, outdoor living, and cleaner day-to-day use of the property.',
     collections: [
       {
         title: 'Backyard Entertaining Terrace',
@@ -359,17 +359,17 @@ export const landscapingContent: DemoContent = {
   },
   contact: {
     intro:
-      'Reach Northline directly to confirm service area, discuss scope, or plan the right first visit.',
+      'Reach Northline directly to confirm service area, talk through scope, or request a quote.',
     details: [
       {
-        label: 'Call office',
+        label: 'Call for a quote',
         value: '+1 (647) 555-0139',
         href: 'tel:+16475550139',
       },
       {
-        label: 'Email estimate request',
-        value: 'quotes@northlineoutdoor.ca',
-        href: 'mailto:quotes@northlineoutdoor.ca',
+        label: 'Email quote request',
+        value: 'quotes@northlinelandscaping.ca',
+        href: 'mailto:quotes@northlinelandscaping.ca',
       },
       {
         label: 'Office and service area',
@@ -378,9 +378,9 @@ export const landscapingContent: DemoContent = {
       },
     ],
     notes: [
-      'Include the property address and target scope in your first message so we can confirm fit quickly.',
-      'If you have a target completion window, add it early and we can recommend a realistic project sequence.',
-      'Current photos of the yard or frontage help us prepare for a more useful first call.',
+      'Include the property address and the part of the yard you want to improve so we can confirm fit quickly.',
+      'If you have a target completion window, add it early and we can recommend a realistic next step.',
+      'Current photos of the front yard, backyard, or problem area help us prepare for a more useful first call.',
     ],
   },
 }

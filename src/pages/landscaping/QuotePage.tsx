@@ -21,8 +21,8 @@ const budgetOptions = [
 
 function getChannelAction(label: string) {
   const normalized = label.toLowerCase()
-  if (normalized.includes('call')) return 'Call office'
-  if (normalized.includes('email')) return 'Email request'
+  if (normalized.includes('call')) return 'Call for a quote'
+  if (normalized.includes('email')) return 'Email quote request'
   if (normalized.includes('map')) return 'View map'
   return 'Open'
 }
@@ -56,12 +56,12 @@ export function QuotePage() {
     ].join('\n')
 
     const query = new URLSearchParams({
-      subject: `Estimate request from ${name || 'Homeowner'}`,
+      subject: `Quote request from ${name || 'Homeowner'}`,
       body,
     })
 
     window.location.href = `${content.brand.emailHref}?${query.toString()}`
-    setStatusMessage('Your email app is opening with your estimate request details.')
+    setStatusMessage('Your email app is opening with your quote request details.')
     event.currentTarget.reset()
   }
 
@@ -70,21 +70,21 @@ export function QuotePage() {
       <PageHero
         actions={
           <ButtonAnchor href={content.brand.phoneHref} variant="secondary">
-            Call office
+            Call for a quote
           </ButtonAnchor>
         }
         className="land-page-hero"
         description={content.reservations.intro}
-        eyebrow="Estimate"
+        eyebrow="Request a quote"
         media={content.home.hero.image}
         signals={['Service-area review first', 'Scope fit before site visit', 'Clear labour and material visibility']}
-        title="Start with a clear project-fit review"
+        title="Start with a clear quote request"
       />
 
       <Section
         description="If you already know your service area and basic scope, these channels will get you to the right next step quickly."
         eyebrow="Direct options"
-        title="Estimate channels"
+        title="Quote request options"
       >
         <div className="land-contact-grid">
           {content.reservations.channels.map((channel) => (
@@ -102,7 +102,7 @@ export function QuotePage() {
       <Section
         description="Share the practical details first so we can confirm scope fit, service area, and the right next scheduling step."
         eyebrow="Form"
-        title="Estimate request form"
+        title="Quote request form"
       >
         <div className="reservation-layout reservation-layout--landscaping">
           <form className="reservation-form reservation-form--landscaping" onSubmit={onSubmit}>
@@ -151,7 +151,7 @@ export function QuotePage() {
             <label htmlFor="notes">Project notes</label>
             <textarea id="notes" name="notes" rows={5} />
 
-            <Button type="submit">Send estimate request</Button>
+            <Button type="submit">Send quote request</Button>
             {statusMessage ? <p className="form-status">{statusMessage}</p> : null}
           </form>
 

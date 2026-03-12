@@ -14,7 +14,7 @@ export function ProjectsPage() {
       <PageHero
         actions={
           <>
-            <ButtonLink to={routes.reservations}>Request estimate</ButtonLink>
+            <ButtonLink to={routes.reservations}>Request a quote</ButtonLink>
             <ButtonLink to={routes.menu} variant="secondary">
               Review services
             </ButtonLink>
@@ -24,13 +24,13 @@ export function ProjectsPage() {
         description={content.gallery.intro}
         eyebrow="Projects"
         media={featuredProject?.image}
-        signals={['Patios and front entries', 'Lighting and planting', 'Premium residential scope']}
-        title="Projects shaped around curb appeal, outdoor living, and cleaner property use"
+        signals={['Patios and walkways', 'Front-yard upgrades', 'Planting and lighting']}
+        title="Recent projects across patios, front yards, and outdoor living spaces"
       />
 
       {featuredProject ? (
         <Section
-          description="A representative Northline project showing the level of planning, finish quality, and property lift the studio is built for."
+          description="A representative Northline project showing the kind of planning, finish quality, and property improvement the company is built for."
           eyebrow="Featured project"
           title={featuredProject.title}
         >
@@ -58,7 +58,7 @@ export function ProjectsPage() {
                 </ul>
               ) : null}
               <div className="land-section-actions">
-                <ButtonLink to={routes.reservations}>Discuss similar scope</ButtonLink>
+                <ButtonLink to={routes.reservations}>Request a similar quote</ButtonLink>
                 <ButtonLink to={routes.contact} variant="secondary">
                   Contact office
                 </ButtonLink>
@@ -69,9 +69,9 @@ export function ProjectsPage() {
       ) : null}
 
       <Section
-        description="Additional project references organized to show the range of exterior upgrades Northline can deliver."
-        eyebrow="Gallery"
-        title="Additional project references"
+        description="Additional project examples showing the range of landscaping work Northline can deliver."
+        eyebrow="More projects"
+        title="Additional project examples"
       >
         <div className="land-project-grid">
           {remainingProjects.map((project, index) => (
@@ -105,7 +105,7 @@ export function ProjectsPage() {
       </Section>
 
       <Section
-        description="If your property goals line up with this level of scope and finish, the next step is a quick fit review before we book an on-site consultation."
+        description="If your property goals line up with this kind of scope and finish, the next step is a quick quote review before we book an on-site consultation."
         eyebrow="Next step"
         title="Planning a similar project"
       >
@@ -117,7 +117,7 @@ export function ProjectsPage() {
             </p>
           </div>
           <div className="land-section-actions">
-            <ButtonLink to={routes.reservations}>Request estimate</ButtonLink>
+            <ButtonLink to={routes.reservations}>Request a quote</ButtonLink>
             <ButtonLink to={routes.menu} variant="secondary">
               Review services
             </ButtonLink>

@@ -91,7 +91,7 @@ export const demoConfigsByKey: Record<DemoKey, DemoConfig> = {
     navItems: landscapingNavItems,
     homePath: landscapingRoutes.home,
     primaryCta: {
-      label: 'Request estimate',
+      label: 'Request a quote',
       path: landscapingRoutes.reservations,
     },
     pages: {

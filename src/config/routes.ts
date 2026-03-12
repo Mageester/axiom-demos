@@ -57,7 +57,7 @@ export const landscapingNavItems: NavItem[] = [
   { label: 'Projects', path: landscapingRoutes.gallery },
   { label: 'About', path: landscapingRoutes.about },
   { label: 'Contact', path: landscapingRoutes.contact },
-  { label: 'Estimate', path: landscapingRoutes.reservations },
+  { label: 'Quote', path: landscapingRoutes.reservations },
 ]
 
 export const roofingNavItems: NavItem[] = [

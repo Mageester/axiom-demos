@@ -61,14 +61,14 @@ export function HomePage() {
               <p>Premium residential projects across Toronto, Etobicoke, Mississauga, and Oakville.</p>
             </article>
             <article className="land-home-intro__fact-card">
-              <p className="land-home-intro__fact-label">Project focus</p>
-              <h2>Outdoor living, entries, lighting, and curb appeal.</h2>
-              <p>Best fit for homeowners planning a real exterior upgrade, not quick cosmetic patchwork.</p>
+              <p className="land-home-intro__fact-label">What we build</p>
+              <h2>Patios, front yards, lighting, planting, and full property upgrades.</h2>
+              <p>Best fit for homeowners planning a real landscaping project, not a quick cosmetic patch.</p>
             </article>
             <article className="land-home-intro__fact-card land-home-intro__fact-card--accent">
-              <p className="land-home-intro__fact-label">Estimate path</p>
-              <h2>Scope fit first. Site visit second.</h2>
-              <p>We confirm service area, priority, and timing before booking a property review.</p>
+              <p className="land-home-intro__fact-label">Quote process</p>
+              <h2>Tell us about the property before we book a site visit.</h2>
+              <p>We confirm service area, job type, and timing first so the next step makes sense.</p>
             </article>
           </div>
         </div>
@@ -86,9 +86,9 @@ export function HomePage() {
 
       {featuredProject ? (
         <Section
-          description="Project framing built around how the property looks from the street, how the space works in use, and how cleanly the details hold together."
-          eyebrow="Featured work"
-          title="Portfolio-led presentation for premium residential landscaping"
+          description="A look at the kind of front-yard, backyard, and outdoor-living work Northline is built to handle."
+          eyebrow="Featured projects"
+          title="Recent landscaping work"
         >
           <div className="land-portfolio-lead">
             <article className="land-portfolio-lead__feature">
@@ -118,7 +118,7 @@ export function HomePage() {
                 <div className="land-section-actions">
                   <ButtonLink to={routes.gallery}>View project gallery</ButtonLink>
                   <ButtonLink to={routes.reservations} variant="secondary">
-                    Discuss similar scope
+                    Request a similar quote
                   </ButtonLink>
                 </div>
               </div>
@@ -148,9 +148,9 @@ export function HomePage() {
       ) : null}
 
       <Section
-        description="Northline is built around a tighter set of services so the finished property feels cohesive rather than assembled from separate crews."
+        description="Northline focuses on the landscaping work most homeowners call about when they want the property to feel cleaner, sharper, and easier to use."
         eyebrow="Services"
-        title="Where the business is strongest"
+        title="Services homeowners call us for"
       >
         <div className="land-service-matrix">
           {featuredService ? (
@@ -194,7 +194,7 @@ export function HomePage() {
           ))}
 
           <aside className="land-service-matrix__panel">
-            <p className="land-service-matrix__panel-label">Common homeowner priorities</p>
+            <p className="land-service-matrix__panel-label">What usually brings people to us</p>
             <ul className="plain-list land-service-matrix__panel-list">
               <li>Stronger curb appeal before a full renovation or resale cycle</li>
               <li>Cleaner patio and walkway flow for everyday use and hosting</li>
@@ -203,7 +203,7 @@ export function HomePage() {
             <div className="land-section-actions">
               <ButtonLink to={routes.menu}>Review services</ButtonLink>
               <ButtonLink to={routes.contact} variant="secondary">
-                Talk through scope
+                Ask about your project
               </ButtonLink>
             </div>
           </aside>
@@ -211,9 +211,9 @@ export function HomePage() {
       </Section>
 
       <Section
-        description="A strong landscaping site has to explain how the work is planned, how the property is handled, and what the homeowner can expect before anyone books a visit."
-        eyebrow="Project path"
-        title="How Northline runs a project"
+        description="Homeowners want to know how the work will be planned, how the property will be handled, and what happens before construction starts."
+        eyebrow="Process"
+        title="How the process works"
       >
         <div className="land-process-band">
           <article className="land-process-band__steps">
@@ -250,17 +250,17 @@ export function HomePage() {
       </Section>
 
       <Section
-        description="Start with a quick fit review so the first conversation is about the right scope, budget band, and next step for the property."
-        eyebrow="Estimate"
-        title="Request the right next step for your property"
+        description="Start with a quick quote request so the first conversation is about the property, the scope, and the right next step."
+        eyebrow="Request a quote"
+        title="Tell us about the property"
       >
         <div className="land-estimate-callout">
           <div className="land-estimate-callout__copy">
             <h3>Send the property address, the area you want to improve, and your target timing.</h3>
             <p>
               We will confirm service-area fit, look at the type of work you are planning,
-              and recommend whether the next step should be a call, a proposal discussion,
-              or an on-site consultation.
+              and let you know whether the next step should be a call, a quote discussion,
+              or an on-site visit.
             </p>
             <ul className="plain-list land-estimate-callout__list">
               <li>Address or neighbourhood</li>
@@ -271,7 +271,7 @@ export function HomePage() {
 
           <div className="land-estimate-callout__aside">
             <div className="land-section-actions">
-              <ButtonLink to={routes.reservations}>Request estimate</ButtonLink>
+              <ButtonLink to={routes.reservations}>Request a quote</ButtonLink>
               <ButtonAnchor href={content.brand.phoneHref} variant="secondary">
                 Call office
               </ButtonAnchor>

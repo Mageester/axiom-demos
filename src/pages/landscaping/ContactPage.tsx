@@ -6,8 +6,8 @@ import { Section } from '../../components/ui/Section'
 
 function getActionLabel(label: string) {
   const normalized = label.toLowerCase()
-  if (normalized.includes('call')) return 'Call office'
-  if (normalized.includes('email')) return 'Email Northline'
+  if (normalized.includes('call')) return 'Call for a quote'
+  if (normalized.includes('email')) return 'Email a quote request'
   if (normalized.includes('map') || normalized.includes('service area') || normalized.includes('office')) {
     return 'View map'
   }
@@ -23,9 +23,9 @@ export function ContactPage() {
         actions={
           <>
             <ButtonAnchor href={content.brand.phoneHref} variant="secondary">
-              Call office
+              Call for a quote
             </ButtonAnchor>
-            <ButtonLink to={routes.reservations}>Request estimate</ButtonLink>
+            <ButtonLink to={routes.reservations}>Request a quote</ButtonLink>
           </>
         }
         className="land-page-hero"
@@ -33,13 +33,13 @@ export function ContactPage() {
         eyebrow="Contact"
         media={content.gallery.collections[5]?.image}
         signals={['Service area fit first', 'Quote replies within one business day', 'On-site visits booked after review']}
-        title="Talk through service area, scope, and project timing"
+        title="Get in touch about your landscaping project"
       />
 
       <Section
-        description="Use the channel that fits your next step best. If you already know the property address and target scope, include them right away."
+        description="Use the contact method that fits your next step best. If you already know the property address and the type of work you want, include that right away."
         eyebrow="Direct contact"
-        title="Northline contact channels"
+        title="How to reach us"
       >
         <div className="land-contact-grid">
           {content.contact.details.map((detail) => (
@@ -59,7 +59,7 @@ export function ContactPage() {
       <Section
         description="A strong first inquiry usually includes the property address, the area you want to improve, and any timing constraints."
         eyebrow="Before you reach out"
-        title="What to include"
+        title="What to include in your message"
       >
         <div className="land-note-panel land-note-panel--split">
           <ul>
@@ -70,11 +70,11 @@ export function ContactPage() {
           <div className="land-note-panel__aside">
             <p className="land-note-panel__eyebrow">Best fit</p>
             <p>
-              Northline is strongest on premium residential projects in Toronto and the west end where finish quality,
+              Northline is strongest on residential landscaping projects in Toronto and the west end where finish quality,
               curb appeal, and cleaner project control matter.
             </p>
             <div className="land-section-actions">
-              <ButtonLink to={routes.reservations}>Start estimate request</ButtonLink>
+              <ButtonLink to={routes.reservations}>Start your quote</ButtonLink>
               <ButtonAnchor href={content.brand.phoneHref} variant="secondary">
                 Call {content.brand.phone}
               </ButtonAnchor>

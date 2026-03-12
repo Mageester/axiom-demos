@@ -12,16 +12,16 @@ export function AboutPage() {
   return (
     <>
       <PageHero
-        actions={<ButtonLink to={routes.reservations}>Request estimate</ButtonLink>}
+        actions={<ButtonLink to={routes.reservations}>Request a quote</ButtonLink>}
         className="land-page-hero"
         description={content.about.intro}
         eyebrow="About"
         media={standardsVisual?.image}
-        signals={['Premium residential scope', 'Design-build planning', 'Clean site standards']}
-        title="A landscaping studio built around planning, finish quality, and homeowner trust"
+        signals={['Residential landscaping', 'Clear communication', 'Clean site standards']}
+        title="A landscaping company built around clean work and strong follow-through"
       />
 
-      <Section eyebrow="Approach" title="How Northline runs a project">
+      <Section eyebrow="Approach" title="How Northline approaches a job">
         <div className="story-layout">
           <div className="story-grid">
             {content.about.story.map((paragraph) => (
@@ -48,9 +48,9 @@ export function AboutPage() {
       </Section>
 
       <Section
-        description="These are the standards Northline is built to protect, regardless of project size."
+        description="These are the standards Northline is built to protect, whether the job is a front-yard refresh or a full backyard upgrade."
         eyebrow="Standards"
-        title="What the business is known for"
+        title="What we are known for"
       >
         <div className="land-fit-grid">
           {content.about.values.map((value) => (
@@ -63,7 +63,7 @@ export function AboutPage() {
       </Section>
 
       <Section
-        description="A small leadership team overseeing scope planning, design direction, and project coordination from first call to handoff."
+        description="A small team overseeing planning, layout direction, and project coordination from first call to handoff."
         eyebrow="Team"
         title="Leadership"
       >
