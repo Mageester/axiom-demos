@@ -23,17 +23,17 @@ export function ServicesPage() {
         eyebrow="Services"
         media={content.menu.sections[1]?.image}
         signals={[
-          'Front yards, backyards, and outdoor living',
-          'Patios, planting, and lighting',
+          'Patios, front entries, and backyard upgrades',
+          'Planting, lighting, and seasonal care',
           'Toronto and West GTA service area',
         ]}
-        title="Residential landscaping services for yards, entries, patios, and outdoor living"
+        title="Residential landscaping services for patios, planting, entries, and outdoor living"
       />
 
       <Section
         description="A clear breakdown of the landscaping work Northline handles most often for residential properties."
         eyebrow="Services"
-        title="Landscaping services"
+        title="What Northline is usually hired to do"
       >
         <div className="land-service-sections">
           {content.menu.sections.map((section, index) => (
@@ -89,7 +89,7 @@ export function ServicesPage() {
       <Section
         description="Most Northline jobs need proper planning, strong finish quality, and a cleaner overall result than a quick patch or low-detail install."
         eyebrow="Project type"
-        title="Most Northline jobs look like this"
+        title="The kind of work we are built for"
       >
         <div className="land-fit-grid">
           <article className="land-fit-panel">

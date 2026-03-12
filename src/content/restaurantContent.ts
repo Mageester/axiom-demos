@@ -12,7 +12,7 @@ export const restaurantContent: DemoContent = {
       src: '/brands/atelier-meridian-mark.svg',
       alt: 'Atelier Meridian logo mark',
     },
-    favicon: '/favicon.svg',
+    favicon: '/brands/atelier-meridian-mark.svg',
     browserTitle: 'Atelier Meridian | Harbourfront Restaurant',
     metaDescription:
       'Seasonal coastal dining on the Toronto waterfront with warm evening service, private dining, and reservations available Tuesday to Sunday.',
@@ -21,7 +21,7 @@ export const restaurantContent: DemoContent = {
     phoneHref: 'tel:+14165550182',
     email: 'reservations@ateliermeridian.ca',
     emailHref: 'mailto:reservations@ateliermeridian.ca',
-    address: '112 Harbor Lane, Toronto, ON M5V 2L6',
+    address: '112 Harbour Lane, Toronto, ON M5V 2L6',
     hours: [
       'Tuesday to Thursday: 5:00 PM to 10:00 PM',
       'Friday to Saturday: 5:00 PM to 11:00 PM',
@@ -44,9 +44,9 @@ export const restaurantContent: DemoContent = {
         'Dietary requests welcomed with advance notice',
       ],
       image: {
-        src: pexelsPhoto('260922', 1800, 1200),
-        alt: 'Warmly lit premium dining room prepared for evening service',
-        position: 'center 42%',
+        src: pexelsPhoto('30323144', 1800, 1200),
+        alt: 'Elegant evening dining room set for service',
+        position: 'center 54%',
       },
     },
     highlights: [
@@ -132,9 +132,9 @@ export const restaurantContent: DemoContent = {
         title: 'First Plates',
         note: 'Smaller dishes for the opening rounds at the table.',
         image: {
-          src: pexelsPhoto('3645126', 1200, 900),
-          alt: 'Seared scallops plated for a first course',
-          position: 'center 56%',
+          src: pexelsPhoto('22711496', 1200, 900),
+          alt: 'Small plates set on a warmly lit restaurant table',
+          position: 'center 62%',
         },
         items: [
           {
@@ -210,7 +210,7 @@ export const restaurantContent: DemoContent = {
   },
   about: {
     intro:
-      'Atelier Meridian is a waterfront dining room built around seasonal cooking and warm, attentive hospitality.',
+      'Atelier Meridian is a waterfront dining room built around seasonal cooking, warm service, and evenings that never feel rushed.',
     story: [
       'Our menu is written in short seasonal cycles, with dishes changing as produce and seafood quality shifts through the month.',
       'The floor team is trained to read the table, pace service naturally, and keep the evening comfortable without interruption.',
@@ -253,7 +253,7 @@ export const restaurantContent: DemoContent = {
   },
   reservations: {
     intro:
-      'Reservations open 30 days ahead. For groups of nine or more, please contact our reservations team directly.',
+      'Reservations open 30 days ahead. For larger tables, private dinners, or hosted occasions, please contact our reservations team directly.',
     policies: [
       'A valid card is required to hold dinner reservations.',
       'Cancellations made within 24 hours may be subject to a per-seat fee.',
@@ -262,7 +262,7 @@ export const restaurantContent: DemoContent = {
     channels: [
       {
         label: 'Book online',
-        value: 'OpenTable reservations',
+        value: 'OpenTable booking',
         href: 'https://www.opentable.com/',
       },
       {
@@ -287,8 +287,8 @@ export const restaurantContent: DemoContent = {
         description:
           'Warm light, generous table spacing, and a room set for long conversation.',
         image: {
-          src: pexelsPhoto('18272528', 1200, 900),
-          alt: 'Warmly lit restaurant interior viewed at night through the front window',
+          src: pexelsPhoto('6314543', 1200, 900),
+          alt: 'Warm restaurant dining room with soft evening lighting',
           position: 'center 52%',
         },
       },
@@ -331,9 +331,9 @@ export const restaurantContent: DemoContent = {
         description:
           'A closer view of finishing work and pass service in the heart of the kitchen.',
         image: {
-          src: pexelsPhoto('628776', 1200, 900),
-          alt: 'Chef plating in an open kitchen counter setting',
-          position: 'center 45%',
+          src: pexelsPhoto('36430091', 1200, 900),
+          alt: 'Chef plating a dish in a professional restaurant kitchen',
+          position: 'center 48%',
         },
       },
       {
@@ -364,8 +364,8 @@ export const restaurantContent: DemoContent = {
         description:
           'The kitchen team on the pass, timing each course for smooth table pacing.',
         image: {
-          src: pexelsPhoto('3217156', 1200, 900),
-          alt: 'Chef team preparing dishes in a professional kitchen setting',
+          src: pexelsPhoto('36430089', 1200, 900),
+          alt: 'Restaurant kitchen team working on the pass during service',
           position: 'center',
         },
       },
@@ -373,7 +373,7 @@ export const restaurantContent: DemoContent = {
   },
   contact: {
     intro:
-      'Contact our reservations team for booking changes, private dining inquiries, or accessibility details.',
+      'Reach the dining room directly for booking changes, private dining inquiries, or accessibility details.',
     details: [
       {
         label: 'Call reservations',
@@ -388,7 +388,7 @@ export const restaurantContent: DemoContent = {
       {
         label: 'Visit',
         value: '112 Harbor Lane, Toronto, ON M5V 2L6',
-        href: 'https://maps.google.com/?q=112+Harbor+Lane+Toronto+ON',
+        href: 'https://maps.google.com/?q=112+Harbour+Lane+Toronto+ON',
       },
     ],
     notes: [

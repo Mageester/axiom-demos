@@ -33,7 +33,7 @@ export function ContactPage() {
         eyebrow="Contact"
         media={content.gallery.collections[5]?.image}
         signals={['Service area reviewed first', 'Quote replies within one business day', 'On-site visits booked after review']}
-        title="Talk with us about the property and what you want to change"
+        title="Talk with us about the property and the work you want priced"
       />
 
       <Section
@@ -59,7 +59,7 @@ export function ContactPage() {
       <Section
         description="A strong first inquiry usually includes the property address, the area you want to improve, and any timing constraints."
         eyebrow="Before you reach out"
-        title="Helpful details for a first call"
+        title="Helpful details for the first conversation"
       >
         <div className="land-note-panel land-note-panel--split">
           <ul>

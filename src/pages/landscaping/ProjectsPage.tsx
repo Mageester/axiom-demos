@@ -25,12 +25,12 @@ export function ProjectsPage() {
         eyebrow="Projects"
         media={featuredProject?.image}
         signals={['Patios and walkways', 'Front-yard upgrades', 'Planting and lighting']}
-        title="Recent landscaping projects across patios, front yards, and outdoor living spaces"
+        title="Recent landscaping projects across patios, front entries, and backyard use"
       />
 
       {featuredProject ? (
         <Section
-          description="A representative Northline project showing the kind of planning, finish quality, and property improvement the company is built for."
+          description="A representative Northline project showing the kind of finish quality, property planning, and day-to-day usefulness the company is built for."
           eyebrow="Featured project"
           title={featuredProject.title}
         >
@@ -69,9 +69,9 @@ export function ProjectsPage() {
       ) : null}
 
       <Section
-        description="Additional project examples showing the range of landscaping work Northline can deliver."
+        description="Additional project examples showing the range of landscaping work Northline handles for residential properties."
         eyebrow="More projects"
-        title="Additional project examples"
+        title="More project examples"
       >
         <div className="land-project-grid">
           {remainingProjects.map((project, index) => (

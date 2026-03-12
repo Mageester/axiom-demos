@@ -78,7 +78,7 @@ export function QuotePage() {
         eyebrow="Request a quote"
         media={content.home.hero.image}
         signals={['Service area reviewed first', 'Scope reviewed before site visit', 'Clear written quotes before work begins']}
-        title="Request a quote for your property"
+        title="Request a quote for the property"
       />
 
       <Section
@@ -102,7 +102,7 @@ export function QuotePage() {
       <Section
         description="Share the practical details first so we can confirm scope, service area, and the right next scheduling step."
         eyebrow="Form"
-        title="Project details"
+        title="Project details for the first review"
       >
         <div className="reservation-layout reservation-layout--landscaping">
           <form className="reservation-form reservation-form--landscaping" onSubmit={onSubmit}>

@@ -47,7 +47,7 @@ export function ReservationsPage() {
     })
 
     window.location.href = `${content.brand.emailHref}?${query.toString()}`
-    setStatusMessage('Your email app is opening with your reservation request ready to send.')
+    setStatusMessage('Your email app is opening with your note to the reservations team ready to send.')
     event.currentTarget.reset()
   }
 
@@ -70,7 +70,10 @@ export function ReservationsPage() {
         title="Reserve your table"
       />
 
-      <Section description="Reserve online, give us a call, or send a note to the reservations team." title="How to reserve">
+      <Section
+        description="Online booking is best for standard tables. For larger groups, hosted dinners, or timing questions, call or email the reservations team."
+        title="Reserve online, call, or email"
+      >
         <div className="restaurant-link-grid restaurant-link-grid--3">
           {content.reservations.channels.map((channel) => (
             <article className="restaurant-link-panel" key={channel.label}>
@@ -85,8 +88,8 @@ export function ReservationsPage() {
       </Section>
 
       <Section
-        description="Share a preferred date, time, and party size. When you send this form, your email app opens with the details already filled in."
-        title="Send a reservation request"
+        description="Share a preferred date, time, party size, and any dietary or access notes. When you send this form, your email app opens with everything prepared."
+        title="Large tables or special requests"
       >
         <div className="reservation-layout">
           <form className="reservation-form" onSubmit={onSubmit}>
@@ -112,12 +115,12 @@ export function ReservationsPage() {
             <label htmlFor="notes">Dietary notes</label>
             <textarea id="notes" name="notes" rows={4} />
 
-            <Button type="submit">Open email request</Button>
+            <Button type="submit">Prepare email request</Button>
             {statusMessage ? <p className="form-status">{statusMessage}</p> : null}
           </form>
 
           <aside className="policy-panel">
-            <h3>Before you book</h3>
+            <h3>Reservation notes</h3>
             <ul>
               {content.reservations.policies.map((policy) => (
                 <li key={policy}>{policy}</li>

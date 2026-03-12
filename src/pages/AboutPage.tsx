@@ -16,7 +16,7 @@ export function AboutPage() {
         description={content.about.intro}
         eyebrow="About"
         media={content.gallery.collections[0]?.image}
-        title="Our kitchen and dining room"
+        title="The room, the kitchen, and the pace of service"
       />
 
       <Section title="Our story">
@@ -50,7 +50,7 @@ export function AboutPage() {
         </div>
       </Section>
 
-      <Section title="What shapes the evening">
+      <Section title="What guests come here for">
         <div className="restaurant-values-grid">
           {content.about.values.map((value) => (
             <article className="restaurant-value-panel" key={value.title}>
@@ -61,7 +61,7 @@ export function AboutPage() {
         </div>
       </Section>
 
-      <Section title="In the kitchen and dining room">
+      <Section title="The people behind service">
         <div className="restaurant-team-grid">
           {content.about.team.map((member) => (
             <article className="restaurant-team-panel" key={member.name}>

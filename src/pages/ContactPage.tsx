@@ -37,10 +37,13 @@ export function ContactPage() {
         description={content.contact.intro}
         eyebrow="Contact"
         media={content.gallery.collections[5]?.image}
-        title="Reservations and private dining"
+        title="Contact the dining room"
       />
 
-      <Section description="For booking changes, private dining, or accessibility details, these are the fastest ways to reach us." title="How to reach us">
+      <Section
+        description="For booking changes, private dining, or accessibility details, these are the quickest ways to reach the dining room."
+        title="Reservations, private dining, and guest requests"
+      >
         <div className="restaurant-link-grid restaurant-link-grid--3">
           {content.contact.details.map((detail) => (
             <article className="restaurant-link-panel" key={detail.label}>
@@ -56,7 +59,7 @@ export function ContactPage() {
         </div>
       </Section>
 
-      <Section title="Before you get in touch">
+      <Section title="A few details that help">
         <div className="experience-panel">
           <ul className="check-list">
             {content.contact.notes.map((note) => (

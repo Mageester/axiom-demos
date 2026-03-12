@@ -15,9 +15,9 @@ export function MenuPage() {
           </ButtonLink>
         }
         description={content.menu.intro}
-        eyebrow="Menu"
+        eyebrow="Dinner"
         media={content.menu.sections[0]?.image}
-        title="Tonight's menu"
+        title="Dinner menu"
       />
 
       <div className="menu-sections">

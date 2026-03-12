@@ -34,18 +34,18 @@ export const landscapingContent: DemoContent = {
       eyebrow: 'Residential landscaping | Toronto & West GTA',
       title: 'Landscaping that makes the whole property feel finished.',
       description:
-        'Northline handles patios, walkways, front-yard upgrades, planting, lighting, and outdoor living projects for homeowners across Toronto and the west end.',
+        'Northline handles patios, walkways, front-entry upgrades, planting, lighting, and backyard outdoor-living work for homeowners across Toronto and the west end.',
       primaryCta: 'Request a quote',
       secondaryCta: 'View projects',
       signals: [
-        'Patios, planting, lighting, front entries, and outdoor living',
+        'Patios, planting, lighting, front entries, and backyard upgrades',
         'Residential projects across Toronto, Etobicoke, Mississauga, and Oakville',
-        'Quote review before we book a site visit',
+        'Address and photos reviewed before we book a site visit',
       ],
       image: {
-        src: pexelsPhoto('1029599', 1800, 1200),
-        alt: 'Premium landscaped backyard with stone patio and layered planting',
-        position: 'center',
+        src: pexelsPhoto('17240696', 1800, 1200),
+        alt: 'Landscaped backyard with patio seating, lawn, and finished planting',
+        position: 'center 56%',
       },
     },
     highlights: [
@@ -72,9 +72,9 @@ export const landscapingContent: DemoContent = {
         description:
           'Stone and porcelain patio builds planned around seating, circulation, and how the yard will actually be used.',
         image: {
-          src: pexelsPhoto('2132227', 1400, 1000),
-          alt: 'Stone patio with seating and layered garden beds',
-          position: 'center',
+          src: pexelsPhoto('34037980', 1400, 1000),
+          alt: 'Residential backyard patio with seating and layered greenery',
+          position: 'center 54%',
         },
       },
       {
@@ -83,8 +83,8 @@ export const landscapingContent: DemoContent = {
         description:
           'Walkways, borders, and planting plans that make the front of the property feel cleaner and more finished.',
         image: {
-          src: pexelsPhoto('2802293', 1400, 1000),
-          alt: 'Refined front yard landscaping with walkway lighting and planting',
+          src: pexelsPhoto('30196217', 1400, 1000),
+          alt: 'Front garden pathway with planting and lamp posts',
           position: 'center',
         },
       },
@@ -94,30 +94,30 @@ export const landscapingContent: DemoContent = {
         description:
           'Low-voltage lighting and planting updates that keep the property looking finished after dark and through the busy season.',
         image: {
-          src: pexelsPhoto('1453499', 1400, 1000),
-          alt: 'Residential garden with warm pathway lighting at dusk',
+          src: pexelsPhoto('35828688', 1400, 1000),
+          alt: 'Landscape lighting illuminating a planted garden path in the evening',
           position: 'center',
         },
       },
     ],
     experience: {
-      title: 'A disciplined project path from first walk-through to final handoff',
+      title: 'What the first steps usually look like',
       description:
-        'Every Northline project is set up to keep site decisions clear, installation quality visible, and communication straightforward for the homeowner.',
+        'The first conversation is about the property, the part of the yard you want to improve, and whether the scope fits how Northline works best.',
       points: [
-        'Property walk-through with constraints, access, drainage, and grading reviewed on site',
-        'Layout and material recommendations shaped around how the yard will actually be used',
-        'Build schedule, site updates, and a final quality walkthrough before closeout',
+        'We start with the address, current photos, and the part of the property that needs attention',
+        'If the scope fits, we book a site visit to review grade, access, drainage, and material direction',
+        'You get a clear quote and next-step recommendation before any work is scheduled',
       ],
       images: [
         {
-          src: pexelsPhoto('280222', 1200, 1400),
-          alt: 'Outdoor living space with layered hardscape and planters',
-          position: 'center',
+          src: pexelsPhoto('33838596', 1200, 1400),
+          alt: 'Backyard outdoor living space with seating, lawn, and planting',
+          position: 'center 56%',
         },
         {
-          src: pexelsPhoto('552784', 1200, 900),
-          alt: 'Residential path and lawn detail with stone edging',
+          src: pexelsPhoto('30278085', 1200, 900),
+          alt: 'Residential garden pathway with structured greenery and stone paving',
           position: 'center',
         },
       ],
@@ -128,83 +128,83 @@ export const landscapingContent: DemoContent = {
       'Northline handles landscaping and outdoor-living work for residential properties across Toronto and the west end.',
     sections: [
       {
-        title: 'Planning & Layout',
-        note: 'Early clarity on layout, grading, drainage, and material direction before the job is priced or scheduled.',
-        highlights: ['Best for full-property planning', 'Site-led layout decisions', 'Material direction before install'],
+        title: 'Patios, Walkways & Front Entries',
+        note: 'Hardscape work that sharpens access, seating, and the first impression of the home.',
+        highlights: ['Interlock and natural-stone patios', 'Front steps and entry walks', 'Backyard circulation and edging'],
         image: {
-          src: pexelsPhoto('2739666', 1200, 900),
-          alt: 'Landscape planning table with material samples and drawings',
-          position: 'center',
+          src: pexelsPhoto('17240696', 1200, 900),
+          alt: 'Residential backyard patio with paving and seating area',
+          position: 'center 56%',
         },
         items: [
           {
-            name: 'Site Assessment & Grading Review',
-            description: 'Property measurements, drainage observations, and opportunity mapping',
-            price: 'Included in proposal',
+            name: 'Interlock Patios & Seating Areas',
+            description: 'Base prep, edge restraint, and finish work sized for real furniture layouts and day-to-day use',
+            price: 'From 6,500',
           },
           {
-            name: 'Concept Layout Planning',
-            description: 'Circulation, patio zones, planting beds, and feature placement',
-            price: 'From 750',
+            name: 'Front Walkways & Entry Steps',
+            description: 'Approach paths, front steps, and entry upgrades that make the house read better from the street',
+            price: 'From 4,800',
           },
           {
-            name: 'Material Direction Package',
-            description: 'Stone, edging, and planting combinations matched to home architecture',
-            price: 'From 450',
-          },
-        ],
-      },
-      {
-        title: 'Build & Installation',
-        note: 'Core hardscape and planting work for front yards, backyards, and outdoor spaces that need to look polished and hold up.',
-        highlights: ['Patios and walkways', 'Walls, steps, and grade transitions', 'Softscape finishing and lawn reset'],
-        image: {
-          src: pexelsPhoto('1028599', 1200, 900),
-          alt: 'Completed backyard hardscape with patio and retaining wall',
-          position: 'center',
-        },
-        items: [
-          {
-            name: 'Interlock Patios & Walkways',
-            description: 'Base prep, edge restraint, and finish compaction for long-term stability',
-            price: 'From 5,500',
-          },
-          {
-            name: 'Retaining Walls & Steps',
-            description: 'Grade management and elevation transitions with clean visual lines',
-            price: 'From 6,800',
-          },
-          {
-            name: 'Sod, Planting, and Bed Installation',
-            description: 'Fresh turf, structured planting, and mulch detailing for complete transformation',
+            name: 'Side-Yard Paths & Garden Connections',
+            description: 'Stone or paver connections that keep access clean between gate, yard, and patio',
             price: 'From 3,900',
           },
         ],
       },
       {
-        title: 'Seasonal Care & Refresh',
-        note: 'Property upkeep and targeted refresh work that protects the finish after the main install is complete.',
-        highlights: ['Spring reset', 'Peak-season polish visits', 'Autumn protection and cleanup'],
+        title: 'Planting, Sod & Yard Upgrades',
+        note: 'Softscape work that gives the property more structure, cleaner beds, and a stronger overall finish.',
+        highlights: ['Front-bed planting', 'Sod and grading touchups', 'Shrub, mulch, and border cleanup'],
         image: {
-          src: pexelsPhoto('2132171', 1200, 900),
-          alt: 'Maintained garden bed and lawn at a residential property',
+          src: pexelsPhoto('33798594', 1200, 900),
+          alt: 'Residential garden path with planting and a well-kept backyard setting',
           position: 'center',
         },
         items: [
           {
-            name: 'Spring Property Reset',
-            description: 'Debris clearing, edging, bed refresh, and lawn wake-up service',
+            name: 'Planting Plans & Bed Installation',
+            description: 'Layered shrubs, perennials, and bed shaping matched to the property and maintenance expectations',
+            price: 'From 2,400',
+          },
+          {
+            name: 'Sod & Lawn Refresh',
+            description: 'Grading touchups, fresh sod, and cleaner lawn edges where the yard needs a reset',
+            price: 'From 2,900',
+          },
+          {
+            name: 'Front-Yard Curb Appeal Refresh',
+            description: 'Focused upgrades around the porch, walk, and street-facing beds for a stronger first impression',
+            price: 'From 3,600',
+          },
+        ],
+      },
+      {
+        title: 'Lighting, Drainage & Seasonal Care',
+        note: 'Supporting work that protects the finish and keeps the property looking looked-after through the season.',
+        highlights: ['Low-voltage lighting', 'Drainage corrections', 'Spring and fall cleanup'],
+        image: {
+          src: pexelsPhoto('35828688', 1200, 900),
+          alt: 'Illuminated landscape path and garden lighting at dusk',
+          position: 'center',
+        },
+        items: [
+          {
+            name: 'Low-Voltage Landscape Lighting',
+            description: 'Path, step, and feature lighting that adds visibility and keeps the yard looking finished after dark',
+            price: 'From 2,200',
+          },
+          {
+            name: 'Drainage & Water Direction Fixes',
+            description: 'Targeted corrections where runoff, pooling, or grade issues are hurting the yard or hardscape',
+            price: 'Quoted after review',
+          },
+          {
+            name: 'Spring / Fall Property Refresh',
+            description: 'Bed cleanup, edging, pruning, and seasonal reset work for properties that need a polish visit',
             price: 'From 650',
-          },
-          {
-            name: 'Summer Maintenance Plans',
-            description: 'Plant health checks, pruning strategy, and polish visits',
-            price: 'Monthly plans',
-          },
-          {
-            name: 'Autumn Cutback & Winter Prep',
-            description: 'Clean transitions to protect hardscape, planting, and drainage paths',
-            price: 'From 750',
           },
         ],
       },
@@ -284,75 +284,75 @@ export const landscapingContent: DemoContent = {
       'A selection of residential projects focused on curb appeal, outdoor living, and cleaner day-to-day use of the property.',
     collections: [
       {
-        title: 'Backyard Entertaining Terrace',
-        subtitle: 'Patio and planting package',
+        title: 'Back Patio & Seating Area',
+        subtitle: 'Backyard entertaining zone',
         description:
-          'Porcelain patio zone with layered planters and integrated circulation for a cleaner outdoor-living layout.',
+          'Backyard patio build with seating, clean circulation, and planting that helps the whole yard feel more complete.',
         facts: ['Rear-yard focus', 'Porcelain paving', 'Planting and circulation'],
         image: {
-          src: pexelsPhoto('280215', 1200, 900),
-          alt: 'Backyard patio with clean paving and modern landscaping',
-          position: 'center',
+          src: pexelsPhoto('34037980', 1200, 900),
+          alt: 'Residential backyard patio with benches and mature greenery',
+          position: 'center 54%',
         },
       },
       {
-        title: 'Front Approach Refresh',
-        subtitle: 'Curb appeal upgrade',
+        title: 'Front Walk & Planting Refresh',
+        subtitle: 'Front-of-house curb appeal',
         description:
-          'Entry path rebuild with structured planting and elevation transitions for a stronger arrival sequence from the sidewalk in.',
+          'New path and planting around the front of the home to make the entry feel cleaner, brighter, and more finished.',
         facts: ['Walkway rebuild', 'Front-bed framing', 'Improved first impression'],
         image: {
-          src: pexelsPhoto('2662116', 1200, 900),
-          alt: 'Front yard pathway redesign with planting and stonework',
+          src: pexelsPhoto('30196217', 1200, 900),
+          alt: 'Front garden pathway with lamp posts and structured greenery',
           position: 'center',
         },
       },
       {
-        title: 'Garden Retaining Wall System',
-        subtitle: 'Grade control and visual structure',
+        title: 'Retaining Wall & Grade Control',
+        subtitle: 'Stonework and elevation management',
         description:
-          'Terraced retaining walls and defined beds that improve drainage while giving the yard more structure and control.',
+          'Stone retaining work that handles elevation more cleanly while giving the yard structure and a tidier finish.',
         facts: ['Retaining wall system', 'Drainage-aware planning', 'Layered garden beds'],
         image: {
-          src: pexelsPhoto('1402787', 1200, 900),
-          alt: 'Residential retaining wall and layered garden beds',
+          src: pexelsPhoto('33589324', 1200, 900),
+          alt: 'Stone steps and retaining wall detail in a landscaped garden',
           position: 'center',
         },
       },
       {
-        title: 'Outdoor Lounge Lighting',
-        subtitle: 'Evening-ready ambience',
+        title: 'Landscape Lighting Upgrade',
+        subtitle: 'After-dark visibility and polish',
         description:
-          'Low-voltage path and feature lighting that supports safety while making the property read better after dark.',
+          'Low-voltage path and feature lighting that improves night-time visibility and makes the property look more finished after dark.',
         facts: ['Low-voltage lighting', 'Path and feature layers', 'Night presence'],
         image: {
-          src: pexelsPhoto('2906509', 1200, 900),
-          alt: 'Landscape lighting around a patio and garden at dusk',
+          src: pexelsPhoto('35828688', 1200, 900),
+          alt: 'Landscape lighting along a planted path at dusk',
           position: 'center',
         },
       },
       {
-        title: 'Seasonal Planting Refresh',
-        subtitle: 'Colour and texture reset',
+        title: 'Seasonal Bed Refresh',
+        subtitle: 'Mid-season planting cleanup',
         description:
-          'Targeted planting updates and mulch detailing to sharpen the property through peak season.',
+          'Planting cleanup and bed detailing that sharpen the property through the main growing season.',
         facts: ['Softscape refresh', 'Mulch detailing', 'Peak-season polish'],
         image: {
-          src: pexelsPhoto('1903964', 1200, 900),
-          alt: 'Fresh seasonal planting with flowers and clean mulch beds',
+          src: pexelsPhoto('33798594', 1200, 900),
+          alt: 'Maintained residential garden with pathway and layered greenery',
           position: 'center',
         },
       },
       {
-        title: 'Complete Front-to-Back Upgrade',
-        subtitle: 'Design-build transformation',
+        title: 'Full Property Upgrade',
+        subtitle: 'Front-to-back scope',
         description:
-          'Integrated hardscape, lawn, and planting work delivered as one coordinated property-wide upgrade.',
+          'Combined patio, lawn, and planting work delivered as one coordinated property-wide upgrade.',
         facts: ['Full property scope', 'Hardscape and softscape', 'Single coordinated install'],
         image: {
-          src: pexelsPhoto('1591447', 1200, 900),
-          alt: 'Residential property with completed front and backyard landscaping',
-          position: 'center',
+          src: pexelsPhoto('17240696', 1200, 900),
+          alt: 'Completed residential backyard with patio, lawn, and finished landscaping',
+          position: 'center 56%',
         },
       },
     ],

@@ -18,10 +18,10 @@ export function AboutPage() {
         eyebrow="About"
         media={standardsVisual?.image}
         signals={['Residential landscaping', 'Clear communication', 'Clean site standards']}
-        title="A local landscaping company built around planning, clean work, and strong finish quality"
+        title="A local landscaping company built around clean work and a better-finished property"
       />
 
-      <Section eyebrow="How we work" title="What matters on our jobs">
+      <Section eyebrow="How we work" title="What matters on Northline jobs">
         <div className="story-layout">
           <div className="story-grid">
             {content.about.story.map((paragraph) => (
@@ -50,7 +50,7 @@ export function AboutPage() {
       <Section
         description="These are the standards Northline is built to protect, whether the job is a front-yard refresh or a full backyard upgrade."
         eyebrow="Standards"
-        title="What homeowners hire us for"
+        title="What homeowners bring us in for"
       >
         <div className="land-fit-grid">
           {content.about.values.map((value) => (

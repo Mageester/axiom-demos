@@ -52,7 +52,7 @@ export function HomePage() {
         <aside className="land-home-hero__panel">
           <p className="land-home-hero__panel-eyebrow">What Northline handles</p>
           <h2 className="land-home-hero__panel-title">
-            Front yards, backyards, patios, planting, and outdoor living upgrades for homes across the west end.
+            Patios, front-entry work, planting, lighting, and backyard upgrades for homes across the west end.
           </h2>
           <ul className="plain-list land-home-hero__signal-list">
             {content.home.hero.signals?.map((signal) => (
@@ -79,9 +79,9 @@ export function HomePage() {
       <section className="land-home-section">
         <header className="land-home-section__header">
           <p className="land-home-section__eyebrow">Services</p>
-          <h2 className="land-home-section__title">Landscaping work for the front yard, backyard, and around the house</h2>
+          <h2 className="land-home-section__title">The landscaping work homeowners usually call us for</h2>
           <p className="land-home-section__description">
-            Northline handles the residential landscaping work people usually call about when the property needs a more finished look and a better layout.
+            Patios, planting, front walks, lighting, and property upgrades that make the yard look better and work better day to day.
           </p>
         </header>
         <div className="land-service-showcase">
@@ -139,9 +139,9 @@ export function HomePage() {
         <section className="land-home-section">
           <header className="land-home-section__header">
             <p className="land-home-section__eyebrow">Recent work</p>
-            <h2 className="land-home-section__title">Projects that clean up the whole property</h2>
+            <h2 className="land-home-section__title">Project examples across patios, entries, and backyard use</h2>
             <p className="land-home-section__description">
-              A sample of the type of front-yard, backyard, and outdoor-living work Northline is built to take on.
+              A sample of the front-yard, backyard, and outdoor-living work Northline is usually brought in to handle.
             </p>
           </header>
           <div className="land-project-band">
@@ -204,9 +204,9 @@ export function HomePage() {
       <section className="land-home-section">
         <header className="land-home-section__header">
           <p className="land-home-section__eyebrow">What to expect</p>
-          <h2 className="land-home-section__title">What happens before work starts</h2>
+          <h2 className="land-home-section__title">Before we schedule a site visit</h2>
           <p className="land-home-section__description">
-            Most Northline jobs start with the address, a quick conversation about the yard, and a site review before a price is finalized.
+            Most Northline jobs start with the property address, a few current photos, and a quick conversation about what part of the yard needs attention.
           </p>
         </header>
         <div className="land-process-layout">
@@ -245,9 +245,9 @@ export function HomePage() {
       <section className="land-home-section">
         <header className="land-home-section__header">
           <p className="land-home-section__eyebrow">Request a quote</p>
-          <h2 className="land-home-section__title">Tell us what you want to change</h2>
+          <h2 className="land-home-section__title">Tell us what you want to improve</h2>
           <p className="land-home-section__description">
-            Start with the property address, the part of the yard you want to improve, and any timing constraints.
+            Start with the property address, the part of the yard you want to improve, and any timing you are trying to plan around.
           </p>
         </header>
         <div className="land-quote-band">
