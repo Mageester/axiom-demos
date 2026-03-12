@@ -2130,6 +2130,37 @@ body[data-demo-brand='hospitality'] .mobile-primary-cta--hospitality .btn {
   margin-bottom: var(--space-section);
 }
 
+.restaurant-house-notes {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: calc(-1 * var(--space-3)) 0 var(--space-section);
+}
+
+.restaurant-house-notes__item {
+  border-top: 1px solid color-mix(in srgb, var(--color-border) 78%, black);
+  display: grid;
+  gap: var(--space-2);
+  padding-top: var(--space-4);
+}
+
+.restaurant-house-notes__index {
+  color: color-mix(in srgb, var(--color-brand-strong) 82%, white);
+  font-size: var(--size-2xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.restaurant-house-notes__item h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  line-height: 1.08;
+}
+
+.restaurant-house-notes__item p:last-child {
+  color: var(--color-text-secondary);
+}
+
 .restaurant-home-section__header {
   display: grid;
   gap: var(--space-2);
@@ -3724,6 +3755,7 @@ body[data-demo-brand='roofing'] .mobile-primary-cta {
   .roof-proof-strip,
   .roof-team-grid,
   .restaurant-atmosphere-grid,
+  .restaurant-house-notes,
   .restaurant-link-grid--3,
   .restaurant-visit-grid,
   .restaurant-values-grid,
@@ -3963,6 +3995,7 @@ body[data-demo-brand='roofing'] .mobile-primary-cta {
   .roof-project-grid,
   .roof-team-grid,
   .restaurant-atmosphere-grid,
+  .restaurant-house-notes,
   .restaurant-link-grid--3,
   .restaurant-visit-grid,
   .restaurant-values-grid,

@@ -37,12 +37,12 @@ export function ContactPage() {
         description={content.contact.intro}
         eyebrow="Contact"
         media={content.gallery.collections[5]?.image}
-        title="Contact the dining room"
+        title="Contact the dining room at Atelier Meridian"
       />
 
       <Section
         description="For booking changes, private dining, or accessibility details, these are the quickest ways to reach the dining room."
-        title="Reservations, private dining, and guest requests"
+        title="Reservations, hosted tables, and guest notes"
       >
         <div className="restaurant-link-grid restaurant-link-grid--3">
           {content.contact.details.map((detail) => (

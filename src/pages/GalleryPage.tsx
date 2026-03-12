@@ -22,12 +22,12 @@ export function GalleryPage() {
         description={content.gallery.intro}
         eyebrow="Gallery"
         media={content.gallery.collections[3]?.image ?? leadMoment?.image}
-        title="Evenings at Atelier Meridian"
+        title="A night at Atelier Meridian"
       />
 
       <Section
         description="A closer look at the room, the plates, and the pace of dinner."
-        title="Evening moments"
+        title="Through the evening"
       >
         <div className="gallery-feature-grid">
           {leadMoment ? (
@@ -73,7 +73,7 @@ export function GalleryPage() {
 
       <Section
         description="Scenes from the dining room, bar, and kitchen as the night unfolds."
-        title="Around the room"
+        title="From arrival to second seating"
       >
         <div className="gallery-wall">
           {galleryWallMoments.map((item, index) => (
@@ -100,13 +100,13 @@ export function GalleryPage() {
       <Section
         className="section--gallery-reserve"
         description="If you already have a date in mind, we would be glad to host you."
-        title="Join us for dinner"
+        title="Plan dinner or a hosted table"
       >
         <div className="reservation-callout reservation-callout--gallery">
           <div className="reservation-callout__copy">
             <p>
               Reserve online for standard tables, or contact our reservations
-              team for private room dinners and hosted occasions.
+              team for hosted dinners in The Studio and larger tables.
             </p>
             <p className="reservation-callout__meta">
               Reservations support available daily before dinner service
@@ -128,10 +128,10 @@ export function GalleryPage() {
           ) : null}
           <div className="reservation-callout__actions">
             <ButtonLink size="lg" to={routes.reservations}>
-              Reserve a table
+              Book dinner
             </ButtonLink>
             <ButtonLink size="lg" to={routes.contact} variant="secondary">
-              Private dining enquiry
+              Plan private dining
             </ButtonLink>
           </div>
         </div>

@@ -10,14 +10,17 @@ export function HomePage() {
   const atmosphereMoments = content.gallery.collections.slice(0, 3)
   const privateDiningMoment =
     content.gallery.collections.find((item) => item.title.includes('Private Dining'))
+    ?? content.gallery.collections.find((item) => item.title.includes('The Studio'))
     ?? content.gallery.collections[2]
     ?? content.gallery.collections[0]
   const philosophyMoment =
     content.gallery.collections.find((item) => item.title.includes('Chef Counter'))
+    ?? content.gallery.collections.find((item) => item.title.includes('At The Pass'))
     ?? content.gallery.collections[4]
     ?? content.gallery.collections[0]
   const reservationVisual =
-    content.home.experience.images[1]
+    privateDiningMoment?.image
+    ?? content.home.experience.images[1]
     ?? content.gallery.collections[content.gallery.collections.length - 1]?.image
     ?? content.home.hero.image
   const leadChef = content.about.team[0]
@@ -69,10 +72,20 @@ export function HomePage() {
         </div>
       </section>
 
+      <section className="restaurant-house-notes" aria-label="Atelier Meridian room notes">
+        {content.home.highlights.map((highlight, index) => (
+          <article className="restaurant-house-notes__item" key={highlight.title}>
+            <p className="restaurant-house-notes__index">0{index + 1}</p>
+            <h2>{highlight.title}</h2>
+            <p>{highlight.description}</p>
+          </article>
+        ))}
+      </section>
+
       <section className="restaurant-home-section">
         <header className="restaurant-home-section__header">
           <p className="restaurant-home-section__eyebrow">Tonight at {content.brand.name}</p>
-          <h2 className="restaurant-home-section__title">Signature dishes and seasonal plates</h2>
+          <h2 className="restaurant-home-section__title">Dinner this week</h2>
         </header>
 
         <div className="restaurant-tonight-layout">
@@ -95,7 +108,7 @@ export function HomePage() {
                 <h3>{featuredDish.name}</h3>
                 <p>{featuredDish.description}</p>
                 <ButtonLink to={routes.menu} variant="quiet">
-                  View full menu
+                  See dinner menu
                 </ButtonLink>
               </div>
             </article>
@@ -130,7 +143,7 @@ export function HomePage() {
       <section className="restaurant-home-section">
         <header className="restaurant-home-section__header">
           <p className="restaurant-home-section__eyebrow">Dining atmosphere</p>
-          <h2 className="restaurant-home-section__title">A room set for long, easy dinners</h2>
+          <h2 className="restaurant-home-section__title">From first seating to late evening</h2>
         </header>
 
         <div className="restaurant-atmosphere-grid">
@@ -172,14 +185,14 @@ export function HomePage() {
             </figure>
             <div className="restaurant-private-layout__body">
               <p className="restaurant-home-section__eyebrow">Private dining</p>
-              <h2 className="restaurant-home-section__title">A private room for celebrations and hosted tables</h2>
+              <h2 className="restaurant-home-section__title">The Studio for celebrations and hosted tables</h2>
               <p>{privateDiningMoment.description}</p>
               <p>
                 For birthdays, business dinners, and family occasions, we can
                 help you plan a menu and service style that fits your evening.
               </p>
               <div className="restaurant-private-layout__actions">
-                <ButtonLink to={routes.reservations}>Reserve private dining</ButtonLink>
+                <ButtonLink to={routes.contact}>Plan private dining</ButtonLink>
                 <ButtonAnchor href={content.brand.phoneHref} variant="secondary">
                   Call reservations
                 </ButtonAnchor>
@@ -192,8 +205,8 @@ export function HomePage() {
       <section className="restaurant-home-section">
         <div className="restaurant-story-layout">
           <div className="restaurant-story-layout__copy">
-            <p className="restaurant-home-section__eyebrow">Kitchen and room philosophy</p>
-            <h2 className="restaurant-home-section__title">Chef-led cuisine with calm, deliberate service</h2>
+            <p className="restaurant-home-section__eyebrow">From the kitchen</p>
+            <h2 className="restaurant-home-section__title">A short menu, quiet service, and a room paced for conversation</h2>
             <p>{content.about.intro}</p>
             <p>{content.about.story[0]}</p>
             {leadChef ? (
@@ -225,7 +238,7 @@ export function HomePage() {
         <div className="restaurant-reservation-module">
           <div className="restaurant-reservation-module__copy">
             <p className="restaurant-home-section__eyebrow">Reservations</p>
-            <h2 className="restaurant-home-section__title">Reserve your table for dinner</h2>
+            <h2 className="restaurant-home-section__title">Book dinner or plan a hosted table</h2>
             <p>{content.reservations.intro}</p>
             <ul className="plain-list restaurant-reservation-module__policies">
               {content.reservations.policies.slice(0, 2).map((policy) => (
@@ -234,7 +247,7 @@ export function HomePage() {
             </ul>
             <div className="restaurant-reservation-module__actions">
               <ButtonLink size="lg" to={routes.reservations}>
-                Reserve a table
+                Book dinner
               </ButtonLink>
               <ButtonAnchor href={content.brand.phoneHref} size="lg" variant="secondary">
                 Call reservations
@@ -261,8 +274,8 @@ export function HomePage() {
 
       <section className="restaurant-home-section restaurant-home-section--visit">
         <header className="restaurant-home-section__header">
-          <p className="restaurant-home-section__eyebrow">Visit and service hours</p>
-          <h2 className="restaurant-home-section__title">Plan your evening at {content.brand.name}</h2>
+          <p className="restaurant-home-section__eyebrow">Before you arrive</p>
+          <h2 className="restaurant-home-section__title">Find the dining room and plan the evening</h2>
         </header>
         <div className="restaurant-visit-grid">
           <article className="restaurant-visit-grid__panel">

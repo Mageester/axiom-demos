@@ -66,13 +66,13 @@ export function ReservationsPage() {
         }
         description={content.reservations.intro}
         eyebrow="Reservations"
-        media={content.home.experience.images[1]}
-        title="Reserve your table"
+        media={content.gallery.collections[2]?.image ?? content.home.experience.images[1]}
+        title="Book dinner at Atelier Meridian"
       />
 
       <Section
         description="Online booking is best for standard tables. For larger groups, hosted dinners, or timing questions, call or email the reservations team."
-        title="Reserve online, call, or email"
+        title="Book online, call, or email"
       >
         <div className="restaurant-link-grid restaurant-link-grid--3">
           {content.reservations.channels.map((channel) => (
@@ -89,7 +89,7 @@ export function ReservationsPage() {
 
       <Section
         description="Share a preferred date, time, party size, and any dietary or access notes. When you send this form, your email app opens with everything prepared."
-        title="Large tables or special requests"
+        title="Private dining, larger tables, or special notes"
       >
         <div className="reservation-layout">
           <form className="reservation-form" onSubmit={onSubmit}>
@@ -115,7 +115,7 @@ export function ReservationsPage() {
             <label htmlFor="notes">Dietary notes</label>
             <textarea id="notes" name="notes" rows={4} />
 
-            <Button type="submit">Prepare email request</Button>
+            <Button type="submit">Prepare email to dining room</Button>
             {statusMessage ? <p className="form-status">{statusMessage}</p> : null}
           </form>
 

@@ -16,10 +16,10 @@ export function AboutPage() {
         description={content.about.intro}
         eyebrow="About"
         media={content.gallery.collections[0]?.image}
-        title="The room, the kitchen, and the pace of service"
+        title="The room, the kitchen, and the pace of the night"
       />
 
-      <Section title="Our story">
+      <Section title="The dining room">
         <div className="story-layout">
           <div className="story-grid">
             {content.about.story.map((paragraph) => (
@@ -50,7 +50,7 @@ export function AboutPage() {
         </div>
       </Section>
 
-      <Section title="What guests come here for">
+      <Section title="What regulars come back for">
         <div className="restaurant-values-grid">
           {content.about.values.map((value) => (
             <article className="restaurant-value-panel" key={value.title}>
@@ -61,7 +61,7 @@ export function AboutPage() {
         </div>
       </Section>
 
-      <Section title="The people behind service">
+      <Section title="The people behind the room">
         <div className="restaurant-team-grid">
           {content.about.team.map((member) => (
             <article className="restaurant-team-panel" key={member.name}>

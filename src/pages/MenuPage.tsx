@@ -17,7 +17,7 @@ export function MenuPage() {
         description={content.menu.intro}
         eyebrow="Dinner"
         media={content.menu.sections[0]?.image}
-        title="Dinner menu"
+        title="Tonight's dinner menu"
       />
 
       <div className="menu-sections">

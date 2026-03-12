@@ -16,7 +16,7 @@ export const restaurantContent: DemoContent = {
     browserTitle: 'Atelier Meridian | Harbourfront Restaurant',
     metaDescription:
       'Seasonal coastal dining on the Toronto waterfront with warm evening service, private dining, and reservations available Tuesday to Sunday.',
-    tagline: 'Seasonal coastal dining by Toronto harbour',
+    tagline: 'Waterside dining room for long dinners by Toronto harbour',
     phone: '+1 (416) 555-0182',
     phoneHref: 'tel:+14165550182',
     email: 'reservations@ateliermeridian.ca',
@@ -35,13 +35,13 @@ export const restaurantContent: DemoContent = {
       eyebrow: 'Toronto Waterfront Dining',
       title: 'An evening by the water, shaped by the season.',
       description:
-        'Atelier Meridian is a dining room for unhurried dinners, thoughtful service, and ingredient-led cooking from Ontario farms and Atlantic waters.',
+        'Atelier Meridian is a harbourfront dining room for unhurried dinners, ingredient-led cooking, and service paced for conversation rather than turnover.',
       primaryCta: 'Reserve a table',
-      secondaryCta: 'Explore menu',
+      secondaryCta: 'See dinner menu',
       signals: [
-        'Dinner service Tuesday to Sunday',
-        'Private dining room for up to 12 guests',
-        'Dietary requests welcomed with advance notice',
+        'First seating catches the western harbour light',
+        'The Studio private room seats up to 12 guests',
+        'Reservations open 30 days ahead',
       ],
       image: {
         src: pexelsPhoto('30323144', 1800, 1200),
@@ -51,19 +51,19 @@ export const restaurantContent: DemoContent = {
     },
     highlights: [
       {
-        title: 'Kitchen-led tasting flow',
+        title: 'Window tables and harbour light',
         description:
-          'Small and full plates arrive in a considered rhythm so the table never feels rushed.',
+          'Early tables catch the last of the western light before the room settles into evening service.',
       },
       {
-        title: 'Wine and zero-proof pairings',
+        title: 'The Studio for hosted dinners',
         description:
-          'A focused list of low-intervention wines and house zero-proof pairings by course.',
+          'A separate 12-seat room for birthdays, client dinners, and quieter hosted tables.',
       },
       {
-        title: 'Private room occasions',
+        title: 'Pairings poured table-side',
         description:
-          'A 12-seat room for birthdays, business dinners, and hosted celebrations.',
+          'A short list of wines, aperitifs, and zero-proof pours shaped around the dinner menu.',
       },
     ],
     featuredDishes: [
@@ -129,8 +129,8 @@ export const restaurantContent: DemoContent = {
       'Our menu shifts with the week and the market, guided by seasonal harvests and fishery arrivals.',
     sections: [
       {
-        title: 'First Plates',
-        note: 'Smaller dishes for the opening rounds at the table.',
+        title: 'Raw & First Plates',
+        note: 'The opening round for the table, from shellfish and crudo to smaller warm plates.',
         image: {
           src: pexelsPhoto('22711496', 1200, 900),
           alt: 'Small plates set on a warmly lit restaurant table',
@@ -155,8 +155,8 @@ export const restaurantContent: DemoContent = {
         ],
       },
       {
-        title: 'Main Courses',
-        note: 'Composed mains built around seafood, game, and peak produce.',
+        title: 'Mains From The Pass',
+        note: 'Composed plates built around seafood, game, and produce at its best that week.',
         image: {
           src: pexelsPhoto('32083423', 1200, 900),
           alt: 'Main course plated in a refined restaurant dining room',
@@ -181,8 +181,8 @@ export const restaurantContent: DemoContent = {
         ],
       },
       {
-        title: 'Dessert',
-        note: 'Desserts with depth, texture, and a restrained finish.',
+        title: 'Dessert & Cheese',
+        note: 'Desserts with depth, plus a short Ontario cheese service to close the table.',
         image: {
           src: pexelsPhoto('34712611', 1200, 900),
           alt: 'Dark chocolate dessert plated for an evening restaurant service',
@@ -212,23 +212,23 @@ export const restaurantContent: DemoContent = {
     intro:
       'Atelier Meridian is a waterfront dining room built around seasonal cooking, warm service, and evenings that never feel rushed.',
     story: [
-      'Our menu is written in short seasonal cycles, with dishes changing as produce and seafood quality shifts through the month.',
-      'The floor team is trained to read the table, pace service naturally, and keep the evening comfortable without interruption.',
-      'Natural wood, soft acoustics, and low evening light were chosen to keep conversation easy from first course to last glass.',
+      'The menu is written in short seasonal cycles, with dishes moving as produce peaks, shellfish changes, and the kitchen finds a better version of a course.',
+      'First seating is quieter and slower, while later tables carry more energy from the bar and the pass, but the room is always paced to leave space for conversation.',
+      'Natural wood, low lamps, and softened acoustics keep the dining room warm even on colder waterfront nights.',
     ],
     values: [
       {
-        title: 'Seasonal sourcing',
+        title: 'Short seasonal menu',
         description:
           'We work with growers and fisheries we know, and we adjust the menu when quality tells us to.',
       },
       {
-        title: 'Warm, attentive service',
+        title: 'Tables paced with care',
         description:
           'Every guest should feel looked after, whether it is a quick dinner for two or a long celebratory table.',
       },
       {
-        title: 'Details that matter',
+        title: 'Room details',
         description:
           'From glassware to pacing, we care about the small decisions that shape how the night feels.',
       },
@@ -253,7 +253,7 @@ export const restaurantContent: DemoContent = {
   },
   reservations: {
     intro:
-      'Reservations open 30 days ahead. For larger tables, private dinners, or hosted occasions, please contact our reservations team directly.',
+      'Reservations open 30 days ahead. For larger tables, hosted dinners, or a night in The Studio, contact the dining room directly.',
     policies: [
       'A valid card is required to hold dinner reservations.',
       'Cancellations made within 24 hours may be subject to a per-seat fee.',
@@ -282,8 +282,8 @@ export const restaurantContent: DemoContent = {
       'A look at the room, the plates, and the pace of service through the evening.',
     collections: [
       {
-        title: 'Main Dining Room',
-        subtitle: 'Evening in the main room',
+        title: 'Window Tables',
+        subtitle: 'Early evening in the main room',
         description:
           'Warm light, generous table spacing, and a room set for long conversation.',
         image: {
@@ -293,8 +293,8 @@ export const restaurantContent: DemoContent = {
         },
       },
       {
-        title: 'Seasonal Plating',
-        subtitle: 'Plating from the kitchen',
+        title: 'First Plates',
+        subtitle: 'Opening rounds from the kitchen',
         description:
           'Seasonal ingredients plated with clean lines and a focus on flavour first.',
         image: {
@@ -304,8 +304,8 @@ export const restaurantContent: DemoContent = {
         },
       },
       {
-        title: 'Private Dining Studio',
-        subtitle: 'Hosted dinners',
+        title: 'The Studio',
+        subtitle: 'Private room dinners',
         description:
           'A separate room for birthdays, hosted dinners, and private evening gatherings.',
         image: {
@@ -315,7 +315,7 @@ export const restaurantContent: DemoContent = {
         },
       },
       {
-        title: 'Bar & Pairings',
+        title: 'Aperitif & Pairings',
         subtitle: 'Cocktail and wine service',
         description:
           'A concise bar program with signature cocktails, by-the-glass wines, and zero-proof options.',
@@ -326,7 +326,7 @@ export const restaurantContent: DemoContent = {
         },
       },
       {
-        title: 'Chef Counter',
+        title: 'At The Pass',
         subtitle: 'Open kitchen view',
         description:
           'A closer view of finishing work and pass service in the heart of the kitchen.',
@@ -337,7 +337,7 @@ export const restaurantContent: DemoContent = {
         },
       },
       {
-        title: 'Arrival Experience',
+        title: 'Before First Seating',
         subtitle: 'Welcome at the door',
         description:
           'Hosts greet each table at arrival and confirm any notes before seating.',
@@ -348,7 +348,7 @@ export const restaurantContent: DemoContent = {
         },
       },
       {
-        title: 'Late Evening Mood',
+        title: 'Second Seating',
         subtitle: 'After-dark dining',
         description:
           'The room settles into a quieter mood as service moves into the late evening.',
@@ -359,7 +359,7 @@ export const restaurantContent: DemoContent = {
         },
       },
       {
-        title: 'Kitchen Team Flow',
+        title: 'Line In Motion',
         subtitle: 'On the pass',
         description:
           'The kitchen team on the pass, timing each course for smooth table pacing.',
@@ -373,7 +373,7 @@ export const restaurantContent: DemoContent = {
   },
   contact: {
     intro:
-      'Reach the dining room directly for booking changes, private dining inquiries, or accessibility details.',
+      'Reach the dining room directly for booking changes, hosted tables in The Studio, or accessibility details.',
     details: [
       {
         label: 'Call reservations',
@@ -387,7 +387,7 @@ export const restaurantContent: DemoContent = {
       },
       {
         label: 'Visit',
-        value: '112 Harbor Lane, Toronto, ON M5V 2L6',
+        value: '112 Harbour Lane, Toronto, ON M5V 2L6',
         href: 'https://maps.google.com/?q=112+Harbour+Lane+Toronto+ON',
       },
     ],

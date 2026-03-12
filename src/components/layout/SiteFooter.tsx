@@ -7,9 +7,9 @@ export function SiteFooter() {
   const isHospitality = brandSystem === 'hospitality'
   const isService = brandSystem === 'service'
   const isRoofing = brandSystem === 'roofing'
-  const visitHeading = isHospitality ? 'Visit The Dining Room' : 'Service Area'
-  const hoursHeading = isHospitality ? 'Dinner Service' : isRoofing ? 'Office Hours' : 'Consultation Hours'
-  const contactHeading = isHospitality ? 'Reservations' : isRoofing ? 'Inspection Desk' : 'Quote Desk'
+  const visitHeading = isHospitality ? 'Find The Dining Room' : 'Service Area'
+  const hoursHeading = isHospitality ? 'Dinner Hours' : isRoofing ? 'Office Hours' : 'Consultation Hours'
+  const contactHeading = isHospitality ? 'Dining Room' : isRoofing ? 'Inspection Desk' : 'Quote Desk'
   const brandTagline = isHospitality
     ? `${content.brand.tagline}. Dinner reservations recommended.`
     : isRoofing
