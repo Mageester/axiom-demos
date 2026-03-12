@@ -16,7 +16,7 @@ export const landscapingContent: DemoContent = {
     browserTitle: 'Northline Outdoor Studio | Premium Landscaping',
     metaDescription:
       'Premium residential landscaping and outdoor living for Toronto and the West GTA. Patios, planting, lighting, and curb appeal upgrades with clear project planning.',
-    tagline: 'Premium residential landscaping and outdoor living builds',
+    tagline: 'Design-build landscaping for premium residential properties',
     phone: '+1 (647) 555-0139',
     phoneHref: 'tel:+16475550139',
     email: 'quotes@northlineoutdoor.ca',
@@ -31,16 +31,16 @@ export const landscapingContent: DemoContent = {
   },
   home: {
     hero: {
-      eyebrow: 'Premium Landscaping | Toronto & West GTA',
-      title: 'Outdoor spaces that look sharper, live better, and hold up season after season.',
+      eyebrow: 'Design-Build Landscaping | Toronto & West GTA',
+      title: 'Landscape upgrades that make the whole property read better.',
       description:
-        'Northline designs and builds refined patios, front entries, planting plans, and lighting upgrades for homeowners who want stronger curb appeal and a better way to use the property.',
+        'Northline plans and builds patios, front approaches, planting, lighting, and full-property exterior improvements for homeowners who want a sharper first impression and a better way to use the yard.',
       primaryCta: 'Request estimate',
-      secondaryCta: 'Explore services',
+      secondaryCta: 'View projects',
       signals: [
-        'Patios, planting, lighting, and curb appeal upgrades',
-        'Projects planned around property conditions before materials are chosen',
-        'Service area fit confirmed before on-site consultations are booked',
+        'Patios, steps, planting, lighting, and curb appeal upgrades',
+        'Site conditions and drainage reviewed before material scope is finalized',
+        'Service-area fit and project intent confirmed before site visits are booked',
       ],
       image: {
         src: pexelsPhoto('1029599', 1800, 1200),
@@ -50,19 +50,19 @@ export const landscapingContent: DemoContent = {
     },
     highlights: [
       {
-        title: 'Design-build planning',
+        title: 'Site-first planning',
         description:
-          'Layouts, drainage, and material direction are resolved before installation starts, so the finished work feels intentional from every angle.',
+          'Layout, grade, drainage, and material direction are worked through before install, so the finished property feels deliberate instead of pieced together.',
       },
       {
-        title: 'Clean, controlled installs',
+        title: 'Clean project delivery',
         description:
-          'Crews protect access points, keep the site orderly, and close each phase with the same care visible in the final result.',
+          'Access points stay protected, the site stays organized, and each phase closes in a way that still reflects the finish standard.',
       },
       {
-        title: 'Built for Ontario seasons',
+        title: 'Built for the local climate',
         description:
-          'Base prep, edge restraint, lighting, and planting choices are made to keep the property performing through real seasonal cycles.',
+          'Base prep, edge restraint, planting choices, and lighting are selected to perform through real Ontario freeze-thaw cycles.',
       },
     ],
     featuredDishes: [
@@ -70,7 +70,7 @@ export const landscapingContent: DemoContent = {
         name: 'Custom Patios & Entertaining Zones',
         course: 'Outdoor living',
         description:
-          'Stone and porcelain patio builds planned around furniture layout, circulation, and a cleaner hosting experience.',
+          'Stone and porcelain patio builds planned around furniture layout, circulation, and a cleaner outdoor-living setup.',
         image: {
           src: pexelsPhoto('2132227', 1400, 1000),
           alt: 'Stone patio with seating and layered garden beds',
@@ -81,7 +81,7 @@ export const landscapingContent: DemoContent = {
         name: 'Front Entry & Curb Appeal Upgrades',
         course: 'Arrival and frontage',
         description:
-          'Walkways, borders, and planting plans that give the property a stronger first read before anyone reaches the door.',
+          'Walkways, borders, and planting plans that give the front of the home a stronger first read before anyone reaches the door.',
         image: {
           src: pexelsPhoto('2802293', 1400, 1000),
           alt: 'Refined front yard landscaping with walkway lighting and planting',
@@ -92,7 +92,7 @@ export const landscapingContent: DemoContent = {
         name: 'Landscape Lighting & Planting Refresh',
         course: 'Evening presence',
         description:
-          'Low-voltage lighting and seasonal planting updates that keep the yard polished after dark and through peak season.',
+          'Low-voltage lighting and seasonal planting updates that keep the property finished after dark and through peak season.',
         image: {
           src: pexelsPhoto('1453499', 1400, 1000),
           alt: 'Residential garden with warm pathway lighting at dusk',
@@ -125,7 +125,7 @@ export const landscapingContent: DemoContent = {
   },
   menu: {
     intro:
-      'Northline handles planning, installation, and seasonal refinement for premium residential properties across Toronto and the west end.',
+      'Northline handles planning, installation, and targeted seasonal refinement for premium residential properties across Toronto and the west end.',
     sections: [
       {
         title: 'Design & Planning',
@@ -212,11 +212,11 @@ export const landscapingContent: DemoContent = {
   },
   about: {
     intro:
-      'Northline was built for homeowners who want premium outdoor work delivered with cleaner planning, calmer communication, and stronger finish quality.',
+      'Northline was built for homeowners who want premium outdoor work delivered with stronger planning, calmer communication, and cleaner finish quality.',
     story: [
-      'We approach landscaping as design-build work. The first decisions are about how the property should function, where the constraints are, and what will still look right years from now.',
-      'Our crews are measured by more than the visible surface. Site conduct, access protection, tidy handoff between phases, and clear homeowner communication are part of the finished product.',
-      'The goal is simple: an exterior that feels more composed, is easier to live with, and gives the property a stronger presence from the street to the back fence.',
+      'We approach landscaping as property design-build work. The first decisions are about how the yard should function, where the constraints sit, and what will still look right several seasons from now.',
+      'Northline is not set up like a volume install crew. Scope, access, grading, drainage, and finish standards are clarified early so the build does not drift once materials arrive.',
+      'The goal is straightforward: an exterior that looks more composed, works better day to day, and gives the property a stronger presence from the curb to the back fence.',
     ],
     values: [
       {
@@ -281,13 +281,13 @@ export const landscapingContent: DemoContent = {
   },
   gallery: {
     intro:
-      'A selection of residential projects focused on curb appeal, outdoor living, and stronger day-to-day use of the property.',
+      'A selection of residential project directions focused on curb appeal, outdoor living, and stronger day-to-day use of the property.',
     collections: [
       {
         title: 'Backyard Entertaining Terrace',
         subtitle: 'Patio and planting package',
         description:
-          'Porcelain patio zone with layered planters and integrated circulation for a cleaner hosting layout.',
+          'Porcelain patio zone with layered planters and integrated circulation for a cleaner outdoor-living layout.',
         facts: ['Rear-yard focus', 'Porcelain paving', 'Planting and circulation'],
         image: {
           src: pexelsPhoto('280215', 1200, 900),
@@ -299,7 +299,7 @@ export const landscapingContent: DemoContent = {
         title: 'Front Approach Refresh',
         subtitle: 'Curb appeal upgrade',
         description:
-          'Entry path rebuild with structured planting and elevation transitions for a stronger arrival sequence.',
+          'Entry path rebuild with structured planting and elevation transitions for a stronger arrival sequence from the sidewalk in.',
         facts: ['Walkway rebuild', 'Front-bed framing', 'Improved first impression'],
         image: {
           src: pexelsPhoto('2662116', 1200, 900),
@@ -311,7 +311,7 @@ export const landscapingContent: DemoContent = {
         title: 'Garden Retaining Wall System',
         subtitle: 'Grade control and visual structure',
         description:
-          'Terraced retaining walls and defined beds that improve drainage while giving the yard stronger composition.',
+          'Terraced retaining walls and defined beds that improve drainage while giving the yard more structure and control.',
         facts: ['Retaining wall system', 'Drainage-aware planning', 'Layered garden beds'],
         image: {
           src: pexelsPhoto('1402787', 1200, 900),
@@ -323,7 +323,7 @@ export const landscapingContent: DemoContent = {
         title: 'Outdoor Lounge Lighting',
         subtitle: 'Evening-ready ambience',
         description:
-          'Low-voltage path and feature lighting that supports safety while elevating the property after dark.',
+          'Low-voltage path and feature lighting that supports safety while making the property read better after dark.',
         facts: ['Low-voltage lighting', 'Path and feature layers', 'Night presence'],
         image: {
           src: pexelsPhoto('2906509', 1200, 900),
@@ -347,7 +347,7 @@ export const landscapingContent: DemoContent = {
         title: 'Complete Front-to-Back Upgrade',
         subtitle: 'Design-build transformation',
         description:
-          'Integrated hardscape, lawn, and planting work delivered as one coordinated property-wide build.',
+          'Integrated hardscape, lawn, and planting work delivered as one coordinated property-wide upgrade.',
         facts: ['Full property scope', 'Hardscape and softscape', 'Single coordinated install'],
         image: {
           src: pexelsPhoto('1591447', 1200, 900),
@@ -359,7 +359,7 @@ export const landscapingContent: DemoContent = {
   },
   contact: {
     intro:
-      'Reach Northline directly to confirm service area, discuss scope, or plan a site visit.',
+      'Reach Northline directly to confirm service area, discuss scope, or plan the right first visit.',
     details: [
       {
         label: 'Call office',
