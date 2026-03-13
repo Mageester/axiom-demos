@@ -103,10 +103,12 @@ export function HomePage() {
                     ))}
                   </ul>
                 ) : null}
-                <div className="land-section-actions">
-                  <ButtonLink to={routes.gallery}>View all projects</ButtonLink>
-                  <ButtonLink to={routes.reservations} variant="secondary">
-                    Request a similar quote
+                <div className="land-section-actions land-section-actions--proof">
+                  <ButtonLink size="md" to={routes.gallery}>
+                    See all projects
+                  </ButtonLink>
+                  <ButtonLink size="md" to={routes.reservations} variant="secondary">
+                    Request pricing
                   </ButtonLink>
                 </div>
               </div>
