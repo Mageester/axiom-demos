@@ -1,8 +1,7 @@
 import { type FormEvent, useContext, useState } from 'react'
 import { DemoConfigContext } from '../../config/demoConfig'
+import { RoofingPageHeader } from '../../components/roofing/RoofingPageHeader'
 import { Button, ButtonAnchor } from '../../components/ui/Button'
-import { PageHero } from '../../components/ui/PageHero'
-import { Section } from '../../components/ui/Section'
 
 const issueOptions = [
   'Active leak or water entry',
@@ -52,51 +51,61 @@ export function InspectionPage() {
     })
 
     window.location.href = `${content.brand.emailHref}?${query.toString()}`
-    setStatusMessage('Your email app is opening with your inspection request details.')
+    setStatusMessage('Your email app is opening with the inspection request details.')
     event.currentTarget.reset()
   }
 
   return (
     <>
-      <PageHero
-        actions={
-          <ButtonAnchor href={content.brand.phoneHref} variant="secondary">
-            Call office
-          </ButtonAnchor>
-        }
-        className="roof-page-hero"
+      <RoofingPageHeader
+        actions={<ButtonAnchor href={content.brand.phoneHref}>Call office</ButtonAnchor>}
         description={content.reservations.intro}
         eyebrow="Inspection"
         media={content.home.hero.image}
-        signals={['Inspection-led recommendations', 'Repair or replacement clarity', 'Photo-backed next steps']}
+        meta={['Use this when the next step still needs to be confirmed', 'Call first for active leak issues']}
+        summaryItems={[
+          'Property address, roof concern, and timing are the first details we need',
+          'Photos help us confirm urgency and whether the scope fits the service area',
+          'Repair-versus-replacement guidance is sent after the first visit, not before it',
+        ]}
+        summaryLabel="What this request should include"
         title="Request a roof or exterior inspection"
       />
 
-      <Section
-        description="If the issue is active water entry or recent storm damage, call directly. For everything else, use the channel that best fits your timeline."
-        eyebrow="Direct options"
-        title="Inspection channels"
-      >
-        <div className="roof-contact-grid">
+      <section className="roof-block">
+        <header className="roof-block__header">
+          <p className="roof-block__eyebrow">Direct options</p>
+          <h2 className="roof-block__title">Call, email, or send the inspection form</h2>
+        </header>
+
+        <div className="roof-contact-board">
           {content.reservations.channels.map((channel) => (
-            <article className="roof-contact-panel" key={channel.label}>
-              <p className="roof-section-eyebrow">{channel.label}</p>
+            <article className="roof-contact-dossier" key={channel.label}>
+              <p className="roof-block__eyebrow">{channel.label}</p>
               <h3>{channel.value}</h3>
               <ButtonAnchor href={channel.href} variant="secondary">
-                {channel.label.toLowerCase().includes('call') ? 'Call office' : channel.label.toLowerCase().includes('email') ? 'Email request' : 'View map'}
+                {channel.label.toLowerCase().includes('call')
+                  ? 'Call office'
+                  : channel.label.toLowerCase().includes('email')
+                    ? 'Email request'
+                    : 'View map'}
               </ButtonAnchor>
             </article>
           ))}
         </div>
-      </Section>
+      </section>
 
-      <Section
-        description="Send the core details first so Blackridge can confirm urgency, service-area fit, and the right next step before a site visit is booked."
-        eyebrow="Form"
-        title="Inspection request form"
-      >
-        <div className="reservation-layout reservation-layout--roofing">
-          <form className="reservation-form reservation-form--roofing" onSubmit={onSubmit}>
+      <section className="roof-block">
+        <header className="roof-block__header">
+          <p className="roof-block__eyebrow">Inspection form</p>
+          <h2 className="roof-block__title">Send the property details first</h2>
+          <p className="roof-block__description">
+            This form is best when the problem is clear enough to describe but the right scope still needs to be confirmed before a site visit is booked.
+          </p>
+        </header>
+
+        <div className="roof-request-layout">
+          <form className="roof-request-form" onSubmit={onSubmit}>
             <label htmlFor="name">Full name</label>
             <input id="name" name="name" required type="text" />
 
@@ -136,19 +145,24 @@ export function InspectionPage() {
             {statusMessage ? <p className="form-status">{statusMessage}</p> : null}
           </form>
 
-          <aside className="policy-panel policy-panel--roofing">
-            <h3>What happens next</h3>
-            <ul>
-              {content.reservations.policies.map((policy) => (
-                <li key={policy}>{policy}</li>
-              ))}
-            </ul>
-            <p className="policy-panel__subtle">
-              For active leaks or recent storm damage, call {content.brand.phone} so we can determine whether the request should be prioritized.
-            </p>
+          <aside className="roof-request-aside">
+            <div className="roof-request-aside__panel">
+              <p className="roof-block__eyebrow">What happens next</p>
+              <ul className="plain-list roof-command-deck__brief-list">
+                {content.reservations.policies.map((policy) => (
+                  <li key={policy}>{policy}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="roof-request-aside__panel roof-request-aside__panel--accent">
+              <p className="roof-block__eyebrow">Urgent issues</p>
+              <p>
+                For active leaks or recent storm damage, call {content.brand.phone} so the request can be triaged first.
+              </p>
+            </div>
           </aside>
         </div>
-      </Section>
+      </section>
     </>
   )
 }

@@ -1,17 +1,13 @@
 import { useContext } from 'react'
 import { DemoConfigContext } from '../../config/demoConfig'
+import { RoofingPageHeader } from '../../components/roofing/RoofingPageHeader'
 import { ButtonAnchor, ButtonLink } from '../../components/ui/Button'
-import { PageHero } from '../../components/ui/PageHero'
-import { Section } from '../../components/ui/Section'
 
 function getActionLabel(label: string) {
   const normalized = label.toLowerCase()
   if (normalized.includes('call')) return 'Call office'
   if (normalized.includes('email')) return 'Email Blackridge'
-  if (normalized.includes('map') || normalized.includes('service area') || normalized.includes('office')) {
-    return 'View map'
-  }
-  return 'Open'
+  return 'View map'
 }
 
 export function ContactPage() {
@@ -19,32 +15,38 @@ export function ContactPage() {
 
   return (
     <>
-      <PageHero
+      <RoofingPageHeader
         actions={
           <>
-            <ButtonAnchor href={content.brand.phoneHref} variant="secondary">
-              Call office
-            </ButtonAnchor>
-            <ButtonLink to={routes.reservations}>Request inspection</ButtonLink>
+            <ButtonAnchor href={content.brand.phoneHref}>Call office</ButtonAnchor>
+            <ButtonLink to={routes.reservations} variant="secondary">
+              Request inspection
+            </ButtonLink>
           </>
         }
-        className="roof-page-hero"
         description={content.contact.intro}
         eyebrow="Contact"
-        media={content.gallery.collections[5]?.image}
-        signals={['Inspection replies within one business day', 'Urgent leak calls prioritized when possible', 'Service-area fit confirmed first']}
-        title="Speak with Blackridge about your roof or exterior concern"
+        media={content.gallery.collections[4]?.image}
+        meta={['Inspection questions, service-area fit, and active issue triage', 'Toronto & Durham Region']}
+        summaryItems={[
+          'Call first for active leaks or recent weather damage',
+          'Email photos when the issue is visible from the ground or attic',
+          'Use the inspection form when the next step still needs to be confirmed',
+        ]}
+        summaryLabel="Best use of each contact channel"
+        title="Speak with Blackridge about a roof, siding, or drainage concern"
       />
 
-      <Section
-        description="Use the direct channel that best fits the urgency of the issue and how much you already know about the property condition."
-        eyebrow="Direct channels"
-        title="Contact Blackridge"
-      >
-        <div className="roof-contact-grid">
+      <section className="roof-block">
+        <header className="roof-block__header">
+          <p className="roof-block__eyebrow">Direct channels</p>
+          <h2 className="roof-block__title">Call, email, or confirm service-area fit</h2>
+        </header>
+
+        <div className="roof-contact-board">
           {content.contact.details.map((detail) => (
-            <article className="roof-contact-panel" key={detail.label}>
-              <p className="roof-section-eyebrow">{detail.label}</p>
+            <article className="roof-contact-dossier" key={detail.label}>
+              <p className="roof-block__eyebrow">{detail.label}</p>
               <h3>{detail.value}</h3>
               {detail.href ? (
                 <ButtonAnchor href={detail.href} variant="secondary">
@@ -54,26 +56,26 @@ export function ContactPage() {
             </article>
           ))}
         </div>
-      </Section>
+      </section>
 
-      <Section
-        description="A better first message includes the property address, what you are seeing, and whether the issue is active damage or preventative planning."
-        eyebrow="Before you call"
-        title="What to include"
-      >
-        <div className="roof-note-panel">
-          <ul>
+      <section className="roof-block">
+        <header className="roof-block__header">
+          <p className="roof-block__eyebrow">Before you send the request</p>
+          <h2 className="roof-block__title">The details that make triage faster</h2>
+        </header>
+
+        <div className="roof-note-board">
+          <ul className="roof-note-board__list">
             {content.contact.notes.map((note) => (
               <li key={note}>{note}</li>
             ))}
           </ul>
-          <div className="roof-note-panel__aside">
-            <p className="roof-section-eyebrow">Best fit</p>
+          <div className="roof-note-board__aside">
+            <p className="roof-block__eyebrow">Best fit</p>
             <p>
-              Blackridge is strongest on residential roofing and exterior scopes where inspection, clear options,
-              and stronger site control matter more than a vague low-end quote.
+              Blackridge is strongest on residential roofing and exterior scopes where the homeowner wants inspection, scope clarity, and tighter on-site standards before the work is booked.
             </p>
-            <div className="roof-section-actions">
+            <div className="roof-command-deck__actions">
               <ButtonLink to={routes.reservations}>Start inspection request</ButtonLink>
               <ButtonAnchor href={content.brand.phoneHref} variant="secondary">
                 Call {content.brand.phone}
@@ -81,7 +83,7 @@ export function ContactPage() {
             </div>
           </div>
         </div>
-      </Section>
+      </section>
     </>
   )
 }

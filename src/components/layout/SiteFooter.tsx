@@ -16,6 +16,59 @@ export function SiteFooter() {
       ? `${content.brand.tagline}. Inspection visits are scheduled after issue and service-area fit are confirmed.`
       : `${content.brand.tagline}. Site visits are scheduled after scope fit is confirmed.`
 
+  if (isRoofing) {
+    return (
+      <footer className="site-footer site-footer--roofing">
+        <div className="site-footer__roofing-top">
+          <div>
+            <h2 className="site-footer__brand">{content.brand.name}</h2>
+            <p className="site-footer__tagline">{brandTagline}</p>
+          </div>
+          <ButtonLink className="site-footer__roofing-cta" size="md" to={primaryCta.path}>
+            {primaryCta.label}
+          </ButtonLink>
+        </div>
+
+        <div className="site-footer__roofing-grid">
+          <div>
+            <h3 className="site-footer__heading">Inspection Desk</h3>
+            <ul className="plain-list">
+              <li>
+                <a href={content.brand.phoneHref}>{content.brand.phone}</a>
+              </li>
+              <li>
+                <a href={content.brand.emailHref}>{content.brand.email}</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="site-footer__heading">Service Area</h3>
+            <p>{content.brand.city}</p>
+            <p>{content.brand.address}</p>
+          </div>
+
+          <div>
+            <h3 className="site-footer__heading">Office Hours</h3>
+            <ul className="plain-list">
+              {content.brand.hours.map((hour) => (
+                <li key={hour}>{hour}</li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="site-footer__heading">Best Use</h3>
+            <p>Active leak calls, aging roof inspections, storm response, roof replacements, and roofline exterior support work.</p>
+          </div>
+        </div>
+        <p className="site-footer__legal">
+          {new Date().getFullYear()} {content.brand.legalLine}
+        </p>
+      </footer>
+    )
+  }
+
   if (isService) {
     return (
       <footer className="site-footer site-footer--service">

@@ -8,6 +8,7 @@ export function SiteNav() {
   const { brandSystem, content, homePath, navItems, primaryCta } = useContext(DemoConfigContext)
   const isHospitality = brandSystem === 'hospitality'
   const isService = brandSystem === 'service'
+  const isRoofing = brandSystem === 'roofing'
   const visibleNavItems = navItems.filter((item) => item.path !== primaryCta.path)
 
   useEffect(() => {
@@ -39,7 +40,19 @@ export function SiteNav() {
         </div>
       ) : null}
 
-      <div className={`site-nav ${isHospitality ? 'site-nav--hospitality' : ''} ${isService ? 'site-nav--service' : ''}`}>
+      {isRoofing ? (
+        <div className="site-nav__roofing-bar">
+          <div className="site-nav__roofing-bar-inner">
+            <p className="site-nav__roofing-bar-copy">Active leak or storm concern? Call the office first for triage.</p>
+            <div className="site-nav__roofing-bar-links">
+              <span>{content.brand.city}</span>
+              <a href={content.brand.phoneHref}>{content.brand.phone}</a>
+            </div>
+          </div>
+        </div>
+      ) : null}
+
+      <div className={`site-nav ${isHospitality ? 'site-nav--hospitality' : ''} ${isService ? 'site-nav--service' : ''} ${isRoofing ? 'site-nav--roofing' : ''}`}>
         <NavLink className="site-brand" to={homePath}>
           {content.brand.logo ? (
             <span className="site-brand__mark" aria-hidden="true">
@@ -73,6 +86,44 @@ export function SiteNav() {
               <a className="site-nav__service-phone" href={content.brand.phoneHref}>
                 {content.brand.phone}
               </a>
+            </div>
+
+            <nav
+              className={`primary-nav ${isOpen ? 'primary-nav--open' : ''}`}
+              id="primary-nav"
+            >
+              {visibleNavItems.map((item) => (
+                <NavLink
+                  className={({ isActive }) =>
+                    ['primary-nav__link', isActive ? 'primary-nav__link--active' : '']
+                      .filter(Boolean)
+                      .join(' ')
+                  }
+                  key={item.path}
+                  onClick={() => setIsOpen(false)}
+                  to={item.path}
+                >
+                  {item.label}
+                </NavLink>
+              ))}
+              <ButtonLink className="primary-nav__cta" onClick={() => setIsOpen(false)} size="md" to={primaryCta.path}>
+                {primaryCta.label}
+              </ButtonLink>
+            </nav>
+          </div>
+        ) : isRoofing ? (
+          <div className={`site-nav__roofing-shell ${isOpen ? 'site-nav__roofing-shell--open' : ''}`}>
+            <div className="site-nav__roofing-utility">
+              <div>
+                <p className="site-nav__roofing-label">Service area</p>
+                <p className="site-nav__roofing-meta">{content.brand.city}</p>
+              </div>
+              <div>
+                <p className="site-nav__roofing-label">Inspection desk</p>
+                <a className="site-nav__roofing-phone" href={content.brand.phoneHref}>
+                  {content.brand.phone}
+                </a>
+              </div>
             </div>
 
             <nav

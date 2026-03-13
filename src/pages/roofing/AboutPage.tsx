@@ -1,81 +1,92 @@
 import { useContext } from 'react'
 import { DemoConfigContext } from '../../config/demoConfig'
+import { RoofingPageHeader } from '../../components/roofing/RoofingPageHeader'
 import { ButtonLink } from '../../components/ui/Button'
-import { PageHero } from '../../components/ui/PageHero'
-import { Section } from '../../components/ui/Section'
 
 export function AboutPage() {
   const { content, routes } = useContext(DemoConfigContext)
   const visualOne = content.gallery.collections[2]
-  const visualTwo = content.gallery.collections[4]
+  const visualTwo = content.gallery.collections[5]
 
   return (
     <>
-      <PageHero
+      <RoofingPageHeader
         actions={<ButtonLink to={routes.reservations}>Request inspection</ButtonLink>}
-        className="roof-page-hero"
         description={content.about.intro}
         eyebrow="About"
         media={visualOne?.image}
-        signals={['Inspection-led recommendations', 'Clear scope communication', 'Clean site standards']}
-        title="A roofing and exterior contractor built around clarity, protection, and site discipline"
+        meta={['Inspection-led scope review', 'Property protection, scheduling, and closeout standards']}
+        summaryItems={[
+          'Built for homeowners who want clear answers before spending on major work',
+          'Crew standards cover access, cleanup, communication, and handoff',
+          'Roofing, roofline support, and drainage work handled as one exterior system',
+        ]}
+        summaryLabel="What kind of contractor this is"
+        title="A roofing and exterior company built around clearer scope and tighter site standards"
       />
 
-      <Section eyebrow="Approach" title="How Blackridge runs the work">
-        <div className="roof-story-layout">
-          <div className="roof-story-layout__copy">
+      <section className="roof-block">
+        <header className="roof-block__header">
+          <p className="roof-block__eyebrow">How the company works</p>
+          <h2 className="roof-block__title">Protection first, then scope, then execution</h2>
+        </header>
+
+        <div className="roof-story-board">
+          <div className="roof-story-board__copy">
             {content.about.story.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
-          <div className="roof-story-layout__visuals">
+          <div className="roof-story-board__visuals">
             {[visualOne, visualTwo].map((item) =>
               item ? (
-                <figure className="roof-story-layout__item" key={item.title}>
+                <figure className="roof-story-board__item" key={item.title}>
                   <img
                     alt={item.image.alt}
                     loading="lazy"
                     src={item.image.src}
                     style={item.image.position ? { objectPosition: item.image.position } : undefined}
                   />
-                  <figcaption>{item.subtitle}</figcaption>
+                  <figcaption>{item.title}</figcaption>
                 </figure>
               ) : null,
             )}
           </div>
         </div>
-      </Section>
+      </section>
 
-      <Section
-        description="These are the operating standards Blackridge is meant to protect on every project."
-        eyebrow="Standards"
-        title="What the business is known for"
-      >
-        <div className="roof-fit-grid">
+      <section className="roof-block">
+        <header className="roof-block__header">
+          <p className="roof-block__eyebrow">Operating standards</p>
+          <h2 className="roof-block__title">What Blackridge is meant to be known for</h2>
+        </header>
+
+        <div className="roof-decision-grid">
           {content.about.values.map((value) => (
-            <article className="roof-fit-panel" key={value.title}>
+            <article className="roof-decision-card" key={value.title}>
               <h3>{value.title}</h3>
               <p>{value.description}</p>
             </article>
           ))}
         </div>
-      </Section>
+      </section>
 
-      <Section
-        description="A small leadership team handling inspections, project coordination, and on-site execution standards."
-        eyebrow="Team"
-        title="Leadership"
-      >
-        <div className="roof-team-grid">
+      <section className="roof-block">
+        <header className="roof-block__header">
+          <p className="roof-block__eyebrow">Leadership</p>
+          <h2 className="roof-block__title">Inspection, coordination, and site operations</h2>
+        </header>
+
+        <div className="roof-leadership-strip">
           {content.about.team.map((member) => (
-            <article className="roof-team-panel" key={member.name}>
-              <p className="roof-team-panel__role">{member.role}</p>
+            <article className="roof-leadership-card" key={member.name}>
+              <p className="roof-leadership-card__role">{member.role}</p>
               <h3>{member.name}</h3>
               <p>{member.bio}</p>
             </article>
           ))}
         </div>
-      </Section>
+      </section>
     </>
   )
 }
