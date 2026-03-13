@@ -2857,6 +2857,13 @@ body[data-demo-brand='service'] .mobile-primary-cta--service {
 .land-cred-strip {
   display: grid;
   gap: var(--space-4);
+}
+
+.land-home-intro__fact-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.land-cred-strip {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
@@ -2891,6 +2898,10 @@ body[data-demo-brand='service'] .mobile-primary-cta--service {
   padding: var(--space-5);
 }
 
+.land-home-intro__fact-card {
+  align-content: start;
+}
+
 .land-home-intro__fact-card h2,
 .land-cred-strip__item h2,
 .land-service-matrix__feature-body h3,
@@ -2902,6 +2913,11 @@ body[data-demo-brand='service'] .mobile-primary-cta--service {
   font-family: var(--font-display);
   font-size: clamp(1.55rem, 2.3vw, 2.3rem);
   line-height: 1.06;
+}
+
+.land-home-intro__fact-card h2 {
+  font-size: clamp(1.35rem, 1.7vw, 1.9rem);
+  line-height: 1.08;
 }
 
 .land-home-intro__fact-card p:last-child,
@@ -2925,6 +2941,7 @@ body[data-demo-brand='service'] .mobile-primary-cta--service {
       color-mix(in srgb, var(--color-surface-strong) 76%, white),
       color-mix(in srgb, var(--color-surface) 94%, white)
     );
+  grid-column: 1 / -1;
 }
 
 .land-cred-strip {
