@@ -75,18 +75,18 @@ body[data-demo-theme='restaurant'] {
 }
 
 body[data-demo-theme='landscaping'] {
-  --color-bg: #f2efe8;
-  --color-bg-soft: #ebe6dc;
-  --color-surface: #fbf8f2;
-  --color-surface-strong: #e4ebde;
-  --color-border: #cfd7c9;
-  --color-text-primary: #223128;
-  --color-text-secondary: #516456;
-  --color-text-muted: #77897a;
-  --color-brand: #395c42;
-  --color-brand-strong: #547a5d;
-  --color-brand-ink: #f7f3eb;
-  --color-success: #6f8a63;
+  --color-bg: #eef2ef;
+  --color-bg-soft: #e4ebe7;
+  --color-surface: #fbfcfa;
+  --color-surface-strong: #dbe5df;
+  --color-border: #c4d0ca;
+  --color-text-primary: #20312d;
+  --color-text-secondary: #556863;
+  --color-text-muted: #7a8c86;
+  --color-brand: #2f695f;
+  --color-brand-strong: #3f8478;
+  --color-brand-ink: #f2f7f5;
+  --color-success: #688168;
   --font-nav: 'Manrope', 'Segoe UI', sans-serif;
   --font-button: 'Manrope', 'Segoe UI', sans-serif;
   --space-section: 4.75rem;

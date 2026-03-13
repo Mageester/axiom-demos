@@ -31,9 +31,9 @@ body[data-demo-brand='hospitality'] {
 
 body[data-demo-theme='landscaping'] {
   background:
-    radial-gradient(circle at 8% 10%, rgb(126 154 121 / 14%), transparent 32%),
-    radial-gradient(circle at 88% 8%, rgb(182 200 154 / 18%), transparent 30%),
-    linear-gradient(180deg, #f7f3eb, var(--color-bg) 42%);
+    radial-gradient(circle at 8% 10%, rgb(92 134 126 / 16%), transparent 32%),
+    radial-gradient(circle at 88% 8%, rgb(184 204 196 / 18%), transparent 30%),
+    linear-gradient(180deg, #f7faf8, var(--color-bg) 42%);
 }
 
 body[data-demo-theme='roofing'] {
