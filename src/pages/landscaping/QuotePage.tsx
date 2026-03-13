@@ -1,7 +1,7 @@
 import { type FormEvent, useContext, useState } from 'react'
 import { DemoConfigContext } from '../../config/demoConfig'
+import { LandscapingPageHeader } from '../../components/landscaping/LandscapingPageHeader'
 import { Button, ButtonAnchor } from '../../components/ui/Button'
-import { PageHero } from '../../components/ui/PageHero'
 import { Section } from '../../components/ui/Section'
 
 const timelineOptions = [
@@ -67,18 +67,20 @@ export function QuotePage() {
 
   return (
     <>
-      <PageHero
+      <LandscapingPageHeader
         actions={
           <ButtonAnchor href={content.brand.phoneHref} variant="secondary">
             Call for a quote
           </ButtonAnchor>
         }
-        className="land-page-hero"
         description={content.reservations.intro}
         eyebrow="Request a quote"
-        media={content.home.hero.image}
-        signals={['Service area reviewed first', 'Scope reviewed before site visit', 'Clear written quotes before work begins']}
-        title="Request a quote for the property"
+        media={content.gallery.collections[1]?.image}
+        title="Request pricing for the property"
+        utilityItems={['Service area reviewed first', 'Scope reviewed before any site visit', 'Clear written quotes before work begins']}
+        utilityLabel="Quote flow"
+        utilityMeta={['Send the address, photos, and the part of the yard you want improved.']}
+        utilityTitle="What we review before we book time on site"
       />
 
       <Section
@@ -100,9 +102,9 @@ export function QuotePage() {
       </Section>
 
       <Section
-        description="Share the practical details first so we can confirm scope, service area, and the right next scheduling step."
-        eyebrow="Form"
-        title="Project details for the first review"
+        description="The clearer the first message, the faster we can confirm service area, scope, and whether the next step should be a call or a site visit."
+        eyebrow="Project details"
+        title="What we need to price the job"
       >
         <div className="reservation-layout reservation-layout--landscaping">
           <form className="reservation-form reservation-form--landscaping" onSubmit={onSubmit}>
@@ -151,19 +153,19 @@ export function QuotePage() {
             <label htmlFor="notes">Project notes</label>
             <textarea id="notes" name="notes" rows={5} />
 
-            <Button type="submit">Send quote request</Button>
+            <Button type="submit">Send quote details</Button>
             {statusMessage ? <p className="form-status">{statusMessage}</p> : null}
           </form>
 
           <aside className="policy-panel policy-panel--landscaping">
-            <h3>Before we book a site visit</h3>
+            <h3>Before we set a site visit</h3>
             <ul>
               {content.reservations.policies.map((policy) => (
                 <li key={policy}>{policy}</li>
               ))}
             </ul>
             <p className="policy-panel__subtle">
-              If your timing is urgent, call {content.brand.phone} so we can confirm the service area and availability faster.
+              If your timing is urgent, call {content.brand.phone} so we can tell you quickly whether the property is in range and what the next opening looks like.
             </p>
           </aside>
         </div>

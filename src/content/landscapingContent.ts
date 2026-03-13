@@ -31,16 +31,16 @@ export const landscapingContent: DemoContent = {
   },
   home: {
     hero: {
-      eyebrow: 'Residential landscaping | Toronto & West GTA',
-      title: 'Landscaping that makes the whole property feel finished.',
+      eyebrow: 'Toronto landscaping and outdoor living',
+      title: 'Patios, planting, and front-entry work that make the property feel finished.',
       description:
-        'Northline handles patios, walkways, front-entry upgrades, planting, lighting, and backyard outdoor-living work for homeowners across Toronto and the west end.',
+        'Northline handles patios, walkways, front-entry upgrades, planting, lighting, and backyard outdoor-living work for homeowners across Toronto and the west end who want the yard to look better and work better.',
       primaryCta: 'Request a quote',
       secondaryCta: 'View projects',
       signals: [
         'Patios, planting, lighting, front entries, and backyard upgrades',
+        'Current photos reviewed before a site visit is booked',
         'Residential projects across Toronto, Etobicoke, Mississauga, and Oakville',
-        'Address and photos reviewed before we book a site visit',
       ],
       image: {
         src: pexelsPhoto('17240696', 1800, 1200),
@@ -50,19 +50,19 @@ export const landscapingContent: DemoContent = {
     },
     highlights: [
       {
-        title: 'Residential focus',
+        title: 'Backyard patios and seating zones',
         description:
-          'Northline is built for homeowners improving the front yard, backyard, or overall outdoor living setup, not commercial grounds contracts.',
+          'Stone and porcelain patio work planned around furniture layout, access, and how the yard is actually used.',
       },
       {
-        title: 'Planned around the property',
+        title: 'Front entries and curb appeal',
         description:
-          'Grade, drainage, access, and day-to-day use of the yard are reviewed before materials and layout are finalized.',
+          'Walkways, borders, planting, and entry work that make the approach to the house read cleaner from the street.',
       },
       {
-        title: 'Clean site conduct',
+        title: 'Lighting, planting, and drainage details',
         description:
-          'Crews protect access points, keep the site orderly, and leave the property looking cared for while the job is underway.',
+          'The finish details that keep the property usable, visible after dark, and easier to maintain through the season.',
       },
     ],
     featuredDishes: [
@@ -255,7 +255,7 @@ export const landscapingContent: DemoContent = {
   },
   reservations: {
     intro:
-      'Tell us what part of the property you want to improve, where you are located, and your timing. We will confirm the service area and let you know the best next step.',
+      'Tell us what part of the property you want to improve, where you are located, and your timing. We will confirm the service area, review the scope, and let you know the right next step.',
     policies: [
       'Most quote requests are reviewed within one business day.',
       'If the property is in our service area, we confirm the next step before booking a visit.',

@@ -2488,6 +2488,39 @@ body[data-demo-brand='service'] .site-nav-wrap {
   backdrop-filter: blur(10px);
 }
 
+body[data-demo-brand='service'] .site-nav__service-bar {
+  background: color-mix(in srgb, var(--color-surface-strong) 64%, white);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-border) 88%, white);
+}
+
+body[data-demo-brand='service'] .site-nav__service-bar-inner {
+  align-items: center;
+  display: flex;
+  gap: var(--space-4);
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: var(--container-max);
+  padding: 0.6rem var(--space-5);
+}
+
+body[data-demo-brand='service'] .site-nav__service-bar-copy,
+body[data-demo-brand='service'] .site-nav__service-bar-links {
+  color: color-mix(in srgb, var(--color-text-primary) 88%, var(--color-text-muted));
+  font-size: var(--size-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+body[data-demo-brand='service'] .site-nav__service-bar-links {
+  display: flex;
+  gap: var(--space-4);
+}
+
+body[data-demo-brand='service'] .site-nav__service-bar-links a {
+  color: color-mix(in srgb, var(--color-brand-strong) 82%, #1d2d1f);
+  font-weight: 700;
+}
+
 body[data-demo-brand='service'] .site-nav--service {
   align-items: center;
   gap: var(--space-5);
@@ -2773,6 +2806,9 @@ body[data-demo-brand='service'] .mobile-primary-cta--service {
 
 .land-home-intro__fact-card,
 .land-cred-strip__item,
+.land-portfolio-lead__feature,
+.land-service-matrix__feature,
+.land-service-matrix__card,
 .land-service-matrix__panel,
 .land-process-band__steps,
 .land-process-band__standards,
@@ -3044,6 +3080,98 @@ body[data-demo-brand='service'] .mobile-primary-cta--service {
   text-transform: uppercase;
 }
 
+.land-utility-hero {
+  align-items: start;
+  display: grid;
+  gap: var(--space-5);
+  grid-template-columns: minmax(0, 1.05fr) minmax(22rem, 0.95fr);
+  margin-bottom: var(--space-7);
+}
+
+.land-utility-hero__copy {
+  display: grid;
+  gap: var(--space-4);
+  padding-top: var(--space-3);
+}
+
+.land-utility-hero__eyebrow,
+.land-utility-hero__panel-label {
+  color: color-mix(in srgb, var(--color-brand-strong) 88%, white);
+  font-size: var(--size-2xs);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.land-utility-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.35rem, 4vw, 4rem);
+  line-height: 0.98;
+  max-width: 12ch;
+}
+
+.land-utility-hero__description {
+  color: var(--color-text-secondary);
+  max-width: 58ch;
+}
+
+.land-utility-hero__aside {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.land-utility-hero__media,
+.land-utility-hero__panel {
+  background: color-mix(in srgb, var(--color-surface) 97%, white);
+  border: 1px solid color-mix(in srgb, var(--color-border) 92%, white);
+  border-radius: calc(var(--radius-panel) + 2px);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+.land-utility-hero__media {
+  margin: 0;
+}
+
+.land-utility-hero__media img {
+  aspect-ratio: 16 / 11;
+  object-fit: cover;
+  width: 100%;
+}
+
+.land-utility-hero__panel {
+  display: grid;
+  gap: var(--space-4);
+  padding: var(--space-5);
+}
+
+.land-utility-hero__panel-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 2.6vw, 2.25rem);
+  line-height: 1.05;
+}
+
+.land-utility-hero__list,
+.land-utility-hero__meta {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.land-utility-hero__list li,
+.land-utility-hero__meta p {
+  color: var(--color-text-secondary);
+}
+
+.land-utility-hero__list li {
+  border-top: 1px solid color-mix(in srgb, var(--color-border) 84%, white);
+  padding-top: var(--space-3);
+}
+
+.land-utility-hero__list li:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
 .land-page-hero {
   background:
     radial-gradient(circle at 10% 6%, rgb(152 180 141 / 12%), transparent 30%),
@@ -3106,6 +3234,7 @@ body[data-demo-brand='service'] .mobile-primary-cta--service {
 }
 
 @media (max-width: 980px) {
+  .land-utility-hero,
   .land-home-intro,
   .land-portfolio-lead,
   .land-process-band,
@@ -3134,6 +3263,7 @@ body[data-demo-brand='service'] .mobile-primary-cta--service {
 }
 
 @media (max-width: 760px) {
+  .land-utility-hero__title,
   .land-home-intro__title {
     max-width: 12ch;
   }
@@ -3156,6 +3286,7 @@ body[data-demo-brand='service'] .mobile-primary-cta--service {
   .land-home-intro__media img,
   .land-portfolio-lead__media img,
   .land-service-matrix__feature-media img,
+  .land-utility-hero__media img,
   .land-page-hero .page-hero__media img {
     min-height: 16rem;
   }
@@ -3163,6 +3294,7 @@ body[data-demo-brand='service'] .mobile-primary-cta--service {
   .land-home-intro__copy,
   .land-portfolio-lead__body,
   .land-service-matrix__feature-body,
+  .land-utility-hero__panel,
   .land-estimate-callout,
   .land-process-band__steps,
   .land-process-band__standards {
@@ -3942,6 +4074,12 @@ body[data-demo-brand='roofing'] .mobile-primary-cta {
     border-right: 0;
     padding-right: 0;
     text-align: left;
+  }
+
+  .site-nav__service-bar-inner,
+  .site-nav__service-bar-links {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .primary-nav {

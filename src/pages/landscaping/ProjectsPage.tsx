@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { DemoConfigContext } from '../../config/demoConfig'
+import { LandscapingPageHeader } from '../../components/landscaping/LandscapingPageHeader'
 import { ButtonLink } from '../../components/ui/Button'
-import { PageHero } from '../../components/ui/PageHero'
 import { Section } from '../../components/ui/Section'
 
 export function ProjectsPage() {
@@ -11,7 +11,7 @@ export function ProjectsPage() {
 
   return (
     <>
-      <PageHero
+      <LandscapingPageHeader
         actions={
           <>
             <ButtonLink to={routes.reservations}>Request a quote</ButtonLink>
@@ -20,17 +20,19 @@ export function ProjectsPage() {
             </ButtonLink>
           </>
         }
-        className="land-page-hero"
         description={content.gallery.intro}
         eyebrow="Projects"
         media={featuredProject?.image}
-        signals={['Patios and walkways', 'Front-yard upgrades', 'Planting and lighting']}
-        title="Recent landscaping projects across patios, front entries, and backyard use"
+        title="Patio, front-entry, and backyard projects across Toronto homes"
+        utilityItems={['Patios and walkways', 'Front-yard upgrades', 'Planting and lighting']}
+        utilityLabel="Project scope"
+        utilityMeta={['Look here first if you want to judge finish level, property type, and the kind of jobs Northline usually handles.']}
+        utilityTitle="Proof before promises"
       />
 
       {featuredProject ? (
         <Section
-          description="A representative Northline project showing the kind of finish quality, property planning, and day-to-day usefulness the company is built for."
+          description="A representative Northline project showing the kind of finish quality, layout planning, and day-to-day use the company is usually hired to improve."
           eyebrow="Featured project"
           title={featuredProject.title}
         >
@@ -69,9 +71,9 @@ export function ProjectsPage() {
       ) : null}
 
       <Section
-        description="Additional project examples showing the range of landscaping work Northline handles for residential properties."
-        eyebrow="More projects"
-        title="More project examples"
+        description="Additional project examples showing the range of patio, entry, lighting, and planting work Northline handles for residential properties."
+        eyebrow="Other recent jobs"
+        title="More recent work"
       >
         <div className="land-project-grid">
           {remainingProjects.map((project, index) => (
@@ -105,9 +107,9 @@ export function ProjectsPage() {
       </Section>
 
       <Section
-        description="If your property goals line up with this kind of scope and finish, the next step is a quick quote review before we book a site visit."
+        description="If your property goals line up with this kind of scope and finish, the next step is a quick quote review before any site visit is booked."
         eyebrow="Next step"
-        title="Request a quote for similar work"
+        title="Request pricing for similar work"
       >
         <div className="land-quote-band">
           <div>

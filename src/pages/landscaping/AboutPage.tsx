@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { DemoConfigContext } from '../../config/demoConfig'
+import { LandscapingPageHeader } from '../../components/landscaping/LandscapingPageHeader'
 import { ButtonLink } from '../../components/ui/Button'
-import { PageHero } from '../../components/ui/PageHero'
 import { Section } from '../../components/ui/Section'
 
 export function AboutPage() {
@@ -11,14 +11,16 @@ export function AboutPage() {
 
   return (
     <>
-      <PageHero
+      <LandscapingPageHeader
         actions={<ButtonLink to={routes.reservations}>Request a quote</ButtonLink>}
-        className="land-page-hero"
         description={content.about.intro}
         eyebrow="About"
         media={standardsVisual?.image}
-        signals={['Residential landscaping', 'Clear communication', 'Clean site standards']}
-        title="A local landscaping company built around clean work and a better-finished property"
+        title="A local landscaping company built around finished work and straightforward communication"
+        utilityItems={['Residential landscaping only', 'Clear communication and scheduling', 'Clean site standards from first visit to handoff']}
+        utilityLabel="Company fit"
+        utilityMeta={['Built for homeowners improving the front yard, backyard, or overall outdoor living setup.']}
+        utilityTitle="What kind of company Northline is"
       />
 
       <Section eyebrow="How we work" title="What matters on Northline jobs">
