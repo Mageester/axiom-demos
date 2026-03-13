@@ -1761,11 +1761,12 @@ textarea:focus-visible {
 
 .land-inline-facts li {
   align-self: flex-start;
-  background: color-mix(in srgb, var(--color-surface-strong) 42%, white);
-  border: 1px solid color-mix(in srgb, var(--color-border) 74%, black);
-  border-radius: 10px;
-  color: var(--color-text-secondary);
+  background: color-mix(in srgb, var(--color-brand) 10%, white);
+  border: 1px solid color-mix(in srgb, var(--color-brand) 20%, var(--color-border));
+  border-radius: 999px;
+  color: color-mix(in srgb, var(--color-text-primary) 94%, var(--color-brand));
   font-size: var(--size-2xs);
+  font-weight: 600;
   letter-spacing: 0.04em;
   padding: 0.45rem 0.7rem;
 }
