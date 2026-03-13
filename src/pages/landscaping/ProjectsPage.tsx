@@ -59,9 +59,11 @@ export function ProjectsPage() {
                   ))}
                 </ul>
               ) : null}
-              <div className="land-section-actions">
-                <ButtonLink to={routes.reservations}>Request a similar quote</ButtonLink>
-                <ButtonLink to={routes.contact} variant="secondary">
+              <div className="land-section-actions land-section-actions--proof">
+                <ButtonLink size="md" to={routes.reservations}>
+                  Request pricing
+                </ButtonLink>
+                <ButtonLink size="md" to={routes.contact} variant="secondary">
                   Contact office
                 </ButtonLink>
               </div>
