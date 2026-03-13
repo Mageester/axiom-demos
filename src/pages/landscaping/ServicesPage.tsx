@@ -63,7 +63,7 @@ export function ServicesPage() {
                   <p className="land-service-section__eyebrow">{section.note}</p>
                   <h2>{section.title}</h2>
                   {section.highlights?.length ? (
-                    <ul className="plain-list land-inline-facts">
+                    <ul className="plain-list land-service-highlights">
                       {section.highlights.map((highlight) => (
                         <li key={highlight}>{highlight}</li>
                       ))}

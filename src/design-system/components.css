@@ -1243,11 +1243,15 @@ textarea:focus-visible {
 }
 
 .land-service-section__media {
+  display: flex;
+  height: 100%;
   margin: 0;
 }
 
 .land-service-section__media img {
-  aspect-ratio: 21 / 9;
+  flex: 1 1 auto;
+  height: 100%;
+  min-height: 100%;
   object-fit: cover;
   width: 100%;
 }
@@ -1262,6 +1266,32 @@ textarea:focus-visible {
 .land-service-section__header h2 {
   font-family: var(--font-display);
   font-size: var(--size-xl);
+}
+
+.land-service-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1rem;
+}
+
+.land-service-highlights li {
+  color: color-mix(in srgb, var(--color-brand) 86%, var(--color-text-primary));
+  font-size: var(--size-xs);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding-left: 0.9rem;
+  position: relative;
+}
+
+.land-service-highlights li::before {
+  background: color-mix(in srgb, var(--color-brand) 76%, white);
+  border-radius: 999px;
+  content: '';
+  height: 0.38rem;
+  left: 0;
+  position: absolute;
+  top: 0.58rem;
+  width: 0.38rem;
 }
 
 .land-service-section__header p {
