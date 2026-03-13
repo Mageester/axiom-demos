@@ -290,8 +290,8 @@ export const landscapingContent: DemoContent = {
           'Backyard patio build with seating, clean circulation, and planting that helps the whole yard feel more complete.',
         facts: ['Rear-yard focus', 'Porcelain paving', 'Planting and circulation'],
         image: {
-          src: pexelsPhoto('34037980', 1200, 900),
-          alt: 'Residential backyard patio with benches and mature greenery',
+          src: pexelsPhoto('17240696', 1200, 900),
+          alt: 'Residential backyard patio with lawn, paving, and an outdoor seating area',
           position: 'center 54%',
         },
       },
@@ -350,8 +350,8 @@ export const landscapingContent: DemoContent = {
           'Combined patio, lawn, and planting work delivered as one coordinated property-wide upgrade.',
         facts: ['Full property scope', 'Hardscape and softscape', 'Single coordinated install'],
         image: {
-          src: pexelsPhoto('17240696', 1200, 900),
-          alt: 'Completed residential backyard with patio, lawn, and finished landscaping',
+          src: pexelsPhoto('33838596', 1200, 900),
+          alt: 'Completed residential backyard with seating, planting, and finished lawn areas',
           position: 'center 56%',
         },
       },

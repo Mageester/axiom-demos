@@ -53,7 +53,7 @@ export function ProjectsPage() {
               <p className="land-feature-project__meta">{featuredProject.subtitle}</p>
               <p>{featuredProject.description}</p>
               {featuredProject.facts?.length ? (
-                <ul className="plain-list land-inline-facts">
+                <ul className="plain-list land-inline-facts land-inline-facts--project">
                   {featuredProject.facts.map((fact) => (
                     <li key={fact}>{fact}</li>
                   ))}
