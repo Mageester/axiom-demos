@@ -26,6 +26,19 @@ export function SiteNav() {
     return () => window.removeEventListener('keydown', onKeyDown)
   }, [isOpen])
 
+  useEffect(() => {
+    if (!isOpen) {
+      document.body.style.overflow = ''
+      return undefined
+    }
+
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.body.style.overflow = previousOverflow
+    }
+  }, [isOpen])
+
   return (
     <header className="site-nav-wrap">
       {isService ? (

@@ -4837,6 +4837,20 @@ body[data-demo-brand='roofing'] .site-footer__roofing-cta {
     display: inline-flex;
   }
 
+  body[data-demo-brand='roofing'] .site-nav__roofing-bar {
+    display: none;
+  }
+
+  body[data-demo-brand='roofing'] .site-nav--roofing {
+    gap: var(--space-3);
+    padding-block: var(--space-3);
+  }
+
+  body[data-demo-brand='roofing'] .site-brand__city {
+    font-size: 0.64rem;
+    letter-spacing: 0.08em;
+  }
+
   .site-nav__service-shell {
     border-top: 1px solid var(--color-border);
     display: none;
@@ -4852,12 +4866,15 @@ body[data-demo-brand='roofing'] .site-footer__roofing-cta {
   }
 
   .site-nav__roofing-shell {
+    background: color-mix(in srgb, var(--color-bg-soft) 96%, black);
     border-top: 1px solid var(--color-border);
+    border-radius: 0 0 var(--radius-card) var(--radius-card);
     display: none;
     flex-direction: column;
     gap: var(--space-3);
     margin-top: var(--space-2);
-    padding-top: var(--space-3);
+    order: 3;
+    padding: var(--space-3) 0 0;
     width: 100%;
   }
 
@@ -4869,6 +4886,11 @@ body[data-demo-brand='roofing'] .site-footer__roofing-cta {
     align-items: flex-start;
     border-right: 0;
     padding-right: 0;
+    text-align: left;
+  }
+
+  .site-nav__roofing-utility {
+    align-items: flex-start;
     text-align: left;
   }
 
