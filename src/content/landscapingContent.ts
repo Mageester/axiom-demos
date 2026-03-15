@@ -122,6 +122,136 @@ export const landscapingContent: DemoContent = {
         },
       ],
     },
+    extras: {
+      projectGallery: [
+        {
+          title: 'Patio entertaining zone',
+          subtitle: 'Patios',
+          description:
+            'Stone and porcelain patio work planned around seating, circulation, and how the yard is actually used on weekends.',
+          facts: ['Backyard patio', 'Entertaining layout', 'Clean edges'],
+          image: {
+            src: pexelsPhoto('34037980', 1200, 900),
+            alt: 'Backyard patio with seating and layered planting',
+            position: 'center 54%',
+          },
+        },
+        {
+          title: 'Garden walk and side-yard path',
+          subtitle: 'Walkways',
+          description:
+            'A cleaner route through the property with better footing, sharper borders, and a more finished connection between front and back.',
+          facts: ['Stone path', 'Border definition', 'Cleaner circulation'],
+          image: {
+            src: pexelsPhoto('30278085', 1200, 900),
+            alt: 'Structured residential garden walkway with stone paving',
+            position: 'center',
+          },
+        },
+        {
+          title: 'Front entry and arrival refresh',
+          subtitle: 'Front entries',
+          description:
+            'Planting, edging, and walkway updates designed to make the front of the home feel brighter and more intentional from the street.',
+          facts: ['Street-facing work', 'Front bed refresh', 'Entry cleanup'],
+          image: {
+            src: pexelsPhoto('30196217', 1200, 900),
+            alt: 'Front garden pathway with planting and lamp posts',
+            position: 'center',
+          },
+        },
+        {
+          title: 'After-dark garden lighting',
+          subtitle: 'Outdoor lighting',
+          description:
+            'Low-voltage lighting that keeps paths readable, adds evening presence, and helps the property still look cared for after dark.',
+          facts: ['Path lighting', 'Night visibility', 'Landscape polish'],
+          image: {
+            src: pexelsPhoto('35828688', 1200, 900),
+            alt: 'Landscape lighting illuminating planting and a garden path at dusk',
+            position: 'center',
+          },
+        },
+      ],
+      beforeAfter: {
+        title: 'Backyard reset from plain lawn to outdoor-living space',
+        summary:
+          'This kind of project usually starts with an underused yard and ends with seating, planting, lighting, and circulation that make the space feel useful and finished.',
+        bullets: ['Patio layout', 'Planting layers', 'Landscape lighting', 'Cleaner circulation'],
+        before: {
+          src: pexelsPhoto('17240696', 1200, 900),
+          alt: 'Plain backyard before patio, planting, and outdoor-living upgrades',
+          position: 'center 56%',
+        },
+        after: {
+          src: pexelsPhoto('33838596', 1200, 900),
+          alt: 'Finished outdoor-living backyard with seating, lawn, and layered planting',
+          position: 'center 56%',
+        },
+      },
+      materialBrands: [
+        {
+          name: 'Natural stone',
+          note: 'Used where the finish needs more permanence, stronger edge detail, and a more tailored feel around entries and steps.',
+        },
+        {
+          name: 'Interlocking pavers',
+          note: 'A practical choice for patios, walkways, and front approaches where durability and clean pattern control matter.',
+        },
+        {
+          name: 'Premium soil blends',
+          note: 'Better planting starts with the right soil structure, compost, and drainage balance under the bed, not just the top layer.',
+        },
+        {
+          name: 'Outdoor lighting systems',
+          note: 'Low-voltage path and feature lighting that improves use after dark and keeps the finish visible through the evening.',
+        },
+      ],
+      consultationSteps: [
+        {
+          title: 'On-site consultation',
+          description:
+            'We walk the property, review the area you want improved, and look at grade, access, drainage, and how the yard is used now.',
+        },
+        {
+          title: 'Design planning',
+          description:
+            'Material direction, planting approach, and layout are shaped into a scope that fits the property instead of feeling dropped onto it.',
+        },
+        {
+          title: 'Project build',
+          description:
+            'Install, prep, and finish work are scheduled clearly so the hardscape, softscape, and lighting all come together properly.',
+        },
+        {
+          title: 'Seasonal maintenance',
+          description:
+            'Where it makes sense, we return for cleanups, pruning, lighting checks, and small refresh work that keeps the property looking looked-after.',
+        },
+      ],
+      seasonalServices: [
+        {
+          title: 'Spring',
+          description:
+            'Bed cleanup, edging, mulch, pruning, and planting prep to get the property ready for the main growing season.',
+        },
+        {
+          title: 'Summer',
+          description:
+            'Mid-season pruning, bed touchups, lighting checks, and focused care where the yard needs to stay presentation-ready.',
+        },
+        {
+          title: 'Fall',
+          description:
+            'Season-end cleanup, cutbacks, bed resets, and planting support to leave the property tidy heading into colder weather.',
+        },
+        {
+          title: 'Winter',
+          description:
+            'Planning, quote review, and early booking for spring projects while outdoor-lighting and structural issues are still addressed.',
+        },
+      ],
+    },
   },
   menu: {
     intro:

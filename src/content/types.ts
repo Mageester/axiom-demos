@@ -36,6 +36,11 @@ export interface BeforeAfterContent {
   after: VisualAssetContent
 }
 
+export interface ProcessStepContent {
+  title: string
+  description: string
+}
+
 export interface VisualAssetContent {
   src: string
   alt: string
@@ -135,6 +140,9 @@ export interface DemoContent {
       serviceAreas?: ServiceAreaContent[]
       emergencyCallout?: EmergencyCalloutContent
       beforeAfter?: BeforeAfterContent
+      consultationSteps?: ProcessStepContent[]
+      seasonalServices?: FeatureCardContent[]
+      projectGallery?: GalleryItemContent[]
     }
   }
   menu: {

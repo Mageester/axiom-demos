@@ -1,18 +1,22 @@
 import { useContext } from 'react'
 import { DemoConfigContext } from '../../config/demoConfig'
 import { ButtonAnchor, ButtonLink } from '../../components/ui/Button'
+import { BeforeAfterCompare } from '../../components/ui/BeforeAfterCompare'
 import { Reveal } from '../../components/ui/Reveal'
 
 export function HomePage() {
   const { content, routes } = useContext(DemoConfigContext)
   const serviceCards = content.menu.sections.slice(0, 3)
-  const featuredProject = content.gallery.collections[0]
-  const projectGrid = content.gallery.collections.slice(1, 5)
+  const featuredProject = content.home.extras?.projectGallery?.[0] ?? content.gallery.collections[0]
+  const projectGrid = content.home.extras?.projectGallery?.slice(1, 4) ?? content.gallery.collections.slice(1, 4)
   const companyStory = content.about.story.slice(0, 2)
   const standards = content.about.values
   const quoteChannels = content.reservations.channels.slice(0, 2)
-  const processPoints = content.home.experience.points
   const heroImage = content.home.hero.image ?? featuredProject?.image
+  const beforeAfter = content.home.extras?.beforeAfter
+  const materialHighlights = content.home.extras?.materialBrands ?? []
+  const consultationSteps = content.home.extras?.consultationSteps ?? []
+  const seasonalServices = content.home.extras?.seasonalServices ?? []
 
   return (
     <>
@@ -65,13 +69,104 @@ export function HomePage() {
         </div>
       </Reveal>
 
+      {featuredProject ? (
+        <Reveal as="section" className="landscape-band landscape-band--gallery" variant="organic">
+          <header className="landscape-band__header">
+            <p className="landscape-band__eyebrow">Project gallery</p>
+            <h2 className="landscape-band__title">Patios, walkways, front entries, and outdoor lighting shown the way homeowners actually judge the work.</h2>
+            <p className="landscape-band__description">
+              Landscaping trust comes from seeing what the finished property looks like. This gallery is there to show finish level, layout quality, and the kind of residential work Northline is hired to build.
+            </p>
+          </header>
+
+          <div className="landscape-project-gallery">
+            <Reveal as="article" className="landscape-project-gallery__lead" variant="organic">
+              <figure className="landscape-project-gallery__lead-media">
+                <img
+                  alt={featuredProject.image.alt}
+                  loading="lazy"
+                  src={featuredProject.image.src}
+                  style={featuredProject.image.position ? { objectPosition: featuredProject.image.position } : undefined}
+                />
+              </figure>
+              <div className="landscape-project-gallery__lead-body">
+                <p className="landscape-gallery-showcase__eyebrow">{featuredProject.subtitle}</p>
+                <h2>{featuredProject.title}</h2>
+                <p>{featuredProject.description}</p>
+                {featuredProject.facts?.length ? (
+                  <ul className="plain-list landscape-project-gallery__facts">
+                    {featuredProject.facts.map((fact) => (
+                      <li key={fact}>{fact}</li>
+                    ))}
+                  </ul>
+                ) : null}
+                <div className="landscape-home-hero__actions">
+                  <ButtonLink to={routes.gallery}>View projects</ButtonLink>
+                  <ButtonLink to={routes.reservations} variant="secondary">
+                    Request pricing
+                  </ButtonLink>
+                </div>
+              </div>
+            </Reveal>
+
+            <div className="landscape-project-gallery__grid">
+              {projectGrid.map((project, index) => (
+                <Reveal
+                  as="article"
+                  className="landscape-project-gallery__card"
+                  delay={110 + index * 60}
+                  key={project.title}
+                  variant="organic"
+                >
+                  <figure className="landscape-project-gallery__card-media">
+                    <img
+                      alt={project.image.alt}
+                      loading="lazy"
+                      src={project.image.src}
+                      style={project.image.position ? { objectPosition: project.image.position } : undefined}
+                    />
+                  </figure>
+                  <div className="landscape-project-gallery__card-body">
+                    <p className="landscape-gallery-showcase__eyebrow">{project.subtitle}</p>
+                    <h3>{project.title}</h3>
+                    <p>{project.description}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </Reveal>
+      ) : null}
+
+      {beforeAfter ? (
+        <Reveal as="section" className="landscape-band" variant="organic">
+          <div className="landscape-transformation">
+            <div className="landscape-transformation__intro">
+              <p className="landscape-band__eyebrow">Before / after</p>
+              <h2 className="landscape-band__title">{beforeAfter.title}</h2>
+              <p className="landscape-band__description">{beforeAfter.summary}</p>
+              <ul className="plain-list landscape-project-gallery__facts">
+                {beforeAfter.bullets.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            <BeforeAfterCompare
+              after={beforeAfter.after}
+              before={beforeAfter.before}
+              className="landscape-transformation__compare"
+            />
+          </div>
+        </Reveal>
+      ) : null}
+
       <Reveal as="section" className="landscape-band landscape-band--services" variant="organic">
         <div className="landscape-band__intro">
           <p className="landscape-band__eyebrow">Services</p>
-          <h2 className="landscape-band__title">Patios, planting, lighting, and front-entry work priced like a real landscaping company.</h2>
+          <h2 className="landscape-band__title">Patios, planting, lighting, and front-entry work planned around residential properties.</h2>
           <p className="landscape-band__description">
-            Northline is built for residential landscaping projects where the finish matters, the property needs to read better,
-            and homeowners want a crew that can handle the whole scope properly.
+            Northline is built for homeowners who want the yard to look better, work better, and still feel appropriate to the house when the install is done.
           </p>
           <ButtonLink to={routes.menu} variant="quiet">
             Review all services
@@ -113,68 +208,53 @@ export function HomePage() {
         </div>
       </Reveal>
 
-      {featuredProject ? (
-        <Reveal as="section" className="landscape-band landscape-band--gallery" variant="organic">
-          <header className="landscape-band__header">
-            <p className="landscape-band__eyebrow">Project gallery</p>
-            <h2 className="landscape-band__title">Recent residential work across patios, front approaches, planting, and outdoor living.</h2>
-            <p className="landscape-band__description">
-              The quickest way to judge the fit is to look at the kind of properties, material level, and finish detail Northline is usually hired to handle.
-            </p>
-          </header>
+      {(materialHighlights.length || consultationSteps.length) ? (
+        <Reveal as="section" className="landscape-materials-process" variant="organic">
+          <div className="landscape-materials-process__materials">
+            <header className="landscape-band__header">
+              <p className="landscape-band__eyebrow">Materials</p>
+              <h2 className="landscape-band__title">Natural stone, pavers, soil, and lighting systems chosen to suit the property.</h2>
+            </header>
 
-          <div className="landscape-gallery-showcase">
-            <Reveal as="article" className="landscape-gallery-showcase__feature" variant="organic">
-              <figure className="landscape-gallery-showcase__feature-media">
-                <img
-                  alt={featuredProject.image.alt}
-                  loading="lazy"
-                  src={featuredProject.image.src}
-                  style={featuredProject.image.position ? { objectPosition: featuredProject.image.position } : undefined}
-                />
-              </figure>
-              <div className="landscape-gallery-showcase__feature-body">
-                <p className="landscape-gallery-showcase__eyebrow">{featuredProject.subtitle}</p>
-                <h3>{featuredProject.title}</h3>
-                <p>{featuredProject.description}</p>
-                {featuredProject.facts?.length ? (
-                  <ul className="plain-list landscape-gallery-showcase__facts">
-                    {featuredProject.facts.map((fact) => (
-                      <li key={fact}>{fact}</li>
-                    ))}
-                  </ul>
-                ) : null}
-                <div className="landscape-home-hero__actions">
-                  <ButtonLink to={routes.gallery}>View projects</ButtonLink>
-                  <ButtonLink to={routes.reservations} variant="secondary">
-                    Request pricing
-                  </ButtonLink>
-                </div>
-              </div>
-            </Reveal>
-
-            <div className="landscape-gallery-showcase__grid">
-              {projectGrid.map((project, index) => (
+            <div className="landscape-materials-grid">
+              {materialHighlights.map((material, index) => (
                 <Reveal
                   as="article"
-                  className="landscape-gallery-showcase__card"
-                  delay={120 + index * 60}
-                  key={project.title}
+                  className="landscape-material-card"
+                  delay={100 + index * 45}
+                  key={material.name}
                   variant="organic"
                 >
-                  <figure className="landscape-gallery-showcase__card-media">
-                    <img
-                      alt={project.image.alt}
-                      loading="lazy"
-                      src={project.image.src}
-                      style={project.image.position ? { objectPosition: project.image.position } : undefined}
-                    />
-                  </figure>
-                  <div className="landscape-gallery-showcase__card-body">
-                    <p className="landscape-gallery-showcase__eyebrow">{project.subtitle}</p>
-                    <h3>{project.title}</h3>
-                    <p>{project.description}</p>
+                  <div className="landscape-material-card__icon" aria-hidden="true">
+                    {material.name.slice(0, 1)}
                   </div>
+                  <div className="landscape-material-card__body">
+                    <h3>{material.name}</h3>
+                    <p>{material.note}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+
+          <div className="landscape-materials-process__process">
+            <header className="landscape-band__header">
+              <p className="landscape-band__eyebrow">Consultation process</p>
+              <h2 className="landscape-band__title">A clear homeowner process from site walk to seasonal follow-through.</h2>
+            </header>
+
+            <div className="landscape-process-lane">
+              {consultationSteps.map((step, index) => (
+                <Reveal
+                  as="article"
+                  className="landscape-process-step"
+                  delay={90 + index * 55}
+                  key={step.title}
+                  variant="organic"
+                >
+                  <p className="landscape-process-step__index">0{index + 1}</p>
+                  <h3>{step.title}</h3>
+                  <p>{step.description}</p>
                 </Reveal>
               ))}
             </div>
@@ -200,8 +280,8 @@ export function HomePage() {
           <p className="landscape-band__eyebrow">Request a quote</p>
           <h2>Send the address, current photos, and the part of the yard you want priced.</h2>
           <ul className="plain-list landscape-split-band__quote-list">
-            {processPoints.map((point) => (
-              <li key={point}>{point}</li>
+            {quoteChannels.map((channel) => (
+              <li key={channel.label}>{channel.value}</li>
             ))}
           </ul>
           <div className="landscape-split-band__quote-actions">
@@ -214,6 +294,34 @@ export function HomePage() {
           </div>
         </aside>
       </Reveal>
+
+      {seasonalServices.length ? (
+        <Reveal as="section" className="landscape-band landscape-band--seasonal" variant="organic">
+          <header className="landscape-band__header">
+            <p className="landscape-band__eyebrow">Seasonal services</p>
+            <h2 className="landscape-band__title">Support work that keeps the property sharp through spring, summer, fall, and winter planning.</h2>
+            <p className="landscape-band__description">
+              Landscaping is not just one install date. Seasonal care and follow-up work keep the property from slipping after the main project is done.
+            </p>
+          </header>
+
+          <div className="landscape-season-grid">
+            {seasonalServices.map((service, index) => (
+              <Reveal
+                as="article"
+                className="landscape-season-card"
+                delay={110 + index * 55}
+                key={service.title}
+                variant="organic"
+              >
+                <p className="landscape-season-card__label">{service.title}</p>
+                <h3>{service.title} care</h3>
+                <p>{service.description}</p>
+              </Reveal>
+            ))}
+          </div>
+        </Reveal>
+      ) : null}
 
       <Reveal as="section" className="landscape-band landscape-band--standards" variant="organic">
         <header className="landscape-band__header">

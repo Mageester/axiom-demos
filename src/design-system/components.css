@@ -5822,6 +5822,112 @@ body[data-demo-theme='landscaping'] .page-main {
   padding-top: 3rem;
 }
 
+.before-after-compare {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.before-after-compare__frame {
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.before-after-compare__image {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.before-after-compare__image--base,
+.before-after-compare__overlay {
+  aspect-ratio: 16 / 10;
+}
+
+.before-after-compare__overlay {
+  inset: 0 auto 0 0;
+  overflow: hidden;
+  position: absolute;
+}
+
+.before-after-compare__image--overlay {
+  height: 100%;
+  max-width: none;
+}
+
+.before-after-compare__badge {
+  align-items: center;
+  background: rgb(18 20 15 / 88%);
+  border: 1px solid rgb(255 255 255 / 0.08);
+  border-radius: 999px;
+  color: #f0ecdf;
+  display: inline-flex;
+  font-family: var(--font-nav);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  padding: 0.4rem 0.7rem;
+  position: absolute;
+  text-transform: uppercase;
+  top: 1rem;
+  z-index: 2;
+}
+
+.before-after-compare__badge--before {
+  left: 1rem;
+}
+
+.before-after-compare__badge--after {
+  right: 1rem;
+}
+
+.before-after-compare__divider {
+  bottom: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  width: 0;
+  z-index: 2;
+}
+
+.before-after-compare__divider::before {
+  background: rgb(255 255 255 / 0.82);
+  content: '';
+  height: 100%;
+  left: 50%;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  width: 2px;
+}
+
+.before-after-compare__handle {
+  background: #f0ecdf;
+  border: 3px solid #20241d;
+  border-radius: 999px;
+  box-shadow: 0 10px 22px rgb(0 0 0 / 24%);
+  height: 1.2rem;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 1.2rem;
+}
+
+.before-after-compare__control {
+  color: #c7c0af;
+  display: grid;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+
+.before-after-compare__control input {
+  accent-color: #b7cf4f;
+  width: 100%;
+}
+
 body[data-demo-theme='landscaping'] .site-nav-wrap {
   background: #20241d;
   border-bottom-color: #44503f;
@@ -6321,6 +6427,228 @@ body[data-demo-theme='landscaping'] .mobile-primary-cta--service {
   grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
 }
 
+.landscape-project-gallery {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+}
+
+.landscape-project-gallery__lead,
+.landscape-materials-process__materials,
+.landscape-materials-process__process,
+.landscape-transformation,
+.landscape-season-card {
+  background: linear-gradient(180deg, #20241d, #1a1e18);
+  border: 1px solid #45503f;
+  border-radius: 10px;
+  box-shadow: 0 20px 34px rgb(4 6 4 / 20%);
+  overflow: hidden;
+  transition:
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms ease;
+}
+
+.landscape-project-gallery__lead {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+}
+
+.landscape-project-gallery__lead-media,
+.landscape-project-gallery__card-media {
+  margin: 0;
+}
+
+.landscape-project-gallery__lead-media img,
+.landscape-project-gallery__card-media img {
+  height: 100%;
+  object-fit: cover;
+  transition: transform 760ms cubic-bezier(0.18, 0.8, 0.24, 1);
+  width: 100%;
+}
+
+.landscape-project-gallery__lead-media img {
+  min-height: 28rem;
+}
+
+.landscape-project-gallery__lead-body,
+.landscape-project-gallery__card-body,
+.landscape-materials-process__materials,
+.landscape-materials-process__process,
+.landscape-transformation,
+.landscape-season-card {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-6);
+}
+
+.landscape-project-gallery__lead-body h2,
+.landscape-materials-process__materials h2,
+.landscape-materials-process__process h2,
+.landscape-transformation__intro h2,
+.landscape-season-card h3 {
+  color: #f0ecdf;
+  font-family: var(--font-display);
+}
+
+.landscape-project-gallery__lead-body h2 {
+  font-size: clamp(2rem, 3vw, 3.1rem);
+  line-height: 0.98;
+}
+
+.landscape-project-gallery__grid {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: 1fr;
+}
+
+.landscape-project-gallery__card {
+  background: linear-gradient(180deg, #20241d, #1a1e18);
+  border: 1px solid #45503f;
+  border-radius: 8px;
+  box-shadow: 0 18px 30px rgb(4 6 4 / 18%);
+  overflow: hidden;
+  transition:
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms ease;
+}
+
+.landscape-project-gallery__card-media img {
+  aspect-ratio: 16 / 11;
+}
+
+.landscape-project-gallery__card-body h3,
+.landscape-material-card__body h3,
+.landscape-process-step h3 {
+  color: #f0ecdf;
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+  line-height: 1.06;
+}
+
+.landscape-project-gallery__lead-body p,
+.landscape-project-gallery__card-body p,
+.landscape-material-card__body p,
+.landscape-process-step p:last-child,
+.landscape-season-card p:last-child {
+  color: #cbc5b5;
+}
+
+.landscape-project-gallery__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.landscape-project-gallery__facts li {
+  background: rgb(255 255 255 / 0.05);
+  border: 1px solid rgb(255 255 255 / 0.08);
+  border-radius: 999px;
+  color: #e8e3d5;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  padding: 0.48rem 0.75rem;
+  text-transform: uppercase;
+}
+
+.landscape-transformation {
+  align-items: start;
+  display: grid;
+  gap: var(--space-5);
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+}
+
+.landscape-transformation__intro {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.landscape-transformation__compare {
+  align-self: stretch;
+}
+
+.landscape-materials-process {
+  display: grid;
+  gap: var(--space-5);
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  margin-bottom: var(--space-section);
+}
+
+.landscape-materials-grid,
+.landscape-process-lane,
+.landscape-season-grid {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.landscape-materials-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.landscape-material-card {
+  background: rgb(25 29 23 / 72%);
+  border: 1px solid rgb(255 255 255 / 0.08);
+  border-radius: 8px;
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: auto 1fr;
+  padding: var(--space-4);
+  transition:
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms ease;
+}
+
+.landscape-material-card__icon {
+  align-items: center;
+  background: linear-gradient(180deg, #7d9526, #6d811f);
+  border-radius: 999px;
+  color: #17200d;
+  display: inline-flex;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  height: 2.5rem;
+  justify-content: center;
+  width: 2.5rem;
+}
+
+.landscape-process-lane {
+  counter-reset: none;
+}
+
+.landscape-process-step {
+  background: rgb(25 29 23 / 72%);
+  border: 1px solid rgb(255 255 255 / 0.08);
+  border-radius: 8px;
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  transition:
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms ease;
+}
+
+.landscape-process-step__index,
+.landscape-season-card__label {
+  color: #b7cf4f;
+  font-size: var(--size-2xs);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.landscape-season-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.landscape-season-card h3 {
+  font-size: clamp(1.45rem, 2vw, 1.9rem);
+  line-height: 1.04;
+}
+
 .landscape-band__intro,
 .landscape-band__header {
   display: grid;
@@ -6529,6 +6857,12 @@ body[data-demo-theme='landscaping'] .mobile-primary-cta--service {
 .landscape-service-strip__card:hover,
 .landscape-gallery-showcase__feature:hover,
 .landscape-gallery-showcase__card:hover,
+.landscape-project-gallery__lead:hover,
+.landscape-project-gallery__card:hover,
+.landscape-material-card:hover,
+.landscape-process-step:hover,
+.landscape-season-card:hover,
+.landscape-transformation:hover,
 .landscape-split-band__story:hover,
 .landscape-split-band__quote:hover,
 .landscape-standards-grid__card:hover {
@@ -6539,7 +6873,9 @@ body[data-demo-theme='landscaping'] .mobile-primary-cta--service {
 
 .landscape-service-strip__card:hover .landscape-service-strip__media img,
 .landscape-gallery-showcase__feature:hover .landscape-gallery-showcase__feature-media img,
-.landscape-gallery-showcase__card:hover .landscape-gallery-showcase__card-media img {
+.landscape-gallery-showcase__card:hover .landscape-gallery-showcase__card-media img,
+.landscape-project-gallery__lead:hover .landscape-project-gallery__lead-media img,
+.landscape-project-gallery__card:hover .landscape-project-gallery__card-media img {
   transform: scale(1.03);
 }
 
@@ -6547,6 +6883,9 @@ body[data-demo-theme='landscaping'] .mobile-primary-cta--service {
   body[data-demo-theme='landscaping'] .site-nav__service-bar-inner,
   body[data-demo-theme='landscaping'] .site-footer__service-top,
   .landscape-band--services,
+  .landscape-project-gallery,
+  .landscape-transformation,
+  .landscape-materials-process,
   .landscape-gallery-showcase,
   .landscape-split-band {
     grid-template-columns: 1fr;
@@ -6567,6 +6906,8 @@ body[data-demo-theme='landscaping'] .mobile-primary-cta--service {
 
   .landscape-home-hero__cards,
   .landscape-service-strip,
+  .landscape-materials-grid,
+  .landscape-season-grid,
   .landscape-standards-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -6617,7 +6958,10 @@ body[data-demo-theme='landscaping'] .mobile-primary-cta--service {
   body[data-demo-theme='landscaping'] .site-footer__service-grid,
   .landscape-home-hero__cards,
   .landscape-service-strip,
+  .landscape-materials-grid,
+  .landscape-season-grid,
   .landscape-gallery-showcase__grid,
+  .landscape-project-gallery__grid,
   .landscape-standards-grid {
     grid-template-columns: 1fr;
   }
@@ -6638,10 +6982,16 @@ body[data-demo-theme='landscaping'] .mobile-primary-cta--service {
   }
 
   .landscape-gallery-showcase__feature,
-  .landscape-gallery-showcase__feature-body {
+  .landscape-gallery-showcase__feature-body,
+  .landscape-project-gallery__lead {
     grid-template-columns: 1fr;
   }
 
+  .landscape-project-gallery__lead-body,
+  .landscape-project-gallery__card-body,
+  .landscape-materials-process__materials,
+  .landscape-materials-process__process,
+  .landscape-transformation,
   .landscape-gallery-showcase__feature-body,
   .landscape-gallery-showcase__card-body,
   .landscape-split-band__story,
@@ -6656,12 +7006,20 @@ body[data-demo-theme='landscaping'] .mobile-primary-cta--service {
   .landscape-service-strip__card,
   .landscape-gallery-showcase__feature,
   .landscape-gallery-showcase__card,
+  .landscape-project-gallery__lead,
+  .landscape-project-gallery__card,
+  .landscape-material-card,
+  .landscape-process-step,
+  .landscape-season-card,
+  .landscape-transformation,
   .landscape-split-band__story,
   .landscape-split-band__quote,
   .landscape-standards-grid__card,
   .landscape-service-strip__media img,
   .landscape-gallery-showcase__feature-media img,
-  .landscape-gallery-showcase__card-media img {
+  .landscape-gallery-showcase__card-media img,
+  .landscape-project-gallery__lead-media img,
+  .landscape-project-gallery__card-media img {
     transition: none !important;
   }
 
@@ -6669,6 +7027,12 @@ body[data-demo-theme='landscaping'] .mobile-primary-cta--service {
   .landscape-service-strip__card:hover,
   .landscape-gallery-showcase__feature:hover,
   .landscape-gallery-showcase__card:hover,
+  .landscape-project-gallery__lead:hover,
+  .landscape-project-gallery__card:hover,
+  .landscape-material-card:hover,
+  .landscape-process-step:hover,
+  .landscape-season-card:hover,
+  .landscape-transformation:hover,
   .landscape-split-band__story:hover,
   .landscape-split-band__quote:hover,
   .landscape-standards-grid__card:hover {
@@ -6677,7 +7041,9 @@ body[data-demo-theme='landscaping'] .mobile-primary-cta--service {
 
   .landscape-service-strip__card:hover .landscape-service-strip__media img,
   .landscape-gallery-showcase__feature:hover .landscape-gallery-showcase__feature-media img,
-  .landscape-gallery-showcase__card:hover .landscape-gallery-showcase__card-media img {
+  .landscape-gallery-showcase__card:hover .landscape-gallery-showcase__card-media img,
+  .landscape-project-gallery__lead:hover .landscape-project-gallery__lead-media img,
+  .landscape-project-gallery__card:hover .landscape-project-gallery__card-media img {
     transform: none !important;
   }
 }
