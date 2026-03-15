@@ -4153,12 +4153,12 @@ body[data-demo-brand='roofing'] .site-brand__mark {
 }
 
 body[data-demo-brand='roofing'] .site-brand__mark img {
-  height: 2.7rem;
-  width: 2.7rem;
+  height: 2.35rem;
+  width: 2.35rem;
 }
 
 body[data-demo-brand='roofing'] .site-brand__name {
-  font-size: clamp(1.25rem, 1.55vw, 1.55rem);
+  font-size: clamp(1.12rem, 1.35vw, 1.38rem);
   font-weight: 700;
   letter-spacing: 0.015em;
   text-transform: none;
@@ -4172,10 +4172,10 @@ body[data-demo-brand='roofing'] .primary-nav__link {
   border: 1px solid transparent;
   border-radius: 8px;
   color: color-mix(in srgb, var(--color-text-primary) 90%, var(--color-text-muted));
-  font-size: 0.78rem;
+  font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.07em;
-  padding: 0.52rem 0.8rem;
+  padding: 0.45rem 0.72rem;
 }
 
 body[data-demo-brand='roofing'] .primary-nav__link:hover {
@@ -4263,7 +4263,7 @@ body[data-demo-brand='roofing'] .site-nav__roofing-bar-inner {
   justify-content: space-between;
   margin: 0 auto;
   max-width: calc(var(--container-max) + (var(--space-6) * 2));
-  padding: 0.55rem var(--space-6);
+  padding: 0.45rem var(--space-5);
 }
 
 body[data-demo-brand='roofing'] .site-nav__roofing-bar-copy,
@@ -4296,17 +4296,29 @@ body[data-demo-brand='roofing'] .site-nav__roofing-phone {
 
 body[data-demo-brand='roofing'] .site-nav--roofing {
   align-items: center;
-  gap: var(--space-5);
+  gap: var(--space-3);
+  padding-block: 0.75rem;
 }
 
 body[data-demo-brand='roofing'] .site-nav__roofing-shell {
   display: grid;
-  gap: var(--space-3);
+  gap: var(--space-2);
   margin-left: auto;
 }
 
 body[data-demo-brand='roofing'] .site-nav__roofing-utility {
+  display: none;
   justify-content: flex-end;
+}
+
+body[data-demo-brand='roofing'] .site-nav__roofing-shell .primary-nav__cta {
+  margin-left: var(--space-1);
+}
+
+body[data-demo-brand='roofing'] .site-nav__roofing-shell .btn--primary {
+  font-size: 0.82rem;
+  min-height: 2.85rem;
+  padding: 0.45rem 1rem;
 }
 
 body[data-demo-brand='roofing'] .site-footer--roofing {
@@ -5503,6 +5515,7 @@ body[data-demo-brand='roofing'] .site-footer__roofing-cta {
 
   .site-nav__roofing-utility {
     align-items: flex-start;
+    display: flex;
     text-align: left;
   }
 
@@ -5970,18 +5983,18 @@ body[data-demo-theme='landscaping'] .site-nav__service-bar-links a {
 }
 
 body[data-demo-theme='landscaping'] .site-nav--service {
-  align-items: stretch;
-  gap: var(--space-4);
-  padding-block: 1rem;
+  align-items: center;
+  gap: var(--space-3);
+  padding-block: 0.75rem;
 }
 
 body[data-demo-theme='landscaping'] .site-brand {
   background: linear-gradient(180deg, #1a1d17, #131611);
   border: 1px solid #394236;
   border-radius: 4px;
-  box-shadow: 0 16px 28px rgb(3 5 3 / 28%);
-  min-width: 19rem;
-  padding: 1rem 1.2rem;
+  box-shadow: 0 12px 22px rgb(3 5 3 / 24%);
+  min-width: 16.5rem;
+  padding: 0.75rem 0.95rem;
 }
 
 body[data-demo-theme='landscaping'] .site-brand__mark {
@@ -5992,13 +6005,13 @@ body[data-demo-theme='landscaping'] .site-brand__mark {
 }
 
 body[data-demo-theme='landscaping'] .site-brand__mark img {
-  height: 2.8rem;
-  width: 2.8rem;
+  height: 2.35rem;
+  width: 2.35rem;
 }
 
 body[data-demo-theme='landscaping'] .site-brand__name {
   color: #f1edde;
-  font-size: clamp(1.35rem, 1.8vw, 1.8rem);
+  font-size: clamp(1.18rem, 1.45vw, 1.5rem);
   font-weight: 600;
   letter-spacing: 0.02em;
 }
@@ -6012,23 +6025,23 @@ body[data-demo-theme='landscaping'] .site-nav__service-shell {
   background: linear-gradient(180deg, #6d811f, #758b22);
   border: 1px solid #7d9423;
   border-radius: 0 4px 4px 0;
-  box-shadow: 0 16px 28px rgb(3 5 3 / 18%);
+  box-shadow: 0 12px 22px rgb(3 5 3 / 16%);
   margin-left: auto;
-  min-height: 100%;
-  padding: 0.35rem 0.75rem;
+  min-height: 0;
+  padding: 0.2rem 0.45rem;
 }
 
 body[data-demo-theme='landscaping'] .site-nav__service-shell .primary-nav {
-  gap: 0.25rem;
+  gap: 0.15rem;
 }
 
 body[data-demo-theme='landscaping'] .primary-nav__link {
   border-radius: 0;
   color: #f4f1e7;
-  font-size: 0.76rem;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.06em;
-  padding: 0.78rem 0.9rem;
+  padding: 0.56rem 0.72rem;
 }
 
 body[data-demo-theme='landscaping'] .primary-nav__link:hover,
@@ -6042,10 +6055,11 @@ body[data-demo-theme='landscaping'] .site-nav__service-shell .btn--primary {
   background: #173924;
   border-color: rgb(255 255 255 / 0.18);
   border-radius: 6px;
-  box-shadow: 0 12px 24px rgb(6 13 8 / 22%);
+  box-shadow: 0 10px 20px rgb(6 13 8 / 18%);
   color: #f4f1e7;
-  min-height: 3.5rem;
-  min-width: 8.2rem;
+  min-height: 2.9rem;
+  min-width: 7.2rem;
+  padding: 0.45rem 1.15rem;
 }
 
 body[data-demo-theme='landscaping'] .site-nav__service-shell .btn--primary:hover {
