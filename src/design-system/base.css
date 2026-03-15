@@ -11,6 +11,10 @@ body,
   min-height: 100%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background:
     radial-gradient(circle at 88% 10%, rgb(89 116 92 / 20%), transparent 34%),
@@ -76,4 +80,10 @@ button {
 
 .plain-list {
   list-style: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

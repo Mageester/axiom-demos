@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import { DemoConfigContext } from '../../config/demoConfig'
 import { RoofingPageHeader } from '../../components/roofing/RoofingPageHeader'
 import { ButtonAnchor, ButtonLink } from '../../components/ui/Button'
+import { Reveal } from '../../components/ui/Reveal'
 
 function getActionLabel(label: string) {
   const normalized = label.toLowerCase()
@@ -37,15 +38,21 @@ export function ContactPage() {
         title="Speak with Blackridge about a roof, siding, or drainage concern"
       />
 
-      <section className="roof-block">
+      <Reveal as="section" className="roof-block" variant="firm">
         <header className="roof-block__header">
           <p className="roof-block__eyebrow">Direct channels</p>
           <h2 className="roof-block__title">Call, email, or confirm service-area fit</h2>
         </header>
 
         <div className="roof-contact-board">
-          {content.contact.details.map((detail) => (
-            <article className="roof-contact-dossier" key={detail.label}>
+          {content.contact.details.map((detail, index) => (
+            <Reveal
+              as="article"
+              className="roof-contact-dossier"
+              delay={index * 55}
+              key={detail.label}
+              variant="firm"
+            >
               <p className="roof-block__eyebrow">{detail.label}</p>
               <h3>{detail.value}</h3>
               {detail.href ? (
@@ -53,12 +60,12 @@ export function ContactPage() {
                   {getActionLabel(detail.label)}
                 </ButtonAnchor>
               ) : null}
-            </article>
+            </Reveal>
           ))}
         </div>
-      </section>
+      </Reveal>
 
-      <section className="roof-block">
+      <Reveal as="section" className="roof-block" variant="firm">
         <header className="roof-block__header">
           <p className="roof-block__eyebrow">Before you send the request</p>
           <h2 className="roof-block__title">The details that make triage faster</h2>
@@ -83,7 +90,7 @@ export function ContactPage() {
             </div>
           </div>
         </div>
-      </section>
+      </Reveal>
     </>
   )
 }

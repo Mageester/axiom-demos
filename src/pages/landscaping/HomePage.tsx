@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import { DemoConfigContext } from '../../config/demoConfig'
 import { ButtonAnchor, ButtonLink } from '../../components/ui/Button'
+import { Reveal } from '../../components/ui/Reveal'
 
 export function HomePage() {
   const { content, routes } = useContext(DemoConfigContext)
@@ -10,6 +11,7 @@ export function HomePage() {
   const supportingProjects = content.gallery.collections.slice(1, 4)
   const standards = content.about.values.slice(0, 3)
   const commonRequests = content.menu.sections.flatMap((section) => section.highlights ?? []).slice(0, 6)
+  const heroSnapshots = [featuredService, supportingServices[0]].filter(Boolean)
   const processImages = [
     content.home.experience.images[0],
     content.home.experience.images[1] ?? content.gallery.collections[3]?.image,
@@ -17,7 +19,7 @@ export function HomePage() {
 
   return (
     <>
-      <section className="land-home-intro">
+      <Reveal as="section" className="land-home-intro" variant="organic">
         <div className="land-home-intro__copy">
           <p className="land-home-intro__eyebrow">{content.home.hero.eyebrow}</p>
           <h1 className="land-home-intro__title">{content.home.hero.title}</h1>
@@ -53,33 +55,83 @@ export function HomePage() {
             </figure>
           ) : null}
 
-          <div className="land-home-intro__fact-grid">
-            {content.home.highlights.map((highlight, index) => (
-              <article
-                className={`land-home-intro__fact-card ${index === 0 ? 'land-home-intro__fact-card--accent' : ''}`}
-                key={highlight.title}
+          <div className="land-home-intro__subgrid">
+            {heroSnapshots.map((service, index) => (
+              <Reveal
+                as="article"
+                className={`land-home-intro__snapshot ${index === 0 ? 'land-home-intro__snapshot--wide' : ''}`}
+                delay={120 + index * 70}
+                key={service.name}
+                variant="organic"
               >
-                <p className="land-home-intro__fact-label">Project focus 0{index + 1}</p>
-                <h2>{highlight.title}</h2>
-                <p>{highlight.description}</p>
-              </article>
+                <figure className="land-home-intro__snapshot-media">
+                  <img
+                    alt={service.image.alt}
+                    loading="lazy"
+                    src={service.image.src}
+                    style={service.image.position ? { objectPosition: service.image.position } : undefined}
+                  />
+                </figure>
+                <div className="land-home-intro__snapshot-body">
+                  <p className="land-home-intro__fact-label">{service.course}</p>
+                  <h2>{service.name}</h2>
+                </div>
+              </Reveal>
             ))}
+
+            <article className="land-home-intro__overview">
+              <p className="land-home-intro__fact-label">Most requested work</p>
+              <ul className="plain-list land-home-intro__overview-list">
+                {content.home.highlights.map((highlight) => (
+                  <li key={highlight.title}>
+                    <strong>{highlight.title}</strong>
+                    <span>{highlight.description}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
           </div>
         </div>
-      </section>
+      </Reveal>
+
+      <Reveal as="section" className="land-home-section" variant="organic">
+        <header className="land-home-section__header">
+          <p className="land-home-section__eyebrow">Typical first asks</p>
+          <h2 className="land-home-section__title">What homeowners usually want to fix first</h2>
+          <p className="land-home-section__description">
+            The work usually starts with a patio or front approach, then extends into planting, drainage, lighting, and the smaller details that make the property feel settled.
+          </p>
+        </header>
+
+        <div className="land-home-focus-grid">
+          {content.home.highlights.map((highlight, index) => (
+            <Reveal
+              as="article"
+              className="land-home-focus-card"
+              delay={index * 80}
+              key={highlight.title}
+              variant="organic"
+            >
+              <p className="land-home-focus-card__index">0{index + 1}</p>
+              <h3>{highlight.title}</h3>
+              <p>{highlight.description}</p>
+            </Reveal>
+          ))}
+        </div>
+      </Reveal>
 
       {featuredProject ? (
-        <section className="land-home-section">
+        <Reveal as="section" className="land-home-section" variant="organic">
           <header className="land-home-section__header">
             <p className="land-home-section__eyebrow">Recent work</p>
-            <h2 className="land-home-section__title">Project proof from patios, front approaches, and backyard upgrades</h2>
+            <h2 className="land-home-section__title">Project proof from patio builds, front entries, and outdoor-living upgrades</h2>
             <p className="land-home-section__description">
               The fastest way to understand Northline is to look at the kind of properties, materials, and finish level the company is usually hired to handle.
             </p>
           </header>
 
           <div className="land-portfolio-lead">
-            <article className="land-portfolio-lead__feature">
+            <Reveal as="article" className="land-portfolio-lead__feature" variant="organic">
               <figure className="land-portfolio-lead__media">
                 <img
                   alt={featuredProject.image.alt}
@@ -112,11 +164,17 @@ export function HomePage() {
                   </ButtonLink>
                 </div>
               </div>
-            </article>
+            </Reveal>
 
             <div className="land-portfolio-lead__stack">
-              {supportingProjects.map((project) => (
-                <article className="land-portfolio-lead__item" key={project.title}>
+              {supportingProjects.map((project, index) => (
+                <Reveal
+                  as="article"
+                  className="land-portfolio-lead__item"
+                  delay={110 + index * 60}
+                  key={project.title}
+                  variant="organic"
+                >
                   <figure>
                     <img
                       alt={project.image.alt}
@@ -130,27 +188,33 @@ export function HomePage() {
                     <h3>{project.title}</h3>
                     <p>{project.description}</p>
                   </div>
-                </article>
+                </Reveal>
               ))}
             </div>
           </div>
-        </section>
+        </Reveal>
       ) : null}
 
       <section className="land-cred-strip" aria-label="Northline work standards">
         {standards.map((standard, index) => (
-          <article className="land-cred-strip__item" key={standard.title}>
+          <Reveal
+            as="article"
+            className="land-cred-strip__item"
+            delay={index * 70}
+            key={standard.title}
+            variant="organic"
+          >
             <p className="land-cred-strip__index">0{index + 1}</p>
             <h2>{standard.title}</h2>
             <p>{standard.description}</p>
-          </article>
+          </Reveal>
         ))}
       </section>
 
-      <section className="land-home-section">
+      <Reveal as="section" className="land-home-section" variant="organic">
         <header className="land-home-section__header">
           <p className="land-home-section__eyebrow">Services</p>
-          <h2 className="land-home-section__title">Where homeowners usually start</h2>
+          <h2 className="land-home-section__title">Outdoor living, front entries, and finish work that gets the property read right</h2>
           <p className="land-home-section__description">
             Most quote requests come in through one of these buckets: a patio or entry project, a planting refresh, or the lighting and drainage details that finish the property properly.
           </p>
@@ -158,7 +222,7 @@ export function HomePage() {
 
         <div className="land-service-matrix">
           {featuredService ? (
-            <article className="land-service-matrix__feature">
+            <Reveal as="article" className="land-service-matrix__feature" variant="organic">
               <figure className="land-service-matrix__feature-media">
                 <img
                   alt={featuredService.image.alt}
@@ -182,11 +246,17 @@ export function HomePage() {
                   </ButtonLink>
                 </div>
               </div>
-            </article>
+            </Reveal>
           ) : null}
 
-          {supportingServices.map((service) => (
-            <article className="land-service-matrix__card" key={service.name}>
+          {supportingServices.map((service, index) => (
+            <Reveal
+              as="article"
+              className="land-service-matrix__card"
+              delay={90 + index * 60}
+              key={service.name}
+              variant="organic"
+            >
               <figure className="land-service-matrix__card-media">
                 <img
                   alt={service.image.alt}
@@ -200,21 +270,21 @@ export function HomePage() {
                 <h3>{service.name}</h3>
                 <p>{service.description}</p>
               </div>
-            </article>
+            </Reveal>
           ))}
 
-          <article className="land-service-matrix__panel">
+          <Reveal as="article" className="land-service-matrix__panel" delay={220} variant="organic">
             <p className="land-service-matrix__panel-label">Common requests</p>
             <ul className="plain-list land-service-matrix__panel-list">
               {commonRequests.map((request) => (
                 <li key={request}>{request}</li>
               ))}
             </ul>
-          </article>
+          </Reveal>
         </div>
-      </section>
+      </Reveal>
 
-      <section className="land-home-section">
+      <Reveal as="section" className="land-home-section" variant="organic">
         <header className="land-home-section__header">
           <p className="land-home-section__eyebrow">Quote process</p>
           <h2 className="land-home-section__title">What we need before we price the job</h2>
@@ -226,10 +296,16 @@ export function HomePage() {
         <div className="land-process-band">
           <div className="land-process-band__steps">
             {content.home.experience.points.map((point, index) => (
-              <article className="land-process-band__step" key={point}>
+              <Reveal
+                as="article"
+                className="land-process-band__step"
+                delay={index * 70}
+                key={point}
+                variant="organic"
+              >
                 <p className="land-process-band__step-index">Step 0{index + 1}</p>
                 <p>{point}</p>
-              </article>
+              </Reveal>
             ))}
           </div>
 
@@ -256,9 +332,9 @@ export function HomePage() {
             </ul>
           </div>
         </div>
-      </section>
+      </Reveal>
 
-      <section className="land-home-section">
+      <Reveal as="section" className="land-home-section" variant="organic">
         <div className="land-estimate-callout">
           <div className="land-estimate-callout__copy">
             <p className="land-process-band__label">Request a quote</p>
@@ -283,7 +359,7 @@ export function HomePage() {
             <p className="land-estimate-callout__meta">Serving Toronto, Etobicoke, Mississauga, and Oakville</p>
           </div>
         </div>
-      </section>
+      </Reveal>
     </>
   )
 }

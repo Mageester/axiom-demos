@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import type { VisualAssetContent } from '../../content/types'
+import { Reveal } from '../ui/Reveal'
 
 interface LandscapingPageHeaderProps {
   eyebrow: string
@@ -25,7 +26,7 @@ export function LandscapingPageHeader({
   utilityMeta = [],
 }: LandscapingPageHeaderProps) {
   return (
-    <section className="land-utility-hero">
+    <Reveal as="section" className="land-utility-hero" variant="organic">
       <div className="land-utility-hero__copy">
         <p className="land-utility-hero__eyebrow">{eyebrow}</p>
         <h1 className="land-utility-hero__title">{title}</h1>
@@ -66,6 +67,6 @@ export function LandscapingPageHeader({
           </div>
         ) : null}
       </div>
-    </section>
+    </Reveal>
   )
 }

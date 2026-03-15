@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import { DemoConfigContext } from '../../config/demoConfig'
 import { RoofingPageHeader } from '../../components/roofing/RoofingPageHeader'
 import { ButtonLink } from '../../components/ui/Button'
+import { Reveal } from '../../components/ui/Reveal'
 
 export function ServicesPage() {
   const { content, routes } = useContext(DemoConfigContext)
@@ -33,7 +34,7 @@ export function ServicesPage() {
         title="Roofing and exterior scopes organized the way homeowners actually buy them"
       />
 
-      <section className="roof-block">
+      <Reveal as="section" className="roof-block" variant="firm">
         <header className="roof-block__header">
           <p className="roof-block__eyebrow">Primary service lines</p>
           <h2 className="roof-block__title">What the work usually turns into after the inspection</h2>
@@ -43,8 +44,14 @@ export function ServicesPage() {
         </header>
 
         <div className="roof-service-rail">
-          {content.menu.sections.map((section) => (
-            <article className="roof-service-dossier" key={section.title}>
+          {content.menu.sections.map((section, index) => (
+            <Reveal
+              as="article"
+              className="roof-service-dossier"
+              delay={index * 55}
+              key={section.title}
+              variant="firm"
+            >
               {section.image ? (
                 <figure className="roof-service-dossier__media">
                   <img
@@ -77,41 +84,41 @@ export function ServicesPage() {
                   ))}
                 </ul>
               </div>
-            </article>
+            </Reveal>
           ))}
         </div>
-      </section>
+      </Reveal>
 
-      <section className="roof-block">
+      <Reveal as="section" className="roof-block" variant="firm">
         <header className="roof-block__header">
           <p className="roof-block__eyebrow">Repair versus replacement</p>
           <h2 className="roof-block__title">What we are usually helping homeowners sort out</h2>
         </header>
 
         <div className="roof-decision-grid">
-          <article className="roof-decision-card">
+          <Reveal as="article" className="roof-decision-card" variant="firm">
             <p className="roof-block__eyebrow">Repair-led jobs</p>
             <h3>{repairScope?.title}</h3>
             <p>
               Best when the issue is tied to a specific area, the rest of the roof still has service life, and the homeowner needs the failure point confirmed before spending on a larger scope.
             </p>
-          </article>
-          <article className="roof-decision-card">
+          </Reveal>
+          <Reveal as="article" className="roof-decision-card" delay={55} variant="firm">
             <p className="roof-block__eyebrow">Replacement-led jobs</p>
             <h3>{replacementScope?.title}</h3>
             <p>
               Best when deterioration is broad, multiple sections are failing, or the roof is near the end of service life and staged repairs would only delay the real work.
             </p>
-          </article>
-          <article className="roof-decision-card">
+          </Reveal>
+          <Reveal as="article" className="roof-decision-card" delay={110} variant="firm">
             <p className="roof-block__eyebrow">Support scopes</p>
             <h3>{supportScope?.title}</h3>
             <p>
               Best when roof-edge details, siding, fascia, soffit, or drainage issues need to be handled so the finished job actually protects the house and looks complete.
             </p>
-          </article>
+          </Reveal>
         </div>
-      </section>
+      </Reveal>
     </>
   )
 }

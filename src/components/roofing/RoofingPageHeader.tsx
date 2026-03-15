@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import type { VisualAssetContent } from '../../content/types'
+import { Reveal } from '../ui/Reveal'
 
 interface RoofingPageHeaderProps {
   eyebrow: string
@@ -23,7 +24,7 @@ export function RoofingPageHeader({
   meta = [],
 }: RoofingPageHeaderProps) {
   return (
-    <section className="roofing-page-header">
+    <Reveal as="section" className="roofing-page-header" variant="firm">
       <div className="roofing-page-header__lead">
         <p className="roofing-page-header__eyebrow">{eyebrow}</p>
         <h1 className="roofing-page-header__title">{title}</h1>
@@ -58,6 +59,6 @@ export function RoofingPageHeader({
           </ul>
         </div>
       </aside>
-    </section>
+    </Reveal>
   )
 }

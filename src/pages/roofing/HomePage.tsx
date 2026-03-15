@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import { DemoConfigContext } from '../../config/demoConfig'
 import { ButtonAnchor, ButtonLink } from '../../components/ui/Button'
+import { Reveal } from '../../components/ui/Reveal'
 
 export function HomePage() {
   const { content, routes } = useContext(DemoConfigContext)
@@ -11,7 +12,7 @@ export function HomePage() {
 
   return (
     <>
-      <section className="roof-command-deck">
+      <Reveal as="section" className="roof-command-deck" variant="firm">
         <div className="roof-command-deck__lead">
           <p className="roof-command-deck__eyebrow">{content.home.hero.eyebrow}</p>
           <h1 className="roof-command-deck__title">{content.home.hero.title}</h1>
@@ -58,86 +59,25 @@ export function HomePage() {
             <a href={content.brand.phoneHref}>{content.brand.phone}</a>
           </div>
         </aside>
-      </section>
+      </Reveal>
 
       <section className="roof-response-grid" aria-label="Common Blackridge calls">
         {content.home.highlights.map((highlight, index) => (
-          <article className="roof-response-card" key={highlight.title}>
+          <Reveal
+            as="article"
+            className="roof-response-card"
+            delay={index * 55}
+            key={highlight.title}
+            variant="firm"
+          >
             <p className="roof-response-card__index">0{index + 1}</p>
             <h2>{highlight.title}</h2>
             <p>{highlight.description}</p>
-          </article>
+          </Reveal>
         ))}
       </section>
 
-      {featuredProject ? (
-        <section className="roof-block">
-          <header className="roof-block__header">
-            <p className="roof-block__eyebrow">Project references</p>
-            <h2 className="roof-block__title">Proof from replacement, repair, and roofline support work</h2>
-            <p className="roof-block__description">
-              Homeowners usually decide faster once they can see the type of roof, condition issue, and finish level Blackridge is normally hired to handle.
-            </p>
-          </header>
-
-          <div className="roof-reference-deck">
-            <article className="roof-reference-deck__feature">
-              <div className="roof-reference-deck__content">
-                <p className="roof-block__eyebrow">{featuredProject.subtitle}</p>
-                <h3>{featuredProject.title}</h3>
-                <p>{featuredProject.description}</p>
-                {featuredProject.facts?.length ? (
-                  <ul className="plain-list roof-chip-list">
-                    {featuredProject.facts.map((fact) => (
-                      <li key={fact}>{fact}</li>
-                    ))}
-                  </ul>
-                ) : null}
-                <div className="roof-command-deck__actions">
-                  <ButtonLink to={routes.gallery}>View projects</ButtonLink>
-                  <ButtonLink to={routes.reservations} variant="secondary">
-                    Request inspection
-                  </ButtonLink>
-                </div>
-              </div>
-              <figure className="roof-reference-deck__media">
-                <img
-                  alt={featuredProject.image.alt}
-                  loading="lazy"
-                  src={featuredProject.image.src}
-                  style={
-                    featuredProject.image.position
-                      ? { objectPosition: featuredProject.image.position }
-                      : undefined
-                  }
-                />
-              </figure>
-            </article>
-
-            <div className="roof-reference-deck__stack">
-              {comparisonProjects.map((project) => (
-                <article className="roof-reference-card" key={project.title}>
-                  <figure className="roof-reference-card__media">
-                    <img
-                      alt={project.image.alt}
-                      loading="lazy"
-                      src={project.image.src}
-                      style={project.image.position ? { objectPosition: project.image.position } : undefined}
-                    />
-                  </figure>
-                  <div className="roof-reference-card__body">
-                    <p className="roof-block__eyebrow">{project.subtitle}</p>
-                    <h3>{project.title}</h3>
-                    <p>{project.description}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-      ) : null}
-
-      <section className="roof-block">
+      <Reveal as="section" className="roof-block" variant="firm">
         <header className="roof-block__header">
           <p className="roof-block__eyebrow">Services</p>
           <h2 className="roof-block__title">How the work is usually grouped on real jobs</h2>
@@ -148,7 +88,7 @@ export function HomePage() {
 
         <div className="roof-scope-ledger">
           {primaryScope ? (
-            <article className="roof-scope-ledger__primary">
+            <Reveal as="article" className="roof-scope-ledger__primary" variant="firm">
               {primaryScope.image ? (
                 <figure className="roof-scope-ledger__primary-media">
                   <img
@@ -179,12 +119,18 @@ export function HomePage() {
                   ))}
                 </ul>
               </div>
-            </article>
+            </Reveal>
           ) : null}
 
           <div className="roof-scope-ledger__stack">
-            {secondaryScopes.map((scope) => (
-              <article className="roof-scope-card" key={scope.title}>
+            {secondaryScopes.map((scope, index) => (
+              <Reveal
+                as="article"
+                className="roof-scope-card"
+                delay={index * 55}
+                key={scope.title}
+                variant="firm"
+              >
                 {scope.image ? (
                   <figure className="roof-scope-card__media">
                     <img
@@ -207,13 +153,86 @@ export function HomePage() {
                   ) : null}
                   <p>{scope.items[0]?.description}</p>
                 </div>
-              </article>
+              </Reveal>
             ))}
           </div>
         </div>
-      </section>
+      </Reveal>
 
-      <section className="roof-visit-lane">
+      {featuredProject ? (
+        <Reveal as="section" className="roof-block" variant="firm">
+          <header className="roof-block__header">
+            <p className="roof-block__eyebrow">Project references</p>
+            <h2 className="roof-block__title">Proof from replacement, repair, and roofline support work</h2>
+            <p className="roof-block__description">
+              Homeowners usually decide faster once they can see the type of roof, condition issue, and finish level Blackridge is normally hired to handle.
+            </p>
+          </header>
+
+          <div className="roof-reference-deck">
+            <Reveal as="article" className="roof-reference-deck__feature" variant="firm">
+              <div className="roof-reference-deck__content">
+                <p className="roof-block__eyebrow">{featuredProject.subtitle}</p>
+                <h3>{featuredProject.title}</h3>
+                <p>{featuredProject.description}</p>
+                {featuredProject.facts?.length ? (
+                  <ul className="plain-list roof-chip-list">
+                    {featuredProject.facts.map((fact) => (
+                      <li key={fact}>{fact}</li>
+                    ))}
+                  </ul>
+                ) : null}
+                <div className="roof-command-deck__actions">
+                  <ButtonLink to={routes.gallery}>View projects</ButtonLink>
+                  <ButtonLink to={routes.reservations} variant="secondary">
+                    Request inspection
+                  </ButtonLink>
+                </div>
+              </div>
+              <figure className="roof-reference-deck__media">
+                <img
+                  alt={featuredProject.image.alt}
+                  loading="lazy"
+                  src={featuredProject.image.src}
+                  style={
+                    featuredProject.image.position
+                      ? { objectPosition: featuredProject.image.position }
+                      : undefined
+                  }
+                />
+              </figure>
+            </Reveal>
+
+            <div className="roof-reference-deck__stack">
+              {comparisonProjects.map((project, index) => (
+                <Reveal
+                  as="article"
+                  className="roof-reference-card"
+                  delay={80 + index * 55}
+                  key={project.title}
+                  variant="firm"
+                >
+                  <figure className="roof-reference-card__media">
+                    <img
+                      alt={project.image.alt}
+                      loading="lazy"
+                      src={project.image.src}
+                      style={project.image.position ? { objectPosition: project.image.position } : undefined}
+                    />
+                  </figure>
+                  <div className="roof-reference-card__body">
+                    <p className="roof-block__eyebrow">{project.subtitle}</p>
+                    <h3>{project.title}</h3>
+                    <p>{project.description}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </Reveal>
+      ) : null}
+
+      <Reveal as="section" className="roof-visit-lane" variant="firm">
         <div className="roof-visit-lane__copy">
           <p className="roof-block__eyebrow">Inspection path</p>
           <h2 className="roof-block__title">What gets checked, priced, and confirmed before the crew is booked</h2>
@@ -222,10 +241,16 @@ export function HomePage() {
 
         <div className="roof-visit-lane__steps">
           {content.home.experience.points.map((point, index) => (
-            <article className="roof-visit-step" key={point}>
+            <Reveal
+              as="article"
+              className="roof-visit-step"
+              delay={index * 55}
+              key={point}
+              variant="firm"
+            >
               <p className="roof-visit-step__index">Step 0{index + 1}</p>
               <p>{point}</p>
-            </article>
+            </Reveal>
           ))}
         </div>
 
@@ -243,9 +268,9 @@ export function HomePage() {
             </p>
           </div>
         </aside>
-      </section>
+      </Reveal>
 
-      <section className="roof-dispatch-band">
+      <Reveal as="section" className="roof-dispatch-band" variant="firm">
         <div className="roof-dispatch-band__copy">
           <p className="roof-block__eyebrow">Inspection request</p>
           <h2 className="roof-block__title">Send the address, issue, and a few photos. We will tell you the cleanest next step.</h2>
@@ -260,7 +285,7 @@ export function HomePage() {
           </ButtonAnchor>
         </div>
         <p className="roof-dispatch-band__meta">Serving Toronto, Scarborough, Pickering, Ajax, and Whitby</p>
-      </section>
+      </Reveal>
     </>
   )
 }

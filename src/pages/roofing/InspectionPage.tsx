@@ -2,6 +2,7 @@ import { type FormEvent, useContext, useState } from 'react'
 import { DemoConfigContext } from '../../config/demoConfig'
 import { RoofingPageHeader } from '../../components/roofing/RoofingPageHeader'
 import { Button, ButtonAnchor } from '../../components/ui/Button'
+import { Reveal } from '../../components/ui/Reveal'
 
 const issueOptions = [
   'Active leak or water entry',
@@ -72,15 +73,21 @@ export function InspectionPage() {
         title="Request a roof or exterior inspection"
       />
 
-      <section className="roof-block">
+      <Reveal as="section" className="roof-block" variant="firm">
         <header className="roof-block__header">
           <p className="roof-block__eyebrow">Direct options</p>
           <h2 className="roof-block__title">Call, email, or send the inspection form</h2>
         </header>
 
         <div className="roof-contact-board">
-          {content.reservations.channels.map((channel) => (
-            <article className="roof-contact-dossier" key={channel.label}>
+          {content.reservations.channels.map((channel, index) => (
+            <Reveal
+              as="article"
+              className="roof-contact-dossier"
+              delay={index * 55}
+              key={channel.label}
+              variant="firm"
+            >
               <p className="roof-block__eyebrow">{channel.label}</p>
               <h3>{channel.value}</h3>
               <ButtonAnchor href={channel.href} variant="secondary">
@@ -90,12 +97,12 @@ export function InspectionPage() {
                     ? 'Email request'
                     : 'View map'}
               </ButtonAnchor>
-            </article>
+            </Reveal>
           ))}
         </div>
-      </section>
+      </Reveal>
 
-      <section className="roof-block">
+      <Reveal as="section" className="roof-block" variant="firm">
         <header className="roof-block__header">
           <p className="roof-block__eyebrow">Inspection form</p>
           <h2 className="roof-block__title">Send the property details first</h2>
@@ -162,7 +169,7 @@ export function InspectionPage() {
             </div>
           </aside>
         </div>
-      </section>
+      </Reveal>
     </>
   )
 }

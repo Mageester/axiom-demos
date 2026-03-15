@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import { DemoConfigContext } from '../../config/demoConfig'
 import { RoofingPageHeader } from '../../components/roofing/RoofingPageHeader'
 import { ButtonLink } from '../../components/ui/Button'
+import { Reveal } from '../../components/ui/Reveal'
 
 export function AboutPage() {
   const { content, routes } = useContext(DemoConfigContext)
@@ -25,7 +26,7 @@ export function AboutPage() {
         title="A roofing and exterior company built around clearer scope and tighter site standards"
       />
 
-      <section className="roof-block">
+      <Reveal as="section" className="roof-block" variant="firm">
         <header className="roof-block__header">
           <p className="roof-block__eyebrow">How the company works</p>
           <h2 className="roof-block__title">Protection first, then scope, then execution</h2>
@@ -53,40 +54,52 @@ export function AboutPage() {
             )}
           </div>
         </div>
-      </section>
+      </Reveal>
 
-      <section className="roof-block">
+      <Reveal as="section" className="roof-block" variant="firm">
         <header className="roof-block__header">
           <p className="roof-block__eyebrow">Operating standards</p>
           <h2 className="roof-block__title">What Blackridge is meant to be known for</h2>
         </header>
 
         <div className="roof-decision-grid">
-          {content.about.values.map((value) => (
-            <article className="roof-decision-card" key={value.title}>
+          {content.about.values.map((value, index) => (
+            <Reveal
+              as="article"
+              className="roof-decision-card"
+              delay={index * 55}
+              key={value.title}
+              variant="firm"
+            >
               <h3>{value.title}</h3>
               <p>{value.description}</p>
-            </article>
+            </Reveal>
           ))}
         </div>
-      </section>
+      </Reveal>
 
-      <section className="roof-block">
+      <Reveal as="section" className="roof-block" variant="firm">
         <header className="roof-block__header">
           <p className="roof-block__eyebrow">Leadership</p>
           <h2 className="roof-block__title">Inspection, coordination, and site operations</h2>
         </header>
 
         <div className="roof-leadership-strip">
-          {content.about.team.map((member) => (
-            <article className="roof-leadership-card" key={member.name}>
+          {content.about.team.map((member, index) => (
+            <Reveal
+              as="article"
+              className="roof-leadership-card"
+              delay={index * 55}
+              key={member.name}
+              variant="firm"
+            >
               <p className="roof-leadership-card__role">{member.role}</p>
               <h3>{member.name}</h3>
               <p>{member.bio}</p>
-            </article>
+            </Reveal>
           ))}
         </div>
-      </section>
+      </Reveal>
     </>
   )
 }

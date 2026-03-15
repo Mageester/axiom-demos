@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import { DemoConfigContext } from '../config/demoConfig'
 import { ButtonAnchor, ButtonLink } from '../components/ui/Button'
+import { Reveal } from '../components/ui/Reveal'
 
 export function HomePage() {
   const { content, routes } = useContext(DemoConfigContext)
@@ -27,7 +28,7 @@ export function HomePage() {
 
   return (
     <>
-      <section className="restaurant-home-hero">
+      <Reveal as="section" className="restaurant-home-hero" variant="soft">
         {content.home.hero.image ? (
           <figure className="restaurant-home-hero__media">
             <img
@@ -70,19 +71,25 @@ export function HomePage() {
             </ul>
           ) : null}
         </div>
-      </section>
+      </Reveal>
 
       <section className="restaurant-house-notes" aria-label="Atelier Meridian room notes">
         {content.home.highlights.map((highlight, index) => (
-          <article className="restaurant-house-notes__item" key={highlight.title}>
+          <Reveal
+            as="article"
+            className="restaurant-house-notes__item"
+            delay={index * 80}
+            key={highlight.title}
+            variant="soft"
+          >
             <p className="restaurant-house-notes__index">0{index + 1}</p>
             <h2>{highlight.title}</h2>
             <p>{highlight.description}</p>
-          </article>
+          </Reveal>
         ))}
       </section>
 
-      <section className="restaurant-home-section">
+      <Reveal as="section" className="restaurant-home-section" variant="soft">
         <header className="restaurant-home-section__header">
           <p className="restaurant-home-section__eyebrow">Tonight at {content.brand.name}</p>
           <h2 className="restaurant-home-section__title">Dinner this week</h2>
@@ -90,7 +97,7 @@ export function HomePage() {
 
         <div className="restaurant-tonight-layout">
           {featuredDish ? (
-            <article className="restaurant-dish-feature" key={featuredDish.name}>
+            <Reveal as="article" className="restaurant-dish-feature" key={featuredDish.name} variant="soft">
               <figure className="restaurant-dish-feature__media">
                 <img
                   alt={featuredDish.image.alt}
@@ -111,12 +118,18 @@ export function HomePage() {
                   See dinner menu
                 </ButtonLink>
               </div>
-            </article>
+            </Reveal>
           ) : null}
 
           <div className="restaurant-dish-stack">
-            {supportingDishes.map((dish) => (
-              <article className="restaurant-dish-stack__item" key={dish.name}>
+            {supportingDishes.map((dish, index) => (
+              <Reveal
+                as="article"
+                className="restaurant-dish-stack__item"
+                delay={120 + index * 80}
+                key={dish.name}
+                variant="soft"
+              >
                 <figure>
                   <img
                     alt={dish.image.alt}
@@ -134,21 +147,27 @@ export function HomePage() {
                   <h3>{dish.name}</h3>
                   <p>{dish.description}</p>
                 </div>
-              </article>
+              </Reveal>
             ))}
           </div>
         </div>
-      </section>
+      </Reveal>
 
-      <section className="restaurant-home-section">
+      <Reveal as="section" className="restaurant-home-section" variant="soft">
         <header className="restaurant-home-section__header">
           <p className="restaurant-home-section__eyebrow">Dining atmosphere</p>
           <h2 className="restaurant-home-section__title">From first seating to late evening</h2>
         </header>
 
         <div className="restaurant-atmosphere-grid">
-          {atmosphereMoments.map((moment) => (
-            <figure className="restaurant-atmosphere-grid__item" key={moment.title}>
+          {atmosphereMoments.map((moment, index) => (
+            <Reveal
+              as="figure"
+              className="restaurant-atmosphere-grid__item"
+              delay={index * 90}
+              key={moment.title}
+              variant="soft"
+            >
               <img
                 alt={moment.image.alt}
                 loading="lazy"
@@ -163,13 +182,13 @@ export function HomePage() {
                 <span>{moment.subtitle}</span>
                 <p>{moment.title}</p>
               </figcaption>
-            </figure>
+            </Reveal>
           ))}
         </div>
-      </section>
+      </Reveal>
 
       {privateDiningMoment ? (
-        <section className="restaurant-home-section">
+        <Reveal as="section" className="restaurant-home-section" variant="soft">
           <div className="restaurant-private-layout">
             <figure className="restaurant-private-layout__media">
               <img
@@ -199,10 +218,10 @@ export function HomePage() {
               </div>
             </div>
           </div>
-        </section>
+        </Reveal>
       ) : null}
 
-      <section className="restaurant-home-section">
+      <Reveal as="section" className="restaurant-home-section" variant="soft">
         <div className="restaurant-story-layout">
           <div className="restaurant-story-layout__copy">
             <p className="restaurant-home-section__eyebrow">From the kitchen</p>
@@ -232,9 +251,9 @@ export function HomePage() {
             </figure>
           ) : null}
         </div>
-      </section>
+      </Reveal>
 
-      <section className="restaurant-home-section">
+      <Reveal as="section" className="restaurant-home-section" variant="soft">
         <div className="restaurant-reservation-module">
           <div className="restaurant-reservation-module__copy">
             <p className="restaurant-home-section__eyebrow">Reservations</p>
@@ -270,32 +289,32 @@ export function HomePage() {
             </figure>
           ) : null}
         </div>
-      </section>
+      </Reveal>
 
-      <section className="restaurant-home-section restaurant-home-section--visit">
+      <Reveal as="section" className="restaurant-home-section restaurant-home-section--visit" variant="soft">
         <header className="restaurant-home-section__header">
           <p className="restaurant-home-section__eyebrow">Before you arrive</p>
           <h2 className="restaurant-home-section__title">Find the dining room and plan the evening</h2>
         </header>
         <div className="restaurant-visit-grid">
-          <article className="restaurant-visit-grid__panel">
+          <Reveal as="article" className="restaurant-visit-grid__panel" variant="soft">
             <h3>Location</h3>
             <p>{content.brand.address}</p>
             <ButtonAnchor href={content.contact.details[2]?.href ?? routes.contact} variant="quiet">
               View on map
             </ButtonAnchor>
-          </article>
+          </Reveal>
 
-          <article className="restaurant-visit-grid__panel">
+          <Reveal as="article" className="restaurant-visit-grid__panel" delay={80} variant="soft">
             <h3>Service windows</h3>
             <ul className="plain-list">
               {content.brand.hours.slice(0, 3).map((hour) => (
                 <li key={hour}>{hour}</li>
               ))}
             </ul>
-          </article>
+          </Reveal>
 
-          <article className="restaurant-visit-grid__panel">
+          <Reveal as="article" className="restaurant-visit-grid__panel" delay={160} variant="soft">
             <h3>Reservation channels</h3>
             <ul className="plain-list">
               <li>
@@ -308,9 +327,9 @@ export function HomePage() {
             <ButtonLink to={routes.contact} variant="quiet">
               Email reservations
             </ButtonLink>
-          </article>
+          </Reveal>
         </div>
-      </section>
+      </Reveal>
     </>
   )
 }

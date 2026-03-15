@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import { DemoConfigContext } from '../../config/demoConfig'
 import { RoofingPageHeader } from '../../components/roofing/RoofingPageHeader'
 import { ButtonLink } from '../../components/ui/Button'
+import { Reveal } from '../../components/ui/Reveal'
 
 export function ProjectsPage() {
   const { content, routes } = useContext(DemoConfigContext)
@@ -33,7 +34,7 @@ export function ProjectsPage() {
       />
 
       {featuredProject ? (
-        <section className="roof-block">
+        <Reveal as="section" className="roof-block" variant="firm">
           <header className="roof-block__header">
             <p className="roof-block__eyebrow">Featured reference</p>
             <h2 className="roof-block__title">{featuredProject.title}</h2>
@@ -42,7 +43,7 @@ export function ProjectsPage() {
             </p>
           </header>
 
-          <article className="roof-casefile">
+          <Reveal as="article" className="roof-casefile" variant="firm">
             <figure className="roof-casefile__media">
               <img
                 alt={featuredProject.image.alt}
@@ -70,19 +71,25 @@ export function ProjectsPage() {
                 </ButtonLink>
               </div>
             </div>
-          </article>
-        </section>
+          </Reveal>
+        </Reveal>
       ) : null}
 
-      <section className="roof-block">
+      <Reveal as="section" className="roof-block" variant="firm">
         <header className="roof-block__header">
           <p className="roof-block__eyebrow">Project register</p>
           <h2 className="roof-block__title">Additional references by issue type</h2>
         </header>
 
         <div className="roof-case-grid">
-          {remainingProjects.map((project) => (
-            <article className="roof-case-card" key={project.title}>
+          {remainingProjects.map((project, index) => (
+            <Reveal
+              as="article"
+              className="roof-case-card"
+              delay={index * 55}
+              key={project.title}
+              variant="firm"
+            >
               <figure className="roof-case-card__media">
                 <img
                   alt={project.image.alt}
@@ -103,10 +110,10 @@ export function ProjectsPage() {
                   </ul>
                 ) : null}
               </div>
-            </article>
+            </Reveal>
           ))}
         </div>
-      </section>
+      </Reveal>
     </>
   )
 }
