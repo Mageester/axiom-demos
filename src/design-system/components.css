@@ -4802,6 +4802,261 @@ body[data-demo-brand='roofing'] .site-footer__roofing-cta {
   text-transform: uppercase;
 }
 
+.roof-case-card__details {
+  border-top: 1px solid color-mix(in srgb, var(--color-border) 82%, black);
+  display: grid;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+  padding-top: var(--space-3);
+}
+
+.roof-case-card__details dt {
+  color: var(--color-text-muted);
+  font-family: var(--font-nav);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+}
+
+.roof-case-card__details dd {
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.roof-trust-layout {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: 0.92fr 1.08fr;
+}
+
+.roof-trust-panel,
+.roof-before-after,
+.roof-emergency-band {
+  background:
+    radial-gradient(circle at 84% 18%, rgb(214 125 66 / 10%), transparent 24%),
+    linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--color-surface) 92%, black),
+      color-mix(in srgb, var(--color-surface-strong) 88%, black)
+    );
+  border: 1px solid color-mix(in srgb, var(--color-border) 84%, black);
+  border-radius: calc(var(--radius-card) + 2px);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  padding: var(--space-6);
+}
+
+.roof-brand-badges {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.roof-brand-badge {
+  align-items: start;
+  background: rgb(9 13 18 / 42%);
+  border: 1px solid color-mix(in srgb, var(--color-border) 82%, black);
+  border-radius: var(--radius-card);
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: auto 1fr;
+  padding: var(--space-4);
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.roof-brand-badge__mark {
+  align-items: center;
+  background: linear-gradient(180deg, rgb(214 125 66 / 18%), rgb(214 125 66 / 8%));
+  border: 1px solid rgb(214 125 66 / 34%);
+  border-radius: 9px;
+  color: var(--color-brand);
+  display: inline-flex;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  height: 2.8rem;
+  justify-content: center;
+  width: 2.8rem;
+}
+
+.roof-brand-badge__body {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.roof-brand-badge__body h3 {
+  color: var(--color-text-primary);
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  line-height: 1.04;
+}
+
+.roof-brand-badge__body p,
+.roof-service-map__item p,
+.roof-before-after__summary p,
+.roof-emergency-band__list li {
+  color: var(--color-text-secondary);
+}
+
+.roof-brand-badge:hover,
+.roof-service-map__item:hover {
+  border-color: color-mix(in srgb, var(--color-brand) 34%, var(--color-border));
+  box-shadow: 0 18px 32px rgb(7 10 14 / 24%);
+  transform: translate3d(0, -2px, 0);
+}
+
+.roof-service-map {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.roof-service-map__canvas {
+  align-items: center;
+  background:
+    radial-gradient(circle at 18% 26%, rgb(214 125 66 / 16%), transparent 18%),
+    radial-gradient(circle at 74% 62%, rgb(92 112 138 / 15%), transparent 20%),
+    linear-gradient(180deg, rgb(10 14 18 / 96%), rgb(13 18 24 / 92%));
+  border: 1px solid color-mix(in srgb, var(--color-border) 84%, black);
+  border-radius: var(--radius-card);
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  min-height: 14rem;
+  padding: var(--space-5);
+}
+
+.roof-service-map__pin {
+  align-items: center;
+  background: rgb(255 255 255 / 0.04);
+  border: 1px solid rgb(255 255 255 / 0.1);
+  border-radius: 999px;
+  color: var(--color-text-primary);
+  display: inline-flex;
+  font-family: var(--font-nav);
+  font-size: 0.74rem;
+  justify-content: center;
+  letter-spacing: 0.08em;
+  min-height: 2.7rem;
+  padding: 0.65rem 0.95rem;
+  text-transform: uppercase;
+}
+
+.roof-service-map__list {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.roof-service-map__item {
+  background: rgb(9 13 18 / 42%);
+  border: 1px solid color-mix(in srgb, var(--color-border) 82%, black);
+  border-radius: var(--radius-card);
+  display: grid;
+  gap: 0.45rem;
+  padding: var(--space-4);
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.roof-service-map__item h3 {
+  color: var(--color-text-primary);
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2vw, 1.45rem);
+  line-height: 1.04;
+}
+
+.roof-before-after {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.roof-before-after__panel {
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.roof-before-after__panel img {
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius-card);
+  object-fit: cover;
+  width: 100%;
+}
+
+.roof-before-after__label {
+  background: rgb(9 13 18 / 82%);
+  border: 1px solid rgb(255 255 255 / 0.08);
+  border-radius: 999px;
+  color: var(--color-text-primary);
+  font-family: var(--font-nav);
+  font-size: 0.72rem;
+  left: 1rem;
+  letter-spacing: 0.08em;
+  padding: 0.45rem 0.7rem;
+  position: absolute;
+  text-transform: uppercase;
+  top: 1rem;
+}
+
+.roof-before-after__label--after {
+  background: rgb(214 125 66 / 88%);
+  border-color: rgb(214 125 66 / 95%);
+  color: rgb(10 14 18 / 92%);
+}
+
+.roof-before-after__summary {
+  border-top: 1px solid color-mix(in srgb, var(--color-border) 82%, black);
+  display: grid;
+  gap: var(--space-3);
+  grid-column: 1 / -1;
+  padding-top: var(--space-4);
+}
+
+.roof-emergency-band {
+  align-items: center;
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: 1.1fr auto;
+  margin-bottom: var(--space-section);
+}
+
+.roof-emergency-band__content {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.roof-emergency-band__list {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.roof-emergency-band__list li {
+  padding-left: 1rem;
+  position: relative;
+}
+
+.roof-emergency-band__list li::before {
+  background: var(--color-brand);
+  border-radius: 999px;
+  content: '';
+  height: 0.42rem;
+  left: 0;
+  position: absolute;
+  top: 0.56rem;
+  width: 0.42rem;
+}
+
+.roof-emergency-band__actions {
+  display: grid;
+  gap: var(--space-3);
+  min-width: 15rem;
+}
+
 .roofing-page-header {
   display: grid;
   gap: var(--space-5);
@@ -4956,9 +5211,12 @@ body[data-demo-brand='roofing'] .site-footer__roofing-cta {
 
   .roof-reference-deck,
   .roof-scope-ledger,
+  .roof-trust-layout,
   .roof-story-board,
   .roof-visit-lane,
-  .roof-request-layout {
+  .roof-request-layout,
+  .roof-before-after,
+  .roof-emergency-band {
     grid-template-columns: 1fr;
   }
 
@@ -5363,13 +5621,17 @@ body[data-demo-brand='roofing'] .site-footer__roofing-cta {
 
   .roof-command-deck__actions .btn,
   .roofing-page-header__actions .btn,
-  .roof-dispatch-band__actions .btn {
+  .roof-dispatch-band__actions .btn,
+  .roof-emergency-band__actions .btn {
     width: 100%;
   }
 
   .roof-command-deck,
   .roofing-page-header,
   .roof-dispatch-band,
+  .roof-trust-panel,
+  .roof-before-after,
+  .roof-emergency-band,
   .roof-note-board,
   .roof-request-layout,
   .roof-visit-lane,
@@ -5401,7 +5663,8 @@ body[data-demo-brand='roofing'] .site-footer__roofing-cta {
   .roof-project-feature__media img,
   .roof-project-spotlight__media img,
   .roof-service-band__media img,
-  .roof-service-panel__media img {
+  .roof-service-panel__media img,
+  .roof-before-after__panel img {
     min-height: 16rem;
   }
 

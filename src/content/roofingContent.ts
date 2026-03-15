@@ -122,6 +122,107 @@ export const roofingContent: DemoContent = {
         },
       ],
     },
+    extras: {
+      recentProjects: [
+        {
+          title: 'Architectural shingle replacement',
+          projectType: 'Full roof replacement',
+          neighborhood: 'Riverdale',
+          materials: ['GAF Timberline HDZ', 'Ice and water shield', 'Ridge ventilation'],
+          description:
+            'Steep-slope replacement with vent corrections, perimeter flashing cleanup, and a sharper front-elevation finish at handoff.',
+          image: {
+            src: pexelsPhoto('18098286', 1200, 900),
+            alt: 'Finished steep residential shingle roof on a two-storey home',
+            position: 'center',
+          },
+        },
+        {
+          title: 'Low-slope roofline reset',
+          projectType: 'Replacement plus gutter work',
+          neighborhood: 'Etobicoke',
+          materials: ['Owens Corning Duration', 'Aluminum fascia', '5-inch eavestroughs'],
+          description:
+            'Replacement scope paired with fascia and drainage updates so the roofline looked finished and the runoff path worked properly.',
+          image: {
+            src: pexelsPhoto('18350737', 1200, 900),
+            alt: 'Residential exterior showing a clean roofline and siding after exterior work',
+            position: 'center',
+          },
+        },
+        {
+          title: 'Storm-damage re-roof',
+          projectType: 'Insurance-supported rebuild',
+          neighborhood: 'Oakville',
+          materials: ['CertainTeed Landmark', 'Synthetic underlayment', 'Step flashing reset'],
+          description:
+            'Storm-damage rebuild with decking spot repairs, new flashing, and a tighter replacement scope after the roof had failed in multiple sections.',
+          image: {
+            src: pexelsPhoto('31771166', 1200, 900),
+            alt: 'Roofer installing shingles during an active residential roof replacement',
+            position: 'center',
+          },
+        },
+      ],
+      materialBrands: [
+        {
+          name: 'GAF',
+          note: 'Architectural shingle systems for replacement work and stronger warranty-backed installs.',
+        },
+        {
+          name: 'CertainTeed',
+          note: 'Trusted residential shingle lines used when colour match and heavier profile matter.',
+        },
+        {
+          name: 'Owens Corning',
+          note: 'Preferred on clean replacement scopes where venting, underlayment, and ridge finish are being reset together.',
+        },
+      ],
+      serviceAreas: [
+        {
+          name: 'Toronto',
+          note: 'Older housing stock, active leak calls, and full replacement planning across core neighbourhoods.',
+        },
+        {
+          name: 'Etobicoke',
+          note: 'Roof replacements, drainage corrections, and broader exterior cleanup on detached homes.',
+        },
+        {
+          name: 'Mississauga',
+          note: 'Inspection-led work for aging shingles, storm damage, and roofline support scopes.',
+        },
+        {
+          name: 'Oakville',
+          note: 'Higher-finish replacement and fascia, soffit, and gutter updates for residential properties.',
+        },
+      ],
+      emergencyCallout: {
+        title: 'Storm damage and active leak response',
+        description:
+          'When weather has lifted shingles, opened flashing, or started water entry, the first priority is getting the failure contained and the right repair path confirmed quickly.',
+        bullets: [
+          'Photo review and urgent triage when active water entry is involved',
+          'Temporary protection guidance before the formal crew visit if conditions allow',
+          'Repair-versus-replacement recommendation documented after inspection',
+        ],
+      },
+      beforeAfter: {
+        title: 'Front-slope replacement and roofline cleanup',
+        summary:
+          'This type of project usually starts with visible wear, poor drainage details, and a roofline that already looks tired from the street. The finished scope leaves the house better protected and much cleaner visually.',
+        bullets: ['Architectural shingles', 'New flashing and vent review', 'Soffit, fascia, and gutter cleanup'],
+        before: {
+          src: pexelsPhoto('36237047', 1200, 900),
+          alt: 'Damaged house exterior before roofing and exterior repair work',
+          position: 'center',
+        },
+        after: {
+          src: pexelsPhoto('18098286', 1200, 900),
+          alt: 'Finished residential roof after replacement and roofline cleanup',
+          position: 'center',
+        },
+      },
+    },
   },
   menu: {
     intro:

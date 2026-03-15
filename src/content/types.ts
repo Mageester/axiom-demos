@@ -3,6 +3,39 @@ export interface FeatureCardContent {
   description: string
 }
 
+export interface ProjectReferenceContent {
+  title: string
+  projectType: string
+  neighborhood: string
+  materials: string[]
+  description: string
+  image: VisualAssetContent
+}
+
+export interface BrandBadgeContent {
+  name: string
+  note: string
+}
+
+export interface ServiceAreaContent {
+  name: string
+  note: string
+}
+
+export interface EmergencyCalloutContent {
+  title: string
+  description: string
+  bullets: string[]
+}
+
+export interface BeforeAfterContent {
+  title: string
+  summary: string
+  bullets: string[]
+  before: VisualAssetContent
+  after: VisualAssetContent
+}
+
 export interface VisualAssetContent {
   src: string
   alt: string
@@ -95,6 +128,13 @@ export interface DemoContent {
       description: string
       points: string[]
       images: VisualAssetContent[]
+    }
+    extras?: {
+      recentProjects?: ProjectReferenceContent[]
+      materialBrands?: BrandBadgeContent[]
+      serviceAreas?: ServiceAreaContent[]
+      emergencyCallout?: EmergencyCalloutContent
+      beforeAfter?: BeforeAfterContent
     }
   }
   menu: {
