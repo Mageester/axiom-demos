@@ -41,18 +41,6 @@ export function SiteNav() {
 
   return (
     <header className="site-nav-wrap">
-      {isService ? (
-        <div className="site-nav__service-bar">
-          <div className="site-nav__service-bar-inner">
-            <p className="site-nav__service-bar-copy">{content.brand.tagline}</p>
-            <div className="site-nav__service-bar-links">
-              <span>{content.brand.city}</span>
-              <a href={content.brand.phoneHref}>{content.brand.phone}</a>
-            </div>
-          </div>
-        </div>
-      ) : null}
-
       {isRoofing ? (
         <div className="site-nav__roofing-bar">
           <div className="site-nav__roofing-bar-inner">
