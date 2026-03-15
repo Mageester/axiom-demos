@@ -3,7 +3,7 @@ import { DemoConfigContext } from '../../config/demoConfig'
 import { ButtonLink } from '../ui/Button'
 
 export function SiteFooter() {
-  const { brandSystem, content, primaryCta } = useContext(DemoConfigContext)
+  const { brandSystem, content, navItems, primaryCta } = useContext(DemoConfigContext)
   const isHospitality = brandSystem === 'hospitality'
   const isService = brandSystem === 'service'
   const isRoofing = brandSystem === 'roofing'
@@ -75,7 +75,7 @@ export function SiteFooter() {
         <div className="site-footer__service-top">
           <div>
             <h2 className="site-footer__brand">{content.brand.name}</h2>
-            <p className="site-footer__tagline">{content.brand.tagline}</p>
+            <p className="site-footer__tagline">{brandTagline}</p>
           </div>
           <ButtonLink className="site-footer__service-cta" size="md" to={primaryCta.path}>
             {primaryCta.label}
@@ -84,22 +84,35 @@ export function SiteFooter() {
 
         <div className="site-footer__service-grid">
           <div>
-            <h3 className="site-footer__heading">Areas We Serve</h3>
-            <p>{content.brand.city}</p>
+            <h3 className="site-footer__heading">Company</h3>
             <p>{content.brand.address}</p>
+            <p>{content.brand.city}</p>
           </div>
 
           <div>
-            <h3 className="site-footer__heading">Office Hours</h3>
+            <h3 className="site-footer__heading">Navigation</h3>
             <ul className="plain-list">
-              {content.brand.hours.map((hour) => (
-                <li key={hour}>{hour}</li>
+              {navItems.map((item) => (
+                <li key={item.path}>
+                  <ButtonLink size="md" to={item.path} variant="quiet">
+                    {item.label}
+                  </ButtonLink>
+                </li>
               ))}
             </ul>
           </div>
 
           <div>
-            <h3 className="site-footer__heading">Call Or Email</h3>
+            <h3 className="site-footer__heading">Services</h3>
+            <ul className="plain-list">
+              {content.menu.sections.map((section) => (
+                <li key={section.title}>{section.title}</li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="site-footer__heading">Quote Desk</h3>
             <ul className="plain-list">
               <li>
                 <a href={content.brand.phoneHref}>{content.brand.phone}</a>
@@ -107,6 +120,15 @@ export function SiteFooter() {
               <li>
                 <a href={content.brand.emailHref}>{content.brand.email}</a>
               </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="site-footer__heading">Hours</h3>
+            <ul className="plain-list">
+              {content.brand.hours.map((hour) => (
+                <li key={hour}>{hour}</li>
+              ))}
             </ul>
           </div>
         </div>

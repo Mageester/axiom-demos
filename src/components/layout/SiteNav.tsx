@@ -9,7 +9,8 @@ export function SiteNav() {
   const isHospitality = brandSystem === 'hospitality'
   const isService = brandSystem === 'service'
   const isRoofing = brandSystem === 'roofing'
-  const visibleNavItems = navItems.filter((item) => item.path !== primaryCta.path)
+  const visibleNavItems = isService ? navItems : navItems.filter((item) => item.path !== primaryCta.path)
+  const serviceBarHours = isService ? content.brand.hours[0] : ''
 
   useEffect(() => {
     if (!isOpen) {
@@ -41,6 +42,19 @@ export function SiteNav() {
 
   return (
     <header className="site-nav-wrap">
+      {isService ? (
+        <div className="site-nav__service-bar">
+          <div className="site-nav__service-bar-inner">
+            <p className="site-nav__service-bar-copy">{content.brand.tagline}</p>
+            <div className="site-nav__service-bar-links">
+              <span>{content.brand.address}</span>
+              {serviceBarHours ? <span>{serviceBarHours}</span> : null}
+              <a href={content.brand.phoneHref}>{content.brand.phone}</a>
+            </div>
+          </div>
+        </div>
+      ) : null}
+
       {isRoofing ? (
         <div className="site-nav__roofing-bar">
           <div className="site-nav__roofing-bar-inner">
@@ -79,16 +93,6 @@ export function SiteNav() {
 
         {isService ? (
           <div className={`site-nav__service-shell ${isOpen ? 'site-nav__service-shell--open' : ''}`}>
-            <div className="site-nav__service-utility">
-              <div>
-                <p className="site-nav__service-label">Serving</p>
-                <p className="site-nav__service-meta">{content.brand.city}</p>
-              </div>
-              <a className="site-nav__service-phone" href={content.brand.phoneHref}>
-                {content.brand.phone}
-              </a>
-            </div>
-
             <nav
               className={`primary-nav ${isOpen ? 'primary-nav--open' : ''}`}
               id="primary-nav"
