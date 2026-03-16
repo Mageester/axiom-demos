@@ -8,6 +8,7 @@ import { Section } from '../components/ui/Section'
 export function ReservationsPage() {
   const [statusMessage, setStatusMessage] = useState('')
   const { content } = useContext(DemoConfigContext)
+  const reservationDetails = content.home.extras?.reservationDetails ?? []
 
   function channelActionLabel(label: string, href: string) {
     if (label.toLowerCase().includes('online')) {
@@ -86,6 +87,22 @@ export function ReservationsPage() {
           ))}
         </div>
       </Section>
+
+      {reservationDetails.length ? (
+        <Section
+          description="A few useful details before you choose a standard table, a private room, or a more formal hosted dinner."
+          title="Reservation information"
+        >
+          <div className="restaurant-values-grid">
+            {reservationDetails.map((item) => (
+              <article className="restaurant-value-panel" key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </article>
+            ))}
+          </div>
+        </Section>
+      ) : null}
 
       <Section
         description="Share a preferred date, time, party size, and any dietary or access notes. When you send this form, your email app opens with everything prepared."

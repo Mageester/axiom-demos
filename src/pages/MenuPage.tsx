@@ -5,6 +5,7 @@ import { PageHero } from '../components/ui/PageHero'
 
 export function MenuPage() {
   const { content, routes } = useContext(DemoConfigContext)
+  const menuCategories = content.menu.sections.map((section) => section.title)
 
   return (
     <>
@@ -15,10 +16,19 @@ export function MenuPage() {
           </ButtonLink>
         }
         description={content.menu.intro}
-        eyebrow="Dinner"
+        eyebrow="Menu"
         media={content.menu.sections[0]?.image}
-        title="Tonight's dinner menu"
+        title="Dinner menu"
       />
+
+      <section className="restaurant-link-grid restaurant-link-grid--3">
+        {menuCategories.map((category) => (
+          <article className="restaurant-link-panel" key={category}>
+            <p className="restaurant-link-panel__eyebrow">Menu category</p>
+            <h3>{category}</h3>
+          </article>
+        ))}
+      </section>
 
       <div className="menu-sections">
         {content.menu.sections.map((section) => (

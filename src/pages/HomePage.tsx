@@ -25,6 +25,8 @@ export function HomePage() {
     ?? content.gallery.collections[content.gallery.collections.length - 1]?.image
     ?? content.home.hero.image
   const leadChef = content.about.team[0]
+  const diningExperience = content.home.extras?.diningExperience ?? []
+  const guestNotes = content.home.extras?.guestNotes ?? []
 
   return (
     <>
@@ -253,6 +255,23 @@ export function HomePage() {
         </div>
       </Reveal>
 
+      {diningExperience.length ? (
+        <Reveal as="section" className="restaurant-home-section" variant="soft">
+          <header className="restaurant-home-section__header">
+            <p className="restaurant-home-section__eyebrow">Dining experience</p>
+            <h2 className="restaurant-home-section__title">The room, the harbour, and the way dinner is paced</h2>
+          </header>
+          <div className="restaurant-values-grid">
+            {diningExperience.map((item) => (
+              <article className="restaurant-value-panel" key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </article>
+            ))}
+          </div>
+        </Reveal>
+      ) : null}
+
       <Reveal as="section" className="restaurant-home-section" variant="soft">
         <div className="restaurant-reservation-module">
           <div className="restaurant-reservation-module__copy">
@@ -290,6 +309,23 @@ export function HomePage() {
           ) : null}
         </div>
       </Reveal>
+
+      {guestNotes.length ? (
+        <Reveal as="section" className="restaurant-home-section" variant="soft">
+          <header className="restaurant-home-section__header">
+            <p className="restaurant-home-section__eyebrow">Guest notes</p>
+            <h2 className="restaurant-home-section__title">Why tables tend to choose this room</h2>
+          </header>
+          <div className="restaurant-values-grid">
+            {guestNotes.map((item) => (
+              <article className="restaurant-value-panel" key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </article>
+            ))}
+          </div>
+        </Reveal>
+      ) : null}
 
       <Reveal as="section" className="restaurant-home-section restaurant-home-section--visit" variant="soft">
         <header className="restaurant-home-section__header">

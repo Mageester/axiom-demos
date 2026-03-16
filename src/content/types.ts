@@ -143,6 +143,9 @@ export interface DemoContent {
       consultationSteps?: ProcessStepContent[]
       seasonalServices?: FeatureCardContent[]
       projectGallery?: GalleryItemContent[]
+      diningExperience?: FeatureCardContent[]
+      reservationDetails?: FeatureCardContent[]
+      guestNotes?: FeatureCardContent[]
     }
   }
   menu: {

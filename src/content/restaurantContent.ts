@@ -123,14 +123,67 @@ export const restaurantContent: DemoContent = {
         },
       ],
     },
+    extras: {
+      diningExperience: [
+        {
+          title: 'Atmosphere',
+          description:
+            'Low lamps, softened acoustics, and generous table spacing keep the room calm even as service picks up later in the evening.',
+        },
+        {
+          title: 'Waterfront dining',
+          description:
+            'Early reservations catch the harbour light while later tables settle into a warmer after-dark mood along the windows.',
+        },
+        {
+          title: 'Seasonal menu philosophy',
+          description:
+            'The kitchen works in short menu cycles so plates can change as produce, shellfish, and fishery arrivals shift through the month.',
+        },
+      ],
+      reservationDetails: [
+        {
+          title: 'Reservation policy',
+          description:
+            'Tables open 30 days ahead and are held with a card. Same-day timing changes are best handled directly with the host team.',
+        },
+        {
+          title: 'Private dining',
+          description:
+            'The Studio seats up to 12 guests for birthdays, hosted dinners, and quieter celebrations with a more tailored pace of service.',
+        },
+        {
+          title: 'Event bookings',
+          description:
+            'For larger buyouts, client dinners, or menu planning around a fixed occasion, the dining room coordinates dates and format by email first.',
+        },
+      ],
+      guestNotes: [
+        {
+          title: 'A room built for conversation',
+          description:
+            'Guests usually choose Atelier Meridian for a slower dinner where the room never feels rushed and the pacing leaves space for the table.',
+        },
+        {
+          title: 'Known for first and last course balance',
+          description:
+            'The menu is designed so the opening plates feel bright and precise, while dessert and wine still carry enough depth to finish the evening properly.',
+        },
+        {
+          title: 'Best for hosted evenings',
+          description:
+            'The dining room works especially well for birthdays, anniversaries, and client dinners where the setting needs to feel polished but not stiff.',
+        },
+      ],
+    },
   },
   menu: {
     intro:
-      'Our menu shifts with the week and the market, guided by seasonal harvests and fishery arrivals.',
+      'Our menu shifts with the week and the market, guided by seasonal harvests, fishery arrivals, and a short cellar list built to support dinner rather than overwhelm it.',
     sections: [
       {
-        title: 'Raw & First Plates',
-        note: 'The opening round for the table, from shellfish and crudo to smaller warm plates.',
+        title: 'Starters',
+        note: 'The opening round for the table, from shellfish and crudo to warmer first plates.',
         image: {
           src: pexelsPhoto('22711496', 1200, 900),
           alt: 'Small plates set on a warmly lit restaurant table',
@@ -155,7 +208,7 @@ export const restaurantContent: DemoContent = {
         ],
       },
       {
-        title: 'Mains From The Pass',
+        title: 'Mains',
         note: 'Composed plates built around seafood, game, and produce at its best that week.',
         image: {
           src: pexelsPhoto('32083423', 1200, 900),
@@ -181,7 +234,7 @@ export const restaurantContent: DemoContent = {
         ],
       },
       {
-        title: 'Dessert & Cheese',
+        title: 'Desserts',
         note: 'Desserts with depth, plus a short Ontario cheese service to close the table.',
         image: {
           src: pexelsPhoto('34712611', 1200, 900),
@@ -206,6 +259,37 @@ export const restaurantContent: DemoContent = {
           },
         ],
       },
+      {
+        title: 'Wine & Aperitifs',
+        note: 'A compact cellar list, by-the-glass pours, and opening drinks chosen to work with the room and the menu.',
+        image: {
+          src: pexelsPhoto('4871188', 1200, 900),
+          alt: 'Wine being poured into glasses during restaurant service',
+          position: 'center 45%',
+        },
+        items: [
+          {
+            name: 'House aperitif',
+            description: 'Dry vermouth spritz with citrus peel and herbs',
+            price: '15',
+          },
+          {
+            name: 'Niagara Chardonnay',
+            description: 'Mineral, bright, and poured by the glass through dinner service',
+            price: '18',
+          },
+          {
+            name: 'Willamette Pinot Noir',
+            description: 'Silky red fruit and enough structure for duck and mushroom dishes',
+            price: '22',
+          },
+          {
+            name: 'Sommelier pairing',
+            description: 'Three-course by-the-glass pairing selected for the current menu',
+            price: '42',
+          },
+        ],
+      },
     ],
   },
   about: {
@@ -214,7 +298,7 @@ export const restaurantContent: DemoContent = {
     story: [
       'The menu is written in short seasonal cycles, with dishes moving as produce peaks, shellfish changes, and the kitchen finds a better version of a course.',
       'First seating is quieter and slower, while later tables carry more energy from the bar and the pass, but the room is always paced to leave space for conversation.',
-      'Natural wood, low lamps, and softened acoustics keep the dining room warm even on colder waterfront nights.',
+      'Natural wood, low lamps, and softened acoustics keep the dining room warm even on colder waterfront nights, especially when the harbour wind picks up outside.',
     ],
     values: [
       {
@@ -237,7 +321,7 @@ export const restaurantContent: DemoContent = {
       {
         name: 'Camille Hart',
         role: 'Executive Chef',
-        bio: 'Camille leads menu development with a focus on coastal techniques and regional produce.',
+        bio: 'Camille leads the kitchen with a menu shaped by coastal technique, Canadian produce, and a preference for dishes that feel precise without becoming overworked.',
       },
       {
         name: 'Noah Pereira',
@@ -253,11 +337,12 @@ export const restaurantContent: DemoContent = {
   },
   reservations: {
     intro:
-      'Reservations open 30 days ahead. For larger tables, hosted dinners, or a night in The Studio, contact the dining room directly.',
+      'Reservations open 30 days ahead. For larger tables, hosted dinners, event bookings, or a night in The Studio, contact the dining room directly.',
     policies: [
       'A valid card is required to hold dinner reservations.',
       'Cancellations made within 24 hours may be subject to a per-seat fee.',
       'Please notify us of allergies or dietary requests at least 48 hours before arrival.',
+      'Private dining and event menus are coordinated directly with the reservations team after the date and guest count are confirmed.',
     ],
     channels: [
       {
