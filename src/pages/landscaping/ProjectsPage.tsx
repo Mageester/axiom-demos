@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { DemoConfigContext } from '../../config/demoConfig'
+import { LandscapingPageHeader } from '../../components/landscaping/LandscapingPageHeader'
 import { ButtonLink } from '../../components/ui/Button'
-import { PageHero } from '../../components/ui/PageHero'
 import { Section } from '../../components/ui/Section'
 
 export function ProjectsPage() {
@@ -11,26 +11,28 @@ export function ProjectsPage() {
 
   return (
     <>
-      <PageHero
+      <LandscapingPageHeader
         actions={
           <>
-            <ButtonLink to={routes.reservations}>Request estimate</ButtonLink>
+            <ButtonLink to={routes.reservations}>Request a quote</ButtonLink>
             <ButtonLink to={routes.menu} variant="secondary">
               Review services
             </ButtonLink>
           </>
         }
-        className="land-page-hero"
         description={content.gallery.intro}
         eyebrow="Projects"
         media={featuredProject?.image}
-        signals={['Patios and front entries', 'Lighting and planting', 'Premium residential scope']}
-        title="Projects shaped around curb appeal, outdoor living, and cleaner property use"
+        title="Patio, front-entry, and backyard projects across Toronto homes"
+        utilityItems={['Patios and walkways', 'Front-yard upgrades', 'Planting and lighting']}
+        utilityLabel="Project scope"
+        utilityMeta={['Look here first if you want to judge finish level, property type, and the kind of jobs Northline usually handles.']}
+        utilityTitle="Proof before promises"
       />
 
       {featuredProject ? (
         <Section
-          description="A representative Northline project showing the level of planning, finish quality, and property lift the studio is built for."
+          description="A representative Northline project showing the kind of finish quality, layout planning, and day-to-day use the company is usually hired to improve."
           eyebrow="Featured project"
           title={featuredProject.title}
         >
@@ -51,15 +53,17 @@ export function ProjectsPage() {
               <p className="land-feature-project__meta">{featuredProject.subtitle}</p>
               <p>{featuredProject.description}</p>
               {featuredProject.facts?.length ? (
-                <ul className="plain-list land-inline-facts">
+                <ul className="plain-list land-inline-facts land-inline-facts--project">
                   {featuredProject.facts.map((fact) => (
                     <li key={fact}>{fact}</li>
                   ))}
                 </ul>
               ) : null}
-              <div className="land-section-actions">
-                <ButtonLink to={routes.reservations}>Discuss similar scope</ButtonLink>
-                <ButtonLink to={routes.contact} variant="secondary">
+              <div className="land-section-actions land-section-actions--proof">
+                <ButtonLink size="md" to={routes.reservations}>
+                  Request pricing
+                </ButtonLink>
+                <ButtonLink size="md" to={routes.contact} variant="secondary">
                   Contact office
                 </ButtonLink>
               </div>
@@ -69,9 +73,9 @@ export function ProjectsPage() {
       ) : null}
 
       <Section
-        description="Additional project references organized to show the range of exterior upgrades Northline can deliver."
-        eyebrow="Gallery"
-        title="Additional project references"
+        description="Additional project examples showing the range of patio, entry, lighting, and planting work Northline handles for residential properties."
+        eyebrow="Other recent jobs"
+        title="More recent work"
       >
         <div className="land-project-grid">
           {remainingProjects.map((project, index) => (
@@ -105,9 +109,9 @@ export function ProjectsPage() {
       </Section>
 
       <Section
-        description="If your property goals line up with this level of scope and finish, the next step is a quick fit review before we book an on-site consultation."
+        description="If your property goals line up with this kind of scope and finish, the next step is a quick quote review before any site visit is booked."
         eyebrow="Next step"
-        title="Planning a similar project"
+        title="Request pricing for similar work"
       >
         <div className="land-quote-band">
           <div>
@@ -117,7 +121,7 @@ export function ProjectsPage() {
             </p>
           </div>
           <div className="land-section-actions">
-            <ButtonLink to={routes.reservations}>Request estimate</ButtonLink>
+            <ButtonLink to={routes.reservations}>Request a quote</ButtonLink>
             <ButtonLink to={routes.menu} variant="secondary">
               Review services
             </ButtonLink>

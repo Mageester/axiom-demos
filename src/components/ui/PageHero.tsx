@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import type { VisualAssetContent } from '../../content/types'
+import { Reveal, type RevealVariant } from './Reveal'
 
 interface PageHeroProps {
   eyebrow?: string
@@ -9,6 +10,7 @@ interface PageHeroProps {
   media?: VisualAssetContent
   signals?: string[]
   className?: string
+  revealVariant?: RevealVariant
 }
 
 export function PageHero({
@@ -19,9 +21,14 @@ export function PageHero({
   media,
   signals,
   className,
+  revealVariant = 'soft',
 }: PageHeroProps) {
   return (
-    <section className={['page-hero', media ? 'page-hero--media' : '', className ?? ''].filter(Boolean).join(' ')}>
+    <Reveal
+      as="section"
+      className={['page-hero', media ? 'page-hero--media' : '', className ?? ''].filter(Boolean).join(' ')}
+      variant={revealVariant}
+    >
       <div className="page-hero__copy">
         {eyebrow ? <p className="page-hero__eyebrow">{eyebrow}</p> : null}
         <h1 className="page-hero__title">{title}</h1>
@@ -45,6 +52,6 @@ export function PageHero({
           />
         </figure>
       ) : null}
-    </section>
+    </Reveal>
   )
 }

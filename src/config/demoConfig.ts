@@ -91,7 +91,7 @@ export const demoConfigsByKey: Record<DemoKey, DemoConfig> = {
     navItems: landscapingNavItems,
     homePath: landscapingRoutes.home,
     primaryCta: {
-      label: 'Request estimate',
+      label: 'Request a quote',
       path: landscapingRoutes.reservations,
     },
     pages: {
@@ -132,24 +132,80 @@ function isDemoKey(value: string): value is DemoKey {
 
 export const defaultDemoKey: DemoKey = 'restaurant'
 const rawDemoKey = (import.meta.env.VITE_DEMO_KEY ?? '').trim().toLowerCase()
+const rawHostname =
+  typeof window !== 'undefined' ? window.location.hostname.trim().toLowerCase() : ''
 
-function resolveDemoKey(value: string): DemoKey {
-  if (!value) {
-    return defaultDemoKey
+const demoKeyByHostname: Partial<Record<string, DemoKey>> = {
+  'restaurant.getaxiom.ca': 'restaurant',
+  'landscaping.getaxiom.ca': 'landscaping',
+  'roofing.getaxiom.ca': 'roofing',
+  'axiom-demos-restaurant.pages.dev': 'restaurant',
+  'axiom-demos-landscaping.pages.dev': 'landscaping',
+  'axiom-demos-roofing.pages.dev': 'roofing',
+}
+
+function resolveDemoKeyFromHostname(hostname: string): DemoKey | null {
+  if (!hostname || hostname === 'localhost' || hostname === '127.0.0.1') {
+    return null
   }
 
+  const exactMatch = demoKeyByHostname[hostname]
+  if (exactMatch) {
+    return exactMatch
+  }
+
+  const firstLabel = hostname.split('.')[0]
+  if (isDemoKey(firstLabel)) {
+    return firstLabel
+  }
+
+  if (hostname.includes('landscaping')) {
+    return 'landscaping'
+  }
+
+  if (hostname.includes('roofing')) {
+    return 'roofing'
+  }
+
+  if (hostname.includes('restaurant')) {
+    return 'restaurant'
+  }
+
+  return null
+}
+
+function resolveDemoKey(value: string, hostname: string): DemoKey {
   if (isDemoKey(value)) {
     return value
   }
 
-  const allowedKeys = Object.keys(demoConfigsByKey).join(', ')
-  console.error(
-    `[demoConfig] Unknown VITE_DEMO_KEY "${value}". Falling back to "${defaultDemoKey}". Allowed keys: ${allowedKeys}.`
-  )
+  const resolvedFromHostname = resolveDemoKeyFromHostname(hostname)
+  if (resolvedFromHostname) {
+    if (!value) {
+      console.info(
+        `[demoConfig] VITE_DEMO_KEY missing. Using "${resolvedFromHostname}" resolved from hostname "${hostname}".`
+      )
+    } else {
+      const allowedKeys = Object.keys(demoConfigsByKey).join(', ')
+      console.error(
+        `[demoConfig] Unknown VITE_DEMO_KEY "${value}". Using hostname "${hostname}" -> "${resolvedFromHostname}" instead. Allowed keys: ${allowedKeys}.`
+      )
+    }
+
+    return resolvedFromHostname
+  }
+
+  if (value) {
+    const allowedKeys = Object.keys(demoConfigsByKey).join(', ')
+    console.error(
+      `[demoConfig] Unknown VITE_DEMO_KEY "${value}". Falling back to "${defaultDemoKey}". Allowed keys: ${allowedKeys}.`
+    )
+  }
+
   return defaultDemoKey
 }
 
-export const selectedDemoKey = resolveDemoKey(rawDemoKey)
+export const selectedDemoKey = resolveDemoKey(rawDemoKey, rawHostname)
 
 export const activeDemoConfig = demoConfigsByKey[selectedDemoKey]
 

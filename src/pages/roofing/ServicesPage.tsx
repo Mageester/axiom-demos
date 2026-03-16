@@ -1,41 +1,59 @@
 import { useContext } from 'react'
 import { DemoConfigContext } from '../../config/demoConfig'
+import { RoofingPageHeader } from '../../components/roofing/RoofingPageHeader'
 import { ButtonLink } from '../../components/ui/Button'
-import { PageHero } from '../../components/ui/PageHero'
-import { Section } from '../../components/ui/Section'
+import { Reveal } from '../../components/ui/Reveal'
 
 export function ServicesPage() {
   const { content, routes } = useContext(DemoConfigContext)
+  const repairScope = content.menu.sections[0]
+  const replacementScope = content.menu.sections[1]
+  const supportScope = content.menu.sections[2]
 
   return (
     <>
-      <PageHero
+      <RoofingPageHeader
         actions={
           <>
             <ButtonLink to={routes.reservations}>Request inspection</ButtonLink>
             <ButtonLink to={routes.gallery} variant="secondary">
-              Review projects
+              View projects
             </ButtonLink>
           </>
         }
-        className="roof-page-hero"
         description={content.menu.intro}
         eyebrow="Services"
-        media={content.menu.sections[1]?.image}
-        signals={['Repair and replacement', 'Exterior support work', 'Inspection-led recommendations']}
-        title="Roofing and exterior services structured around condition, scope, and long-term protection"
+        media={replacementScope?.image}
+        meta={['Repairs, replacements, siding, soffit, fascia, and eavestroughs', 'Toronto & Durham Region']}
+        summaryItems={[
+          'Inspection first when the failure point is still unclear',
+          'Replacement scopes laid out by urgency and section',
+          'Roofline support work handled so the house is not left half-finished',
+        ]}
+        summaryLabel="How Blackridge groups the work"
+        title="Roofing and exterior scopes organized the way homeowners actually buy them"
       />
 
-      <Section
-        description="Each service line is organized so homeowners can understand what needs immediate action, what can be staged, and what the work is meant to solve."
-        eyebrow="Service lines"
-        title="Blackridge services"
-      >
-        <div className="roof-service-sections">
-          {content.menu.sections.map((section) => (
-            <section className="roof-service-panel" key={section.title}>
+      <Reveal as="section" className="roof-block" variant="firm">
+        <header className="roof-block__header">
+          <p className="roof-block__eyebrow">Primary service lines</p>
+          <h2 className="roof-block__title">What the work usually turns into after the inspection</h2>
+          <p className="roof-block__description">
+            Once condition is confirmed, the next step is usually a repair scope, a planned replacement, or the exterior support work tied to the roofline and drainage.
+          </p>
+        </header>
+
+        <div className="roof-service-rail">
+          {content.menu.sections.map((section, index) => (
+            <Reveal
+              as="article"
+              className="roof-service-dossier"
+              delay={index * 55}
+              key={section.title}
+              variant="firm"
+            >
               {section.image ? (
-                <figure className="roof-service-panel__media">
+                <figure className="roof-service-dossier__media">
                   <img
                     alt={section.image.alt}
                     loading="lazy"
@@ -44,61 +62,63 @@ export function ServicesPage() {
                   />
                 </figure>
               ) : null}
-              <div className="roof-service-panel__content">
-                <header className="roof-service-panel__header">
-                  <p className="roof-section-eyebrow">{section.note}</p>
-                  <h2>{section.title}</h2>
-                  {section.highlights?.length ? (
-                    <ul className="plain-list roof-inline-facts">
-                      {section.highlights.map((highlight) => (
-                        <li key={highlight}>{highlight}</li>
-                      ))}
-                    </ul>
-                  ) : null}
-                </header>
-                <ul className="roof-service-list">
+              <div className="roof-service-dossier__body">
+                <p className="roof-block__eyebrow">{section.note}</p>
+                <h3>{section.title}</h3>
+                {section.highlights?.length ? (
+                  <ul className="plain-list roof-chip-list">
+                    {section.highlights.map((highlight) => (
+                      <li key={highlight}>{highlight}</li>
+                    ))}
+                  </ul>
+                ) : null}
+                <ul className="plain-list roof-ledger-list">
                   {section.items.map((item) => (
-                    <li className="roof-service-list__item" key={item.name}>
-                      <div className="roof-service-list__row">
-                        <h3>{item.name}</h3>
-                        <span>{item.price}</span>
+                    <li key={item.name}>
+                      <div>
+                        <strong>{item.name}</strong>
+                        <span>{item.description}</span>
                       </div>
-                      <p>{item.description}</p>
+                      <em>{item.price}</em>
                     </li>
                   ))}
                 </ul>
               </div>
-            </section>
+            </Reveal>
           ))}
         </div>
-      </Section>
+      </Reveal>
 
-      <Section
-        description="Blackridge is strongest when the homeowner needs a contractor who can inspect properly, explain the options clearly, and execute with tighter operational control than a basic trade crew."
-        eyebrow="Best fit"
-        title="When this service model makes the most sense"
-      >
-        <div className="roof-fit-grid">
-          <article className="roof-fit-panel">
-            <h3>Active issue or aging exterior system</h3>
+      <Reveal as="section" className="roof-block" variant="firm">
+        <header className="roof-block__header">
+          <p className="roof-block__eyebrow">Repair versus replacement</p>
+          <h2 className="roof-block__title">What we are usually helping homeowners sort out</h2>
+        </header>
+
+        <div className="roof-decision-grid">
+          <Reveal as="article" className="roof-decision-card" variant="firm">
+            <p className="roof-block__eyebrow">Repair-led jobs</p>
+            <h3>{repairScope?.title}</h3>
             <p>
-              Best for roof leaks, storm damage, aging shingles, drainage problems, or exterior wear where the property needs a serious condition review.
+              Best when the issue is tied to a specific area, the rest of the roof still has service life, and the homeowner needs the failure point confirmed before spending on a larger scope.
             </p>
-          </article>
-          <article className="roof-fit-panel">
-            <h3>Repair versus replacement needs to be clarified</h3>
+          </Reveal>
+          <Reveal as="article" className="roof-decision-card" delay={55} variant="firm">
+            <p className="roof-block__eyebrow">Replacement-led jobs</p>
+            <h3>{replacementScope?.title}</h3>
             <p>
-              Strong fit when you need a contractor to separate what is urgent, what can be repaired, and what should be planned as a larger replacement scope.
+              Best when deterioration is broad, multiple sections are failing, or the roof is near the end of service life and staged repairs would only delay the real work.
             </p>
-          </article>
-          <article className="roof-fit-panel">
-            <h3>Site standards matter</h3>
+          </Reveal>
+          <Reveal as="article" className="roof-decision-card" delay={110} variant="firm">
+            <p className="roof-block__eyebrow">Support scopes</p>
+            <h3>{supportScope?.title}</h3>
             <p>
-              Blackridge is built for homeowners who care about communication, access protection, cleanup, and a cleaner handoff at the end of the job.
+              Best when roof-edge details, siding, fascia, soffit, or drainage issues need to be handled so the finished job actually protects the house and looks complete.
             </p>
-          </article>
+          </Reveal>
         </div>
-      </Section>
+      </Reveal>
     </>
   )
 }

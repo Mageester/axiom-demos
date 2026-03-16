@@ -6,6 +6,8 @@ import { Section } from '../components/ui/Section'
 
 export function AboutPage() {
   const { content, routes } = useContext(DemoConfigContext)
+  const chef = content.about.team[0]
+  const diningExperience = content.home.extras?.diningExperience ?? []
 
   return (
     <>
@@ -16,10 +18,10 @@ export function AboutPage() {
         description={content.about.intro}
         eyebrow="About"
         media={content.gallery.collections[0]?.image}
-        title="Our kitchen and dining room"
+        title="The room, the kitchen, and the pace of the night"
       />
 
-      <Section title="Our story">
+      <Section title="The dining room">
         <div className="story-layout">
           <div className="story-grid">
             {content.about.story.map((paragraph) => (
@@ -50,7 +52,53 @@ export function AboutPage() {
         </div>
       </Section>
 
-      <Section title="What shapes the evening">
+      {chef ? (
+        <Section title="Executive chef">
+          <div className="restaurant-story-layout">
+            <div className="restaurant-story-layout__copy">
+              <p className="restaurant-home-section__eyebrow">{chef.role}</p>
+              <h2 className="restaurant-home-section__title">{chef.name}</h2>
+              <p>{chef.bio}</p>
+              <p>
+                The kitchen is built around shorter seasonal cycles, quieter
+                plates, and enough restraint that the room still feels like a
+                place to spend the evening rather than just move through
+                courses.
+              </p>
+            </div>
+
+            {content.gallery.collections[4] ? (
+              <figure className="restaurant-story-layout__media">
+                <img
+                  alt={content.gallery.collections[4].image.alt}
+                  loading="lazy"
+                  src={content.gallery.collections[4].image.src}
+                  style={
+                    content.gallery.collections[4].image.position
+                      ? { objectPosition: content.gallery.collections[4].image.position }
+                      : undefined
+                  }
+                />
+              </figure>
+            ) : null}
+          </div>
+        </Section>
+      ) : null}
+
+      {diningExperience.length ? (
+        <Section title="Dining experience">
+          <div className="restaurant-values-grid">
+            {diningExperience.map((item) => (
+              <article className="restaurant-value-panel" key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </article>
+            ))}
+          </div>
+        </Section>
+      ) : null}
+
+      <Section title="What regulars come back for">
         <div className="restaurant-values-grid">
           {content.about.values.map((value) => (
             <article className="restaurant-value-panel" key={value.title}>
@@ -61,7 +109,7 @@ export function AboutPage() {
         </div>
       </Section>
 
-      <Section title="In the kitchen and dining room">
+      <Section title="The people behind the room">
         <div className="restaurant-team-grid">
           {content.about.team.map((member) => (
             <article className="restaurant-team-panel" key={member.name}>

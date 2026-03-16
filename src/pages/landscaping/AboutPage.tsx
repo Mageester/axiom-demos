@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { DemoConfigContext } from '../../config/demoConfig'
+import { LandscapingPageHeader } from '../../components/landscaping/LandscapingPageHeader'
 import { ButtonLink } from '../../components/ui/Button'
-import { PageHero } from '../../components/ui/PageHero'
 import { Section } from '../../components/ui/Section'
 
 export function AboutPage() {
@@ -11,17 +11,19 @@ export function AboutPage() {
 
   return (
     <>
-      <PageHero
-        actions={<ButtonLink to={routes.reservations}>Request estimate</ButtonLink>}
-        className="land-page-hero"
+      <LandscapingPageHeader
+        actions={<ButtonLink to={routes.reservations}>Request a quote</ButtonLink>}
         description={content.about.intro}
         eyebrow="About"
         media={standardsVisual?.image}
-        signals={['Premium residential scope', 'Design-build planning', 'Clean site standards']}
-        title="A landscaping studio built around planning, finish quality, and homeowner trust"
+        title="A local landscaping company built around finished work and straightforward communication"
+        utilityItems={['Residential landscaping only', 'Clear communication and scheduling', 'Clean site standards from first visit to handoff']}
+        utilityLabel="Company fit"
+        utilityMeta={['Built for homeowners improving the front yard, backyard, or overall outdoor living setup.']}
+        utilityTitle="What kind of company Northline is"
       />
 
-      <Section eyebrow="Approach" title="How Northline runs a project">
+      <Section eyebrow="How we work" title="What matters on Northline jobs">
         <div className="story-layout">
           <div className="story-grid">
             {content.about.story.map((paragraph) => (
@@ -48,9 +50,9 @@ export function AboutPage() {
       </Section>
 
       <Section
-        description="These are the standards Northline is built to protect, regardless of project size."
+        description="These are the standards Northline is built to protect, whether the job is a front-yard refresh or a full backyard upgrade."
         eyebrow="Standards"
-        title="What the business is known for"
+        title="What homeowners bring us in for"
       >
         <div className="land-fit-grid">
           {content.about.values.map((value) => (
@@ -63,9 +65,9 @@ export function AboutPage() {
       </Section>
 
       <Section
-        description="A small leadership team overseeing scope planning, design direction, and project coordination from first call to handoff."
+        description="A small team overseeing planning, layout direction, and project coordination from first call to handoff."
         eyebrow="Team"
-        title="Leadership"
+        title="Who you deal with"
       >
         <div className="land-team-grid">
           {content.about.team.map((member) => (

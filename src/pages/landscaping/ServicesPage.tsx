@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { DemoConfigContext } from '../../config/demoConfig'
+import { LandscapingPageHeader } from '../../components/landscaping/LandscapingPageHeader'
 import { ButtonLink } from '../../components/ui/Button'
-import { PageHero } from '../../components/ui/PageHero'
 import { Section } from '../../components/ui/Section'
 
 export function ServicesPage() {
@@ -9,31 +9,33 @@ export function ServicesPage() {
 
   return (
     <>
-      <PageHero
+      <LandscapingPageHeader
         actions={
           <>
-            <ButtonLink to={routes.reservations}>Request estimate</ButtonLink>
+            <ButtonLink to={routes.reservations}>Request a quote</ButtonLink>
             <ButtonLink to={routes.gallery} variant="secondary">
               View projects
             </ButtonLink>
           </>
         }
-        className="land-page-hero"
         description={content.menu.intro}
         eyebrow="Services"
         media={content.menu.sections[1]?.image}
-        signals={[
-          'Premium residential scope',
-          'Design-build planning',
-          'Toronto and West GTA service area',
+        title="Patios, planting, lighting, and front-yard work for Toronto homes"
+        utilityItems={[
+          'Patios, front entries, and backyard upgrades',
+          'Planting, lighting, and seasonal care',
+          'Residential projects across Toronto and the west end',
         ]}
-        title="Design-build services for premium residential exteriors"
+        utilityLabel="Most requested"
+        utilityMeta={['Quotes start with the address, current photos, and the part of the yard you want priced.']}
+        utilityTitle="The work Northline prices most often"
       />
 
       <Section
-        description="Each service line is structured to keep scope, finish quality, and homeowner expectations clear from the start."
-        eyebrow="Scope"
-        title="Service categories"
+        description="Most quote requests land in one of these service groups, with scope and materials adjusted around how the property is used."
+        eyebrow="Services"
+        title="What homeowners usually ask us to price"
       >
         <div className="land-service-sections">
           {content.menu.sections.map((section, index) => (
@@ -61,7 +63,7 @@ export function ServicesPage() {
                   <p className="land-service-section__eyebrow">{section.note}</p>
                   <h2>{section.title}</h2>
                   {section.highlights?.length ? (
-                    <ul className="plain-list land-inline-facts">
+                    <ul className="plain-list land-service-highlights">
                       {section.highlights.map((highlight) => (
                         <li key={highlight}>{highlight}</li>
                       ))}
@@ -87,9 +89,9 @@ export function ServicesPage() {
       </Section>
 
       <Section
-        description="Northline is typically the right fit when the project needs cleaner planning, premium finish quality, and a more disciplined delivery path than a basic install crew."
+        description="Northline is strongest on residential projects where the finished result, site handling, and long-term use matter more than a rushed patch job."
         eyebrow="Fit"
-        title="When this service model makes sense"
+        title="The kind of landscaping work that fits best"
       >
         <div className="land-fit-grid">
           <article className="land-fit-panel">
@@ -115,7 +117,7 @@ export function ServicesPage() {
           </article>
         </div>
         <div className="land-section-actions">
-          <ButtonLink to={routes.reservations}>Start estimate request</ButtonLink>
+          <ButtonLink to={routes.reservations}>Start your quote</ButtonLink>
           <ButtonLink to={routes.contact} variant="secondary">
             Contact office
           </ButtonLink>
