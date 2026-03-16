@@ -20,8 +20,8 @@ export function Reveal({
   as = 'div',
   variant = 'soft',
   delay = 0,
-  threshold = 0.18,
-  rootMargin = '0px 0px -12% 0px',
+  threshold = 0.08,
+  rootMargin = '0px 0px -8% 0px',
   id,
 }: RevealProps) {
   const ref = useRef<HTMLElement | null>(null)

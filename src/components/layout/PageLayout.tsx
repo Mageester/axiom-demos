@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import { DemoConfigContext } from '../../config/demoConfig'
 import { ButtonLink } from '../ui/Button'
@@ -8,6 +8,7 @@ import { SiteNav } from './SiteNav'
 export function PageLayout() {
   const { brandSystem, content, key, primaryCta, theme } = useContext(DemoConfigContext)
   const location = useLocation()
+  const [showMobilePrimaryCta, setShowMobilePrimaryCta] = useState(false)
 
   useEffect(() => {
     document.body.dataset.demoBrand = brandSystem
@@ -43,6 +44,35 @@ export function PageLayout() {
     faviconTag.setAttribute('type', 'image/svg+xml')
   }, [content.brand])
 
+  useEffect(() => {
+    if (typeof window === 'undefined') {
+      return undefined
+    }
+
+    const mobileQuery = window.matchMedia('(max-width: 760px)')
+    let frameId = 0
+
+    const syncMobilePrimaryCta = () => {
+      window.cancelAnimationFrame(frameId)
+      frameId = window.requestAnimationFrame(() => {
+        const shouldShow = mobileQuery.matches && window.scrollY > 480
+        setShowMobilePrimaryCta((current) => (current === shouldShow ? current : shouldShow))
+      })
+    }
+
+    syncMobilePrimaryCta()
+    window.addEventListener('scroll', syncMobilePrimaryCta, { passive: true })
+    window.addEventListener('resize', syncMobilePrimaryCta)
+    mobileQuery.addEventListener('change', syncMobilePrimaryCta)
+
+    return () => {
+      window.cancelAnimationFrame(frameId)
+      window.removeEventListener('scroll', syncMobilePrimaryCta)
+      window.removeEventListener('resize', syncMobilePrimaryCta)
+      mobileQuery.removeEventListener('change', syncMobilePrimaryCta)
+    }
+  }, [location.pathname])
+
   return (
     <div className={`app-shell app-shell--${key}`}>
       <SiteNav key={location.pathname} />
@@ -50,7 +80,9 @@ export function PageLayout() {
         <Outlet />
       </main>
       <SiteFooter />
-      <div className={`mobile-primary-cta ${brandSystem === 'hospitality' ? 'mobile-primary-cta--hospitality' : brandSystem === 'service' ? 'mobile-primary-cta--service' : ''}`}>
+      <div
+        className={`mobile-primary-cta ${showMobilePrimaryCta ? 'mobile-primary-cta--visible' : ''} ${brandSystem === 'hospitality' ? 'mobile-primary-cta--hospitality' : brandSystem === 'service' ? 'mobile-primary-cta--service' : ''}`}
+      >
         <ButtonLink fullWidth size="lg" to={primaryCta.path} variant={brandSystem === 'hospitality' ? 'secondary' : 'primary'}>
           {primaryCta.label}
         </ButtonLink>
