@@ -82,6 +82,29 @@ export function HomePage() {
         ))}
       </section>
 
+      {emergencyCallout ? (
+        <Reveal as="section" className="roof-emergency-band" variant="firm">
+          <div className="roof-emergency-band__content">
+            <p className="roof-block__eyebrow">Emergency roofing callout</p>
+            <h2 className="roof-block__title">{emergencyCallout.title}</h2>
+            <p className="roof-block__description">{emergencyCallout.description}</p>
+            <ul className="plain-list roof-emergency-band__list">
+              {emergencyCallout.bullets.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="roof-emergency-band__actions">
+            <ButtonAnchor size="lg" href={content.brand.phoneHref}>
+              Call now
+            </ButtonAnchor>
+            <ButtonLink size="lg" to={routes.reservations} variant="secondary">
+              Send inspection request
+            </ButtonLink>
+          </div>
+        </Reveal>
+      ) : null}
+
       <Reveal as="section" className="roof-block" variant="firm">
         <header className="roof-block__header">
           <p className="roof-block__eyebrow">Services</p>
@@ -432,29 +455,6 @@ export function HomePage() {
           </div>
         </aside>
       </Reveal>
-
-      {emergencyCallout ? (
-        <Reveal as="section" className="roof-emergency-band" variant="firm">
-          <div className="roof-emergency-band__content">
-            <p className="roof-block__eyebrow">Emergency roofing callout</p>
-            <h2 className="roof-block__title">{emergencyCallout.title}</h2>
-            <p className="roof-block__description">{emergencyCallout.description}</p>
-            <ul className="plain-list roof-emergency-band__list">
-              {emergencyCallout.bullets.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </div>
-          <div className="roof-emergency-band__actions">
-            <ButtonAnchor size="lg" href={content.brand.phoneHref}>
-              Call now
-            </ButtonAnchor>
-            <ButtonLink size="lg" to={routes.reservations} variant="secondary">
-              Send inspection request
-            </ButtonLink>
-          </div>
-        </Reveal>
-      ) : null}
 
       <Reveal as="section" className="roof-dispatch-band" variant="firm">
         <div className="roof-dispatch-band__copy">

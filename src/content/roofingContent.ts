@@ -32,13 +32,13 @@ export const roofingContent: DemoContent = {
   home: {
     hero: {
       eyebrow: 'Roofing & Exterior Protection | Toronto & Durham Region',
-      title: 'Roof inspections, repairs, and replacements with clearer answers before the crew ever starts.',
+      title: 'Roof repairs and replacements with clear answers before the crew ever starts.',
       description:
-        'Blackridge handles active leaks, aging roofs, storm response, siding, soffit, fascia, and eavestrough work for homeowners who want a contractor that inspects properly, explains the scope clearly, and keeps the job under control once it starts.',
+        'Blackridge handles active leaks, aging roofs, storm response, siding, soffit, fascia, and eavestrough work for homeowners who need a direct inspection, a clear recommendation, and a crew that treats the roof like urgent protection work.',
       primaryCta: 'Request inspection',
       secondaryCta: 'View services',
       signals: [
-        'Active leak, storm-damage, and aging-roof inspections',
+        'Active leak calls, storm damage, and replacement planning',
         'Photo-backed repair-versus-replacement guidance after the first visit',
         'Scheduling, cleanup, and closeout expectations confirmed before work starts',
       ],
@@ -67,10 +67,10 @@ export const roofingContent: DemoContent = {
     ],
     featuredDishes: [
       {
-        name: 'Roof Replacement & Re-Sheeting',
+        name: 'Roof replacement',
         course: 'Replacement scope',
         description:
-          'Full replacement work planned around decking condition, ventilation, flashing continuity, and a cleaner roof-edge finish at handoff.',
+          'Full tear-off replacement planned around decking condition, ventilation, flashing continuity, and a cleaner roof-edge finish at handoff.',
         image: {
           src: pexelsPhoto('18098286', 1400, 1000),
           alt: 'Two-storey house with a steep finished shingle roof under daylight',
@@ -78,7 +78,7 @@ export const roofingContent: DemoContent = {
         },
       },
       {
-        name: 'Leak Tracing & Targeted Repair',
+        name: 'Leak repair',
         course: 'Inspection-led repair',
         description:
           'Condition-based repair scopes for leaks, storm damage, and isolated failures where replacement is not the first answer.',
@@ -89,7 +89,7 @@ export const roofingContent: DemoContent = {
         },
       },
       {
-        name: 'Siding, Fascia & Eavestrough Work',
+        name: 'Roofline repair',
         course: 'Roofline support',
         description:
           'Roofline and exterior support work that protects the structure, sharpens curb impression, and gets water off the house more reliably.',
@@ -101,8 +101,8 @@ export const roofingContent: DemoContent = {
       },
     ],
     experience: {
-      title: 'What the inspection is meant to answer',
-      description:
+        title: 'What the inspection is meant to answer',
+        description:
         'The first visit is there to confirm condition, isolate weak points, and tell the homeowner what is urgent, what can wait, and what the cleanest scope actually is.',
       points: [
         'Roof condition, flashing details, penetrations, and drainage weak points are reviewed on site',
@@ -197,9 +197,9 @@ export const roofingContent: DemoContent = {
         },
       ],
       emergencyCallout: {
-        title: 'Storm damage and active leak response',
+        title: 'If water is coming in now, call first',
         description:
-          'When weather has lifted shingles, opened flashing, or started water entry, the first priority is getting the failure contained and the right repair path confirmed quickly.',
+          'When weather has lifted shingles, opened flashing, or started water entry, the first priority is containing the problem and confirming whether a repair will hold or a replacement makes more sense.',
         bullets: [
           'Photo review and urgent triage when active water entry is involved',
           'Temporary protection guidance before the formal crew visit if conditions allow',
@@ -207,9 +207,9 @@ export const roofingContent: DemoContent = {
         ],
       },
       beforeAfter: {
-        title: 'Front-slope replacement and roofline cleanup',
+        title: 'Weathered front slope to a cleaner roofline',
         summary:
-          'This type of project usually starts with visible wear, poor drainage details, and a roofline that already looks tired from the street. The finished scope leaves the house better protected and much cleaner visually.',
+          'A tired front slope usually shows up as curling shingles, weak flashing, and gutter issues that homeowners can see from the driveway. The finished job tightens the roofline and stops the house looking patched together.',
         bullets: ['Architectural shingles', 'New flashing and vent review', 'Soffit, fascia, and gutter cleanup'],
         before: {
           src: pexelsPhoto('36237047', 1200, 900),

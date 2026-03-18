@@ -15,8 +15,8 @@ export const landscapingContent: DemoContent = {
     favicon: '/brands/northline-outdoor-favicon.svg',
     browserTitle: 'Northline Landscaping | Landscaping and Outdoor Living',
     metaDescription:
-      'Northline Landscaping handles patios, planting, outdoor lighting, front-yard upgrades, and outdoor living projects across Toronto and the West GTA.',
-    tagline: 'Landscaping, patios, planting, and outdoor living for Toronto homes',
+      'Northline Landscaping builds patios, planting, lighting, curb appeal, and outdoor-living upgrades for Toronto and West GTA homes.',
+    tagline: 'Residential landscaping for patios, planting, lighting, and curb appeal',
     phone: '+1 (647) 555-0139',
     phoneHref: 'tel:+16475550139',
     email: 'quotes@northlinelandscaping.ca',
@@ -32,13 +32,13 @@ export const landscapingContent: DemoContent = {
   home: {
     hero: {
       eyebrow: 'Toronto landscaping and outdoor living',
-      title: 'Patios, planting, and front-entry work that make the property feel finished.',
+      title: 'Patios, planting, and front-entry work that make the house feel cared for.',
       description:
-        'Northline handles patios, walkways, front-entry upgrades, planting, lighting, and backyard outdoor-living work for homeowners across Toronto and the west end who want the yard to look better and work better.',
+        'Northline handles patios, walkways, planting, lighting, curb appeal, and backyard outdoor-living work for homeowners across Toronto and the west end who want the property to look cleaner and feel more usable.',
       primaryCta: 'Request a quote',
       secondaryCta: 'View projects',
       signals: [
-        'Patios, planting, lighting, front entries, and backyard upgrades',
+        'Patios, planting, lighting, curb appeal, and outdoor-living work',
         'Current photos reviewed before a site visit is booked',
         'Residential projects across Toronto, Etobicoke, Mississauga, and Oakville',
       ],
@@ -50,27 +50,22 @@ export const landscapingContent: DemoContent = {
     },
     highlights: [
       {
-        title: 'Backyard patios and seating zones',
+        title: 'Backyards that actually get used',
         description:
-          'Stone and porcelain patio work planned around furniture layout, access, and how the yard is actually used.',
+          'Stone and porcelain patios planned around furniture, access, and the way people actually move through the yard.',
       },
       {
-        title: 'Front entries and curb appeal',
+        title: 'Front entries with better curb appeal',
         description:
-          'Walkways, borders, planting, and entry work that make the approach to the house read cleaner from the street.',
-      },
-      {
-        title: 'Lighting, planting, and drainage details',
-        description:
-          'The finish details that keep the property usable, visible after dark, and easier to maintain through the season.',
+          'Walkways, planting, and cleanup that make the approach to the house read sharper from the street.',
       },
     ],
     featuredDishes: [
       {
-        name: 'Custom Patios & Entertaining Zones',
+        name: 'Patios and seating areas',
         course: 'Outdoor living',
         description:
-          'Stone and porcelain patio builds planned around seating, circulation, and how the yard will actually be used.',
+          'Patio builds planned around seating, circulation, and the way the yard is actually used day to day.',
         image: {
           src: pexelsPhoto('34037980', 1400, 1000),
           alt: 'Residential backyard patio with seating and layered greenery',
@@ -78,10 +73,10 @@ export const landscapingContent: DemoContent = {
         },
       },
       {
-        name: 'Front Entry & Curb Appeal Upgrades',
+        name: 'Front entry and curb appeal',
         course: 'Arrival and frontage',
         description:
-          'Walkways, borders, and planting plans that make the front of the property feel cleaner and more finished.',
+          'Walkways, borders, and planting plans that make the front of the property feel clean and finished from the street.',
         image: {
           src: pexelsPhoto('30196217', 1400, 1000),
           alt: 'Front garden pathway with planting and lamp posts',
@@ -89,10 +84,10 @@ export const landscapingContent: DemoContent = {
         },
       },
       {
-        name: 'Landscape Lighting & Planting Refresh',
+        name: 'Lighting and planting refresh',
         course: 'Evening presence',
         description:
-          'Low-voltage lighting and planting updates that keep the property looking finished after dark and through the busy season.',
+          'Low-voltage lighting and planting updates that keep the property looking finished after dark and into the busy season.',
         image: {
           src: pexelsPhoto('35828688', 1400, 1000),
           alt: 'Landscape lighting illuminating a planted garden path in the evening',
@@ -102,12 +97,12 @@ export const landscapingContent: DemoContent = {
     ],
     experience: {
       title: 'What the first steps usually look like',
-      description:
-        'The first conversation is about the property, the part of the yard you want to improve, and whether the scope fits how Northline works best.',
+        description:
+          'The first conversation is about the property, the part of the yard you want to improve, and whether the scope fits what the homeowner actually wants to use it for.',
       points: [
         'We start with the address, current photos, and the part of the property that needs attention',
-        'If the scope fits, we book a site visit to review grade, access, drainage, and material direction',
-        'You get a clear quote and next-step recommendation before any work is scheduled',
+        'If the scope fits, we book a site visit to review grade, access, drainage, and finish level',
+        'You get a clear quote and a practical next-step recommendation before anything is scheduled',
       ],
       images: [
         {
@@ -125,10 +120,10 @@ export const landscapingContent: DemoContent = {
     extras: {
       projectGallery: [
         {
-          title: 'Patio entertaining zone',
+          title: 'Back patio and seating area',
           subtitle: 'Patios',
           description:
-            'Stone and porcelain patio work planned around seating, circulation, and how the yard is actually used on weekends.',
+            'Stone and porcelain patio work planned around seating, circulation, and the way the yard is actually used on weekends.',
           facts: ['Backyard patio', 'Entertaining layout', 'Clean edges'],
           image: {
             src: pexelsPhoto('34037980', 1200, 900),
@@ -140,7 +135,7 @@ export const landscapingContent: DemoContent = {
           title: 'Garden walk and side-yard path',
           subtitle: 'Walkways',
           description:
-            'A cleaner route through the property with better footing, sharper borders, and a more finished connection between front and back.',
+            'A cleaner route through the property with better footing, sharper borders, and a finished connection between front and back.',
           facts: ['Stone path', 'Border definition', 'Cleaner circulation'],
           image: {
             src: pexelsPhoto('30278085', 1200, 900),
@@ -174,18 +169,18 @@ export const landscapingContent: DemoContent = {
         },
       ],
       beforeAfter: {
-        title: 'Backyard reset from plain lawn to outdoor-living space',
+        title: 'Plain lawn to usable outdoor living space',
         summary:
-          'This kind of project usually starts with an underused yard and ends with seating, planting, lighting, and circulation that make the space feel useful and finished.',
-        bullets: ['Patio layout', 'Planting layers', 'Landscape lighting', 'Cleaner circulation'],
+          'This kind of project usually starts with an open yard that gets used poorly and ends with a patio, planting, lighting, and circulation that make the space feel tied to the house.',
+        bullets: ['Patio and seating zone', 'Planting layers', 'Low-voltage lighting', 'Cleaner circulation'],
         before: {
           src: '/images/landscaping/land1.png',
-          alt: 'Plain backyard before patio, planting, and outdoor-living upgrades',
+          alt: 'Open backyard before patio, planting, and lighting work',
           position: 'center 56%',
         },
         after: {
           src: '/images/landscaping/land2.png',
-          alt: 'Finished outdoor-living backyard with seating, lawn, and layered planting',
+          alt: 'Finished backyard with patio, planting, seating, and lighting',
           position: 'center 56%',
         },
       },
@@ -211,7 +206,7 @@ export const landscapingContent: DemoContent = {
         {
           title: 'On-site consultation',
           description:
-            'We walk the property, review the area you want improved, and look at grade, access, drainage, and how the yard is used now.',
+            'We walk the property, note the problem areas, and look at grade, access, drainage, and how the yard is used now.',
         },
         {
           title: 'Design planning',
@@ -233,12 +228,12 @@ export const landscapingContent: DemoContent = {
         {
           title: 'Spring',
           description:
-            'Bed cleanup, edging, mulch, pruning, and planting prep to get the property ready for the main growing season.',
+            'Spring cleanup, edging, mulch, pruning, and planting prep to get the property ready for the season.',
         },
         {
           title: 'Summer',
           description:
-            'Mid-season pruning, bed touchups, lighting checks, and focused care where the yard needs to stay presentation-ready.',
+            'Mid-season pruning, bed touchups, lighting checks, and focused care where the yard needs to stay presentable.',
         },
         {
           title: 'Fall',
@@ -248,7 +243,7 @@ export const landscapingContent: DemoContent = {
         {
           title: 'Winter',
           description:
-            'Planning, quote review, and early booking for spring projects while outdoor-lighting and structural issues are still addressed.',
+            'Planning, quote review, and early booking for spring projects while lighting and drainage issues are still being sorted.',
         },
       ],
     },

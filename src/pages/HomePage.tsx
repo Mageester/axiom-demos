@@ -87,9 +87,47 @@ export function HomePage() {
             <p className="restaurant-house-notes__index">0{index + 1}</p>
             <h2>{highlight.title}</h2>
             <p>{highlight.description}</p>
-          </Reveal>
-        ))}
+            </Reveal>
+          ))}
       </section>
+
+      <Reveal as="section" className="restaurant-home-section" variant="soft">
+        <div className="restaurant-reservation-module">
+          <div className="restaurant-reservation-module__copy">
+            <p className="restaurant-home-section__eyebrow">Reservations</p>
+            <h2 className="restaurant-home-section__title">Book dinner or plan a hosted table</h2>
+            <p>{content.reservations.intro}</p>
+            <ul className="plain-list restaurant-reservation-module__policies">
+              {content.reservations.policies.slice(0, 2).map((policy) => (
+                <li key={policy}>{policy}</li>
+              ))}
+            </ul>
+            <div className="restaurant-reservation-module__actions">
+              <ButtonLink size="lg" to={routes.reservations}>
+                Book dinner
+              </ButtonLink>
+              <ButtonAnchor href={content.brand.phoneHref} size="lg" variant="secondary">
+                Call reservations
+              </ButtonAnchor>
+            </div>
+          </div>
+
+          {reservationVisual ? (
+            <figure className="restaurant-reservation-module__media">
+              <img
+                alt={reservationVisual.alt}
+                loading="lazy"
+                src={reservationVisual.src}
+                style={
+                  reservationVisual.position
+                    ? { objectPosition: reservationVisual.position }
+                    : undefined
+                }
+              />
+            </figure>
+          ) : null}
+        </div>
+      </Reveal>
 
       <Reveal as="section" className="restaurant-home-section" variant="soft">
         <header className="restaurant-home-section__header">
@@ -271,44 +309,6 @@ export function HomePage() {
           </div>
         </Reveal>
       ) : null}
-
-      <Reveal as="section" className="restaurant-home-section" variant="soft">
-        <div className="restaurant-reservation-module">
-          <div className="restaurant-reservation-module__copy">
-            <p className="restaurant-home-section__eyebrow">Reservations</p>
-            <h2 className="restaurant-home-section__title">Book dinner or plan a hosted table</h2>
-            <p>{content.reservations.intro}</p>
-            <ul className="plain-list restaurant-reservation-module__policies">
-              {content.reservations.policies.slice(0, 2).map((policy) => (
-                <li key={policy}>{policy}</li>
-              ))}
-            </ul>
-            <div className="restaurant-reservation-module__actions">
-              <ButtonLink size="lg" to={routes.reservations}>
-                Book dinner
-              </ButtonLink>
-              <ButtonAnchor href={content.brand.phoneHref} size="lg" variant="secondary">
-                Call reservations
-              </ButtonAnchor>
-            </div>
-          </div>
-
-          {reservationVisual ? (
-            <figure className="restaurant-reservation-module__media">
-              <img
-                alt={reservationVisual.alt}
-                loading="lazy"
-                src={reservationVisual.src}
-                style={
-                  reservationVisual.position
-                    ? { objectPosition: reservationVisual.position }
-                    : undefined
-                }
-              />
-            </figure>
-          ) : null}
-        </div>
-      </Reveal>
 
       {guestNotes.length ? (
         <Reveal as="section" className="restaurant-home-section" variant="soft">

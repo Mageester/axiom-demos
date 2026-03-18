@@ -15,8 +15,8 @@ export const restaurantContent: DemoContent = {
     favicon: '/brands/atelier-meridian-mark.svg',
     browserTitle: 'Atelier Meridian | Harbourfront Restaurant',
     metaDescription:
-      'Seasonal coastal dining on the Toronto waterfront with warm evening service, private dining, and reservations available Tuesday to Sunday.',
-    tagline: 'Waterside dining room for long dinners by Toronto harbour',
+      'Atelier Meridian is a Harbourfront dinner room with seasonal cooking, private dining, and easy reservations for Toronto nights out.',
+    tagline: 'Harbourfront dining for dinner, drinks, and long table service',
     phone: '+1 (416) 555-0182',
     phoneHref: 'tel:+14165550182',
     email: 'reservations@ateliermeridian.ca',
@@ -33,15 +33,16 @@ export const restaurantContent: DemoContent = {
   home: {
     hero: {
       eyebrow: 'Toronto Waterfront Dining',
-      title: 'An evening by the water, shaped by the season.',
+      title: 'A harbourfront table for dinner tonight.',
       description:
-        'Atelier Meridian is a harbourfront dining room for unhurried dinners, ingredient-led cooking, and service paced for conversation rather than turnover.',
+        'Atelier Meridian is a harbourfront dining room for good dinners, clear reservations, and a room that feels like a real night out instead of a design sample.',
       primaryCta: 'Reserve a table',
       secondaryCta: 'See dinner menu',
       signals: [
-        'First seating catches the western harbour light',
+        'Reserve online or by phone',
+        'Open Tuesday to Sunday for dinner',
         'The Studio private room seats up to 12 guests',
-        'Reservations open 30 days ahead',
+        '112 Harbour Lane, Toronto',
       ],
       image: {
         src: pexelsPhoto('30323144', 1800, 1200),
@@ -66,34 +67,34 @@ export const restaurantContent: DemoContent = {
           'A short list of wines, aperitifs, and zero-proof pours shaped around the dinner menu.',
       },
     ],
-    featuredDishes: [
-      {
-        name: 'Scallop Crudo',
-        course: 'To begin',
-        description:
-          'Sliced day-boat scallops with citrus, herbs, and a clean saline finish.',
+      featuredDishes: [
+        {
+          name: 'Scallop crudo',
+          course: 'To begin',
+          description:
+            'Day-boat scallops with citrus, herbs, and a clean saline finish.',
         image: {
           src: pexelsPhoto('262978', 1400, 1000),
           alt: 'First course plated in a warm restaurant dining room',
           position: 'center 68%',
         },
       },
-      {
-        name: 'Dry-Aged Duck Breast',
-        course: 'Main',
-        description:
-          'Duck aged in-house and served with sour cherry jus and peak-season vegetables.',
+        {
+          name: 'Dry-aged duck breast',
+          course: 'Main',
+          description:
+            'Duck aged in-house and served with sour cherry jus and peak-season vegetables.',
         image: {
           src: pexelsPhoto('32083423', 1400, 1000),
           alt: 'Elegant plated main course in a warm fine dining setting',
           position: 'center 52%',
         },
       },
-      {
-        name: 'Chocolate Tarte',
-        course: 'To finish',
-        description:
-          'Dark chocolate tart with espresso cream and a lightly salted praline crunch.',
+        {
+          name: 'Chocolate tarte',
+          course: 'To finish',
+          description:
+            'Dark chocolate tart with espresso cream and a lightly salted praline crunch.',
         image: {
           src: pexelsPhoto('34712611', 1400, 1000),
           alt: 'Dark chocolate dessert plated for an evening restaurant service',
@@ -102,11 +103,11 @@ export const restaurantContent: DemoContent = {
       },
     ],
     experience: {
-      title: 'Service designed for an unhurried evening',
+      title: 'Service paced for a real dinner out',
       description:
-        'From your welcome pour to the final course, each table is paced for conversation and comfort.',
+        'From the first pour to dessert, the room is paced for conversation, not churn.',
       points: [
-        'Reservations confirmed by our host team ahead of service',
+        'Reservations confirmed by the host team ahead of service',
         'Menu guidance for allergies and dietary preferences',
         'Attentive pacing from first plate through dessert',
       ],
@@ -128,7 +129,7 @@ export const restaurantContent: DemoContent = {
         {
           title: 'Atmosphere',
           description:
-            'Low lamps, softened acoustics, and generous table spacing keep the room calm even as service picks up later in the evening.',
+            'Low lamps, softened acoustics, and generous table spacing keep the room calm enough for conversation, even when the room fills up later on.',
         },
         {
           title: 'Waterfront dining',
@@ -138,7 +139,7 @@ export const restaurantContent: DemoContent = {
         {
           title: 'Seasonal menu philosophy',
           description:
-            'The kitchen works in short menu cycles so plates can change as produce, shellfish, and fishery arrivals shift through the month.',
+            'The kitchen keeps the menu short so the best produce, shellfish, and fishery arrivals can move through without forcing the same dishes all month.',
         },
       ],
       reservationDetails: [
@@ -337,7 +338,7 @@ export const restaurantContent: DemoContent = {
   },
   reservations: {
     intro:
-      'Reservations open 30 days ahead. For larger tables, hosted dinners, event bookings, or a night in The Studio, contact the dining room directly.',
+      'Reservations open 30 days ahead. For standard tables, book online. For larger tables, hosted dinners, or a night in The Studio, contact the dining room directly.',
     policies: [
       'A valid card is required to hold dinner reservations.',
       'Cancellations made within 24 hours may be subject to a per-seat fee.',
@@ -364,7 +365,7 @@ export const restaurantContent: DemoContent = {
   },
   gallery: {
     intro:
-      'A look at the room, the plates, and the pace of service through the evening.',
+      'A quick look at the room, the plates, and how the evening settles in after first seating.',
     collections: [
       {
         title: 'Window Tables',
