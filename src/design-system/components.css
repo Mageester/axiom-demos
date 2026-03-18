@@ -5896,6 +5896,7 @@ body[data-demo-theme='landscaping'] .page-main {
 }
 
 .before-after-compare__frame {
+  aspect-ratio: 16 / 10;
   margin: 0;
   overflow: hidden;
   position: relative;
@@ -5908,20 +5909,16 @@ body[data-demo-theme='landscaping'] .page-main {
   width: 100%;
 }
 
-.before-after-compare__image--base,
 .before-after-compare__overlay {
-  aspect-ratio: 16 / 10;
-}
-
-.before-after-compare__overlay {
-  inset: 0 auto 0 0;
-  overflow: hidden;
+  clip-path: inset(0 calc(100% - var(--before-after-position, 52%)) 0 0);
+  inset: 0;
   position: absolute;
 }
 
 .before-after-compare__image--overlay {
-  height: 100%;
   max-width: none;
+  position: absolute;
+  inset: 0;
 }
 
 .before-after-compare__badge {
@@ -5951,6 +5948,7 @@ body[data-demo-theme='landscaping'] .page-main {
 
 .before-after-compare__divider {
   bottom: 0;
+  left: var(--before-after-position, 52%);
   pointer-events: none;
   position: absolute;
   top: 0;

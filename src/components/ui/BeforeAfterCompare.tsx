@@ -1,4 +1,4 @@
-import { useId, useState } from 'react'
+import { useId, useState, type CSSProperties } from 'react'
 import type { VisualAssetContent } from '../../content/types'
 
 interface BeforeAfterCompareProps {
@@ -18,10 +18,13 @@ export function BeforeAfterCompare({
 }: BeforeAfterCompareProps) {
   const [position, setPosition] = useState(52)
   const inputId = useId()
+  const frameStyle = {
+    ['--before-after-position' as const]: `${position}%`,
+  } as CSSProperties
 
   return (
     <div className={['before-after-compare', className ?? ''].filter(Boolean).join(' ')}>
-      <figure className="before-after-compare__frame">
+      <figure className="before-after-compare__frame" style={frameStyle}>
         <img
           alt={before.alt}
           className="before-after-compare__image before-after-compare__image--base"
@@ -29,7 +32,7 @@ export function BeforeAfterCompare({
           src={before.src}
           style={before.position ? { objectPosition: before.position } : undefined}
         />
-        <div className="before-after-compare__overlay" style={{ width: `${position}%` }}>
+        <div className="before-after-compare__overlay">
           <img
             alt={after.alt}
             className="before-after-compare__image before-after-compare__image--overlay"
@@ -40,7 +43,7 @@ export function BeforeAfterCompare({
         </div>
         <span className="before-after-compare__badge before-after-compare__badge--before">{beforeLabel}</span>
         <span className="before-after-compare__badge before-after-compare__badge--after">{afterLabel}</span>
-        <div className="before-after-compare__divider" style={{ left: `${position}%` }}>
+        <div className="before-after-compare__divider">
           <span className="before-after-compare__handle" aria-hidden="true" />
         </div>
       </figure>
