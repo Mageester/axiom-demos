@@ -179,12 +179,12 @@ export const landscapingContent: DemoContent = {
           'This kind of project usually starts with an underused yard and ends with seating, planting, lighting, and circulation that make the space feel useful and finished.',
         bullets: ['Patio layout', 'Planting layers', 'Landscape lighting', 'Cleaner circulation'],
         before: {
-          src: pexelsPhoto('17240696', 1200, 900),
+          src: '/images/landscaping/land1.png',
           alt: 'Plain backyard before patio, planting, and outdoor-living upgrades',
           position: 'center 56%',
         },
         after: {
-          src: pexelsPhoto('33838596', 1200, 900),
+          src: '/images/landscaping/land2.png',
           alt: 'Finished outdoor-living backyard with seating, lawn, and layered planting',
           position: 'center 56%',
         },
