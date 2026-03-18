@@ -21,7 +21,10 @@ export function PageHero({
   className,
 }: PageHeroProps) {
   return (
-    <section className={['page-hero', media ? 'page-hero--media' : '', className ?? ''].filter(Boolean).join(' ')}>
+    <section
+      className={['page-hero', media ? 'page-hero--media' : '', className ?? ''].filter(Boolean).join(' ')}
+      data-reveal="hero"
+    >
       <div className="page-hero__copy">
         {eyebrow ? <p className="page-hero__eyebrow">{eyebrow}</p> : null}
         <h1 className="page-hero__title">{title}</h1>

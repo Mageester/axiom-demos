@@ -18,7 +18,7 @@ export function Section({
   children,
 }: SectionProps) {
   return (
-    <section className={['section', className ?? ''].join(' ').trim()} id={id}>
+    <section className={['section', className ?? ''].join(' ').trim()} data-reveal="section" id={id}>
       <header className="section__header">
         {eyebrow ? <p className="section__eyebrow">{eyebrow}</p> : null}
         <h2 className="section__title">{title}</h2>

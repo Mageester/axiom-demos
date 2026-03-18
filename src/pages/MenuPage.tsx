@@ -20,7 +20,7 @@ export function MenuPage() {
         title="Tonight's menu"
       />
 
-      <div className="menu-sections">
+      <div className="menu-sections" data-reveal="section">
         {content.menu.sections.map((section) => (
           <section className="menu-section" key={section.title}>
             {section.image ? (

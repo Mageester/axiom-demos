@@ -24,7 +24,7 @@ export function HomePage() {
 
   return (
     <>
-      <section className="restaurant-home-hero">
+      <section className="restaurant-home-hero" data-reveal="hero">
         {content.home.hero.image ? (
           <figure className="restaurant-home-hero__media">
             <img
@@ -69,7 +69,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="restaurant-home-section">
+      <section className="restaurant-home-section" data-reveal="section">
         <header className="restaurant-home-section__header">
           <p className="restaurant-home-section__eyebrow">Tonight at {content.brand.name}</p>
           <h2 className="restaurant-home-section__title">Signature dishes and seasonal plates</h2>
@@ -127,7 +127,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="restaurant-home-section">
+      <section className="restaurant-home-section" data-reveal="section">
         <header className="restaurant-home-section__header">
           <p className="restaurant-home-section__eyebrow">Dining atmosphere</p>
           <h2 className="restaurant-home-section__title">A room set for long, easy dinners</h2>
@@ -156,7 +156,7 @@ export function HomePage() {
       </section>
 
       {privateDiningMoment ? (
-        <section className="restaurant-home-section">
+        <section className="restaurant-home-section" data-reveal="section">
           <div className="restaurant-private-layout">
             <figure className="restaurant-private-layout__media">
               <img
@@ -189,7 +189,7 @@ export function HomePage() {
         </section>
       ) : null}
 
-      <section className="restaurant-home-section">
+      <section className="restaurant-home-section" data-reveal="section">
         <div className="restaurant-story-layout">
           <div className="restaurant-story-layout__copy">
             <p className="restaurant-home-section__eyebrow">Kitchen and room philosophy</p>
@@ -221,7 +221,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="restaurant-home-section">
+      <section className="restaurant-home-section" data-reveal="section">
         <div className="restaurant-reservation-module">
           <div className="restaurant-reservation-module__copy">
             <p className="restaurant-home-section__eyebrow">Reservations</p>
@@ -259,7 +259,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="restaurant-home-section restaurant-home-section--visit">
+      <section className="restaurant-home-section restaurant-home-section--visit" data-reveal="section">
         <header className="restaurant-home-section__header">
           <p className="restaurant-home-section__eyebrow">Visit and service hours</p>
           <h2 className="restaurant-home-section__title">Plan your evening at {content.brand.name}</h2>
