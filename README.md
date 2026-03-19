@@ -161,7 +161,7 @@ Why Pages projects are the right approach:
 
 The app now also has a hostname-based runtime safety net, so a missed or invalid `VITE_DEMO_KEY` does not silently collapse every subdomain to restaurant. Separate Pages projects are still the recommended setup because they keep releases, custom domains, and rollback decisions isolated per demo.
 
-`wrangler.jsonc` remains useful for Worker-based local preview or alternate deployment flows, but it is not the recommended multi-subdomain setup for these branded demo sites.
+This repo is set up for static Pages builds. The generic `deploy` script only builds the app; use the demo-specific Pages deploy scripts below when you need to publish manually.
 
 ## Cloudflare Pages Deployment Matrix
 
@@ -175,6 +175,10 @@ The app now also has a hostname-based runtime safety net, so a missed or invalid
 - Build output directory: `dist`
 - Root directory: repository root
 - Node compatibility: no extra runtime bindings required
+- Manual deploy scripts:
+  - `npm run deploy:restaurant`
+  - `npm run deploy:landscaping`
+  - `npm run deploy:roofing`
 
 ### Restaurant Pages project
 

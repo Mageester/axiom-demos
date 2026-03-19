@@ -12,8 +12,11 @@
     "build:all": "npm run build:demo -- restaurant landscaping roofing",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "npm run build && wrangler dev",
-    "deploy": "npm run build && wrangler deploy"
+    "preview": "npm run build && vite preview",
+    "deploy": "npm run build",
+    "deploy:restaurant": "npm run build:restaurant && npx wrangler pages deploy dist --project-name axiom-demos-restaurant",
+    "deploy:landscaping": "npm run build:landscaping && npx wrangler pages deploy dist --project-name axiom-demos-landscaping",
+    "deploy:roofing": "npm run build:roofing && npx wrangler pages deploy dist --project-name axiom-demos-roofing"
   },
   "dependencies": {
     "react": "^19.2.0",
@@ -21,7 +24,6 @@
     "react-router-dom": "^7.13.1"
   },
   "devDependencies": {
-    "@cloudflare/vite-plugin": "^1.26.1",
     "@eslint/js": "^9.39.1",
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.7",
