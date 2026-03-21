@@ -5,14 +5,8 @@ import { Reveal } from '../../components/ui/Reveal'
 
 export function HomePage() {
   const { content, routes } = useContext(DemoConfigContext)
-  const featuredProject = content.gallery.collections[0]
-  const comparisonProjects = content.gallery.collections.slice(1, 4)
   const primaryScope = content.menu.sections[0]
   const secondaryScopes = content.menu.sections.slice(1)
-  const recentProjects = content.home.extras?.recentProjects ?? []
-  const materialBrands = content.home.extras?.materialBrands ?? []
-  const serviceAreas = content.home.extras?.serviceAreas ?? []
-  const emergencyCallout = content.home.extras?.emergencyCallout
   const beforeAfter = content.home.extras?.beforeAfter
 
   return (
@@ -81,29 +75,6 @@ export function HomePage() {
           </Reveal>
         ))}
       </section>
-
-      {emergencyCallout ? (
-        <Reveal as="section" className="roof-emergency-band" variant="firm">
-          <div className="roof-emergency-band__content">
-            <p className="roof-block__eyebrow">Emergency roofing callout</p>
-            <h2 className="roof-block__title">{emergencyCallout.title}</h2>
-            <p className="roof-block__description">{emergencyCallout.description}</p>
-            <ul className="plain-list roof-emergency-band__list">
-              {emergencyCallout.bullets.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </div>
-          <div className="roof-emergency-band__actions">
-            <ButtonAnchor size="lg" href={content.brand.phoneHref}>
-              Call now
-            </ButtonAnchor>
-            <ButtonLink size="lg" to={routes.reservations} variant="secondary">
-              Send inspection request
-            </ButtonLink>
-          </div>
-        </Reveal>
-      ) : null}
 
       <Reveal as="section" className="roof-block" variant="firm">
         <header className="roof-block__header">
@@ -187,192 +158,6 @@ export function HomePage() {
         </div>
       </Reveal>
 
-      {featuredProject ? (
-        <Reveal as="section" className="roof-block" variant="firm">
-          <header className="roof-block__header">
-            <p className="roof-block__eyebrow">Project references</p>
-            <h2 className="roof-block__title">Proof from replacement, repair, and roofline support work</h2>
-            <p className="roof-block__description">
-              Homeowners usually decide faster once they can see the type of roof, condition issue, and finish level Blackridge is normally hired to handle.
-            </p>
-          </header>
-
-          <div className="roof-reference-deck">
-            <Reveal as="article" className="roof-reference-deck__feature" variant="firm">
-              <div className="roof-reference-deck__content">
-                <p className="roof-block__eyebrow">{featuredProject.subtitle}</p>
-                <h3>{featuredProject.title}</h3>
-                <p>{featuredProject.description}</p>
-                {featuredProject.facts?.length ? (
-                  <ul className="plain-list roof-chip-list">
-                    {featuredProject.facts.map((fact) => (
-                      <li key={fact}>{fact}</li>
-                    ))}
-                  </ul>
-                ) : null}
-                <div className="roof-command-deck__actions">
-                  <ButtonLink to={routes.gallery}>View projects</ButtonLink>
-                  <ButtonLink to={routes.reservations} variant="secondary">
-                    Request inspection
-                  </ButtonLink>
-                </div>
-              </div>
-              <figure className="roof-reference-deck__media">
-                <img
-                  alt={featuredProject.image.alt}
-                  loading="lazy"
-                  src={featuredProject.image.src}
-                  style={
-                    featuredProject.image.position
-                      ? { objectPosition: featuredProject.image.position }
-                      : undefined
-                  }
-                />
-              </figure>
-            </Reveal>
-
-            <div className="roof-reference-deck__stack">
-              {comparisonProjects.map((project, index) => (
-                <Reveal
-                  as="article"
-                  className="roof-reference-card"
-                  delay={80 + index * 55}
-                  key={project.title}
-                  variant="firm"
-                >
-                  <figure className="roof-reference-card__media">
-                    <img
-                      alt={project.image.alt}
-                      loading="lazy"
-                      src={project.image.src}
-                      style={project.image.position ? { objectPosition: project.image.position } : undefined}
-                    />
-                  </figure>
-                  <div className="roof-reference-card__body">
-                    <p className="roof-block__eyebrow">{project.subtitle}</p>
-                    <h3>{project.title}</h3>
-                    <p>{project.description}</p>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </Reveal>
-      ) : null}
-
-      {recentProjects.length ? (
-        <Reveal as="section" className="roof-block" variant="firm">
-          <header className="roof-block__header">
-            <p className="roof-block__eyebrow">Recent projects</p>
-            <h2 className="roof-block__title">Recent replacement scopes homeowners can compare against their own roof</h2>
-            <p className="roof-block__description">
-              Real contractor sites usually win trust by showing what the finished work looks like, where it was completed, and what system was actually installed.
-            </p>
-          </header>
-
-          <div className="roof-case-grid">
-            {recentProjects.map((project, index) => (
-              <Reveal
-                as="article"
-                className="roof-case-card"
-                delay={index * 55}
-                key={`${project.title}-${project.neighborhood}`}
-                variant="firm"
-              >
-                <figure className="roof-case-card__media">
-                  <img
-                    alt={project.image.alt}
-                    loading="lazy"
-                    src={project.image.src}
-                    style={project.image.position ? { objectPosition: project.image.position } : undefined}
-                  />
-                </figure>
-                <div className="roof-case-card__body">
-                  <p className="roof-block__eyebrow">{project.projectType}</p>
-                  <h3>{project.title}</h3>
-                  <p>{project.description}</p>
-                  <dl className="roof-case-card__details">
-                    <div>
-                      <dt>Neighbourhood</dt>
-                      <dd>{project.neighborhood}</dd>
-                    </div>
-                    <div>
-                      <dt>Materials used</dt>
-                      <dd>{project.materials.join(' / ')}</dd>
-                    </div>
-                  </dl>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </Reveal>
-      ) : null}
-
-      {(materialBrands.length || serviceAreas.length) ? (
-        <Reveal as="section" className="roof-block" variant="firm">
-          <div className="roof-trust-layout">
-            {materialBrands.length ? (
-              <section className="roof-trust-panel">
-                <header className="roof-block__header">
-                  <p className="roof-block__eyebrow">Materials & brands</p>
-                  <h2 className="roof-block__title">Installed with systems homeowners already recognize</h2>
-                  <p className="roof-block__description">
-                    We do not hide the material conversation. Brand, shingle line, and supporting components are part of how the scope gets priced and approved.
-                  </p>
-                </header>
-
-                <div className="roof-brand-badges">
-                  {materialBrands.map((brand, index) => (
-                    <Reveal
-                      as="article"
-                      className="roof-brand-badge"
-                      delay={index * 45}
-                      key={brand.name}
-                      variant="firm"
-                    >
-                      <div className="roof-brand-badge__mark" aria-hidden="true">
-                        {brand.name.slice(0, 1)}
-                      </div>
-                      <div className="roof-brand-badge__body">
-                        <h3>{brand.name}</h3>
-                        <p>{brand.note}</p>
-                      </div>
-                    </Reveal>
-                  ))}
-                </div>
-              </section>
-            ) : null}
-
-            {serviceAreas.length ? (
-              <section className="roof-trust-panel roof-trust-panel--map">
-                <header className="roof-block__header">
-                  <p className="roof-block__eyebrow">Service area map</p>
-                  <h2 className="roof-block__title">Primary service area for inspection and replacement work</h2>
-                </header>
-
-                <div className="roof-service-map">
-                  <div className="roof-service-map__canvas" aria-hidden="true">
-                    {serviceAreas.map((area) => (
-                      <span className="roof-service-map__pin" key={area.name}>
-                        {area.name}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="roof-service-map__list">
-                    {serviceAreas.map((area) => (
-                      <article className="roof-service-map__item" key={area.name}>
-                        <h3>{area.name}</h3>
-                        <p>{area.note}</p>
-                      </article>
-                    ))}
-                  </div>
-                </div>
-              </section>
-            ) : null}
-          </div>
-        </Reveal>
-      ) : null}
-
       {beforeAfter ? (
         <Reveal as="section" className="roof-block" variant="firm">
           <header className="roof-block__header">
@@ -426,7 +211,7 @@ export function HomePage() {
         </div>
 
         <div className="roof-visit-lane__steps">
-          {content.home.experience.points.map((point, index) => (
+          {content.home.experience.points.slice(0, 3).map((point, index) => (
             <Reveal
               as="article"
               className="roof-visit-step"
@@ -459,10 +244,8 @@ export function HomePage() {
       <Reveal as="section" className="roof-dispatch-band" variant="firm">
         <div className="roof-dispatch-band__copy">
           <p className="roof-block__eyebrow">Inspection request</p>
-          <h2 className="roof-block__title">Send the address, issue, and a few photos. We will tell you the cleanest next step.</h2>
-          <p className="roof-block__description">
-            Most requests move faster when the property address, the part of the roof or exterior causing concern, and current photos are included with the first message.
-          </p>
+          <h2 className="roof-block__title">Send the address, issue, and a few photos.</h2>
+          <p className="roof-block__description">We will confirm the cleanest next step after the first review.</p>
         </div>
         <div className="roof-dispatch-band__actions">
           <ButtonLink to={routes.reservations}>Request inspection</ButtonLink>
