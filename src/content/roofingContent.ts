@@ -32,15 +32,15 @@ export const roofingContent: DemoContent = {
   home: {
     hero: {
       eyebrow: 'Roofing & Exterior Protection | Toronto & Durham Region',
-      title: 'Roof repairs and replacements with clear answers before the crew ever starts.',
+      title: 'Roof repairs and replacements with clear answers first.',
       description:
-        'Blackridge handles active leaks, aging roofs, storm response, and roof-edge work for homeowners who want a direct inspection and a clear recommendation.',
+        'Blackridge handles leaks, aging roofs, storm response, and roof-edge work with a direct inspection and a clear recommendation.',
       primaryCta: 'Request inspection',
       secondaryCta: 'View services',
       signals: [
-        'Active leak calls, storm damage, and replacement planning',
+        'Leaks, storm damage, and replacement planning',
         'Photo-backed repair-versus-replacement guidance',
-        'Scheduling, cleanup, and closeout expectations confirmed up front',
+        'Scheduling and cleanup confirmed up front',
       ],
       image: {
         src: pexelsPhoto('31771166', 1800, 1200),
@@ -51,26 +51,22 @@ export const roofingContent: DemoContent = {
     highlights: [
       {
         title: 'Active leaks and storm calls',
-        description:
-          'When water is getting in or weather has lifted sections loose, the first job is isolating the failure point.',
+        description: 'The first job is isolating the failure point.',
       },
       {
         title: 'Replacement planning for aging roofs',
-        description:
-          'Older roofs get reviewed for condition, ventilation, flashing continuity, and replacement scope.',
+        description: 'Older roofs get reviewed for condition, ventilation, and scope.',
       },
       {
         title: 'Siding, fascia, and drainage follow-through',
-        description:
-          'Roof edge details, soffit, fascia, and eavestrough work are handled so the exterior looks complete.',
+        description: 'Roof-edge details and drainage work keep the exterior complete.',
       },
     ],
     featuredDishes: [
       {
         name: 'Roof replacement',
         course: 'Replacement scope',
-        description:
-          'Full tear-off replacement planned around decking, ventilation, and flashing continuity.',
+        description: 'Full tear-off replacement planned around decking, ventilation, and flashing.',
         image: {
           src: pexelsPhoto('18098286', 1400, 1000),
           alt: 'Two-storey house with a steep finished shingle roof under daylight',
@@ -80,8 +76,7 @@ export const roofingContent: DemoContent = {
       {
         name: 'Leak repair',
         course: 'Inspection-led repair',
-        description:
-          'Condition-based repair scopes for leaks, storm damage, and isolated failures.',
+        description: 'Condition-based repairs for leaks, storm damage, and isolated failures.',
         image: {
           src: pexelsPhoto('33404248', 1400, 1000),
           alt: 'Roofer inspecting a residential roof edge while checking condition details',
@@ -91,8 +86,7 @@ export const roofingContent: DemoContent = {
       {
         name: 'Roofline repair',
         course: 'Roofline support',
-        description:
-          'Roofline and exterior support work that protects the structure and improves drainage.',
+        description: 'Roofline support work that protects the structure and improves drainage.',
         image: {
           src: pexelsPhoto('34006744', 1400, 1000),
           alt: 'Worker installing gutter detail beneath a residential roof edge',
@@ -102,12 +96,11 @@ export const roofingContent: DemoContent = {
     ],
     experience: {
       title: 'What the inspection is meant to answer',
-      description:
-        'The first visit confirms condition, isolates weak points, and shows what is urgent and what can wait.',
+      description: 'The first visit confirms condition, weak points, and what is urgent.',
       points: [
-        'Roof condition, flashing details, penetrations, and drainage weak points are reviewed on site',
-        'Photos and notes are sent back with repair-versus-replacement guidance',
-        'Scheduling, property protection, and cleanup expectations are confirmed before the crew is booked',
+        'Roof condition, flashing details, penetrations, and drainage are reviewed on site.',
+        'Photos and notes come back with repair-versus-replacement guidance.',
+        'Scheduling, protection, and cleanup are confirmed before booking.',
       ],
       images: [
         {
@@ -125,7 +118,7 @@ export const roofingContent: DemoContent = {
     extras: {
       beforeAfter: {
         title: 'Weathered front slope to a cleaner roofline',
-        summary: 'A tired front slope with curling shingles, weak flashing, and gutter issues cleaned up into a tighter roofline.',
+        summary: 'A tired front slope with curling shingles and weak flashing tightened into a cleaner roofline.',
         bullets: ['Architectural shingles', 'New flashing and vent review', 'Soffit, fascia, and gutter cleanup'],
         before: {
           src: pexelsPhoto('36237047', 1200, 900),
@@ -142,11 +135,11 @@ export const roofingContent: DemoContent = {
   },
   menu: {
     intro:
-      'Blackridge handles inspection-led roofing and exterior work for homeowners dealing with active problems or aging systems.',
+      'Inspection-led roofing and exterior work for active problems or aging systems.',
     sections: [
       {
         title: 'Roof Inspections, Leak Tracing & Repairs',
-        note: 'Best fit for active water entry, storm concerns, and isolated failures.',
+        note: 'Best for active water entry, storm concerns, and isolated failures.',
         highlights: ['Active leaks', 'Storm damage', 'Photo-backed scope'],
         image: {
           src: pexelsPhoto('33404248', 1200, 900),
@@ -156,7 +149,7 @@ export const roofingContent: DemoContent = {
         items: [
           {
             name: 'Inspection & Condition Report',
-            description: 'On-site review of roof condition, flashing, penetrations, and drainage weak points.',
+            description: 'On-site review of roof condition, flashing, penetrations, and drainage.',
             price: 'From 295',
           },
           {
@@ -173,7 +166,7 @@ export const roofingContent: DemoContent = {
       },
       {
         title: 'Roof Replacements',
-        note: 'For roofs that are at the end of service life or failing across multiple sections.',
+        note: 'For roofs at the end of service life or failing across multiple sections.',
         highlights: ['Decking review', 'Ventilation corrections', 'Clean perimeter detailing'],
         image: {
           src: pexelsPhoto('31771166', 1200, 900),
@@ -200,7 +193,7 @@ export const roofingContent: DemoContent = {
       },
       {
         title: 'Siding, Soffit, Fascia & Eavestroughs',
-        note: 'Support work that protects the roofline and gets water off the house properly.',
+        note: 'Support work that protects the roofline and moves water off the house properly.',
         highlights: ['Siding repair', 'Roof edge detail work', 'Drainage fixes'],
         image: {
           src: pexelsPhoto('18350737', 1200, 900),
@@ -229,7 +222,7 @@ export const roofingContent: DemoContent = {
   },
   about: {
     intro:
-      'Blackridge is for homeowners who need a roofing and exterior contractor that can inspect seriously and explain the scope clearly.',
+      'Blackridge is for homeowners who need a roofing and exterior contractor that inspects carefully and explains the scope clearly.',
     story: [
       'We treat roofing as protection work first. That means understanding the failure point and surrounding roof condition before making recommendations.',
       'Material staging, property protection, cleanup, and homeowner communication are part of the standard.',
@@ -269,11 +262,11 @@ export const roofingContent: DemoContent = {
   },
   reservations: {
     intro:
-      'Request an inspection with the property address, what you are seeing, and whether the issue is active water entry, storm damage, age-related wear, or an exterior update.',
+      'Request an inspection with the property address, what you are seeing, and whether the issue is water entry, storm damage, age-related wear, or an exterior update.',
     policies: [
       'Inspection requests are usually reviewed within one business day.',
       'Urgent leak issues are prioritized when conditions and crew availability allow.',
-      'Repair-versus-replacement recommendations are documented with photos and supporting notes after inspection.',
+      'Repair-versus-replacement recommendations are documented with photos and notes after inspection.',
     ],
     channels: [
       {
@@ -295,7 +288,7 @@ export const roofingContent: DemoContent = {
   },
   gallery: {
     intro:
-      'Representative roofing and exterior references showing repair work, replacements, and roof-edge detailing.',
+      'Roofing and exterior references showing repair work, replacements, and roof-edge detailing.',
     collections: [
       {
         title: 'Full Roof Replacement on a Two-Storey Home',

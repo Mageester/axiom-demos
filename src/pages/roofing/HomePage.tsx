@@ -60,29 +60,11 @@ export function HomePage() {
         </aside>
       </Reveal>
 
-      <section className="roof-response-grid" aria-label="Common Blackridge calls">
-        {content.home.highlights.map((highlight, index) => (
-          <Reveal
-            as="article"
-            className="roof-response-card"
-            delay={index * 55}
-            key={highlight.title}
-            variant="firm"
-          >
-            <p className="roof-response-card__index">0{index + 1}</p>
-            <h2>{highlight.title}</h2>
-            <p>{highlight.description}</p>
-          </Reveal>
-        ))}
-      </section>
-
       <Reveal as="section" className="roof-block" variant="firm">
         <header className="roof-block__header">
           <p className="roof-block__eyebrow">Services</p>
-          <h2 className="roof-block__title">How the work is usually grouped on real jobs</h2>
-          <p className="roof-block__description">
-            Most calls fall into one of three buckets: active roof issues, replacement planning, or the exterior support work that finishes the roofline properly once the main scope is handled.
-          </p>
+          <h2 className="roof-block__title">Roof issues, replacements, and roof-edge work.</h2>
+          <p className="roof-block__description">Most calls fall into repair, replacement, or roof-edge support.</p>
         </header>
 
         <div className="roof-scope-ledger">
@@ -143,13 +125,6 @@ export function HomePage() {
                 <div className="roof-scope-card__body">
                   <p className="roof-block__eyebrow">{scope.note}</p>
                   <h3>{scope.title}</h3>
-                  {scope.highlights?.length ? (
-                    <ul className="plain-list roof-chip-list">
-                      {scope.highlights.map((highlight) => (
-                        <li key={highlight}>{highlight}</li>
-                      ))}
-                    </ul>
-                  ) : null}
                   <p>{scope.items[0]?.description}</p>
                 </div>
               </Reveal>
@@ -206,7 +181,7 @@ export function HomePage() {
       <Reveal as="section" className="roof-visit-lane" variant="firm">
         <div className="roof-visit-lane__copy">
           <p className="roof-block__eyebrow">Inspection path</p>
-          <h2 className="roof-block__title">What gets checked, priced, and confirmed before the crew is booked</h2>
+          <h2 className="roof-block__title">What is checked before work is booked</h2>
           <p className="roof-block__description">{content.home.experience.description}</p>
         </div>
 
@@ -234,9 +209,7 @@ export function HomePage() {
           </ul>
           <div className="roof-command-deck__brief-callout">
             <p className="roof-command-deck__brief-title">Best fit</p>
-            <p>
-              Strongest for homeowners dealing with an active roof issue, aging shingles, drainage failures, or a broader exterior reset where the next step needs to be clarified first.
-            </p>
+            <p>Best for active roof issues, aging shingles, drainage failures, or an exterior reset.</p>
           </div>
         </aside>
       </Reveal>
@@ -244,8 +217,8 @@ export function HomePage() {
       <Reveal as="section" className="roof-dispatch-band" variant="firm">
         <div className="roof-dispatch-band__copy">
           <p className="roof-block__eyebrow">Inspection request</p>
-          <h2 className="roof-block__title">Send the address, issue, and a few photos.</h2>
-          <p className="roof-block__description">We will confirm the cleanest next step after the first review.</p>
+          <h2 className="roof-block__title">Send the address, issue, and photos.</h2>
+          <p className="roof-block__description">We will confirm the next step after the first review.</p>
         </div>
         <div className="roof-dispatch-band__actions">
           <ButtonLink to={routes.reservations}>Request inspection</ButtonLink>
