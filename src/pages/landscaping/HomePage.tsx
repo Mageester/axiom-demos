@@ -8,7 +8,6 @@ export function HomePage() {
   const { content, routes } = useContext(DemoConfigContext)
   const featuredProject = content.home.extras?.projectGallery?.[0] ?? content.gallery.collections[0]
   const projectGrid = content.home.extras?.projectGallery?.slice(1, 3) ?? content.gallery.collections.slice(1, 3)
-  const companyStory = content.about.story.slice(0, 1)
   const quoteChannels = content.reservations.channels.slice(0, 2)
   const heroImage = content.home.hero.image ?? featuredProject?.image
   const beforeAfter = content.home.extras?.beforeAfter
@@ -205,37 +204,21 @@ export function HomePage() {
         </div>
       </Reveal>
 
-      <Reveal as="section" className="landscape-split-band" variant="organic">
-        <article className="landscape-split-band__story">
-          <p className="landscape-band__eyebrow">About Northline</p>
-          <h2>Outdoor-living work planned around the property.</h2>
-          <div className="landscape-split-band__story-copy">
-            {companyStory.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-          </div>
-          <ButtonLink to={routes.about} variant="quiet">
-            Learn about the company
-          </ButtonLink>
-        </article>
-
-        <aside className="landscape-split-band__quote">
+      <Reveal as="section" className="land-quote-band" variant="organic">
+        <div>
           <p className="landscape-band__eyebrow">Request a quote</p>
           <h2>Send the address, current photos, and the part of the yard you want priced.</h2>
-          <ul className="plain-list landscape-split-band__quote-list">
-            {quoteChannels.map((channel) => (
-              <li key={channel.label}>{channel.value}</li>
-            ))}
-          </ul>
-          <div className="landscape-split-band__quote-actions">
-            {quoteChannels.map((channel) => (
-              <ButtonAnchor href={channel.href} key={channel.label} variant="secondary">
-                {channel.label}
-              </ButtonAnchor>
-            ))}
-            <ButtonLink to={routes.reservations}>{content.home.hero.primaryCta}</ButtonLink>
-          </div>
-        </aside>
+          <p>We will confirm scope first and point you to the right next step.</p>
+        </div>
+        <div className="land-section-actions">
+          {quoteChannels.map((channel) => (
+            <ButtonAnchor href={channel.href} key={channel.label} variant="secondary">
+              {channel.label}
+            </ButtonAnchor>
+          ))}
+          <ButtonLink to={routes.reservations}>{content.home.hero.primaryCta}</ButtonLink>
+        </div>
+        <p className="land-quote-band__meta">Serving Toronto, Etobicoke, Mississauga, and Oakville</p>
       </Reveal>
     </>
   )

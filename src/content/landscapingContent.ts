@@ -34,13 +34,13 @@ export const landscapingContent: DemoContent = {
       eyebrow: 'Toronto landscaping and outdoor living',
       title: 'Patios, planting, and front-entry work that make the house feel cared for.',
       description:
-        'Northline handles patios, walkways, planting, lighting, curb appeal, and backyard outdoor-living work across Toronto and the west end.',
+        'Northline handles patios, walkways, planting, lighting, curb appeal, and backyard upgrades across Toronto and the west end.',
       primaryCta: 'Request a quote',
       secondaryCta: 'View projects',
       signals: [
-        'Patios, planting, lighting, and curb appeal',
-        'Current photos reviewed before a site visit',
-        'Residential projects across Toronto, Etobicoke, Mississauga, and Oakville',
+        'Patios, planting, lighting, curb appeal',
+        'Photos reviewed before a site visit',
+        'Toronto, Etobicoke, Mississauga, and Oakville',
       ],
       image: {
         src: pexelsPhoto('17240696', 1800, 1200),
@@ -51,11 +51,11 @@ export const landscapingContent: DemoContent = {
     highlights: [
       {
         title: 'Backyards that actually get used',
-        description: 'Stone and porcelain patios planned around furniture, access, and circulation.',
+        description: 'Patios planned around furniture, access, and circulation.',
       },
       {
         title: 'Front entries with better curb appeal',
-        description: 'Walkways, planting, and cleanup that make the approach to the house read sharper.',
+        description: 'Walkways and planting that sharpen the front of the house.',
       },
     ],
     featuredDishes: [
@@ -93,11 +93,11 @@ export const landscapingContent: DemoContent = {
     experience: {
       title: 'What the first steps usually look like',
       description:
-        'The first conversation is about the property, the part of the yard you want to improve, and whether the scope fits the way you want to use it.',
+        'The first conversation covers the property, the area that needs attention, and whether the scope fits.',
       points: [
-        'We start with the address, current photos, and the part of the property that needs attention',
-        'If the scope fits, we book a site visit to review grade, access, drainage, and finish level',
-        'You get a clear quote and practical next-step recommendation before anything is scheduled',
+        'Start with the address, current photos, and the area you want priced.',
+        'If it fits, we book a site visit to review access, grade, drainage, and finish level.',
+        'You get a clear quote and next step before anything is scheduled.',
       ],
       images: [
         {
@@ -178,12 +178,12 @@ export const landscapingContent: DemoContent = {
   },
   menu: {
     intro:
-      'Northline handles residential landscaping and outdoor-living work across Toronto and the west end.',
+      'Residential landscaping and outdoor-living work across Toronto and the west end.',
     sections: [
       {
         title: 'Patios, Walkways & Front Entries',
-        note: 'Hardscape work that sharpens access, seating, and curb appeal.',
-        highlights: ['Interlock and natural-stone patios', 'Front steps and entry walks', 'Backyard circulation and edging'],
+        note: 'Hardscape work that sharpens access and curb appeal.',
+        highlights: ['Interlock and natural-stone patios', 'Front entry and step work', 'Backyard circulation and edging'],
         image: {
           src: pexelsPhoto('17240696', 1200, 900),
           alt: 'Residential backyard patio with paving and seating area',
@@ -192,25 +192,25 @@ export const landscapingContent: DemoContent = {
         items: [
           {
             name: 'Interlock Patios & Seating Areas',
-            description: 'Base prep, edge restraint, and finish work sized for real furniture layouts.',
+            description: 'Base prep and finish work sized for real furniture layouts.',
             price: 'From 6,500',
           },
           {
             name: 'Front Walkways & Entry Steps',
-            description: 'Approach paths and entry upgrades that make the house read better from the street.',
+            description: 'Entry upgrades that make the house read better from the street.',
             price: 'From 4,800',
           },
           {
             name: 'Side-Yard Paths & Garden Connections',
-            description: 'Stone or paver connections that keep access clean between gate, yard, and patio.',
+            description: 'Stone connections that keep access clean between gate, yard, and patio.',
             price: 'From 3,900',
           },
         ],
       },
       {
         title: 'Planting, Sod & Yard Upgrades',
-        note: 'Softscape work that gives the property more structure and cleaner beds.',
-        highlights: ['Front-bed planting', 'Sod and grading touchups', 'Shrub, mulch, and border cleanup'],
+        note: 'Softscape work that adds structure and cleaner beds.',
+        highlights: ['Front-bed planting', 'Sod and grading touchups', 'Shrub and border cleanup'],
         image: {
           src: pexelsPhoto('33798594', 1200, 900),
           alt: 'Residential garden path with planting and a well-kept backyard setting',
@@ -237,7 +237,7 @@ export const landscapingContent: DemoContent = {
       {
         title: 'Lighting, Drainage & Seasonal Care',
         note: 'Supporting work that protects the finish and keeps the property looking cared for.',
-        highlights: ['Low-voltage lighting', 'Drainage corrections', 'Spring and fall cleanup'],
+        highlights: ['Low-voltage lighting', 'Drainage corrections', 'Seasonal cleanup'],
         image: {
           src: pexelsPhoto('35828688', 1200, 900),
           alt: 'Illuminated landscape path and garden lighting at dusk',
@@ -305,7 +305,7 @@ export const landscapingContent: DemoContent = {
   },
   reservations: {
     intro:
-      'Tell us what part of the property you want to improve, where you are located, and your timing.',
+      'Tell us what part of the property needs work, where you are, and your timing.',
     policies: [
       'Most quote requests are reviewed within one business day.',
       'If the property is in our service area, we confirm the next step before booking a visit.',

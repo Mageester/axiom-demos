@@ -6037,10 +6037,10 @@ body[data-demo-theme='landscaping'] .site-nav--service {
 }
 
 body[data-demo-theme='landscaping'] .site-brand {
-  background: linear-gradient(180deg, #1a1d17, #131611);
-  border: 1px solid #394236;
-  border-radius: 4px;
-  box-shadow: 0 12px 22px rgb(3 5 3 / 24%);
+  background: color-mix(in srgb, var(--color-surface) 94%, white);
+  border: 1px solid color-mix(in srgb, var(--color-border) 86%, white);
+  border-radius: 10px;
+  box-shadow: 0 8px 18px rgb(3 5 3 / 12%);
   min-width: 16.5rem;
   padding: 0.75rem 0.95rem;
 }
@@ -6070,13 +6070,13 @@ body[data-demo-theme='landscaping'] .site-brand__city {
 
 body[data-demo-theme='landscaping'] .site-nav__service-shell {
   align-items: center;
-  background: linear-gradient(180deg, #6d811f, #758b22);
-  border: 1px solid #7d9423;
-  border-radius: 0 4px 4px 0;
-  box-shadow: 0 12px 22px rgb(3 5 3 / 16%);
+  background: color-mix(in srgb, var(--color-surface) 92%, #d8e1c5 8%);
+  border: 1px solid color-mix(in srgb, var(--color-border) 84%, white);
+  border-radius: 0 10px 10px 0;
+  box-shadow: 0 8px 18px rgb(3 5 3 / 10%);
   margin-left: auto;
   min-height: 0;
-  padding: 0.2rem 0.45rem;
+  padding: 0.18rem 0.45rem;
 }
 
 body[data-demo-theme='landscaping'] .site-nav__service-shell .primary-nav {
@@ -6100,10 +6100,10 @@ body[data-demo-theme='landscaping'] .primary-nav__link--active {
 }
 
 body[data-demo-theme='landscaping'] .site-nav__service-shell .btn--primary {
-  background: #173924;
-  border-color: rgb(255 255 255 / 0.18);
-  border-radius: 6px;
-  box-shadow: 0 10px 20px rgb(6 13 8 / 18%);
+  background: linear-gradient(180deg, #8c9f47, #7b8f3d);
+  border-color: #a0b35a;
+  border-radius: 8px;
+  box-shadow: 0 10px 18px rgb(6 13 8 / 14%);
   color: #f4f1e7;
   min-height: 2.9rem;
   min-width: 7.2rem;
@@ -6111,35 +6111,35 @@ body[data-demo-theme='landscaping'] .site-nav__service-shell .btn--primary {
 }
 
 body[data-demo-theme='landscaping'] .site-nav__service-shell .btn--primary:hover {
-  background: #1f472e;
-  border-color: rgb(255 255 255 / 0.26);
+  background: linear-gradient(180deg, #95a94e, #839542);
+  border-color: #b3c56b;
 }
 
 body[data-demo-theme='landscaping'] .btn--primary {
-  background: linear-gradient(180deg, #809924, #6e8520);
-  border-color: #94ac33;
-  box-shadow: 0 14px 26px rgb(5 8 4 / 18%);
+  background: linear-gradient(180deg, #8fa44b, #7d9141);
+  border-color: #a9bd63;
+  box-shadow: 0 10px 18px rgb(5 8 4 / 12%);
   color: #17200d;
   font-weight: 700;
   text-transform: uppercase;
 }
 
 body[data-demo-theme='landscaping'] .btn--primary:hover {
-  background: linear-gradient(180deg, #8ea82d, #789121);
-  border-color: #b7cf4f;
-  box-shadow: 0 18px 30px rgb(5 8 4 / 22%);
+  background: linear-gradient(180deg, #9db253, #8a9d48);
+  border-color: #c3d07a;
+  box-shadow: 0 12px 20px rgb(5 8 4 / 14%);
 }
 
 body[data-demo-theme='landscaping'] .btn--secondary {
-  background: transparent;
-  border-color: #586752;
+  background: rgb(255 255 255 / 0.02);
+  border-color: #5f695d;
   color: #f0ecdf;
   text-transform: uppercase;
 }
 
 body[data-demo-theme='landscaping'] .btn--secondary:hover {
-  background: rgb(255 255 255 / 0.06);
-  border-color: #7f916b;
+  background: rgb(255 255 255 / 0.07);
+  border-color: #7c8a79;
 }
 
 body[data-demo-theme='landscaping'] .btn--quiet {
@@ -6214,6 +6214,12 @@ body[data-demo-theme='landscaping'] .policy-panel__subtle {
   color: #a7b48d;
 }
 
+body[data-demo-theme='landscaping'] .land-quote-band {
+  background: color-mix(in srgb, var(--color-surface) 96%, white);
+  border-color: color-mix(in srgb, var(--color-border) 86%, white);
+  box-shadow: 0 10px 22px rgb(4 6 4 / 10%);
+}
+
 body[data-demo-theme='landscaping'] .land-utility-hero__list li,
 body[data-demo-theme='landscaping'] .land-service-item,
 body[data-demo-theme='landscaping'] .land-note-panel__aside,
@@ -6241,16 +6247,8 @@ body[data-demo-theme='landscaping'] .form-status {
 }
 
 body[data-demo-theme='landscaping'] .site-footer--service {
-  background:
-    repeating-linear-gradient(
-      45deg,
-      rgb(255 255 255 / 0.015) 0,
-      rgb(255 255 255 / 0.015) 2px,
-      transparent 2px,
-      transparent 16px
-    ),
-    linear-gradient(180deg, #20241d, #171a16);
-  border-top-color: #42503d;
+  background: linear-gradient(180deg, #1e221c, #151812);
+  border-top-color: #445143;
   padding-top: var(--space-8);
 }
 
@@ -6342,8 +6340,8 @@ body[data-demo-theme='landscaping'] .mobile-primary-cta--service {
 
 .landscape-home-hero__overlay {
   background:
-    linear-gradient(90deg, rgb(14 16 12 / 78%) 0%, rgb(14 16 12 / 58%) 42%, rgb(14 16 12 / 24%) 70%, rgb(14 16 12 / 70%) 100%),
-    linear-gradient(180deg, rgb(14 16 12 / 28%), rgb(14 16 12 / 62%));
+    linear-gradient(90deg, rgb(14 16 12 / 68%) 0%, rgb(14 16 12 / 46%) 42%, rgb(14 16 12 / 18%) 70%, rgb(14 16 12 / 58%) 100%),
+    linear-gradient(180deg, rgb(14 16 12 / 20%), rgb(14 16 12 / 50%));
   inset: 0;
   position: absolute;
 }
@@ -6442,10 +6440,9 @@ body[data-demo-theme='landscaping'] .mobile-primary-cta--service {
 
 .landscape-home-hero__card,
 .landscape-standards-grid__card {
-  background: rgb(25 29 23 / 90%);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgb(255 255 255 / 0.08);
-  border-radius: 10px;
+  background: color-mix(in srgb, var(--color-surface) 96%, white);
+  border: 1px solid color-mix(in srgb, var(--color-border) 88%, white);
+  border-radius: 14px;
   display: grid;
   gap: var(--space-3);
   padding: var(--space-4);
@@ -6466,6 +6463,7 @@ body[data-demo-theme='landscaping'] .mobile-primary-cta--service {
 .landscape-home-hero__card h2 {
   font-size: clamp(1.35rem, 1.85vw, 1.9rem);
   line-height: 1.04;
+  text-shadow: none;
 }
 
 .landscape-home-hero__card p:last-child,
@@ -6514,10 +6512,10 @@ body[data-demo-theme='landscaping'] .mobile-primary-cta--service {
 .landscape-materials-process__process,
 .landscape-transformation,
 .landscape-season-card {
-  background: color-mix(in srgb, var(--color-surface) 95%, black);
-  border: 1px solid color-mix(in srgb, var(--color-border) 84%, black);
-  border-radius: 12px;
-  box-shadow: 0 14px 24px rgb(4 6 4 / 12%);
+  background: color-mix(in srgb, var(--color-surface) 97%, white);
+  border: 1px solid color-mix(in srgb, var(--color-border) 86%, white);
+  border-radius: 14px;
+  box-shadow: 0 10px 22px rgb(4 6 4 / 10%);
   overflow: hidden;
   transition:
     border-color 220ms ease,
@@ -6748,14 +6746,14 @@ body[data-demo-theme='landscaping'] .mobile-primary-cta--service {
 }
 
 .landscape-service-strip__card {
-  background: color-mix(in srgb, var(--color-surface) 95%, black);
-  border: 1px solid color-mix(in srgb, var(--color-border) 84%, black);
-  border-radius: 12px;
+  background: color-mix(in srgb, var(--color-surface) 97%, white);
+  border: 1px solid color-mix(in srgb, var(--color-border) 86%, white);
+  border-radius: 14px;
   overflow: hidden;
 }
 
 .landscape-service-strip__card--lead {
-  background: color-mix(in srgb, var(--color-surface) 91%, black);
+  background: color-mix(in srgb, var(--color-surface) 94%, white);
 }
 
 .landscape-service-strip__media {
@@ -6942,8 +6940,8 @@ body[data-demo-theme='landscaping'] .mobile-primary-cta--service {
 .landscape-split-band__story:hover,
 .landscape-split-band__quote:hover,
 .landscape-standards-grid__card:hover {
-  border-color: #6b7b55;
-  box-shadow: 0 16px 28px rgb(4 6 4 / 16%);
+  border-color: #758569;
+  box-shadow: 0 14px 24px rgb(4 6 4 / 12%);
   transform: translate3d(0, -2px, 0);
 }
 
