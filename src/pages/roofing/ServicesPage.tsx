@@ -1,106 +1,74 @@
 import { useContext } from 'react'
 import { DemoConfigContext } from '../../config/demoConfig'
-import { ButtonLink } from '../../components/ui/Button'
-import { Card } from '../../components/ui/Card'
-import { PageHero } from '../../components/ui/PageHero'
-import { Section } from '../../components/ui/Section'
+import { roofingDemoContent } from '../../content/roofingDemoContent'
+import { ButtonAnchor, ButtonLink } from '../../components/ui/Button'
+import { Reveal } from '../../components/ui/Reveal'
 
 export function ServicesPage() {
   const { content, routes } = useContext(DemoConfigContext)
-  const repairScope = content.menu.sections[0]
-  const replacementScope = content.menu.sections[1]
-  const supportScope = content.menu.sections[2]
-  const decisionCards = [
-    {
-      eyebrow: 'Repair-led',
-      title: repairScope?.title ?? 'Repair-led work',
-      description:
-        'Best when the failure point is isolated and the rest of the roof still has usable life.',
-    },
-    {
-      eyebrow: 'Replacement-led',
-      title: replacementScope?.title ?? 'Replacement-led work',
-      description:
-        'Best when wear is broad, the system is nearing the end of service life, or patching would only delay the real scope.',
-    },
-    {
-      eyebrow: 'Support work',
-      title: supportScope?.title ?? 'Support work',
-      description:
-        'Best when siding, soffit, fascia, or drainage details need to be handled alongside the roofline.',
-    },
-  ]
+  const { decisionGuide, hero, lanes } = roofingDemoContent.services
 
   return (
     <>
-      <PageHero
-        actions={
-          <>
+      <Reveal as="section" className="roof-route-hero" variant="firm">
+        <div className="roof-route-hero__copy">
+          <p className="roof-route-hero__eyebrow">{hero.eyebrow}</p>
+          <h1>{hero.title}</h1>
+          <p>{hero.description}</p>
+          <div className="roof-command-deck__actions">
             <ButtonLink to={routes.reservations}>Request inspection</ButtonLink>
-            <ButtonLink to={routes.gallery} variant="secondary">
-              View projects
-            </ButtonLink>
-          </>
-        }
-        className="roofing-hero"
-        description={content.menu.intro}
-        eyebrow="Services"
-        media={replacementScope?.image}
-        revealVariant="firm"
-        signals={[
-          'Inspections first',
-          'Repairs, replacements, and roof-edge work',
-          'Toronto & Durham Region',
-        ]}
-        title="Roofing services that are easier to sort out"
-      />
+            <ButtonAnchor href={content.brand.phoneHref} variant="secondary">
+              Call office
+            </ButtonAnchor>
+          </div>
+        </div>
+      </Reveal>
 
-      <Section
-        className="roofing-section roofing-section--services"
-        description="The first pass is meant to make the next step obvious, not to overload the homeowner with jargon."
-        eyebrow="Scope"
-        revealVariant="firm"
-        title="What the work usually turns into after the inspection"
-      >
-        <div className="card-grid card-grid--3 roofing-card-grid">
-          {content.menu.sections.map((section) => (
-            <Card
-              description={section.items[0]?.description}
-              image={section.image}
-              key={section.title}
-              meta={section.note}
-              title={section.title}
-            >
-              {section.highlights?.length ? (
-                <ul className="plain-list roofing-card-list">
-                  {section.highlights.map((highlight) => (
-                    <li key={highlight}>{highlight}</li>
+      <Reveal as="section" className="roof-block" variant="firm">
+        <div className="roof-block__header">
+          <p className="roof-block__eyebrow">Service lanes</p>
+          <h2 className="roof-block__title">The page is organized by problem type so homeowners can sort themselves fast.</h2>
+        </div>
+
+        <div className="roof-lane-stack">
+          {lanes.map((lane) => (
+            <article className="roof-lane-card" key={lane.title}>
+              {lane.image ? (
+                <figure className="roof-lane-card__media">
+                  <img
+                    alt={lane.image.alt}
+                    loading="lazy"
+                    src={lane.image.src}
+                    style={lane.image.position ? { objectPosition: lane.image.position } : undefined}
+                  />
+                </figure>
+              ) : null}
+              <div className="roof-lane-card__body">
+                <p className="roof-lane-card__label">{lane.label}</p>
+                <h3>{lane.title}</h3>
+                <p>{lane.description}</p>
+                <ul className="plain-list roof-lane-card__list">
+                  {lane.bullets.map((bullet) => (
+                    <li key={bullet}>{bullet}</li>
                   ))}
                 </ul>
-              ) : null}
-            </Card>
+              </div>
+            </article>
           ))}
         </div>
-      </Section>
+      </Reveal>
 
-      <Section
-        className="roofing-section roofing-section--decision"
-        description="When the roof is still serviceable, the job is usually a repair. When the wear is broad, the right answer is a replacement. Support scopes handle the edges that keep water moving off the home."
-        eyebrow="Decision guide"
-        revealVariant="firm"
-        title="What homeowners are usually deciding between"
-      >
-        <div className="roofing-decision-grid">
-          {decisionCards.map((card) => (
-            <Card
-              description={card.description}
-              key={card.title}
-              meta={card.eyebrow}
-              title={card.title}
-            />
-          ))}
+      <Reveal as="section" className="roof-decision-band" variant="firm">
+        <div>
+          <p className="roof-decision-band__eyebrow">Decision guide</p>
+          <h2>Repair, replace, or support the roofline based on the actual condition.</h2>
         </div>
-      </Section>
+        <ul className="plain-list roof-decision-band__list">
+          {decisionGuide.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </Reveal>
     </>
   )
 }

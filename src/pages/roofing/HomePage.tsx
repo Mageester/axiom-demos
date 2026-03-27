@@ -1,150 +1,147 @@
 import { useContext } from 'react'
 import { DemoConfigContext } from '../../config/demoConfig'
-import { BeforeAfterCompare } from '../../components/ui/BeforeAfterCompare'
+import { roofingDemoContent } from '../../content/roofingDemoContent'
 import { ButtonAnchor, ButtonLink } from '../../components/ui/Button'
-import { Card } from '../../components/ui/Card'
-import { PageHero } from '../../components/ui/PageHero'
-import { Section } from '../../components/ui/Section'
 import { Reveal } from '../../components/ui/Reveal'
 
 export function HomePage() {
   const { content, routes } = useContext(DemoConfigContext)
-  const serviceScopes = content.menu.sections
-  const inspectionSteps = [
-    {
-      label: '01',
-      title: 'Inspect',
-      description: content.home.experience.points[0],
-    },
-    {
-      label: '02',
-      title: 'Set scope',
-      description: content.home.experience.points[1],
-    },
-    {
-      label: '03',
-      title: 'Close out',
-      description: content.home.experience.points[2],
-    },
-  ]
-  const beforeAfter = content.home.extras?.beforeAfter
+  const { caseFile, ctaBand, hero, responseDeck, standards } = roofingDemoContent.home
 
   return (
     <>
-      <PageHero
-        actions={
-          <>
+      <Reveal as="section" className="roof-command-deck" variant="firm">
+        <div className="roof-command-deck__lead">
+          <p className="roof-command-deck__eyebrow">{hero.eyebrow}</p>
+          <h1 className="roof-command-deck__title">{hero.title}</h1>
+          <p className="roof-command-deck__description">{hero.description}</p>
+          <div className="roof-command-deck__actions">
             <ButtonLink size="lg" to={routes.reservations}>
-              {content.home.hero.primaryCta}
+              {hero.primaryCta}
             </ButtonLink>
             <ButtonAnchor size="lg" href={content.brand.phoneHref} variant="secondary">
+              {hero.secondaryCta}
+            </ButtonAnchor>
+          </div>
+          <ul className="plain-list roof-command-deck__signals">
+            {hero.signals.map((signal) => (
+              <li key={signal}>{signal}</li>
+            ))}
+          </ul>
+        </div>
+
+        <figure className="roof-command-deck__media">
+          <img
+            alt={hero.image.alt}
+            loading="eager"
+            src={hero.image.src}
+            style={hero.image.position ? { objectPosition: hero.image.position } : undefined}
+          />
+        </figure>
+
+        <div className="roof-command-deck__status">
+          <p className="roof-command-deck__status-label">Dispatch status</p>
+          <ul className="plain-list">
+            {hero.statusItems.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+          <div className="roof-command-deck__status-actions">
+            <ButtonAnchor href={content.brand.phoneHref} variant="secondary">
               Call office
             </ButtonAnchor>
-          </>
-        }
-        className="roofing-hero"
-        description={content.home.hero.description}
-        eyebrow={content.home.hero.eyebrow}
-        media={content.home.hero.image}
-        revealVariant="firm"
-        signals={content.home.hero.signals}
-        title={content.home.hero.title}
-      />
-
-      <Section
-        className="roofing-section roofing-section--services"
-        description="Use the first visit to confirm whether the issue is a repair, a replacement, or roof-edge support."
-        eyebrow="Services"
-        revealVariant="firm"
-        title="Roofing work organized by urgency and condition"
-      >
-        <div className="card-grid card-grid--3 roofing-card-grid">
-          {serviceScopes.map((scope) => (
-            <Card
-              description={scope.items[0]?.description}
-              image={scope.image}
-              key={scope.title}
-              meta={scope.note}
-              title={scope.title}
-            >
-              {scope.highlights?.length ? (
-                <ul className="plain-list roofing-card-list">
-                  {scope.highlights.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              ) : null}
-            </Card>
-          ))}
+          </div>
         </div>
-      </Section>
+      </Reveal>
 
-      <Section
-        className="roofing-section roofing-section--process"
-        description="The job stays tight when the first review, the scope, and the handoff all line up."
-        eyebrow="Process"
-        revealVariant="firm"
-        title="What happens from inspection to closeout"
-      >
-        <div className="roofing-step-grid">
-          {inspectionSteps.map((step) => (
-            <Reveal as="article" className="roofing-step-card" key={step.label} variant="firm">
-              <p className="roofing-step-card__label">{step.label}</p>
-              <h3>{step.title}</h3>
-              <p>{step.description}</p>
-            </Reveal>
-          ))}
+      <Reveal as="section" className="roof-block roof-block--services" variant="firm">
+        <div className="roof-block__header">
+          <p className="roof-block__eyebrow">Service lanes</p>
+          <h2 className="roof-block__title">Sort the issue first. Then decide the scope.</h2>
+          <p className="roof-block__description">
+            Blackridge is strongest when the homeowner needs the problem clarified quickly and the next step written clearly.
+          </p>
         </div>
-      </Section>
 
-      {beforeAfter ? (
-        <Section
-          className="roofing-section roofing-section--comparison"
-          description={beforeAfter.summary}
-          eyebrow="Before / after"
-          revealVariant="firm"
-          title={beforeAfter.title}
-        >
-          <div className="roofing-comparison">
-            <BeforeAfterCompare
-              after={beforeAfter.after}
-              before={beforeAfter.before}
-              className="roofing-comparison__compare"
-            />
-
-            <div className="roofing-comparison__aside">
-              <p className="roofing-comparison__eyebrow">What changed</p>
-              <ul className="plain-list roofing-comparison__list">
-                {beforeAfter.bullets.map((item) => (
-                  <li key={item}>{item}</li>
+        <div className="roof-scope-ledger">
+          {responseDeck.map((card) => (
+            <article className="roof-scope-card" key={card.title}>
+              <p className="roof-scope-card__label">{card.label}</p>
+              <h3>{card.title}</h3>
+              <p>{card.description}</p>
+              <ul className="plain-list roof-scope-card__list">
+                {card.bullets.map((bullet) => (
+                  <li key={bullet}>{bullet}</li>
                 ))}
               </ul>
-              <div className="roofing-comparison__actions">
-                <ButtonLink to={routes.reservations}>Request inspection</ButtonLink>
-                <ButtonLink to={routes.gallery} variant="secondary">
-                  View more work
-                </ButtonLink>
-              </div>
-            </div>
-          </div>
-        </Section>
-      ) : null}
+            </article>
+          ))}
+        </div>
+      </Reveal>
 
-      <Reveal as="section" className="roofing-cta-band" variant="firm">
-        <div className="roofing-cta-band__copy">
-          <p className="roofing-cta-band__eyebrow">Inspection request</p>
-          <h2>Send the address, the issue, and a few photos.</h2>
-          <p>We will confirm the next step after the first review.</p>
+      <Reveal as="section" className="roof-block" variant="firm">
+        <div className="roof-block__header">
+          <p className="roof-block__eyebrow">Operating standards</p>
+          <h2 className="roof-block__title">Operational trust beats decorative marketing.</h2>
         </div>
 
-        <div className="roofing-cta-band__actions">
-          <ButtonLink to={routes.reservations}>Request inspection</ButtonLink>
-          <ButtonAnchor href={content.brand.emailHref} variant="secondary">
+        <div className="roof-standard-grid">
+          {standards.map((item) => (
+            <article className="roof-standard-grid__card" key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </article>
+          ))}
+        </div>
+      </Reveal>
+
+      <Reveal as="section" className="roof-block roof-block--case" variant="firm">
+        <div className="roof-block__header">
+          <p className="roof-block__eyebrow">{caseFile.label}</p>
+          <h2 className="roof-block__title">{caseFile.title}</h2>
+          <p className="roof-block__description">{caseFile.description}</p>
+        </div>
+
+        <article className="roof-case-file">
+          <figure className="roof-case-file__media">
+            <img
+              alt={caseFile.image.alt}
+              loading="lazy"
+              src={caseFile.image.src}
+              style={caseFile.image.position ? { objectPosition: caseFile.image.position } : undefined}
+            />
+          </figure>
+          <div className="roof-case-file__body">
+            <p className="roof-case-file__label">What closed the confidence gap</p>
+            <ul className="plain-list roof-case-file__list">
+              {caseFile.outcomes.map((outcome) => (
+                <li key={outcome}>{outcome}</li>
+              ))}
+            </ul>
+            <div className="roof-command-deck__actions">
+              <ButtonLink to={routes.reservations}>Request inspection</ButtonLink>
+              <ButtonLink to={routes.gallery} variant="secondary">
+                View more references
+              </ButtonLink>
+            </div>
+          </div>
+        </article>
+      </Reveal>
+
+      <Reveal as="section" className="roof-dispatch-band" variant="firm">
+        <div>
+          <p className="roof-dispatch-band__eyebrow">Inspection request</p>
+          <h2>{ctaBand.title}</h2>
+          <p>{ctaBand.description}</p>
+        </div>
+        <div className="roof-dispatch-band__actions">
+          <ButtonLink size="lg" to={routes.reservations}>
+            Request inspection
+          </ButtonLink>
+          <ButtonAnchor size="lg" href={content.brand.emailHref} variant="secondary">
             Email photos
           </ButtonAnchor>
         </div>
-
-        <p className="roofing-cta-band__meta">Serving Toronto, Scarborough, Pickering, Ajax, and Whitby</p>
       </Reveal>
     </>
   )

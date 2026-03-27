@@ -1,128 +1,108 @@
 import { useContext } from 'react'
 import { DemoConfigContext } from '../../config/demoConfig'
-import { LandscapingPageHeader } from '../../components/landscaping/LandscapingPageHeader'
-import { ButtonLink } from '../../components/ui/Button'
-import { Section } from '../../components/ui/Section'
+import { landscapingDemoContent } from '../../content/landscapingDemoContent'
+import { ButtonAnchor, ButtonLink } from '../../components/ui/Button'
+import { Reveal } from '../../components/ui/Reveal'
 
 export function ServicesPage() {
   const { content, routes } = useContext(DemoConfigContext)
+  const { guidance, hero, scopes } = landscapingDemoContent.services
 
   return (
     <>
-      <LandscapingPageHeader
-        actions={
-          <>
+      <Reveal as="section" className="land-route-hero" variant="organic">
+        <div className="land-route-hero__copy">
+          <p className="land-route-hero__eyebrow">{hero.eyebrow}</p>
+          <h1>{hero.title}</h1>
+          <p>{hero.description}</p>
+          <ul className="plain-list land-route-hero__rail">
+            {hero.rail.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+          <div className="land-block__actions">
             <ButtonLink to={routes.reservations}>Request a quote</ButtonLink>
             <ButtonLink to={routes.gallery} variant="secondary">
               View projects
             </ButtonLink>
-          </>
-        }
-        description={content.menu.intro}
-        eyebrow="Services"
-        media={content.menu.sections[1]?.image}
-        title="Patios, planting, lighting, and front-yard work for Toronto homes"
-        utilityItems={[
-          'Patios, front entries, and backyard upgrades',
-          'Planting, lighting, and seasonal care',
-          'Residential projects across Toronto and the west end',
-        ]}
-        utilityLabel="Most requested"
-        utilityMeta={['Quotes start with the address, current photos, and the part of the yard you want priced.']}
-        utilityTitle="The work Northline prices most often"
-      />
+          </div>
+        </div>
 
-      <Section
-        description="Most quote requests land in one of these service groups, with scope and materials adjusted around how the property is used."
-        eyebrow="Services"
-        title="What homeowners usually ask us to price"
-      >
-        <div className="land-service-sections">
-          {content.menu.sections.map((section, index) => (
-            <section
-              className={`land-service-section ${index % 2 === 1 ? 'land-service-section--reverse' : ''}`}
-              key={section.title}
+        <figure className="land-route-hero__media">
+          <img
+            alt={hero.image.alt}
+            loading="eager"
+            src={hero.image.src}
+            style={hero.image.position ? { objectPosition: hero.image.position } : undefined}
+          />
+        </figure>
+      </Reveal>
+
+      <Reveal as="section" className="land-block" variant="organic">
+        <div className="land-block__header">
+          <p className="land-block__eyebrow">Main scope lanes</p>
+          <h2>Each scope is defined by the kind of property shift the homeowner wants.</h2>
+        </div>
+
+        <div className="land-scope-stack">
+          {scopes.map((scope, index) => (
+            <article
+              className={`land-scope-card ${index % 2 === 1 ? 'land-scope-card--reverse' : ''}`}
+              key={scope.title}
             >
-              {section.image ? (
-                <figure className="land-service-section__media">
-                  <img
-                    alt={section.image.alt}
-                    loading="lazy"
-                    src={section.image.src}
-                    style={
-                      section.image.position
-                        ? { objectPosition: section.image.position }
-                        : undefined
-                    }
-                  />
-                </figure>
-              ) : null}
-
-              <div className="land-service-section__content">
-                <header className="land-service-section__header">
-                  <p className="land-service-section__eyebrow">{section.note}</p>
-                  <h2>{section.title}</h2>
-                  {section.highlights?.length ? (
-                    <ul className="plain-list land-service-highlights">
-                      {section.highlights.map((highlight) => (
-                        <li key={highlight}>{highlight}</li>
+              <figure className="land-scope-card__media">
+                <img
+                  alt={scope.image.alt}
+                  loading="lazy"
+                  src={scope.image.src}
+                  style={scope.image.position ? { objectPosition: scope.image.position } : undefined}
+                />
+              </figure>
+              <div className="land-scope-card__body">
+                <p className="land-scope-card__label">{scope.label}</p>
+                <h3>{scope.title}</h3>
+                <p>{scope.description}</p>
+                <div className="land-scope-card__lists">
+                  <div>
+                    <p className="land-scope-card__list-label">Usually includes</p>
+                    <ul className="plain-list">
+                      {scope.outcomes.map((item) => (
+                        <li key={item}>{item}</li>
                       ))}
                     </ul>
-                  ) : null}
-                </header>
-
-                <ul className="land-service-list">
-                  {section.items.map((item) => (
-                    <li className="land-service-item" key={item.name}>
-                      <div className="land-service-item__header">
-                        <h3>{item.name}</h3>
-                        <span className="land-service-item__meta">{item.price}</span>
-                      </div>
-                      <p>{item.description}</p>
-                    </li>
-                  ))}
-                </ul>
+                  </div>
+                  <div>
+                    <p className="land-scope-card__list-label">Northline focus</p>
+                    <ul className="plain-list">
+                      {scope.inclusions.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
               </div>
-            </section>
+            </article>
           ))}
         </div>
-      </Section>
+      </Reveal>
 
-      <Section
-        description="Northline is strongest on residential projects where the finished result, site handling, and long-term use matter more than a rushed patch job."
-        eyebrow="Fit"
-        title="The kind of landscaping work that fits best"
-      >
-        <div className="land-fit-grid">
-          <article className="land-fit-panel">
-            <h3>Property upgrade, not quick patchwork</h3>
-            <p>
-              Best for homeowners improving the front approach, backyard living area,
-              or full property composition rather than looking for the cheapest short-term fix.
-            </p>
-          </article>
-          <article className="land-fit-panel">
-            <h3>Clear scope and realistic timing</h3>
-            <p>
-              The strongest projects start with a defined priority, a known service area,
-              and a practical completion window we can plan around properly.
-            </p>
-          </article>
-          <article className="land-fit-panel">
-            <h3>Finish quality matters</h3>
-            <p>
-              This is for homeowners who care how the work reads from the street,
-              how it performs in use, and how the site is handled during the build.
-            </p>
-          </article>
+      <Reveal as="section" className="land-guidance-band" variant="organic">
+        <div>
+          <p className="land-guidance-band__eyebrow">Fit guidance</p>
+          <h2>Northline is strongest when the finished property matters more than a fast patch.</h2>
         </div>
-        <div className="land-section-actions">
-          <ButtonLink to={routes.reservations}>Start your quote</ButtonLink>
-          <ButtonLink to={routes.contact} variant="secondary">
-            Contact office
-          </ButtonLink>
+        <ul className="plain-list land-guidance-band__list">
+          {guidance.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+        <div className="land-guidance-band__actions">
+          <ButtonLink to={routes.reservations}>Start quote review</ButtonLink>
+          <ButtonAnchor href={content.brand.phoneHref} variant="secondary">
+            Call quote desk
+          </ButtonAnchor>
         </div>
-      </Section>
+      </Reveal>
     </>
   )
 }

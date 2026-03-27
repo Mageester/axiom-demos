@@ -1,52 +1,54 @@
 import { useContext } from 'react'
 import { DemoConfigContext } from '../../config/demoConfig'
-import { LandscapingPageHeader } from '../../components/landscaping/LandscapingPageHeader'
+import { landscapingDemoContent } from '../../content/landscapingDemoContent'
 import { ButtonAnchor, ButtonLink } from '../../components/ui/Button'
-import { Section } from '../../components/ui/Section'
+import { Reveal } from '../../components/ui/Reveal'
 
 function getActionLabel(label: string) {
   const normalized = label.toLowerCase()
-  if (normalized.includes('call')) return 'Call for a quote'
-  if (normalized.includes('email')) return 'Email a quote request'
-  if (normalized.includes('map') || normalized.includes('service area') || normalized.includes('office')) {
-    return 'View map'
-  }
-  return 'Open'
+  if (normalized.includes('call')) return 'Call now'
+  if (normalized.includes('email')) return 'Email quote desk'
+  return 'Open map'
 }
 
 export function ContactPage() {
   const { content, routes } = useContext(DemoConfigContext)
+  const { checklist, hero, responseCards } = landscapingDemoContent.contact
 
   return (
     <>
-      <LandscapingPageHeader
-        actions={
-          <>
-            <ButtonAnchor href={content.brand.phoneHref} variant="secondary">
-              Call for a quote
-            </ButtonAnchor>
-            <ButtonLink to={routes.reservations}>Request a quote</ButtonLink>
-          </>
-        }
-        description={content.contact.intro}
-        eyebrow="Contact"
-        media={content.gallery.collections[2]?.image}
-        title="Talk with us about the yard and the work you want priced"
-        utilityItems={['Service area reviewed first', 'Quote replies within one business day', 'On-site visits booked after review']}
-        utilityLabel="Direct contact"
-        utilityMeta={['If you already know the address and the area that needs work, include both in the first message.']}
-        utilityTitle="Best first contact for pricing and scope"
-      />
+      <Reveal as="section" className="land-route-hero land-route-hero--contact" variant="organic">
+        <div className="land-route-hero__copy">
+          <p className="land-route-hero__eyebrow">{hero.eyebrow}</p>
+          <h1>{hero.title}</h1>
+          <p>{hero.description}</p>
+          <div className="land-block__actions">
+            <ButtonAnchor href={content.brand.phoneHref}>Call quote desk</ButtonAnchor>
+            <ButtonLink to={routes.reservations} variant="secondary">
+              Request a quote
+            </ButtonLink>
+          </div>
+        </div>
+        <figure className="land-route-hero__media">
+          <img
+            alt={hero.image.alt}
+            loading="eager"
+            src={hero.image.src}
+            style={hero.image.position ? { objectPosition: hero.image.position } : undefined}
+          />
+        </figure>
+      </Reveal>
 
-      <Section
-        description="Use the contact method that works best for you. If you already know the property address and the type of work you want, include that right away."
-        eyebrow="Direct contact"
-        title="Call, email, or send the property details"
-      >
+      <Reveal as="section" className="land-block" variant="organic">
+        <div className="land-block__header">
+          <p className="land-block__eyebrow">Direct channels</p>
+          <h2>Use the contact method that matches how far along the project already is.</h2>
+        </div>
+
         <div className="land-contact-grid">
           {content.contact.details.map((detail) => (
-            <article className="land-contact-panel" key={detail.label}>
-              <p className="land-contact-panel__eyebrow">{detail.label}</p>
+            <article className="land-contact-grid__card" key={detail.label}>
+              <p className="land-contact-grid__label">{detail.label}</p>
               <h3>{detail.value}</h3>
               {detail.href ? (
                 <ButtonAnchor href={detail.href} variant="secondary">
@@ -56,34 +58,37 @@ export function ContactPage() {
             </article>
           ))}
         </div>
-      </Section>
+      </Reveal>
 
-      <Section
-        description="A strong first inquiry usually includes the property address, the area you want to improve, and any timing constraints."
-        eyebrow="Before you reach out"
-        title="What helps us price it faster"
-      >
-        <div className="land-note-panel land-note-panel--split">
-          <ul>
-            {content.contact.notes.map((note) => (
-              <li key={note}>{note}</li>
+      <Reveal as="section" className="land-block" variant="organic">
+        <div className="land-contact-guidance">
+          <div>
+            <p className="land-block__eyebrow">Before you reach out</p>
+            <h2>Contact goes faster when the first message is specific.</h2>
+            <ul className="plain-list land-contact-guidance__list">
+              {checklist.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="land-contact-guidance__cards">
+            {responseCards.map((card) => (
+              <article className="land-contact-guidance__card" key={card.title}>
+                <h3>{card.title}</h3>
+                <p>{card.description}</p>
+              </article>
             ))}
-          </ul>
-          <div className="land-note-panel__aside">
-            <p className="land-note-panel__eyebrow">Best fit</p>
-            <p>
-              Northline is strongest on residential landscaping projects in Toronto and the west end where patios,
-              planting, front-entry work, and overall finish quality matter.
-            </p>
-            <div className="land-section-actions">
-              <ButtonLink to={routes.reservations}>Start your quote</ButtonLink>
-              <ButtonAnchor href={content.brand.phoneHref} variant="secondary">
-                Call {content.brand.phone}
-              </ButtonAnchor>
-            </div>
           </div>
         </div>
-      </Section>
+
+        <div className="land-block__actions">
+          <ButtonLink to={routes.reservations}>Start quote request</ButtonLink>
+          <ButtonAnchor href={content.brand.phoneHref} variant="secondary">
+            Call {content.brand.phone}
+          </ButtonAnchor>
+        </div>
+      </Reveal>
     </>
   )
 }

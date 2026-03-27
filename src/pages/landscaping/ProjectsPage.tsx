@@ -1,134 +1,98 @@
 import { useContext } from 'react'
 import { DemoConfigContext } from '../../config/demoConfig'
-import { LandscapingPageHeader } from '../../components/landscaping/LandscapingPageHeader'
+import { landscapingDemoContent } from '../../content/landscapingDemoContent'
 import { ButtonLink } from '../../components/ui/Button'
-import { Section } from '../../components/ui/Section'
+import { Reveal } from '../../components/ui/Reveal'
 
 export function ProjectsPage() {
-  const { content, routes } = useContext(DemoConfigContext)
-  const featuredProject = content.gallery.collections[0]
-  const remainingProjects = content.gallery.collections.slice(1)
+  const { routes } = useContext(DemoConfigContext)
+  const { cases, featuredCase, hero } = landscapingDemoContent.projects
 
   return (
     <>
-      <LandscapingPageHeader
-        actions={
-          <>
-            <ButtonLink to={routes.reservations}>Request a quote</ButtonLink>
+      <Reveal as="section" className="land-route-hero land-route-hero--projects" variant="organic">
+        <div className="land-route-hero__copy">
+          <p className="land-route-hero__eyebrow">{hero.eyebrow}</p>
+          <h1>{hero.title}</h1>
+          <p>{hero.description}</p>
+          <div className="land-block__actions">
+            <ButtonLink to={routes.reservations}>Request pricing</ButtonLink>
             <ButtonLink to={routes.menu} variant="secondary">
               Review services
             </ButtonLink>
-          </>
-        }
-        description={content.gallery.intro}
-        eyebrow="Projects"
-        media={featuredProject?.image}
-        title="Patio, front-entry, and backyard projects across Toronto homes"
-        utilityItems={['Patios and walkways', 'Front-yard upgrades', 'Planting and lighting']}
-        utilityLabel="Project scope"
-        utilityMeta={['Look here first if you want to judge finish level, property type, and the kind of jobs Northline usually handles.']}
-        utilityTitle="Proof before promises"
-      />
+          </div>
+        </div>
+      </Reveal>
 
-      {featuredProject ? (
-        <Section
-          description="A representative Northline project showing the kind of finish quality, layout planning, and day-to-day use the company is usually hired to improve."
-          eyebrow="Featured project"
-          title={featuredProject.title}
-        >
-          <article className="land-feature-project">
-            <figure className="land-feature-project__media">
-              <img
-                alt={featuredProject.image.alt}
-                loading="lazy"
-                src={featuredProject.image.src}
-                style={
-                  featuredProject.image.position
-                    ? { objectPosition: featuredProject.image.position }
-                    : undefined
-                }
-              />
-            </figure>
-            <div className="land-feature-project__body">
-              <p className="land-feature-project__meta">{featuredProject.subtitle}</p>
-              <p>{featuredProject.description}</p>
-              {featuredProject.facts?.length ? (
-                <ul className="plain-list land-inline-facts land-inline-facts--project">
-                  {featuredProject.facts.map((fact) => (
-                    <li key={fact}>{fact}</li>
-                  ))}
-                </ul>
-              ) : null}
-              <div className="land-section-actions land-section-actions--proof">
-                <ButtonLink size="md" to={routes.reservations}>
-                  Request pricing
-                </ButtonLink>
-                <ButtonLink size="md" to={routes.contact} variant="secondary">
-                  Contact office
-                </ButtonLink>
-              </div>
-            </div>
-          </article>
-        </Section>
-      ) : null}
+      <Reveal as="section" className="land-block" variant="organic">
+        <div className="land-block__header">
+          <p className="land-block__eyebrow">{featuredCase.label}</p>
+          <h2>{featuredCase.title}</h2>
+          <p>{featuredCase.description}</p>
+        </div>
 
-      <Section
-        description="Additional project examples showing the range of patio, entry, lighting, and planting work Northline handles for residential properties."
-        eyebrow="Other recent jobs"
-        title="More recent work"
-      >
+        <article className="land-case-study">
+          <figure className="land-case-study__media">
+            <img
+              alt={featuredCase.image.alt}
+              loading="lazy"
+              src={featuredCase.image.src}
+              style={featuredCase.image.position ? { objectPosition: featuredCase.image.position } : undefined}
+            />
+          </figure>
+          <div className="land-case-study__body">
+            <ul className="plain-list land-case-study__facts">
+              {featuredCase.facts.map((fact) => (
+                <li key={fact}>{fact}</li>
+              ))}
+            </ul>
+            <ul className="plain-list land-case-study__notes">
+              {featuredCase.notes.map((note) => (
+                <li key={note}>{note}</li>
+              ))}
+            </ul>
+          </div>
+        </article>
+      </Reveal>
+
+      <Reveal as="section" className="land-block" variant="organic">
+        <div className="land-block__header">
+          <p className="land-block__eyebrow">More project stories</p>
+          <h2>Selected references that show how Northline thinks about space, not just scope.</h2>
+        </div>
+
         <div className="land-project-grid">
-          {remainingProjects.map((project, index) => (
-            <article
-              className={`land-project-card ${index === 0 ? 'land-project-card--wide' : ''}`}
-              key={project.title}
-            >
-              <figure className="land-project-card__media">
+          {cases.map((story) => (
+            <article className="land-project-grid__card" key={story.title}>
+              <figure className="land-project-grid__media">
                 <img
-                  alt={project.image.alt}
+                  alt={story.image.alt}
                   loading="lazy"
-                  src={project.image.src}
-                  style={project.image.position ? { objectPosition: project.image.position } : undefined}
+                  src={story.image.src}
+                  style={story.image.position ? { objectPosition: story.image.position } : undefined}
                 />
               </figure>
-              <div className="land-project-card__body">
-                <p className="land-project-card__eyebrow">{project.subtitle}</p>
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
-                {project.facts?.length ? (
-                  <ul className="plain-list land-inline-facts land-inline-facts--compact">
-                    {project.facts.map((fact) => (
-                      <li key={fact}>{fact}</li>
-                    ))}
-                  </ul>
-                ) : null}
+              <div className="land-project-grid__body">
+                <p className="land-project-grid__label">{story.label}</p>
+                <h3>{story.title}</h3>
+                <p>{story.description}</p>
+                <ul className="plain-list land-project-grid__details">
+                  {story.details.map((detail) => (
+                    <li key={detail}>{detail}</li>
+                  ))}
+                </ul>
               </div>
             </article>
           ))}
         </div>
-      </Section>
 
-      <Section
-        description="If your property goals line up with this kind of scope and finish, the next step is a quick quote review before any site visit is booked."
-        eyebrow="Next step"
-        title="Request pricing for similar work"
-      >
-        <div className="land-quote-band">
-          <div>
-            <p>
-              Share the property address, the part of the yard you want to improve,
-              and any timing constraints. We will point you to the right next step first.
-            </p>
-          </div>
-          <div className="land-section-actions">
-            <ButtonLink to={routes.reservations}>Request a quote</ButtonLink>
-            <ButtonLink to={routes.menu} variant="secondary">
-              Review services
-            </ButtonLink>
-          </div>
-          <p className="land-quote-band__meta">Serving Toronto, Etobicoke, Mississauga, and Oakville</p>
+        <div className="land-block__actions">
+          <ButtonLink to={routes.reservations}>Request a quote</ButtonLink>
+          <ButtonLink to={routes.contact} variant="secondary">
+            Contact office
+          </ButtonLink>
         </div>
-      </Section>
+      </Reveal>
     </>
   )
 }

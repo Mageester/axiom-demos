@@ -1,58 +1,76 @@
 import { useContext } from 'react'
 import { DemoConfigContext } from '../../config/demoConfig'
+import { roofingDemoContent } from '../../content/roofingDemoContent'
 import { ButtonLink } from '../../components/ui/Button'
-import { Card } from '../../components/ui/Card'
-import { PageHero } from '../../components/ui/PageHero'
-import { Section } from '../../components/ui/Section'
+import { Reveal } from '../../components/ui/Reveal'
 
 export function AboutPage() {
-  const { content, routes } = useContext(DemoConfigContext)
-  const visual = content.gallery.collections[2]
+  const { routes } = useContext(DemoConfigContext)
+  const { hero, operations, pillars, team } = roofingDemoContent.about
 
   return (
     <>
-      <PageHero
-        actions={<ButtonLink to={routes.reservations}>Request inspection</ButtonLink>}
-        className="roofing-hero"
-        description={content.about.intro}
-        eyebrow="About"
-        media={visual?.image}
-        revealVariant="firm"
-        signals={[
-          'Inspection-led scope review',
-          'Property protection and cleanup standards',
-          'Roofing, roof-edge, and drainage work',
-        ]}
-        title="A roofing contractor built around clearer scope and tighter site standards"
-      />
+      <Reveal as="section" className="roof-route-hero" variant="firm">
+        <div className="roof-route-hero__copy">
+          <p className="roof-route-hero__eyebrow">{hero.eyebrow}</p>
+          <h1>{hero.title}</h1>
+          <p>{hero.description}</p>
+          <div className="roof-command-deck__actions">
+            <ButtonLink to={routes.reservations}>Request inspection</ButtonLink>
+            <ButtonLink to={routes.contact} variant="secondary">
+              Contact office
+            </ButtonLink>
+          </div>
+        </div>
+      </Reveal>
 
-      <Section
-        className="roofing-section roofing-section--values"
-        description="These are the operating standards the company is meant to be known for."
-        eyebrow="Operating standards"
-        revealVariant="firm"
-        title="What Blackridge is trying to do well"
-      >
-        <div className="card-grid card-grid--3 roofing-card-grid">
-          {content.about.values.map((value) => (
-            <Card description={value.description} key={value.title} title={value.title} />
+      <Reveal as="section" className="roof-block" variant="firm">
+        <div className="roof-block__header">
+          <p className="roof-block__eyebrow">Pillars</p>
+          <h2 className="roof-block__title">The trust story is operational, not decorative.</h2>
+        </div>
+
+        <div className="roof-standard-grid">
+          {pillars.map((pillar) => (
+            <article className="roof-standard-grid__card" key={pillar.title}>
+              <h3>{pillar.title}</h3>
+              <p>{pillar.description}</p>
+            </article>
           ))}
         </div>
-      </Section>
+      </Reveal>
 
-      <Section
-        className="roofing-section roofing-section--team"
-        description="Clear roles keep the inspection, scheduling, and site handoff from becoming a mess."
-        eyebrow="Team"
-        revealVariant="firm"
-        title="Inspection, coordination, and site operations"
-      >
-        <div className="card-grid card-grid--3 roofing-card-grid">
-          {content.about.team.map((member) => (
-            <Card description={member.bio} key={member.name} meta={member.role} title={member.name} />
+      <Reveal as="section" className="roof-operations-band" variant="firm">
+        <div>
+          <p className="roof-operations-band__eyebrow">How the work moves</p>
+          <h2>Blackridge should feel controlled from triage through closeout.</h2>
+        </div>
+        <div className="roof-operations-band__steps">
+          {operations.map((step, index) => (
+            <article className="roof-operations-band__step" key={step}>
+              <span>0{index + 1}</span>
+              <p>{step}</p>
+            </article>
           ))}
         </div>
-      </Section>
+      </Reveal>
+
+      <Reveal as="section" className="roof-block" variant="firm">
+        <div className="roof-block__header">
+          <p className="roof-block__eyebrow">Team</p>
+          <h2 className="roof-block__title">Clear roles make the inspection and execution feel credible.</h2>
+        </div>
+
+        <div className="roof-team-grid">
+          {team.map((member) => (
+            <article className="roof-team-grid__card" key={member.name}>
+              <p className="roof-team-grid__role">{member.role}</p>
+              <h3>{member.name}</h3>
+              <p>{member.description}</p>
+            </article>
+          ))}
+        </div>
+      </Reveal>
     </>
   )
 }

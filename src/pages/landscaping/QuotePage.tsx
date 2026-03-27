@@ -1,8 +1,8 @@
 import { type FormEvent, useContext, useState } from 'react'
 import { DemoConfigContext } from '../../config/demoConfig'
-import { LandscapingPageHeader } from '../../components/landscaping/LandscapingPageHeader'
+import { landscapingDemoContent } from '../../content/landscapingDemoContent'
 import { Button, ButtonAnchor } from '../../components/ui/Button'
-import { Section } from '../../components/ui/Section'
+import { Reveal } from '../../components/ui/Reveal'
 
 const timelineOptions = [
   'Within 30 days',
@@ -11,25 +11,19 @@ const timelineOptions = [
   'Flexible planning horizon',
 ]
 
-const budgetOptions = [
-  'Under $7k',
-  '$7k to $15k',
-  '$15k to $30k',
-  '$30k+',
-  'Need guidance',
-]
+const budgetOptions = ['Under $7k', '$7k to $15k', '$15k to $30k', '$30k+', 'Need guidance']
 
 function getChannelAction(label: string) {
   const normalized = label.toLowerCase()
-  if (normalized.includes('call')) return 'Call for a quote'
-  if (normalized.includes('email')) return 'Email quote request'
-  if (normalized.includes('map')) return 'View map'
-  return 'Open'
+  if (normalized.includes('call')) return 'Call quote desk'
+  if (normalized.includes('email')) return 'Email request'
+  return 'View map'
 }
 
 export function QuotePage() {
   const [statusMessage, setStatusMessage] = useState('')
   const { content } = useContext(DemoConfigContext)
+  const { asidePoints, asideTitle, channelsHeading, hero, intakePrompts } = landscapingDemoContent.quote
 
   function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -67,31 +61,24 @@ export function QuotePage() {
 
   return (
     <>
-      <LandscapingPageHeader
-        actions={
-          <ButtonAnchor href={content.brand.phoneHref} variant="secondary">
-            Call for a quote
-          </ButtonAnchor>
-        }
-        description={content.reservations.intro}
-        eyebrow="Request a quote"
-        media={content.gallery.collections[1]?.image}
-        title="Request pricing for the property"
-        utilityItems={['Service area reviewed first', 'Scope reviewed before any site visit', 'Clear written quotes before work begins']}
-        utilityLabel="Quote flow"
-        utilityMeta={['Send the address, photos, and the part of the yard you want improved.']}
-        utilityTitle="What we review before we book time on site"
-      />
+      <Reveal as="section" className="land-route-hero land-route-hero--quote" variant="organic">
+        <div className="land-route-hero__copy">
+          <p className="land-route-hero__eyebrow">{hero.eyebrow}</p>
+          <h1>{hero.title}</h1>
+          <p>{hero.description}</p>
+        </div>
+      </Reveal>
 
-      <Section
-        description="If you already know the property address and the kind of work you want priced, these channels will get you to the right next step quickly."
-        eyebrow="Direct options"
-        title="Start by phone or email"
-      >
+      <Reveal as="section" className="land-block" variant="organic">
+        <div className="land-block__header">
+          <p className="land-block__eyebrow">Direct channels</p>
+          <h2>{channelsHeading}</h2>
+        </div>
+
         <div className="land-contact-grid">
           {content.reservations.channels.map((channel) => (
-            <article className="land-contact-panel" key={channel.label}>
-              <p className="land-contact-panel__eyebrow">{channel.label}</p>
+            <article className="land-contact-grid__card" key={channel.label}>
+              <p className="land-contact-grid__label">{channel.label}</p>
               <h3>{channel.value}</h3>
               <ButtonAnchor href={channel.href} variant="secondary">
                 {getChannelAction(channel.label)}
@@ -99,15 +86,11 @@ export function QuotePage() {
             </article>
           ))}
         </div>
-      </Section>
+      </Reveal>
 
-      <Section
-        description="The clearer the first message, the faster we can confirm service area, scope, and whether the next step should be a call or a site visit."
-        eyebrow="Project details"
-        title="What we need to price the job"
-      >
-        <div className="reservation-layout reservation-layout--landscaping">
-          <form className="reservation-form reservation-form--landscaping" onSubmit={onSubmit}>
+      <Reveal as="section" className="land-block" variant="organic">
+        <div className="land-quote-layout">
+          <form className="land-quote-form" onSubmit={onSubmit}>
             <label htmlFor="name">Full name</label>
             <input id="name" name="name" required type="text" />
 
@@ -151,25 +134,35 @@ export function QuotePage() {
             </select>
 
             <label htmlFor="notes">Project notes</label>
-            <textarea id="notes" name="notes" rows={5} />
+            <textarea id="notes" name="notes" rows={6} />
 
             <Button type="submit">Send quote details</Button>
             {statusMessage ? <p className="form-status">{statusMessage}</p> : null}
           </form>
 
-          <aside className="policy-panel policy-panel--landscaping">
-            <h3>Before we set a site visit</h3>
-            <ul>
-              {content.reservations.policies.map((policy) => (
-                <li key={policy}>{policy}</li>
-              ))}
-            </ul>
-            <p className="policy-panel__subtle">
-              If your timing is urgent, call {content.brand.phone} so we can tell you quickly whether the property is in range and what the next opening looks like.
-            </p>
+          <aside className="land-quote-aside">
+            <div className="land-quote-aside__panel">
+              <p className="land-quote-aside__label">Quote prompts</p>
+              <ul className="plain-list">
+                {intakePrompts.map((prompt) => (
+                  <li key={prompt}>{prompt}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="land-quote-aside__panel">
+              <p className="land-quote-aside__label">{asideTitle}</p>
+              <ul className="plain-list">
+                {asidePoints.map((point) => (
+                  <li key={point}>{point}</li>
+                ))}
+              </ul>
+              <ButtonAnchor href={content.brand.phoneHref} variant="secondary">
+                Call {content.brand.phone}
+              </ButtonAnchor>
+            </div>
           </aside>
         </div>
-      </Section>
+      </Reveal>
     </>
   )
 }

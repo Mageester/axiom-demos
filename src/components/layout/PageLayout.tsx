@@ -2,6 +2,10 @@ import { useContext, useEffect, useState } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import { DemoConfigContext } from '../../config/demoConfig'
 import { ButtonLink } from '../ui/Button'
+import { LandscapingFooter } from './LandscapingFooter'
+import { LandscapingNav } from './LandscapingNav'
+import { RoofingFooter } from './RoofingFooter'
+import { RoofingNav } from './RoofingNav'
 import { SiteFooter } from './SiteFooter'
 import { SiteNav } from './SiteNav'
 
@@ -75,11 +79,23 @@ export function PageLayout() {
 
   return (
     <div className={`app-shell app-shell--${key}`}>
-      <SiteNav key={location.pathname} />
+      {key === 'landscaping' ? (
+        <LandscapingNav key={location.pathname} />
+      ) : key === 'roofing' ? (
+        <RoofingNav key={location.pathname} />
+      ) : (
+        <SiteNav key={location.pathname} />
+      )}
       <main className="page-main">
         <Outlet />
       </main>
-      <SiteFooter />
+      {key === 'landscaping' ? (
+        <LandscapingFooter />
+      ) : key === 'roofing' ? (
+        <RoofingFooter />
+      ) : (
+        <SiteFooter />
+      )}
       <div
         className={`mobile-primary-cta ${showMobilePrimaryCta ? 'mobile-primary-cta--visible' : ''} ${brandSystem === 'hospitality' ? 'mobile-primary-cta--hospitality' : brandSystem === 'service' ? 'mobile-primary-cta--service' : ''}`}
       >

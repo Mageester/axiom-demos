@@ -1,8 +1,8 @@
 import { type FormEvent, useContext, useState } from 'react'
 import { DemoConfigContext } from '../../config/demoConfig'
+import { roofingDemoContent } from '../../content/roofingDemoContent'
 import { Button, ButtonAnchor, ButtonLink } from '../../components/ui/Button'
-import { PageHero } from '../../components/ui/PageHero'
-import { Section } from '../../components/ui/Section'
+import { Reveal } from '../../components/ui/Reveal'
 
 const issueOptions = [
   'Active leak or water entry',
@@ -23,6 +23,7 @@ const timelineOptions = [
 export function InspectionPage() {
   const [statusMessage, setStatusMessage] = useState('')
   const { content, routes } = useContext(DemoConfigContext)
+  const { hero, prep, urgencyPanel } = roofingDemoContent.inspection
 
   function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -58,30 +59,20 @@ export function InspectionPage() {
 
   return (
     <>
-      <PageHero
-        actions={<ButtonAnchor href={content.brand.phoneHref}>Call office</ButtonAnchor>}
-        className="roofing-hero"
-        description={content.reservations.intro}
-        eyebrow="Inspection"
-        media={content.home.hero.image}
-        revealVariant="firm"
-        signals={[
-          'Best for serious roof work',
-          'Photos help us triage faster',
-          'Replies usually within one business day',
-        ]}
-        title="Request an inspection when the next step still needs to be confirmed"
-      />
+      <Reveal as="section" className="roof-route-hero roof-route-hero--inspection" variant="firm">
+        <div className="roof-route-hero__copy">
+          <p className="roof-route-hero__eyebrow">{hero.eyebrow}</p>
+          <h1>{hero.title}</h1>
+          <p>{hero.description}</p>
+          <div className="roof-command-deck__actions">
+            <ButtonAnchor href={content.brand.phoneHref}>Call office first</ButtonAnchor>
+          </div>
+        </div>
+      </Reveal>
 
-      <Section
-        className="roofing-section roofing-section--request"
-        description="This is the cleanest route when you are ready to share the address and the issue details."
-        eyebrow="Inspection form"
-        revealVariant="firm"
-        title="Send the property details first"
-      >
-        <div className="roofing-request-layout">
-          <form className="roofing-request-form" onSubmit={onSubmit}>
+      <Reveal as="section" className="roof-block" variant="firm">
+        <div className="roof-request-layout">
+          <form className="roof-request-form" onSubmit={onSubmit}>
             <label htmlFor="name">Full name</label>
             <input id="name" name="name" required type="text" />
 
@@ -115,37 +106,42 @@ export function InspectionPage() {
             </select>
 
             <label htmlFor="notes">Inspection notes</label>
-            <textarea id="notes" name="notes" rows={5} />
+            <textarea id="notes" name="notes" rows={6} />
 
             <Button type="submit">Send inspection request</Button>
             {statusMessage ? <p className="form-status">{statusMessage}</p> : null}
           </form>
 
-          <aside className="roofing-request-aside">
-            <div className="roofing-request-panel">
-              <p className="roofing-request-panel__eyebrow">What happens next</p>
-              <ul className="plain-list roofing-request-panel__list">
-                {content.reservations.policies.map((policy) => (
-                  <li key={policy}>{policy}</li>
+          <aside className="roof-request-aside">
+            <div className="roof-request-aside__panel roof-request-aside__panel--accent">
+              <p className="roof-request-aside__label">{urgencyPanel.title}</p>
+              <p>{urgencyPanel.description}</p>
+              <ul className="plain-list roof-request-aside__list">
+                {urgencyPanel.bullets.map((bullet) => (
+                  <li key={bullet}>{bullet}</li>
                 ))}
               </ul>
+              <ButtonAnchor href={content.brand.phoneHref} variant="secondary">
+                Call {content.brand.phone}
+              </ButtonAnchor>
             </div>
 
-            <div className="roofing-request-panel roofing-request-panel--accent">
-              <p className="roofing-request-panel__eyebrow">Urgent issues</p>
-              <p>
-                For active leaks or recent storm damage, call {content.brand.phone} so the request can be triaged first.
-              </p>
-              <div className="roofing-request-panel__actions">
-                <ButtonLink to={routes.contact}>Go to contact page</ButtonLink>
-                <ButtonAnchor href={content.brand.phoneHref} variant="secondary">
-                  Call now
-                </ButtonAnchor>
+            <div className="roof-request-aside__panel">
+              <p className="roof-request-aside__label">Before you submit</p>
+              <ul className="plain-list roof-request-aside__list">
+                {prep.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+              <div className="roof-command-deck__actions">
+                <ButtonLink to={routes.contact} variant="secondary">
+                  General contact
+                </ButtonLink>
               </div>
             </div>
           </aside>
         </div>
-      </Section>
+      </Reveal>
     </>
   )
 }

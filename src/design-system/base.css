@@ -35,10 +35,10 @@ body[data-demo-brand='hospitality'] {
 
 body[data-demo-theme='landscaping'] {
   background:
-    radial-gradient(circle at 18% 0%, rgb(134 155 47 / 10%), transparent 24%),
-    radial-gradient(circle at 84% 12%, rgb(142 166 78 / 12%), transparent 30%),
-    radial-gradient(circle at 50% 100%, rgb(175 149 94 / 10%), transparent 42%),
-    linear-gradient(180deg, #f7f4ec 0%, var(--color-bg) 42%, #ece6d7 100%);
+    radial-gradient(circle at 18% 0%, rgb(167 137 82 / 12%), transparent 26%),
+    radial-gradient(circle at 84% 12%, rgb(94 122 78 / 18%), transparent 34%),
+    radial-gradient(circle at 50% 100%, rgb(32 40 31 / 60%), transparent 44%),
+    linear-gradient(180deg, #0c110d 0%, var(--color-bg) 46%, #101510 100%);
 }
 
 body[data-demo-theme='roofing'] {

@@ -1,0 +1,602 @@
+body[data-demo-theme='roofing'] .page-main {
+  max-width: 1320px;
+  padding: 1.1rem 1.25rem 6rem;
+}
+
+body[data-demo-theme='roofing'] .roof-shell-nav {
+  inset: 0 0 auto;
+  position: sticky;
+  top: 0;
+  z-index: 45;
+}
+
+body[data-demo-theme='roofing'] .roof-shell-nav__alert,
+body[data-demo-theme='roofing'] .roof-shell-nav__bar {
+  margin: 0 auto;
+  max-width: 1320px;
+}
+
+body[data-demo-theme='roofing'] .roof-shell-nav__alert {
+  align-items: center;
+  color: rgb(227 232 238 / 84%);
+  display: flex;
+  font-size: 0.76rem;
+  justify-content: space-between;
+  letter-spacing: 0.08em;
+  padding: 0.8rem 1.25rem 0.7rem;
+  text-transform: uppercase;
+}
+
+body[data-demo-theme='roofing'] .roof-shell-nav__alert a {
+  color: var(--color-brand-strong);
+  font-weight: 700;
+}
+
+body[data-demo-theme='roofing'] .roof-shell-nav__bar {
+  align-items: center;
+  backdrop-filter: blur(18px);
+  background: linear-gradient(180deg, rgb(15 20 26 / 94%), rgb(12 16 21 / 92%));
+  border: 1px solid rgb(77 90 105 / 42%);
+  border-radius: 22px;
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.95rem 1rem 0.95rem 1.15rem;
+}
+
+body[data-demo-theme='roofing'] .roof-shell-nav__brand {
+  align-items: center;
+  display: flex;
+  gap: 0.85rem;
+  min-width: 0;
+}
+
+body[data-demo-theme='roofing'] .roof-shell-nav__mark img {
+  display: block;
+  height: 2.7rem;
+  width: 2.7rem;
+}
+
+body[data-demo-theme='roofing'] .roof-shell-nav__brand strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.22rem;
+  letter-spacing: -0.04em;
+}
+
+body[data-demo-theme='roofing'] .roof-shell-nav__brand span span {
+  color: var(--color-text-secondary);
+  display: block;
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  margin-top: 0.15rem;
+  text-transform: uppercase;
+}
+
+body[data-demo-theme='roofing'] .roof-shell-nav__desk {
+  margin-left: auto;
+  min-width: 10rem;
+}
+
+body[data-demo-theme='roofing'] .roof-shell-nav__desk-label,
+body[data-demo-theme='roofing'] .roof-command-deck__eyebrow,
+body[data-demo-theme='roofing'] .roof-block__eyebrow,
+body[data-demo-theme='roofing'] .roof-route-hero__eyebrow,
+body[data-demo-theme='roofing'] .roof-dispatch-band__eyebrow,
+body[data-demo-theme='roofing'] .roof-scope-card__label,
+body[data-demo-theme='roofing'] .roof-case-file__label,
+body[data-demo-theme='roofing'] .roof-lane-card__label,
+body[data-demo-theme='roofing'] .roof-reference-grid__label,
+body[data-demo-theme='roofing'] .roof-operations-band__eyebrow,
+body[data-demo-theme='roofing'] .roof-team-grid__role,
+body[data-demo-theme='roofing'] .roof-contact-grid__label,
+body[data-demo-theme='roofing'] .roof-contact-guidance__label,
+body[data-demo-theme='roofing'] .roof-request-aside__label,
+body[data-demo-theme='roofing'] .roof-decision-band__eyebrow,
+body[data-demo-theme='roofing'] .roof-shell-footer__eyebrow {
+  color: var(--color-brand-strong);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+body[data-demo-theme='roofing'] .roof-shell-nav__desk a {
+  color: var(--color-text-primary);
+  display: inline-block;
+  font-weight: 700;
+  margin-top: 0.2rem;
+}
+
+body[data-demo-theme='roofing'] .roof-shell-nav__toggle {
+  display: none;
+}
+
+body[data-demo-theme='roofing'] .roof-shell-nav__panel {
+  align-items: center;
+  display: flex;
+  gap: 0.9rem;
+}
+
+body[data-demo-theme='roofing'] .roof-shell-nav__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+body[data-demo-theme='roofing'] .roof-shell-nav__link {
+  border-radius: 999px;
+  color: rgb(225 231 238 / 74%);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  padding: 0.65rem 0.9rem;
+  text-transform: uppercase;
+}
+
+body[data-demo-theme='roofing'] .roof-shell-nav__link--active {
+  background: rgb(216 122 61 / 12%);
+  color: var(--color-text-primary);
+}
+
+body[data-demo-theme='roofing'] .roof-shell-nav__actions,
+body[data-demo-theme='roofing'] .roof-command-deck__actions,
+body[data-demo-theme='roofing'] .roof-dispatch-band__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+body[data-demo-theme='roofing'] .roof-command-deck,
+body[data-demo-theme='roofing'] .roof-route-hero {
+  background:
+    radial-gradient(circle at 90% 10%, rgb(216 122 61 / 10%), transparent 28%),
+    radial-gradient(circle at 12% 0%, rgb(90 111 136 / 16%), transparent 34%),
+    linear-gradient(160deg, rgb(20 26 33 / 96%), rgb(14 18 23 / 96%));
+  border: 1px solid rgb(78 91 105 / 46%);
+  border-radius: 28px;
+  box-shadow: 0 22px 56px rgb(4 7 10 / 28%);
+  display: grid;
+  gap: 1rem;
+  margin-bottom: clamp(2.6rem, 5vw, 4rem);
+  overflow: hidden;
+  padding: clamp(1.15rem, 3vw, 1.5rem);
+}
+
+body[data-demo-theme='roofing'] .roof-command-deck {
+  align-items: start;
+  grid-template-columns: minmax(0, 1.12fr) minmax(320px, 0.88fr) minmax(240px, 0.62fr);
+}
+
+body[data-demo-theme='roofing'] .roof-route-hero {
+  grid-template-columns: 1fr;
+}
+
+body[data-demo-theme='roofing'] .roof-command-deck__lead,
+body[data-demo-theme='roofing'] .roof-route-hero__copy {
+  align-content: start;
+  display: grid;
+  gap: 1rem;
+  min-width: 0;
+  padding: 0.4rem;
+}
+
+body[data-demo-theme='roofing'] .roof-command-deck__title,
+body[data-demo-theme='roofing'] .roof-route-hero h1,
+body[data-demo-theme='roofing'] .roof-block__title,
+body[data-demo-theme='roofing'] .roof-dispatch-band h2,
+body[data-demo-theme='roofing'] .roof-decision-band h2,
+body[data-demo-theme='roofing'] .roof-operations-band h2,
+body[data-demo-theme='roofing'] .roof-shell-footer__top h2 {
+  font-family: var(--font-display);
+  letter-spacing: -0.05em;
+  line-height: 0.94;
+}
+
+body[data-demo-theme='roofing'] .roof-command-deck__title {
+  font-size: clamp(2.9rem, 5vw, 5.1rem);
+  max-width: 10ch;
+}
+
+body[data-demo-theme='roofing'] .roof-route-hero h1,
+body[data-demo-theme='roofing'] .roof-block__title,
+body[data-demo-theme='roofing'] .roof-dispatch-band h2,
+body[data-demo-theme='roofing'] .roof-decision-band h2,
+body[data-demo-theme='roofing'] .roof-operations-band h2,
+body[data-demo-theme='roofing'] .roof-shell-footer__top h2 {
+  font-size: clamp(2rem, 3.6vw, 3.3rem);
+  max-width: 13ch;
+}
+
+body[data-demo-theme='roofing'] .roof-command-deck__description,
+body[data-demo-theme='roofing'] .roof-route-hero p,
+body[data-demo-theme='roofing'] .roof-block p,
+body[data-demo-theme='roofing'] .roof-contact-grid__card p,
+body[data-demo-theme='roofing'] .roof-standard-grid__card p,
+body[data-demo-theme='roofing'] .roof-team-grid__card p,
+body[data-demo-theme='roofing'] .roof-request-aside__panel p {
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+body[data-demo-theme='roofing'] .roof-command-deck__signals,
+body[data-demo-theme='roofing'] .roof-scope-card__list,
+body[data-demo-theme='roofing'] .roof-case-file__list,
+body[data-demo-theme='roofing'] .roof-lane-card__list,
+body[data-demo-theme='roofing'] .roof-reference-grid__list,
+body[data-demo-theme='roofing'] .roof-contact-guidance__list,
+body[data-demo-theme='roofing'] .roof-request-aside__list,
+body[data-demo-theme='roofing'] .roof-decision-band__list {
+  display: grid;
+  gap: 0.65rem;
+}
+
+body[data-demo-theme='roofing'] .roof-command-deck__signals li,
+body[data-demo-theme='roofing'] .roof-scope-card__list li,
+body[data-demo-theme='roofing'] .roof-case-file__list li,
+body[data-demo-theme='roofing'] .roof-lane-card__list li,
+body[data-demo-theme='roofing'] .roof-reference-grid__list li,
+body[data-demo-theme='roofing'] .roof-contact-guidance__list li,
+body[data-demo-theme='roofing'] .roof-request-aside__list li,
+body[data-demo-theme='roofing'] .roof-decision-band__list li {
+  color: var(--color-text-secondary);
+  padding-left: 0.95rem;
+  position: relative;
+}
+
+body[data-demo-theme='roofing'] .roof-command-deck__signals li::before,
+body[data-demo-theme='roofing'] .roof-scope-card__list li::before,
+body[data-demo-theme='roofing'] .roof-case-file__list li::before,
+body[data-demo-theme='roofing'] .roof-lane-card__list li::before,
+body[data-demo-theme='roofing'] .roof-reference-grid__list li::before,
+body[data-demo-theme='roofing'] .roof-contact-guidance__list li::before,
+body[data-demo-theme='roofing'] .roof-request-aside__list li::before,
+body[data-demo-theme='roofing'] .roof-decision-band__list li::before {
+  background: var(--color-brand);
+  border-radius: 999px;
+  content: '';
+  height: 0.35rem;
+  left: 0;
+  position: absolute;
+  top: 0.62rem;
+  width: 0.35rem;
+}
+
+body[data-demo-theme='roofing'] .roof-command-deck__media,
+body[data-demo-theme='roofing'] .roof-case-file__media,
+body[data-demo-theme='roofing'] .roof-lane-card__media,
+body[data-demo-theme='roofing'] .roof-reference-grid__media {
+  border-radius: 22px;
+  margin: 0;
+  overflow: hidden;
+}
+
+body[data-demo-theme='roofing'] .roof-command-deck__media img,
+body[data-demo-theme='roofing'] .roof-case-file__media img,
+body[data-demo-theme='roofing'] .roof-lane-card__media img,
+body[data-demo-theme='roofing'] .roof-reference-grid__media img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+body[data-demo-theme='roofing'] .roof-command-deck__media img {
+  min-height: 28rem;
+}
+
+body[data-demo-theme='roofing'] .roof-command-deck__status,
+body[data-demo-theme='roofing'] .roof-scope-card,
+body[data-demo-theme='roofing'] .roof-standard-grid__card,
+body[data-demo-theme='roofing'] .roof-case-file__body,
+body[data-demo-theme='roofing'] .roof-lane-card__body,
+body[data-demo-theme='roofing'] .roof-reference-grid__body,
+body[data-demo-theme='roofing'] .roof-team-grid__card,
+body[data-demo-theme='roofing'] .roof-contact-grid__card,
+body[data-demo-theme='roofing'] .roof-contact-guidance__card,
+body[data-demo-theme='roofing'] .roof-contact-guidance__panel,
+body[data-demo-theme='roofing'] .roof-request-aside__panel,
+body[data-demo-theme='roofing'] .roof-request-form {
+  background: linear-gradient(180deg, rgb(22 29 37 / 94%), rgb(17 22 28 / 98%));
+  border: 1px solid rgb(78 91 105 / 38%);
+  border-radius: 22px;
+  display: grid;
+  gap: 0.95rem;
+  padding: 1.25rem;
+}
+
+body[data-demo-theme='roofing'] .roof-command-deck__status-label {
+  color: var(--color-brand-strong);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+body[data-demo-theme='roofing'] .roof-command-deck__status-actions {
+  margin-top: auto;
+}
+
+body[data-demo-theme='roofing'] .roof-block,
+body[data-demo-theme='roofing'] .roof-decision-band,
+body[data-demo-theme='roofing'] .roof-dispatch-band,
+body[data-demo-theme='roofing'] .roof-operations-band {
+  margin-bottom: clamp(2.6rem, 5vw, 3.8rem);
+}
+
+body[data-demo-theme='roofing'] .roof-block {
+  display: grid;
+  gap: 1.2rem;
+}
+
+body[data-demo-theme='roofing'] .roof-block--services,
+body[data-demo-theme='roofing'] .roof-block--case {
+  align-items: start;
+  grid-template-columns: minmax(280px, 0.34fr) minmax(0, 0.66fr);
+}
+
+body[data-demo-theme='roofing'] .roof-block__header {
+  display: grid;
+  gap: 0.75rem;
+}
+
+body[data-demo-theme='roofing'] .roof-scope-ledger,
+body[data-demo-theme='roofing'] .roof-standard-grid,
+body[data-demo-theme='roofing'] .roof-reference-grid,
+body[data-demo-theme='roofing'] .roof-team-grid,
+body[data-demo-theme='roofing'] .roof-contact-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+body[data-demo-theme='roofing'] .roof-scope-ledger,
+body[data-demo-theme='roofing'] .roof-standard-grid,
+body[data-demo-theme='roofing'] .roof-contact-grid,
+body[data-demo-theme='roofing'] .roof-reference-grid,
+body[data-demo-theme='roofing'] .roof-team-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+body[data-demo-theme='roofing'] .roof-case-file,
+body[data-demo-theme='roofing'] .roof-contact-guidance,
+body[data-demo-theme='roofing'] .roof-request-layout {
+  align-items: start;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
+}
+
+body[data-demo-theme='roofing'] .roof-lane-stack {
+  display: grid;
+  gap: 1rem;
+}
+
+body[data-demo-theme='roofing'] .roof-lane-card {
+  background: linear-gradient(180deg, rgb(22 29 37 / 94%), rgb(17 22 28 / 98%));
+  border: 1px solid rgb(78 91 105 / 38%);
+  border-radius: 24px;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(260px, 0.82fr) minmax(0, 1.18fr);
+  overflow: hidden;
+  padding: 0.9rem;
+}
+
+body[data-demo-theme='roofing'] .roof-lane-card__body,
+body[data-demo-theme='roofing'] .roof-reference-grid__body {
+  align-content: start;
+}
+
+body[data-demo-theme='roofing'] .roof-lane-card__body h3,
+body[data-demo-theme='roofing'] .roof-scope-card h3,
+body[data-demo-theme='roofing'] .roof-standard-grid__card h3,
+body[data-demo-theme='roofing'] .roof-case-file__body h3,
+body[data-demo-theme='roofing'] .roof-reference-grid__body h3,
+body[data-demo-theme='roofing'] .roof-team-grid__card h3,
+body[data-demo-theme='roofing'] .roof-contact-grid__card h3,
+body[data-demo-theme='roofing'] .roof-contact-guidance__card h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 1.8vw, 1.65rem);
+  letter-spacing: -0.04em;
+  line-height: 1.02;
+}
+
+body[data-demo-theme='roofing'] .roof-decision-band,
+body[data-demo-theme='roofing'] .roof-dispatch-band,
+body[data-demo-theme='roofing'] .roof-operations-band {
+  background: linear-gradient(160deg, rgb(18 24 31 / 96%), rgb(14 18 23 / 96%));
+  border: 1px solid rgb(78 91 105 / 42%);
+  border-radius: 24px;
+  display: grid;
+  gap: 1rem;
+  padding: clamp(1.2rem, 3vw, 1.75rem);
+}
+
+body[data-demo-theme='roofing'] .roof-operations-band {
+  grid-template-columns: minmax(260px, 0.7fr) minmax(0, 1.3fr);
+}
+
+body[data-demo-theme='roofing'] .roof-operations-band__steps {
+  display: grid;
+  gap: 0.8rem;
+}
+
+body[data-demo-theme='roofing'] .roof-operations-band__step {
+  background: rgb(9 13 18 / 38%);
+  border: 1px solid rgb(76 89 102 / 28%);
+  border-radius: 18px;
+  display: grid;
+  gap: 0.45rem;
+  grid-template-columns: auto 1fr;
+  padding: 0.95rem;
+}
+
+body[data-demo-theme='roofing'] .roof-operations-band__step span {
+  color: var(--color-brand-strong);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  padding-top: 0.18rem;
+  text-transform: uppercase;
+}
+
+body[data-demo-theme='roofing'] .roof-contact-guidance__cards,
+body[data-demo-theme='roofing'] .roof-request-aside {
+  display: grid;
+  gap: 1rem;
+}
+
+body[data-demo-theme='roofing'] .roof-request-aside__panel--accent {
+  border-color: rgb(216 122 61 / 42%);
+  box-shadow: inset 0 0 0 1px rgb(216 122 61 / 10%);
+}
+
+body[data-demo-theme='roofing'] .roof-request-form {
+  gap: 0.78rem;
+}
+
+body[data-demo-theme='roofing'] .roof-request-form label {
+  color: rgb(221 228 235 / 82%);
+  font-size: 0.78rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+body[data-demo-theme='roofing'] .roof-request-form input,
+body[data-demo-theme='roofing'] .roof-request-form select,
+body[data-demo-theme='roofing'] .roof-request-form textarea {
+  background: rgb(10 14 18 / 74%);
+  border: 1px solid rgb(86 99 114 / 52%);
+  border-radius: 14px;
+  color: var(--color-text-primary);
+  padding: 0.92rem 1rem;
+}
+
+body[data-demo-theme='roofing'] .roof-shell-footer {
+  background: linear-gradient(180deg, rgb(10 13 17 / 76%), rgb(8 10 13 / 98%));
+  border-top: 1px solid rgb(71 83 97 / 42%);
+  margin-top: 3rem;
+  padding: 2.4rem 1.25rem 1.5rem;
+}
+
+body[data-demo-theme='roofing'] .roof-shell-footer__top,
+body[data-demo-theme='roofing'] .roof-shell-footer__grid {
+  margin: 0 auto;
+  max-width: 1320px;
+}
+
+body[data-demo-theme='roofing'] .roof-shell-footer__top {
+  align-items: end;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  margin-bottom: 1.3rem;
+}
+
+body[data-demo-theme='roofing'] .roof-shell-footer__top p,
+body[data-demo-theme='roofing'] .roof-shell-footer__panel p,
+body[data-demo-theme='roofing'] .roof-shell-footer__panel li,
+body[data-demo-theme='roofing'] .roof-shell-footer__panel a {
+  color: var(--color-text-secondary);
+}
+
+body[data-demo-theme='roofing'] .roof-shell-footer__grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+body[data-demo-theme='roofing'] .roof-shell-footer__panel {
+  background: rgb(13 18 23 / 86%);
+  border: 1px solid rgb(71 83 97 / 32%);
+  border-radius: 20px;
+  display: grid;
+  gap: 0.7rem;
+  padding: 1.15rem;
+}
+
+body[data-demo-theme='roofing'] .roof-shell-footer__links {
+  display: grid;
+  justify-items: start;
+}
+
+body[data-demo-theme='roofing'] .roof-shell-footer__legal {
+  color: rgb(172 183 194 / 72%);
+  font-size: 0.78rem;
+  margin: 1rem auto 0;
+  max-width: 1320px;
+}
+
+@media (max-width: 1180px) {
+  body[data-demo-theme='roofing'] .roof-command-deck,
+  body[data-demo-theme='roofing'] .roof-block--services,
+  body[data-demo-theme='roofing'] .roof-block--case,
+  body[data-demo-theme='roofing'] .roof-case-file,
+  body[data-demo-theme='roofing'] .roof-contact-guidance,
+  body[data-demo-theme='roofing'] .roof-request-layout,
+  body[data-demo-theme='roofing'] .roof-operations-band,
+  body[data-demo-theme='roofing'] .roof-shell-footer__top {
+    grid-template-columns: 1fr;
+  }
+
+  body[data-demo-theme='roofing'] .roof-scope-ledger,
+  body[data-demo-theme='roofing'] .roof-standard-grid,
+  body[data-demo-theme='roofing'] .roof-reference-grid,
+  body[data-demo-theme='roofing'] .roof-team-grid,
+  body[data-demo-theme='roofing'] .roof-contact-grid,
+  body[data-demo-theme='roofing'] .roof-shell-footer__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body[data-demo-theme='roofing'] .roof-shell-nav__toggle {
+    display: inline-flex;
+    margin-left: auto;
+  }
+
+  body[data-demo-theme='roofing'] .roof-shell-nav__desk {
+    display: none;
+  }
+
+  body[data-demo-theme='roofing'] .roof-shell-nav__bar {
+    position: relative;
+  }
+
+  body[data-demo-theme='roofing'] .roof-shell-nav__panel {
+    background: rgb(12 16 21 / 98%);
+    border: 1px solid rgb(71 83 97 / 42%);
+    border-radius: 18px;
+    display: none;
+    inset: calc(100% + 0.75rem) 1rem auto;
+    padding: 1rem;
+    position: absolute;
+  }
+
+  body[data-demo-theme='roofing'] .roof-shell-nav__panel--open {
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  body[data-demo-theme='roofing'] .roof-shell-nav__links,
+  body[data-demo-theme='roofing'] .roof-shell-nav__actions {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 760px) {
+  body[data-demo-theme='roofing'] .roof-shell-nav__alert {
+    align-items: start;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
+  body[data-demo-theme='roofing'] .roof-scope-ledger,
+  body[data-demo-theme='roofing'] .roof-standard-grid,
+  body[data-demo-theme='roofing'] .roof-reference-grid,
+  body[data-demo-theme='roofing'] .roof-team-grid,
+  body[data-demo-theme='roofing'] .roof-contact-grid,
+  body[data-demo-theme='roofing'] .roof-shell-footer__grid,
+  body[data-demo-theme='roofing'] .roof-lane-card {
+    grid-template-columns: 1fr;
+  }
+
+  body[data-demo-theme='roofing'] .roof-command-deck__title,
+  body[data-demo-theme='roofing'] .roof-route-hero h1 {
+    max-width: none;
+  }
+}
