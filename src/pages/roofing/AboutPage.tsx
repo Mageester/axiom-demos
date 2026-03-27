@@ -1,105 +1,58 @@
 import { useContext } from 'react'
 import { DemoConfigContext } from '../../config/demoConfig'
-import { RoofingPageHeader } from '../../components/roofing/RoofingPageHeader'
 import { ButtonLink } from '../../components/ui/Button'
-import { Reveal } from '../../components/ui/Reveal'
+import { Card } from '../../components/ui/Card'
+import { PageHero } from '../../components/ui/PageHero'
+import { Section } from '../../components/ui/Section'
 
 export function AboutPage() {
   const { content, routes } = useContext(DemoConfigContext)
-  const visualOne = content.gallery.collections[2]
-  const visualTwo = content.gallery.collections[5]
+  const visual = content.gallery.collections[2]
 
   return (
     <>
-      <RoofingPageHeader
+      <PageHero
         actions={<ButtonLink to={routes.reservations}>Request inspection</ButtonLink>}
+        className="roofing-hero"
         description={content.about.intro}
         eyebrow="About"
-        media={visualOne?.image}
-        meta={['Inspection-led scope review', 'Property protection, scheduling, and closeout standards']}
-        summaryItems={[
-          'Built for homeowners who want clear answers before spending on major work',
-          'Crew standards cover access, cleanup, communication, and handoff',
-          'Roofing, roofline support, and drainage work handled as one exterior system',
+        media={visual?.image}
+        revealVariant="firm"
+        signals={[
+          'Inspection-led scope review',
+          'Property protection and cleanup standards',
+          'Roofing, roof-edge, and drainage work',
         ]}
-        summaryLabel="What kind of contractor this is"
-        title="A roofing and exterior company built around clearer scope and tighter site standards"
+        title="A roofing contractor built around clearer scope and tighter site standards"
       />
 
-      <Reveal as="section" className="roof-block" variant="firm">
-        <header className="roof-block__header">
-          <p className="roof-block__eyebrow">How the company works</p>
-          <h2 className="roof-block__title">Protection first, then scope, then execution</h2>
-        </header>
-
-        <div className="roof-story-board">
-          <div className="roof-story-board__copy">
-            {content.about.story.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-          </div>
-          <div className="roof-story-board__visuals">
-            {[visualOne, visualTwo].map((item) =>
-              item ? (
-                <figure className="roof-story-board__item" key={item.title}>
-                  <img
-                    alt={item.image.alt}
-                    loading="lazy"
-                    src={item.image.src}
-                    style={item.image.position ? { objectPosition: item.image.position } : undefined}
-                  />
-                  <figcaption>{item.title}</figcaption>
-                </figure>
-              ) : null,
-            )}
-          </div>
-        </div>
-      </Reveal>
-
-      <Reveal as="section" className="roof-block" variant="firm">
-        <header className="roof-block__header">
-          <p className="roof-block__eyebrow">Operating standards</p>
-          <h2 className="roof-block__title">What Blackridge is meant to be known for</h2>
-        </header>
-
-        <div className="roof-decision-grid">
-          {content.about.values.map((value, index) => (
-            <Reveal
-              as="article"
-              className="roof-decision-card"
-              delay={index * 55}
-              key={value.title}
-              variant="firm"
-            >
-              <h3>{value.title}</h3>
-              <p>{value.description}</p>
-            </Reveal>
+      <Section
+        className="roofing-section roofing-section--values"
+        description="These are the operating standards the company is meant to be known for."
+        eyebrow="Operating standards"
+        revealVariant="firm"
+        title="What Blackridge is trying to do well"
+      >
+        <div className="card-grid card-grid--3 roofing-card-grid">
+          {content.about.values.map((value) => (
+            <Card description={value.description} key={value.title} title={value.title} />
           ))}
         </div>
-      </Reveal>
+      </Section>
 
-      <Reveal as="section" className="roof-block" variant="firm">
-        <header className="roof-block__header">
-          <p className="roof-block__eyebrow">Leadership</p>
-          <h2 className="roof-block__title">Inspection, coordination, and site operations</h2>
-        </header>
-
-        <div className="roof-leadership-strip">
-          {content.about.team.map((member, index) => (
-            <Reveal
-              as="article"
-              className="roof-leadership-card"
-              delay={index * 55}
-              key={member.name}
-              variant="firm"
-            >
-              <p className="roof-leadership-card__role">{member.role}</p>
-              <h3>{member.name}</h3>
-              <p>{member.bio}</p>
-            </Reveal>
+      <Section
+        className="roofing-section roofing-section--team"
+        description="Clear roles keep the inspection, scheduling, and site handoff from becoming a mess."
+        eyebrow="Team"
+        revealVariant="firm"
+        title="Inspection, coordination, and site operations"
+      >
+        <div className="card-grid card-grid--3 roofing-card-grid">
+          {content.about.team.map((member) => (
+            <Card description={member.bio} key={member.name} meta={member.role} title={member.name} />
           ))}
         </div>
-      </Reveal>
+      </Section>
     </>
   )
 }

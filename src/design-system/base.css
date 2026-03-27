@@ -43,10 +43,10 @@ body[data-demo-theme='landscaping'] {
 
 body[data-demo-theme='roofing'] {
   background:
-    radial-gradient(circle at 88% 10%, rgb(214 125 66 / 11%), transparent 32%),
-    radial-gradient(circle at 12% 8%, rgb(92 112 138 / 14%), transparent 34%),
-    radial-gradient(circle at 50% 100%, rgb(6 10 16 / 48%), transparent 40%),
-    linear-gradient(180deg, #0f151d, var(--color-bg) 48%);
+    radial-gradient(circle at 84% 8%, rgb(217 125 62 / 12%), transparent 28%),
+    radial-gradient(circle at 16% 6%, rgb(96 120 150 / 14%), transparent 30%),
+    radial-gradient(circle at 50% 100%, rgb(4 7 10 / 48%), transparent 42%),
+    linear-gradient(180deg, #0d1117 0%, var(--color-bg) 44%, #11171e 100%);
 }
 
 a {

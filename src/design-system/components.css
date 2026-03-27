@@ -7977,3 +7977,572 @@ body[data-demo-brand='roofing'] .roof-dispatch-band {
     grid-template-columns: 1fr;
   }
 }
+
+body[data-demo-brand='roofing'] .site-nav-wrap {
+  background: rgba(12, 16, 21, 0.82);
+  border-bottom: 1px solid rgba(74, 89, 104, 0.48);
+  backdrop-filter: blur(16px);
+  box-shadow: none;
+}
+
+body[data-demo-brand='roofing'] .site-nav {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+body[data-demo-brand='roofing'] .site-nav__roofing-bar {
+  background: rgba(8, 11, 15, 0.92);
+  border-bottom: 1px solid rgba(74, 89, 104, 0.42);
+}
+
+body[data-demo-brand='roofing'] .site-nav__roofing-bar-inner {
+  color: var(--color-text-secondary);
+  max-width: 1280px;
+}
+
+body[data-demo-brand='roofing'] .site-nav__roofing-bar-copy {
+  color: var(--color-brand-strong);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+body[data-demo-brand='roofing'] .site-nav__roofing-shell {
+  gap: 1rem;
+}
+
+body[data-demo-brand='roofing'] .site-nav__roofing-utility {
+  background: rgba(18, 23, 30, 0.82);
+  border: 1px solid rgba(72, 87, 103, 0.45);
+  border-radius: 16px;
+  display: grid;
+  gap: 1rem;
+  padding: 1rem 1.1rem;
+}
+
+body[data-demo-brand='roofing'] .site-nav__roofing-label {
+  color: var(--color-brand-strong);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+body[data-demo-brand='roofing'] .site-nav__roofing-meta,
+body[data-demo-brand='roofing'] .site-nav__roofing-phone {
+  color: var(--color-text-primary);
+}
+
+body[data-demo-brand='roofing'] .primary-nav__link {
+  color: var(--color-text-secondary);
+}
+
+body[data-demo-brand='roofing'] .primary-nav__link--active {
+  color: var(--color-text-primary);
+}
+
+body[data-demo-brand='roofing'] .primary-nav__cta {
+  box-shadow: none;
+}
+
+body[data-demo-brand='roofing'] .page-hero {
+  background:
+    radial-gradient(circle at 84% 20%, rgb(214 125 66 / 8%), transparent 28%),
+    radial-gradient(circle at 12% 8%, rgb(92 112 138 / 10%), transparent 34%),
+    linear-gradient(
+      150deg,
+      color-mix(in srgb, var(--color-surface) 94%, white),
+      color-mix(in srgb, var(--color-surface-strong) 92%, white)
+    );
+  border: 1px solid rgba(74, 89, 104, 0.45);
+  box-shadow: var(--shadow-elevated);
+  gap: var(--space-6);
+  padding: clamp(1.65rem, 3.7vw, 3rem);
+}
+
+body[data-demo-brand='roofing'] .page-hero--media {
+  align-items: stretch;
+  grid-template-columns: minmax(0, 1.05fr) minmax(330px, 0.95fr);
+}
+
+body[data-demo-brand='roofing'] .page-hero__copy {
+  gap: 1rem;
+}
+
+body[data-demo-brand='roofing'] .page-hero__eyebrow,
+body[data-demo-brand='roofing'] .section__eyebrow,
+body[data-demo-brand='roofing'] .card__meta {
+  color: var(--color-brand-strong);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+body[data-demo-brand='roofing'] .page-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.7rem, 6vw, 5rem);
+  letter-spacing: -0.05em;
+  line-height: 0.95;
+  max-width: 12.5ch;
+}
+
+body[data-demo-brand='roofing'] .page-hero__description {
+  color: var(--color-text-secondary);
+  font-size: 1.02rem;
+  line-height: 1.72;
+  max-width: 42ch;
+}
+
+body[data-demo-brand='roofing'] .page-hero__actions {
+  gap: 0.8rem;
+}
+
+body[data-demo-brand='roofing'] .page-hero__signals {
+  display: grid;
+  gap: 0.65rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 36rem;
+}
+
+body[data-demo-brand='roofing'] .page-hero__signals li {
+  background: rgba(18, 23, 30, 0.84);
+  border: 1px solid rgba(79, 93, 109, 0.55);
+  border-radius: 999px;
+  color: var(--color-text-secondary);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  padding: 0.78rem 0.95rem;
+  text-transform: uppercase;
+}
+
+body[data-demo-brand='roofing'] .page-hero__media {
+  border: 1px solid rgba(79, 93, 109, 0.55);
+  border-radius: 20px;
+  box-shadow: var(--shadow-soft);
+  min-height: 31rem;
+}
+
+body[data-demo-brand='roofing'] .section {
+  margin-bottom: clamp(3.5rem, 6vw, 5rem);
+}
+
+body[data-demo-brand='roofing'] .section__header {
+  display: grid;
+  gap: 0.85rem;
+  margin-bottom: 1.5rem;
+  max-width: 46rem;
+}
+
+body[data-demo-brand='roofing'] .section__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3vw, 3.15rem);
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+  max-width: 14ch;
+}
+
+body[data-demo-brand='roofing'] .section__description {
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  max-width: 52ch;
+}
+
+body[data-demo-brand='roofing'] .card-grid {
+  gap: 1rem;
+}
+
+body[data-demo-brand='roofing'] .card {
+  background: linear-gradient(180deg, rgba(23, 29, 37, 0.95), rgba(18, 23, 30, 0.98));
+  border: 1px solid rgba(74, 89, 104, 0.55);
+  border-radius: 18px;
+  box-shadow: none;
+  overflow: hidden;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+body[data-demo-brand='roofing'] .card:hover {
+  border-color: color-mix(in srgb, var(--color-brand) 46%, var(--color-border));
+  box-shadow: var(--shadow-soft);
+  transform: translateY(-2px);
+}
+
+body[data-demo-brand='roofing'] .card__media {
+  aspect-ratio: 16 / 11;
+}
+
+body[data-demo-brand='roofing'] .card__content {
+  display: grid;
+  gap: 0.8rem;
+  padding: 1.35rem 1.35rem 1.45rem;
+}
+
+body[data-demo-brand='roofing'] .card__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 1.6vw, 1.45rem);
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+}
+
+body[data-demo-brand='roofing'] .card__description {
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+}
+
+body[data-demo-brand='roofing'] .card__body {
+  margin-top: 0.1rem;
+}
+
+body[data-demo-brand='roofing'] .roofing-card-list,
+body[data-demo-brand='roofing'] .roofing-comparison__list,
+body[data-demo-brand='roofing'] .roofing-case-facts,
+body[data-demo-brand='roofing'] .roofing-notes-list,
+body[data-demo-brand='roofing'] .roofing-request-panel__list {
+  display: grid;
+  gap: 0.45rem;
+}
+
+body[data-demo-brand='roofing'] .roofing-card-list li,
+body[data-demo-brand='roofing'] .roofing-comparison__list li,
+body[data-demo-brand='roofing'] .roofing-case-facts li,
+body[data-demo-brand='roofing'] .roofing-notes-list li,
+body[data-demo-brand='roofing'] .roofing-request-panel__list li {
+  color: var(--color-text-secondary);
+  line-height: 1.45;
+  padding-left: 0.95rem;
+  position: relative;
+}
+
+body[data-demo-brand='roofing'] .roofing-card-list li::before,
+body[data-demo-brand='roofing'] .roofing-comparison__list li::before,
+body[data-demo-brand='roofing'] .roofing-case-facts li::before,
+body[data-demo-brand='roofing'] .roofing-notes-list li::before,
+body[data-demo-brand='roofing'] .roofing-request-panel__list li::before {
+  background: var(--color-brand);
+  border-radius: 999px;
+  content: '';
+  height: 0.35rem;
+  left: 0;
+  position: absolute;
+  top: 0.55rem;
+  width: 0.35rem;
+}
+
+body[data-demo-brand='roofing'] .roofing-card-list--tight li {
+  line-height: 1.35;
+}
+
+body[data-demo-brand='roofing'] .roofing-step-grid,
+body[data-demo-brand='roofing'] .roofing-decision-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+body[data-demo-brand='roofing'] .roofing-step-card {
+  background: linear-gradient(180deg, rgba(23, 29, 37, 0.94), rgba(18, 23, 30, 0.96));
+  border: 1px solid rgba(72, 87, 103, 0.55);
+  border-radius: 18px;
+  display: grid;
+  gap: 0.85rem;
+  padding: 1.4rem;
+}
+
+body[data-demo-brand='roofing'] .roofing-step-card__label {
+  color: var(--color-brand-strong);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+body[data-demo-brand='roofing'] .roofing-step-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  line-height: 1.1;
+}
+
+body[data-demo-brand='roofing'] .roofing-step-card p {
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+}
+
+body[data-demo-brand='roofing'] .roofing-comparison {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.82fr);
+  align-items: start;
+}
+
+body[data-demo-brand='roofing'] .roofing-comparison__compare {
+  min-width: 0;
+}
+
+body[data-demo-brand='roofing'] .roofing-comparison__aside {
+  background: linear-gradient(180deg, rgba(23, 29, 38, 0.92), rgba(18, 23, 30, 0.96));
+  border: 1px solid rgba(72, 87, 103, 0.55);
+  border-radius: 18px;
+  display: grid;
+  gap: 1rem;
+  padding: 1.4rem;
+}
+
+body[data-demo-brand='roofing'] .roofing-comparison__eyebrow,
+body[data-demo-brand='roofing'] .roofing-case-showcase__eyebrow,
+body[data-demo-brand='roofing'] .roofing-request-panel__eyebrow,
+body[data-demo-brand='roofing'] .roofing-notes-panel__eyebrow,
+body[data-demo-brand='roofing'] .roofing-cta-band__eyebrow {
+  color: var(--color-brand-strong);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+body[data-demo-brand='roofing'] .roofing-comparison__actions,
+body[data-demo-brand='roofing'] .roofing-case-showcase__actions,
+body[data-demo-brand='roofing'] .roofing-notes-panel__actions,
+body[data-demo-brand='roofing'] .roofing-cta-band__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+body[data-demo-brand='roofing'] .roofing-cta-band {
+  background: linear-gradient(135deg, rgba(18, 23, 30, 0.96), rgba(24, 31, 40, 0.96));
+  border: 1px solid rgba(70, 85, 100, 0.55);
+  border-radius: 22px;
+  box-shadow: var(--shadow-elevated);
+  display: grid;
+  gap: 1rem;
+  margin-bottom: var(--space-section);
+  padding: clamp(1.5rem, 3vw, 2rem);
+}
+
+body[data-demo-brand='roofing'] .roofing-cta-band h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 2.6vw, 2.6rem);
+  line-height: 1.02;
+  max-width: 14ch;
+}
+
+body[data-demo-brand='roofing'] .roofing-cta-band p {
+  color: var(--color-text-secondary);
+  max-width: 50ch;
+}
+
+body[data-demo-brand='roofing'] .roofing-cta-band__meta {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+body[data-demo-brand='roofing'] .roofing-case-showcase {
+  background: linear-gradient(180deg, rgba(21, 27, 35, 0.95), rgba(17, 22, 29, 0.98));
+  border: 1px solid rgba(72, 87, 103, 0.55);
+  border-radius: 20px;
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+  align-items: stretch;
+  padding: 1rem;
+}
+
+body[data-demo-brand='roofing'] .roofing-case-showcase__media {
+  border-radius: 16px;
+  margin: 0;
+  min-height: 22rem;
+  overflow: hidden;
+}
+
+body[data-demo-brand='roofing'] .roofing-case-showcase__media img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+body[data-demo-brand='roofing'] .roofing-case-showcase__body {
+  align-content: start;
+  display: grid;
+  gap: 1rem;
+  padding: 0.45rem 0.4rem 0.4rem;
+}
+
+body[data-demo-brand='roofing'] .roofing-case-showcase__description {
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+body[data-demo-brand='roofing'] .roofing-request-layout {
+  display: grid;
+  gap: 1.3rem;
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.75fr);
+}
+
+body[data-demo-brand='roofing'] .roofing-request-form {
+  background: linear-gradient(180deg, rgba(21, 27, 35, 0.95), rgba(18, 23, 30, 0.98));
+  border: 1px solid rgba(72, 87, 103, 0.55);
+  border-radius: 20px;
+  display: grid;
+  gap: 0.85rem;
+  padding: clamp(1.2rem, 2.8vw, 1.7rem);
+}
+
+body[data-demo-brand='roofing'] .roofing-request-form label {
+  color: var(--color-text-secondary);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+body[data-demo-brand='roofing'] .roofing-request-form input,
+body[data-demo-brand='roofing'] .roofing-request-form select,
+body[data-demo-brand='roofing'] .roofing-request-form textarea {
+  background: rgba(11, 15, 20, 0.72);
+  border: 1px solid rgba(88, 102, 118, 0.7);
+  border-radius: 12px;
+  color: var(--color-text-primary);
+  padding: 0.95rem 1rem;
+}
+
+body[data-demo-brand='roofing'] .roofing-request-form textarea {
+  min-height: 10rem;
+  resize: vertical;
+}
+
+body[data-demo-brand='roofing'] .roofing-request-aside {
+  align-content: start;
+  display: grid;
+  gap: 1rem;
+}
+
+body[data-demo-brand='roofing'] .roofing-request-panel {
+  background: linear-gradient(180deg, rgba(23, 29, 37, 0.94), rgba(18, 23, 30, 0.96));
+  border: 1px solid rgba(72, 87, 103, 0.55);
+  border-radius: 18px;
+  display: grid;
+  gap: 1rem;
+  padding: 1.4rem;
+}
+
+body[data-demo-brand='roofing'] .roofing-request-panel--accent {
+  border-color: rgba(216, 122, 61, 0.34);
+  box-shadow: inset 0 0 0 1px rgba(216, 122, 61, 0.08);
+}
+
+body[data-demo-brand='roofing'] .roofing-request-panel p {
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+}
+
+body[data-demo-brand='roofing'] .roofing-request-panel__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+body[data-demo-brand='roofing'] .roofing-notes-layout {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.82fr);
+}
+
+body[data-demo-brand='roofing'] .roofing-notes-panel {
+  background: linear-gradient(180deg, rgba(23, 29, 37, 0.94), rgba(18, 23, 30, 0.96));
+  border: 1px solid rgba(72, 87, 103, 0.55);
+  border-radius: 18px;
+  display: grid;
+  gap: 1rem;
+  padding: 1.4rem;
+}
+
+body[data-demo-brand='roofing'] .roofing-notes-panel p {
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+body[data-demo-brand='roofing'] .roofing-notes-panel__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+body[data-demo-brand='roofing'] .before-after-compare {
+  gap: 0.85rem;
+}
+
+body[data-demo-brand='roofing'] .before-after-compare__frame {
+  border: 1px solid rgba(74, 89, 104, 0.55);
+  border-radius: 20px;
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+body[data-demo-brand='roofing'] .before-after-compare__control {
+  color: var(--color-text-muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+body[data-demo-brand='roofing'] .before-after-compare__control input {
+  accent-color: var(--color-brand);
+}
+
+body[data-demo-brand='roofing'] .before-after-compare__badge {
+  background: rgba(10, 14, 18, 0.84);
+  border-color: rgba(215, 225, 236, 0.12);
+  color: var(--color-text-primary);
+}
+
+body[data-demo-brand='roofing'] .before-after-compare__handle {
+  background: var(--color-brand);
+  border-color: #161c23;
+}
+
+body[data-demo-brand='roofing'] .before-after-compare__divider::before {
+  background: rgba(255, 255, 255, 0.78);
+}
+
+body[data-demo-brand='roofing'] .site-footer {
+  background: linear-gradient(180deg, rgba(16, 20, 26, 0.7), rgba(10, 13, 17, 0.98));
+  border-top: 1px solid rgba(74, 89, 104, 0.42);
+}
+
+body[data-demo-brand='roofing'] .site-footer__roofing-top,
+body[data-demo-brand='roofing'] .site-footer__roofing-grid {
+  max-width: 1280px;
+}
+
+body[data-demo-brand='roofing'] .site-footer__roofing-top {
+  align-items: center;
+}
+
+body[data-demo-brand='roofing'] .site-footer__brand {
+  font-family: var(--font-display);
+  letter-spacing: -0.04em;
+}
+
+body[data-demo-brand='roofing'] .site-footer__heading {
+  color: var(--color-brand-strong);
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+body[data-demo-brand='roofing'] .site-footer__tagline,
+body[data-demo-brand='roofing'] .site-footer__legal,
+body[data-demo-brand='roofing'] .site-footer p,
+body[data-demo-brand='roofing'] .site-footer li,
+body[data-demo-brand='roofing'] .site-footer a {
+  color: var(--color-text-secondary);
+}
+
+body[data-demo-brand='roofing'] .site-footer a:hover {
+  color: var(--color-text-primary);
+}
+
+body[data-demo-brand='roofing'] .mobile-primary-cta {
+  background: rgba(12, 16, 21, 0.92);
+  backdrop-filter: blur(10px);
+}

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap');
 
 :root {
   --color-bg: #101412;
@@ -99,25 +99,25 @@ body[data-demo-theme='landscaping'] {
 }
 
 body[data-demo-theme='roofing'] {
-  --color-bg: #0d1117;
-  --color-bg-soft: #141b23;
-  --color-surface: #1b2330;
-  --color-surface-strong: #253243;
-  --color-border: #39475a;
+  --color-bg: #0f1318;
+  --color-bg-soft: #151b22;
+  --color-surface: #1a2028;
+  --color-surface-strong: #222a35;
+  --color-border: #324150;
   --color-text-primary: #eff4f8;
-  --color-text-secondary: #ccd6df;
-  --color-text-muted: #92a2b1;
-  --color-brand: #cf7440;
-  --color-brand-strong: #efb169;
-  --color-brand-ink: #21140d;
+  --color-text-secondary: #c7d0da;
+  --color-text-muted: #8f9baa;
+  --color-brand: #d87a3d;
+  --color-brand-strong: #f2b268;
+  --color-brand-ink: #22140c;
   --color-success: #84b592;
-  --font-display: 'Manrope', 'Segoe UI', sans-serif;
+  --font-display: 'Space Grotesk', 'Manrope', 'Segoe UI', sans-serif;
   --font-nav: 'Manrope', 'Segoe UI', sans-serif;
   --font-button: 'Manrope', 'Segoe UI', sans-serif;
   --space-section: 4.25rem;
-  --radius-button: 10px;
-  --radius-card: 14px;
-  --radius-panel: 18px;
-  --shadow-soft: 0 14px 32px rgb(7 10 14 / 24%);
-  --shadow-elevated: 0 22px 50px rgb(5 8 11 / 30%);
+  --radius-button: 12px;
+  --radius-card: 16px;
+  --radius-panel: 22px;
+  --shadow-soft: 0 16px 38px rgb(3 5 8 / 26%);
+  --shadow-elevated: 0 26px 54px rgb(3 5 8 / 34%);
 }

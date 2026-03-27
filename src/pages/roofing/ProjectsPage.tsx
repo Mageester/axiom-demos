@@ -1,7 +1,9 @@
 import { useContext } from 'react'
 import { DemoConfigContext } from '../../config/demoConfig'
-import { RoofingPageHeader } from '../../components/roofing/RoofingPageHeader'
 import { ButtonLink } from '../../components/ui/Button'
+import { Card } from '../../components/ui/Card'
+import { PageHero } from '../../components/ui/PageHero'
+import { Section } from '../../components/ui/Section'
 import { Reveal } from '../../components/ui/Reveal'
 
 export function ProjectsPage() {
@@ -11,7 +13,7 @@ export function ProjectsPage() {
 
   return (
     <>
-      <RoofingPageHeader
+      <PageHero
         actions={
           <>
             <ButtonLink to={routes.reservations}>Request inspection</ButtonLink>
@@ -20,31 +22,29 @@ export function ProjectsPage() {
             </ButtonLink>
           </>
         }
+        className="roofing-hero"
         description={content.gallery.intro}
         eyebrow="Projects"
         media={featuredProject?.image}
-        meta={['Repair, replacement, roofline support, and drainage references', 'Homes across east Toronto and Durham']}
-        summaryItems={[
-          'Representative scopes only, organized by issue type and finish level',
-          'Useful for comparing repair jobs against full replacement work',
-          'Best read as examples of condition, scope, and closeout quality',
+        revealVariant="firm"
+        signals={[
+          'Representative scopes only',
+          'Repair and replacement references',
+          'Finished for homes in east Toronto and Durham',
         ]}
-        summaryLabel="How to read these references"
-        title="Project references for homeowners comparing issue type, scope, and finish standard"
+        title="Selected references for homeowners comparing scope and finish"
       />
 
       {featuredProject ? (
-        <Reveal as="section" className="roof-block" variant="firm">
-          <header className="roof-block__header">
-            <p className="roof-block__eyebrow">Featured reference</p>
-            <h2 className="roof-block__title">{featuredProject.title}</h2>
-            <p className="roof-block__description">
-              A representative scope showing the kind of roof condition, roof-edge detail, and closeout standard Blackridge is usually hired to handle.
-            </p>
-          </header>
-
-          <Reveal as="article" className="roof-casefile" variant="firm">
-            <figure className="roof-casefile__media">
+        <Section
+          className="roofing-section roofing-section--featured"
+          description="A clearer read on the kind of roof condition, roof-edge detail, and closeout standard the homeowner was working toward."
+          eyebrow="Featured reference"
+          revealVariant="firm"
+          title={featuredProject.title}
+        >
+          <Reveal as="article" className="roofing-case-showcase" variant="firm">
+            <figure className="roofing-case-showcase__media">
               <img
                 alt={featuredProject.image.alt}
                 loading="lazy"
@@ -52,19 +52,20 @@ export function ProjectsPage() {
                 style={featuredProject.image.position ? { objectPosition: featuredProject.image.position } : undefined}
               />
             </figure>
-            <div className="roof-casefile__body">
-              <div className="roof-casefile__intro">
-                <p className="roof-block__eyebrow">{featuredProject.subtitle}</p>
-                <p>{featuredProject.description}</p>
-              </div>
+
+            <div className="roofing-case-showcase__body">
+              <p className="roofing-case-showcase__eyebrow">{featuredProject.subtitle}</p>
+              <p className="roofing-case-showcase__description">{featuredProject.description}</p>
+
               {featuredProject.facts?.length ? (
-                <ul className="plain-list roof-chip-list">
+                <ul className="plain-list roofing-case-facts">
                   {featuredProject.facts.map((fact) => (
                     <li key={fact}>{fact}</li>
                   ))}
                 </ul>
               ) : null}
-              <div className="roof-command-deck__actions">
+
+              <div className="roofing-case-showcase__actions">
                 <ButtonLink to={routes.reservations}>Discuss similar scope</ButtonLink>
                 <ButtonLink to={routes.contact} variant="secondary">
                   Contact office
@@ -72,48 +73,36 @@ export function ProjectsPage() {
               </div>
             </div>
           </Reveal>
-        </Reveal>
+        </Section>
       ) : null}
 
-      <Reveal as="section" className="roof-block" variant="firm">
-        <header className="roof-block__header">
-          <p className="roof-block__eyebrow">Project register</p>
-          <h2 className="roof-block__title">Additional references by issue type</h2>
-        </header>
-
-        <div className="roof-case-grid">
-          {remainingProjects.map((project, index) => (
-            <Reveal
-              as="article"
-              className="roof-case-card"
-              delay={index * 55}
+      <Section
+        className="roofing-section roofing-section--references"
+        description="A smaller set of references grouped by issue type so the page stays selective instead of looking like a gallery wall."
+        eyebrow="More references"
+        revealVariant="firm"
+        title="Additional projects by issue type"
+      >
+        <div className="card-grid card-grid--3 roofing-card-grid">
+          {remainingProjects.map((project) => (
+            <Card
+              description={project.description}
+              image={project.image}
               key={project.title}
-              variant="firm"
+              meta={project.subtitle}
+              title={project.title}
             >
-              <figure className="roof-case-card__media">
-                <img
-                  alt={project.image.alt}
-                  loading="lazy"
-                  src={project.image.src}
-                  style={project.image.position ? { objectPosition: project.image.position } : undefined}
-                />
-              </figure>
-              <div className="roof-case-card__body">
-                <p className="roof-block__eyebrow">{project.subtitle}</p>
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
-                {project.facts?.length ? (
-                  <ul className="plain-list roof-chip-list roof-chip-list--tight">
-                    {project.facts.map((fact) => (
-                      <li key={fact}>{fact}</li>
-                    ))}
-                  </ul>
-                ) : null}
-              </div>
-            </Reveal>
+              {project.facts?.length ? (
+                <ul className="plain-list roofing-card-list roofing-card-list--tight">
+                  {project.facts.map((fact) => (
+                    <li key={fact}>{fact}</li>
+                  ))}
+                </ul>
+              ) : null}
+            </Card>
           ))}
         </div>
-      </Reveal>
+      </Section>
     </>
   )
 }

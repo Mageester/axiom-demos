@@ -1,8 +1,8 @@
 import { type FormEvent, useContext, useState } from 'react'
 import { DemoConfigContext } from '../../config/demoConfig'
-import { RoofingPageHeader } from '../../components/roofing/RoofingPageHeader'
-import { Button, ButtonAnchor } from '../../components/ui/Button'
-import { Reveal } from '../../components/ui/Reveal'
+import { Button, ButtonAnchor, ButtonLink } from '../../components/ui/Button'
+import { PageHero } from '../../components/ui/PageHero'
+import { Section } from '../../components/ui/Section'
 
 const issueOptions = [
   'Active leak or water entry',
@@ -22,7 +22,7 @@ const timelineOptions = [
 
 export function InspectionPage() {
   const [statusMessage, setStatusMessage] = useState('')
-  const { content } = useContext(DemoConfigContext)
+  const { content, routes } = useContext(DemoConfigContext)
 
   function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -58,61 +58,30 @@ export function InspectionPage() {
 
   return (
     <>
-      <RoofingPageHeader
+      <PageHero
         actions={<ButtonAnchor href={content.brand.phoneHref}>Call office</ButtonAnchor>}
+        className="roofing-hero"
         description={content.reservations.intro}
         eyebrow="Inspection"
         media={content.home.hero.image}
-        meta={['Use this when the next step still needs to be confirmed', 'Call first for active leak issues']}
-        summaryItems={[
-          'Property address, roof concern, and timing are the first details we need',
-          'Photos help us confirm urgency and whether the scope fits the service area',
-          'Repair-versus-replacement guidance is sent after the first visit, not before it',
+        revealVariant="firm"
+        signals={[
+          'Best for serious roof work',
+          'Photos help us triage faster',
+          'Replies usually within one business day',
         ]}
-        summaryLabel="What this request should include"
-        title="Request a roof or exterior inspection"
+        title="Request an inspection when the next step still needs to be confirmed"
       />
 
-      <Reveal as="section" className="roof-block" variant="firm">
-        <header className="roof-block__header">
-          <p className="roof-block__eyebrow">Direct options</p>
-          <h2 className="roof-block__title">Call, email, or send the inspection form</h2>
-        </header>
-
-        <div className="roof-contact-board">
-          {content.reservations.channels.map((channel, index) => (
-            <Reveal
-              as="article"
-              className="roof-contact-dossier"
-              delay={index * 55}
-              key={channel.label}
-              variant="firm"
-            >
-              <p className="roof-block__eyebrow">{channel.label}</p>
-              <h3>{channel.value}</h3>
-              <ButtonAnchor href={channel.href} variant="secondary">
-                {channel.label.toLowerCase().includes('call')
-                  ? 'Call office'
-                  : channel.label.toLowerCase().includes('email')
-                    ? 'Email request'
-                    : 'View map'}
-              </ButtonAnchor>
-            </Reveal>
-          ))}
-        </div>
-      </Reveal>
-
-      <Reveal as="section" className="roof-block" variant="firm">
-        <header className="roof-block__header">
-          <p className="roof-block__eyebrow">Inspection form</p>
-          <h2 className="roof-block__title">Send the property details first</h2>
-          <p className="roof-block__description">
-            This form is best when the problem is clear enough to describe but the right scope still needs to be confirmed before a site visit is booked.
-          </p>
-        </header>
-
-        <div className="roof-request-layout">
-          <form className="roof-request-form" onSubmit={onSubmit}>
+      <Section
+        className="roofing-section roofing-section--request"
+        description="This is the cleanest route when you are ready to share the address and the issue details."
+        eyebrow="Inspection form"
+        revealVariant="firm"
+        title="Send the property details first"
+      >
+        <div className="roofing-request-layout">
+          <form className="roofing-request-form" onSubmit={onSubmit}>
             <label htmlFor="name">Full name</label>
             <input id="name" name="name" required type="text" />
 
@@ -152,24 +121,31 @@ export function InspectionPage() {
             {statusMessage ? <p className="form-status">{statusMessage}</p> : null}
           </form>
 
-          <aside className="roof-request-aside">
-            <div className="roof-request-aside__panel">
-              <p className="roof-block__eyebrow">What happens next</p>
-              <ul className="plain-list roof-command-deck__brief-list">
+          <aside className="roofing-request-aside">
+            <div className="roofing-request-panel">
+              <p className="roofing-request-panel__eyebrow">What happens next</p>
+              <ul className="plain-list roofing-request-panel__list">
                 {content.reservations.policies.map((policy) => (
                   <li key={policy}>{policy}</li>
                 ))}
               </ul>
             </div>
-            <div className="roof-request-aside__panel roof-request-aside__panel--accent">
-              <p className="roof-block__eyebrow">Urgent issues</p>
+
+            <div className="roofing-request-panel roofing-request-panel--accent">
+              <p className="roofing-request-panel__eyebrow">Urgent issues</p>
               <p>
                 For active leaks or recent storm damage, call {content.brand.phone} so the request can be triaged first.
               </p>
+              <div className="roofing-request-panel__actions">
+                <ButtonLink to={routes.contact}>Go to contact page</ButtonLink>
+                <ButtonAnchor href={content.brand.phoneHref} variant="secondary">
+                  Call now
+                </ButtonAnchor>
+              </div>
             </div>
           </aside>
         </div>
-      </Reveal>
+      </Section>
     </>
   )
 }

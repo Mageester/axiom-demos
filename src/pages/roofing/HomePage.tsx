@@ -1,190 +1,150 @@
 import { useContext } from 'react'
 import { DemoConfigContext } from '../../config/demoConfig'
+import { BeforeAfterCompare } from '../../components/ui/BeforeAfterCompare'
 import { ButtonAnchor, ButtonLink } from '../../components/ui/Button'
+import { Card } from '../../components/ui/Card'
+import { PageHero } from '../../components/ui/PageHero'
+import { Section } from '../../components/ui/Section'
 import { Reveal } from '../../components/ui/Reveal'
 
 export function HomePage() {
   const { content, routes } = useContext(DemoConfigContext)
-  const primaryScope = content.menu.sections[0]
-  const secondaryScopes = content.menu.sections.slice(1)
+  const serviceScopes = content.menu.sections
+  const inspectionSteps = [
+    {
+      label: '01',
+      title: 'Inspect',
+      description: content.home.experience.points[0],
+    },
+    {
+      label: '02',
+      title: 'Set scope',
+      description: content.home.experience.points[1],
+    },
+    {
+      label: '03',
+      title: 'Close out',
+      description: content.home.experience.points[2],
+    },
+  ]
   const beforeAfter = content.home.extras?.beforeAfter
 
   return (
     <>
-      <Reveal as="section" className="roof-command-deck" variant="firm">
-        <div className="roof-command-deck__lead">
-          <p className="roof-command-deck__eyebrow">{content.home.hero.eyebrow}</p>
-          <h1 className="roof-command-deck__title">{content.home.hero.title}</h1>
-          <p className="roof-command-deck__description">{content.home.hero.description}</p>
-          <div className="roof-command-deck__actions">
+      <PageHero
+        actions={
+          <>
             <ButtonLink size="lg" to={routes.reservations}>
               {content.home.hero.primaryCta}
             </ButtonLink>
             <ButtonAnchor size="lg" href={content.brand.phoneHref} variant="secondary">
               Call office
             </ButtonAnchor>
-          </div>
-          <div className="roof-command-deck__meta">
-            <span>{content.brand.city}</span>
-            <span>Inspection replies usually within one business day</span>
-          </div>
-        </div>
+          </>
+        }
+        className="roofing-hero"
+        description={content.home.hero.description}
+        eyebrow={content.home.hero.eyebrow}
+        media={content.home.hero.image}
+        revealVariant="firm"
+        signals={content.home.hero.signals}
+        title={content.home.hero.title}
+      />
 
-        {content.home.hero.image ? (
-          <figure className="roof-command-deck__media">
-            <img
-              alt={content.home.hero.image.alt}
-              loading="eager"
-              src={content.home.hero.image.src}
-              style={
-                content.home.hero.image.position
-                  ? { objectPosition: content.home.hero.image.position }
-                  : undefined
-              }
-            />
-          </figure>
-        ) : null}
-
-        <aside className="roof-command-deck__brief">
-          <p className="roof-command-deck__brief-label">What the first visit is for</p>
-          <ul className="plain-list roof-command-deck__brief-list">
-            {content.home.hero.signals?.map((signal) => (
-              <li key={signal}>{signal}</li>
-            ))}
-          </ul>
-          <div className="roof-command-deck__brief-callout">
-            <p className="roof-command-deck__brief-title">Urgent leak or recent storm damage</p>
-            <p>Call first so the issue can be triaged before a formal inspection slot is booked.</p>
-            <a href={content.brand.phoneHref}>{content.brand.phone}</a>
-          </div>
-        </aside>
-      </Reveal>
-
-      <Reveal as="section" className="roof-block roof-block--services" variant="firm">
-        <header className="roof-block__header">
-          <p className="roof-block__eyebrow">Services</p>
-          <h2 className="roof-block__title">Roof issues, replacements, and roof-edge work.</h2>
-          <p className="roof-block__description">Most calls fall into repair, replacement, or roof-edge support.</p>
-        </header>
-
-        <div className="roof-scope-ledger">
-          {primaryScope ? (
-            <Reveal as="article" className="roof-scope-ledger__primary" variant="firm">
-              {primaryScope.image ? (
-                <figure className="roof-scope-ledger__primary-media">
-                  <img
-                    alt={primaryScope.image.alt}
-                    loading="lazy"
-                    src={primaryScope.image.src}
-                    style={
-                      primaryScope.image.position
-                        ? { objectPosition: primaryScope.image.position }
-                        : undefined
-                    }
-                  />
-                </figure>
-              ) : null}
-              <div className="roof-scope-ledger__primary-body">
-                <p className="roof-block__eyebrow">{primaryScope.note}</p>
-                <h3>{primaryScope.title}</h3>
-                <p>{primaryScope.items[0]?.description}</p>
-                <ul className="plain-list roof-chip-list">
-                  {primaryScope.highlights?.map((highlight) => (
-                    <li key={highlight}>{highlight}</li>
+      <Section
+        className="roofing-section roofing-section--services"
+        description="Use the first visit to confirm whether the issue is a repair, a replacement, or roof-edge support."
+        eyebrow="Services"
+        revealVariant="firm"
+        title="Roofing work organized by urgency and condition"
+      >
+        <div className="card-grid card-grid--3 roofing-card-grid">
+          {serviceScopes.map((scope) => (
+            <Card
+              description={scope.items[0]?.description}
+              image={scope.image}
+              key={scope.title}
+              meta={scope.note}
+              title={scope.title}
+            >
+              {scope.highlights?.length ? (
+                <ul className="plain-list roofing-card-list">
+                  {scope.highlights.map((item) => (
+                    <li key={item}>{item}</li>
                   ))}
                 </ul>
-              </div>
-            </Reveal>
-          ) : null}
-
-          <div className="roof-scope-ledger__stack">
-            {secondaryScopes.map((scope, index) => (
-              <Reveal
-                as="article"
-                className="roof-scope-card"
-                delay={index * 55}
-                key={scope.title}
-                variant="firm"
-              >
-                {scope.image ? (
-                  <figure className="roof-scope-card__media">
-                    <img
-                      alt={scope.image.alt}
-                      loading="lazy"
-                      src={scope.image.src}
-                      style={scope.image.position ? { objectPosition: scope.image.position } : undefined}
-                    />
-                  </figure>
-                ) : null}
-                <div className="roof-scope-card__body">
-                  <p className="roof-block__eyebrow">{scope.note}</p>
-                  <h3>{scope.title}</h3>
-                  <p>{scope.items[0]?.description}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+              ) : null}
+            </Card>
+          ))}
         </div>
-      </Reveal>
+      </Section>
+
+      <Section
+        className="roofing-section roofing-section--process"
+        description="The job stays tight when the first review, the scope, and the handoff all line up."
+        eyebrow="Process"
+        revealVariant="firm"
+        title="What happens from inspection to closeout"
+      >
+        <div className="roofing-step-grid">
+          {inspectionSteps.map((step) => (
+            <Reveal as="article" className="roofing-step-card" key={step.label} variant="firm">
+              <p className="roofing-step-card__label">{step.label}</p>
+              <h3>{step.title}</h3>
+              <p>{step.description}</p>
+            </Reveal>
+          ))}
+        </div>
+      </Section>
 
       {beforeAfter ? (
-        <Reveal as="section" className="roof-block roof-block--comparison" variant="firm">
-          <header className="roof-block__header">
-            <p className="roof-block__eyebrow">Before / after comparison</p>
-            <h2 className="roof-block__title">{beforeAfter.title}</h2>
-            <p className="roof-block__description">{beforeAfter.summary}</p>
-          </header>
+        <Section
+          className="roofing-section roofing-section--comparison"
+          description={beforeAfter.summary}
+          eyebrow="Before / after"
+          revealVariant="firm"
+          title={beforeAfter.title}
+        >
+          <div className="roofing-comparison">
+            <BeforeAfterCompare
+              after={beforeAfter.after}
+              before={beforeAfter.before}
+              className="roofing-comparison__compare"
+            />
 
-          <article className="roof-before-after">
-            <figure className="roof-before-after__panel">
-              <span className="roof-before-after__label">Before</span>
-              <img
-                alt={beforeAfter.before.alt}
-                loading="lazy"
-                src={beforeAfter.before.src}
-                style={beforeAfter.before.position ? { objectPosition: beforeAfter.before.position } : undefined}
-              />
-            </figure>
-            <figure className="roof-before-after__panel">
-              <span className="roof-before-after__label roof-before-after__label--after">After</span>
-              <img
-                alt={beforeAfter.after.alt}
-                loading="lazy"
-                src={beforeAfter.after.src}
-                style={beforeAfter.after.position ? { objectPosition: beforeAfter.after.position } : undefined}
-              />
-            </figure>
-            <div className="roof-before-after__summary">
-              <p className="roof-block__eyebrow">What changed</p>
-              <ul className="plain-list roof-chip-list">
+            <div className="roofing-comparison__aside">
+              <p className="roofing-comparison__eyebrow">What changed</p>
+              <ul className="plain-list roofing-comparison__list">
                 {beforeAfter.bullets.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
-              <div className="roof-command-deck__actions">
-                <ButtonLink to={routes.reservations}>Request an inspection</ButtonLink>
+              <div className="roofing-comparison__actions">
+                <ButtonLink to={routes.reservations}>Request inspection</ButtonLink>
                 <ButtonLink to={routes.gallery} variant="secondary">
-                  View more projects
+                  View more work
                 </ButtonLink>
               </div>
             </div>
-          </article>
-        </Reveal>
+          </div>
+        </Section>
       ) : null}
 
-      <Reveal as="section" className="roof-dispatch-band" variant="firm">
-        <div className="roof-dispatch-band__copy">
-          <p className="roof-block__eyebrow">Inspection request</p>
-          <h2 className="roof-block__title">Send the address, issue, and photos.</h2>
-          <p className="roof-block__description">We will confirm the next step after the first review.</p>
+      <Reveal as="section" className="roofing-cta-band" variant="firm">
+        <div className="roofing-cta-band__copy">
+          <p className="roofing-cta-band__eyebrow">Inspection request</p>
+          <h2>Send the address, the issue, and a few photos.</h2>
+          <p>We will confirm the next step after the first review.</p>
         </div>
-        <div className="roof-dispatch-band__actions">
+
+        <div className="roofing-cta-band__actions">
           <ButtonLink to={routes.reservations}>Request inspection</ButtonLink>
           <ButtonAnchor href={content.brand.emailHref} variant="secondary">
             Email photos
           </ButtonAnchor>
         </div>
-        <p className="roof-dispatch-band__meta">Serving Toronto, Scarborough, Pickering, Ajax, and Whitby</p>
+
+        <p className="roofing-cta-band__meta">Serving Toronto, Scarborough, Pickering, Ajax, and Whitby</p>
       </Reveal>
     </>
   )
