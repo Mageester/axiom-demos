@@ -60,7 +60,7 @@ export function HomePage() {
         </aside>
       </Reveal>
 
-      <Reveal as="section" className="roof-block" variant="firm">
+      <Reveal as="section" className="roof-block roof-block--services" variant="firm">
         <header className="roof-block__header">
           <p className="roof-block__eyebrow">Services</p>
           <h2 className="roof-block__title">Roof issues, replacements, and roof-edge work.</h2>
@@ -128,7 +128,7 @@ export function HomePage() {
       </Reveal>
 
       {beforeAfter ? (
-        <Reveal as="section" className="roof-block" variant="firm">
+        <Reveal as="section" className="roof-block roof-block--comparison" variant="firm">
           <header className="roof-block__header">
             <p className="roof-block__eyebrow">Before / after comparison</p>
             <h2 className="roof-block__title">{beforeAfter.title}</h2>
