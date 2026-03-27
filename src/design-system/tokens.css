@@ -75,26 +75,26 @@ body[data-demo-theme='restaurant'] {
 }
 
 body[data-demo-theme='landscaping'] {
-  --color-bg: #181d18;
-  --color-bg-soft: #20271f;
-  --color-surface: #232b23;
-  --color-surface-strong: #2f372f;
-  --color-border: #495346;
-  --color-text-primary: #f2efe5;
-  --color-text-secondary: #d4cebe;
-  --color-text-muted: #9b9c8e;
-  --color-brand: #8ead34;
-  --color-brand-strong: #c3db57;
-  --color-brand-ink: #18210d;
-  --color-success: #8aa36b;
+  --color-bg: #f5f1e8;
+  --color-bg-soft: #fbf8f2;
+  --color-surface: #ffffff;
+  --color-surface-strong: #f2eee4;
+  --color-border: #d8d0c0;
+  --color-text-primary: #20271f;
+  --color-text-secondary: #4e5a4d;
+  --color-text-muted: #6c746d;
+  --color-brand: #6f8f31;
+  --color-brand-strong: #91b73a;
+  --color-brand-ink: #17210d;
+  --color-success: #607d4a;
   --font-nav: 'Manrope', 'Segoe UI', sans-serif;
   --font-button: 'Manrope', 'Segoe UI', sans-serif;
   --space-section: 4.5rem;
-  --radius-button: 8px;
-  --radius-card: 14px;
-  --radius-panel: 20px;
-  --shadow-soft: 0 14px 32px rgb(4 7 4 / 18%);
-  --shadow-elevated: 0 24px 52px rgb(2 4 2 / 28%);
+  --radius-button: 999px;
+  --radius-card: 18px;
+  --radius-panel: 28px;
+  --shadow-soft: 0 12px 28px rgb(44 52 32 / 10%);
+  --shadow-elevated: 0 22px 46px rgb(44 52 32 / 14%);
   --font-display: 'Fraunces', Georgia, serif;
 }
 

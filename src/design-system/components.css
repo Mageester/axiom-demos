@@ -7648,3 +7648,218 @@ body[data-demo-brand='roofing'] .roof-dispatch-band__meta {
     grid-template-columns: 1fr;
   }
 }
+
+body[data-demo-theme='landscaping'] .site-nav__service-bar {
+  background: rgb(248 244 234 / 92%);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-border) 74%, white);
+}
+
+body[data-demo-theme='landscaping'] .site-nav__service-bar-copy,
+body[data-demo-theme='landscaping'] .site-nav__service-bar-links a,
+body[data-demo-theme='landscaping'] .site-nav__service-bar-links span {
+  color: var(--color-text-secondary);
+}
+
+body[data-demo-theme='landscaping'] .site-nav--service {
+  background: rgb(251 248 240 / 90%);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-border) 72%, white);
+}
+
+body[data-demo-theme='landscaping'] .site-brand {
+  background: rgb(255 255 251 / 92%);
+  border: 1px solid color-mix(in srgb, var(--color-border) 82%, white);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgb(44 52 32 / 8%);
+}
+
+body[data-demo-theme='landscaping'] .site-brand__name {
+  color: var(--color-text-primary);
+}
+
+body[data-demo-theme='landscaping'] .site-brand__city {
+  color: var(--color-text-muted);
+}
+
+body[data-demo-theme='landscaping'] .site-nav__service-shell {
+  background: rgb(255 255 252 / 86%);
+  border: 1px solid color-mix(in srgb, var(--color-border) 76%, white);
+  box-shadow: 0 8px 20px rgb(44 52 32 / 7%);
+}
+
+body[data-demo-theme='landscaping'] .primary-nav__link {
+  color: var(--color-text-secondary);
+}
+
+body[data-demo-theme='landscaping'] .primary-nav__link:hover,
+body[data-demo-theme='landscaping'] .primary-nav__link--active {
+  background: rgb(111 143 49 / 10%);
+  color: var(--color-text-primary);
+}
+
+body[data-demo-theme='landscaping'] .btn--primary {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--color-brand-strong) 28%, white), var(--color-brand));
+  border-color: color-mix(in srgb, var(--color-brand) 60%, white);
+  color: var(--color-brand-ink);
+  box-shadow: 0 10px 18px rgb(86 112 36 / 12%);
+  text-transform: uppercase;
+}
+
+body[data-demo-theme='landscaping'] .btn--primary:hover {
+  box-shadow: 0 12px 22px rgb(86 112 36 / 16%);
+}
+
+body[data-demo-theme='landscaping'] .btn--secondary {
+  background: rgb(255 255 252 / 76%);
+  border-color: color-mix(in srgb, var(--color-border) 78%, white);
+  color: var(--color-text-primary);
+}
+
+body[data-demo-theme='landscaping'] .btn--secondary:hover {
+  background: rgb(255 255 252 / 94%);
+  border-color: color-mix(in srgb, var(--color-brand) 36%, var(--color-border));
+}
+
+body[data-demo-theme='landscaping'] .btn--quiet {
+  color: var(--color-brand);
+}
+
+body[data-demo-theme='landscaping'] .landscape-home-hero {
+  border-color: color-mix(in srgb, var(--color-border) 82%, white);
+  box-shadow: 0 18px 42px rgb(44 52 32 / 10%);
+}
+
+body[data-demo-theme='landscaping'] .landscape-home-hero__overlay {
+  background:
+    linear-gradient(92deg, rgb(7 10 6 / 68%) 0%, rgb(7 10 6 / 34%) 38%, rgb(7 10 6 / 18%) 68%, rgb(7 10 6 / 48%) 100%),
+    linear-gradient(180deg, rgb(7 10 6 / 10%), rgb(7 10 6 / 34%));
+}
+
+body[data-demo-theme='landscaping'] .landscape-home-hero__card,
+body[data-demo-theme='landscaping'] .landscape-service-strip__card,
+body[data-demo-theme='landscaping'] .landscape-gallery-showcase__feature,
+body[data-demo-theme='landscaping'] .landscape-gallery-showcase__card,
+body[data-demo-theme='landscaping'] .landscape-project-gallery__lead,
+body[data-demo-theme='landscaping'] .landscape-project-gallery__card,
+body[data-demo-theme='landscaping'] .landscape-transformation,
+body[data-demo-theme='landscaping'] .land-service-focus,
+body[data-demo-theme='landscaping'] .land-service-section,
+body[data-demo-theme='landscaping'] .land-transformation,
+body[data-demo-theme='landscaping'] .land-quote-band,
+body[data-demo-theme='landscaping'] .land-service-card,
+body[data-demo-theme='landscaping'] .land-project-card,
+body[data-demo-theme='landscaping'] .land-fit-panel,
+body[data-demo-theme='landscaping'] .land-contact-panel,
+body[data-demo-theme='landscaping'] .land-team-panel,
+body[data-demo-theme='landscaping'] .policy-panel--landscaping,
+body[data-demo-theme='landscaping'] .reservation-form--landscaping {
+  background: rgb(255 255 252 / 92%);
+  border-color: color-mix(in srgb, var(--color-border) 78%, white);
+  box-shadow: 0 14px 34px rgb(44 52 32 / 9%);
+}
+
+body[data-demo-theme='landscaping'] .landscape-home-hero__card,
+body[data-demo-theme='landscaping'] .landscape-service-strip__card,
+body[data-demo-theme='landscaping'] .landscape-gallery-showcase__feature,
+body[data-demo-theme='landscaping'] .landscape-gallery-showcase__card,
+body[data-demo-theme='landscaping'] .landscape-project-gallery__lead,
+body[data-demo-theme='landscaping'] .landscape-project-gallery__card {
+  color: var(--color-text-primary);
+}
+
+body[data-demo-theme='landscaping'] .landscape-home-hero__card h2,
+body[data-demo-theme='landscaping'] .landscape-service-strip__card h3,
+body[data-demo-theme='landscaping'] .landscape-gallery-showcase__feature-body h3,
+body[data-demo-theme='landscaping'] .landscape-gallery-showcase__card h3,
+body[data-demo-theme='landscaping'] .landscape-project-gallery__lead-body h2,
+body[data-demo-theme='landscaping'] .landscape-project-gallery__card-body h3,
+body[data-demo-theme='landscaping'] .landscape-transformation__intro h2,
+body[data-demo-theme='landscaping'] .landscape-band__title,
+body[data-demo-theme='landscaping'] .landscape-season-card h3,
+body[data-demo-theme='landscaping'] .landscape-standards-grid__card h3,
+body[data-demo-theme='landscaping'] .land-service-focus__title,
+body[data-demo-theme='landscaping'] .land-service-section__header h2,
+body[data-demo-theme='landscaping'] .land-feature-project__title,
+body[data-demo-theme='landscaping'] .land-note-panel h3,
+body[data-demo-theme='landscaping'] .land-fit-panel h3,
+body[data-demo-theme='landscaping'] .land-contact-panel h3,
+body[data-demo-theme='landscaping'] .land-team-panel h3 {
+  color: var(--color-text-primary);
+}
+
+body[data-demo-theme='landscaping'] .landscape-home-hero__card p:last-child,
+body[data-demo-theme='landscaping'] .landscape-band__description,
+body[data-demo-theme='landscaping'] .landscape-gallery-showcase__feature-body p,
+body[data-demo-theme='landscaping'] .landscape-gallery-showcase__card p,
+body[data-demo-theme='landscaping'] .landscape-service-strip__body p,
+body[data-demo-theme='landscaping'] .landscape-project-gallery__lead-body p,
+body[data-demo-theme='landscaping'] .landscape-project-gallery__card-body p,
+body[data-demo-theme='landscaping'] .landscape-transformation__intro p,
+body[data-demo-theme='landscaping'] .land-service-focus__description,
+body[data-demo-theme='landscaping'] .land-service-section__header p,
+body[data-demo-theme='landscaping'] .land-feature-project__body p,
+body[data-demo-theme='landscaping'] .land-note-panel p,
+body[data-demo-theme='landscaping'] .land-note-panel li,
+body[data-demo-theme='landscaping'] .land-project-card__body p,
+body[data-demo-theme='landscaping'] .land-fit-panel p,
+body[data-demo-theme='landscaping'] .land-contact-panel p:not(.land-contact-panel__eyebrow),
+body[data-demo-theme='landscaping'] .land-team-panel p,
+body[data-demo-theme='landscaping'] .policy-panel--landscaping p,
+body[data-demo-theme='landscaping'] .policy-panel--landscaping li {
+  color: var(--color-text-secondary);
+}
+
+body[data-demo-theme='landscaping'] .landscape-home-hero__signals li,
+body[data-demo-theme='landscaping'] .landscape-service-strip__list li,
+body[data-demo-theme='landscaping'] .landscape-project-gallery__facts li,
+body[data-demo-theme='landscaping'] .land-inline-facts--project li {
+  color: var(--color-text-secondary);
+}
+
+body[data-demo-theme='landscaping'] .landscape-project-gallery__facts li {
+  background: rgb(111 143 49 / 8%);
+  border-color: rgb(111 143 49 / 18%);
+}
+
+body[data-demo-theme='landscaping'] .landscape-service-strip__list li::before,
+body[data-demo-theme='landscaping'] .landscape-home-hero__signals li::before,
+body[data-demo-theme='landscaping'] .landscape-split-band__quote-list li::before {
+  background: var(--color-brand);
+}
+
+body[data-demo-theme='landscaping'] .land-quote-band {
+  background:
+    linear-gradient(180deg, rgb(255 255 252 / 94%), rgb(244 240 229 / 92%));
+  border-color: color-mix(in srgb, var(--color-brand) 20%, var(--color-border));
+}
+
+body[data-demo-theme='landscaping'] .land-quote-band__meta,
+body[data-demo-theme='landscaping'] .policy-panel__subtle {
+  color: var(--color-text-muted);
+}
+
+body[data-demo-theme='landscaping'] .site-footer--service {
+  background:
+    linear-gradient(180deg, rgb(246 241 231 / 98%), rgb(237 231 218 / 98%));
+  border-top-color: color-mix(in srgb, var(--color-border) 76%, white);
+}
+
+body[data-demo-theme='landscaping'] .site-footer__service-top {
+  border-bottom-color: color-mix(in srgb, var(--color-border) 78%, white);
+}
+
+body[data-demo-theme='landscaping'] .site-footer__heading,
+body[data-demo-theme='landscaping'] .site-footer__service-grid p,
+body[data-demo-theme='landscaping'] .site-footer__service-grid li,
+body[data-demo-theme='landscaping'] .site-footer__legal,
+body[data-demo-theme='landscaping'] .site-footer__tagline {
+  color: var(--color-text-secondary);
+}
+
+body[data-demo-theme='landscaping'] .site-footer__service-grid .btn--quiet {
+  color: var(--color-brand);
+}
+
+body[data-demo-theme='landscaping'] .mobile-primary-cta--service {
+  background: rgb(249 246 238 / 96%);
+  border-top: 1px solid color-mix(in srgb, var(--color-border) 80%, white);
+}
