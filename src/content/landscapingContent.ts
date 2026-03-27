@@ -31,14 +31,13 @@ export const landscapingContent: DemoContent = {
   },
   home: {
     hero: {
-      eyebrow: 'Toronto landscaping and outdoor living',
-      title: 'Patios, planting, and front-entry work that make the house feel cared for.',
-      description:
-        'Northline handles patios, walkways, planting, lighting, curb appeal, and backyard upgrades across Toronto and the west end.',
+      eyebrow: 'Residential landscaping',
+      title: 'Patios, planting, and curb appeal that make the home feel finished.',
+      description: 'Northline plans and builds outdoor spaces across Toronto and the west end.',
       primaryCta: 'Request a quote',
       secondaryCta: 'View projects',
       signals: [
-        'Patios, planting, lighting, curb appeal',
+        'Patios, planting, lighting',
         'Photos reviewed before a site visit',
         'Toronto, Etobicoke, Mississauga, and Oakville',
       ],
@@ -50,8 +49,8 @@ export const landscapingContent: DemoContent = {
     },
     highlights: [
       {
-        title: 'Backyards that actually get used',
-        description: 'Patios planned around furniture, access, and circulation.',
+        title: 'Backyards that feel usable',
+        description: 'Patios planned around furniture and movement.',
       },
       {
         title: 'Front entries with better curb appeal',
@@ -60,9 +59,9 @@ export const landscapingContent: DemoContent = {
     ],
     featuredDishes: [
       {
-        name: 'Patios and seating areas',
+        name: 'Patios and seating',
         course: 'Outdoor living',
-        description: 'Patio builds planned around seating, circulation, and everyday use.',
+        description: 'Patio builds planned around seating, circulation, and daily use.',
         image: {
           src: pexelsPhoto('34037980', 1400, 1000),
           alt: 'Residential backyard patio with seating and layered greenery',
@@ -72,7 +71,7 @@ export const landscapingContent: DemoContent = {
       {
         name: 'Front entry and curb appeal',
         course: 'Arrival and frontage',
-        description: 'Walkways, borders, and planting plans that make the front of the property feel finished.',
+        description: 'Walkways, borders, and planting that clean up the street view.',
         image: {
           src: pexelsPhoto('30196217', 1400, 1000),
           alt: 'Front garden pathway with planting and lamp posts',
@@ -82,7 +81,7 @@ export const landscapingContent: DemoContent = {
       {
         name: 'Lighting and planting refresh',
         course: 'Evening presence',
-        description: 'Low-voltage lighting and planting updates that keep the property looking finished after dark.',
+        description: 'Low-voltage lighting and planting that finish the property after dark.',
         image: {
           src: pexelsPhoto('35828688', 1400, 1000),
           alt: 'Landscape lighting illuminating a planted garden path in the evening',
@@ -91,13 +90,12 @@ export const landscapingContent: DemoContent = {
       },
     ],
     experience: {
-      title: 'What the first steps usually look like',
-      description:
-        'The first conversation covers the property, the area that needs attention, and whether the scope fits.',
+      title: 'What the first call covers',
+      description: 'We review the property, the scope, and whether the project is a fit.',
       points: [
-        'Start with the address, current photos, and the area you want priced.',
-        'If it fits, we book a site visit to review access, grade, drainage, and finish level.',
-        'You get a clear quote and next step before anything is scheduled.',
+        'Send the address, photos, and the area you want priced.',
+        'If it fits, we book a visit to confirm access and finish level.',
+        'You get a clear quote before work is scheduled.',
       ],
       images: [
         {
@@ -115,9 +113,9 @@ export const landscapingContent: DemoContent = {
     extras: {
       projectGallery: [
         {
-          title: 'Back patio and seating area',
+          title: 'Back patio and seating',
           subtitle: 'Patios',
-          description: 'Stone and porcelain patio work planned around seating and circulation.',
+          description: 'Stone and porcelain patio work planned around seating.',
           facts: ['Backyard patio', 'Entertaining layout', 'Clean edges'],
           image: {
             src: pexelsPhoto('34037980', 1200, 900),
@@ -128,7 +126,7 @@ export const landscapingContent: DemoContent = {
         {
           title: 'Garden walk and side-yard path',
           subtitle: 'Walkways',
-          description: 'A cleaner route through the property with better footing and sharper borders.',
+          description: 'A cleaner route through the property with better footing.',
           facts: ['Stone path', 'Border definition', 'Cleaner circulation'],
           image: {
             src: pexelsPhoto('30278085', 1200, 900),
@@ -150,7 +148,7 @@ export const landscapingContent: DemoContent = {
         {
           title: 'After-dark garden lighting',
           subtitle: 'Outdoor lighting',
-          description: 'Low-voltage lighting that keeps paths readable and the property looking finished after dark.',
+          description: 'Low-voltage lighting that keeps paths readable after dark.',
           facts: ['Path lighting', 'Night visibility', 'Landscape polish'],
           image: {
             src: pexelsPhoto('35828688', 1200, 900),
@@ -161,7 +159,7 @@ export const landscapingContent: DemoContent = {
       ],
       beforeAfter: {
         title: 'Plain lawn to usable outdoor living space',
-        summary: 'An open yard turned into a patio, planting, lighting, and circulation that feel tied to the house.',
+        summary: 'An open yard turned into a patio, planting, lighting, and circulation tied to the house.',
         bullets: ['Patio and seating zone', 'Planting layers', 'Low-voltage lighting', 'Cleaner circulation'],
         before: {
           src: '/images/landscaping/land1.png',
@@ -177,13 +175,12 @@ export const landscapingContent: DemoContent = {
     },
   },
   menu: {
-    intro:
-      'Residential landscaping and outdoor-living work across Toronto and the west end.',
+    intro: 'Residential landscaping and outdoor-living work across Toronto and the west end.',
     sections: [
       {
-        title: 'Patios, Walkways & Front Entries',
-        note: 'Hardscape work that sharpens access and curb appeal.',
-        highlights: ['Interlock and natural-stone patios', 'Front entry and step work', 'Backyard circulation and edging'],
+        title: 'Patios, Walkways & Entry Work',
+        note: 'Clean access and stronger curb appeal.',
+        highlights: ['Interlock patios', 'Front steps', 'Side-yard paths'],
         image: {
           src: pexelsPhoto('17240696', 1200, 900),
           alt: 'Residential backyard patio with paving and seating area',
@@ -191,26 +188,26 @@ export const landscapingContent: DemoContent = {
         },
         items: [
           {
-            name: 'Interlock Patios & Seating Areas',
-            description: 'Base prep and finish work sized for real furniture layouts.',
+            name: 'Interlock Patios',
+            description: 'Built around furniture, access, and drainage.',
             price: 'From 6,500',
           },
           {
-            name: 'Front Walkways & Entry Steps',
-            description: 'Entry upgrades that make the house read better from the street.',
+            name: 'Front Walkways',
+            description: 'Entry work that sharpens the front of the house.',
             price: 'From 4,800',
           },
           {
-            name: 'Side-Yard Paths & Garden Connections',
-            description: 'Stone connections that keep access clean between gate, yard, and patio.',
+            name: 'Side-Yard Paths',
+            description: 'Cleaner movement between gate, yard, and patio.',
             price: 'From 3,900',
           },
         ],
       },
       {
-        title: 'Planting, Sod & Yard Upgrades',
-        note: 'Softscape work that adds structure and cleaner beds.',
-        highlights: ['Front-bed planting', 'Sod and grading touchups', 'Shrub and border cleanup'],
+        title: 'Planting, Sod & Bed Refresh',
+        note: 'Softscape work that makes the property feel cared for.',
+        highlights: ['Front-bed planting', 'Sod touchups', 'Shrub cleanup'],
         image: {
           src: pexelsPhoto('33798594', 1200, 900),
           alt: 'Residential garden path with planting and a well-kept backyard setting',
@@ -218,17 +215,17 @@ export const landscapingContent: DemoContent = {
         },
         items: [
           {
-            name: 'Planting Plans & Bed Installation',
+            name: 'Planting Plans',
             description: 'Layered shrubs, perennials, and bed shaping matched to the property.',
             price: 'From 2,400',
           },
           {
             name: 'Sod & Lawn Refresh',
-            description: 'Grading touchups, fresh sod, and cleaner lawn edges where the yard needs a reset.',
+            description: 'Grading touchups, fresh sod, and cleaner lawn edges.',
             price: 'From 2,900',
           },
           {
-            name: 'Front-Yard Curb Appeal Refresh',
+            name: 'Front-Yard Curb Appeal',
             description: 'Focused upgrades around the porch, walk, and street-facing beds.',
             price: 'From 3,600',
           },
@@ -236,8 +233,8 @@ export const landscapingContent: DemoContent = {
       },
       {
         title: 'Lighting, Drainage & Seasonal Care',
-        note: 'Supporting work that protects the finish and keeps the property looking cared for.',
-        highlights: ['Low-voltage lighting', 'Drainage corrections', 'Seasonal cleanup'],
+        note: 'Supporting work that protects the finish.',
+        highlights: ['Path lighting', 'Drainage fixes', 'Seasonal cleanup'],
         image: {
           src: pexelsPhoto('35828688', 1200, 900),
           alt: 'Illuminated landscape path and garden lighting at dusk',
@@ -251,12 +248,12 @@ export const landscapingContent: DemoContent = {
           },
           {
             name: 'Drainage & Water Direction Fixes',
-            description: 'Targeted corrections where runoff, pooling, or grade issues are hurting the yard.',
+            description: 'Targeted corrections where runoff or pooling is hurting the yard.',
             price: 'Quoted after review',
           },
           {
             name: 'Spring / Fall Property Refresh',
-            description: 'Bed cleanup, edging, pruning, and seasonal reset work for properties that need a polish visit.',
+            description: 'Bed cleanup, edging, pruning, and seasonal reset work.',
             price: 'From 650',
           },
         ],
@@ -265,47 +262,46 @@ export const landscapingContent: DemoContent = {
   },
   about: {
     intro:
-      'Northline is for homeowners who want a landscaping company that plans well and leaves the property looking finished.',
+      'Northline is for homeowners who want a landscaping company that plans carefully and leaves the property looking finished.',
     story: [
-      'We start with how the property should function, what needs to improve, and what still makes sense a few seasons from now.',
-      'Scope, access, grading, drainage, and finish standards are worked out early so the project stays under control once work starts.',
-      'The goal is simple: a property that looks sharper, is easier to use, and gives the house a stronger first impression.',
+      'We start with how the property should function, what needs to improve, and what still makes sense over time.',
+      'Scope, access, grading, drainage, and finish standards are set early so the project stays under control.',
+      'The goal is a property that looks sharper, works better, and gives the house a stronger first impression.',
     ],
     values: [
       {
         title: 'Craft before speed',
-        description: 'Prep, level accuracy, and finish detailing come before rushed installs or shortcuts.',
+        description: 'Prep, level accuracy, and finish detailing come before shortcuts.',
       },
       {
         title: 'Clear project control',
-        description: 'Scope, materials, and milestones are laid out clearly so homeowners know what is happening and when.',
+        description: 'Scope, materials, and milestones are laid out clearly.',
       },
       {
         title: 'Respect for the property',
-        description: 'Clean site conduct, careful access management, and a proper handoff are part of the job.',
+        description: 'Clean site conduct, careful access, and a proper handoff are part of the job.',
       },
     ],
     team: [
       {
         name: 'Evan North',
         role: 'Owner & Build Lead',
-        bio: 'Evan leads site planning, hardscape execution, and final quality review.',
+        bio: 'Evan leads site planning, hardscape execution, and final review.',
       },
       {
         name: 'Alana Reyes',
         role: 'Landscape Design Coordinator',
-        bio: 'Alana shapes layout direction, planting strategy, and material combinations.',
+        bio: 'Alana shapes layout direction, planting, and material choices.',
       },
       {
         name: 'Noel Chen',
         role: 'Project Coordinator',
-        bio: 'Noel manages schedule communication, supplier coordination, and homeowner handoff.',
+        bio: 'Noel manages schedule communication, suppliers, and homeowner handoff.',
       },
     ],
   },
   reservations: {
-    intro:
-      'Tell us what part of the property needs work, where you are, and your timing.',
+    intro: 'Tell us what part of the property needs work, where you are, and your timing.',
     policies: [
       'Most quote requests are reviewed within one business day.',
       'If the property is in our service area, we confirm the next step before booking a visit.',
@@ -330,13 +326,12 @@ export const landscapingContent: DemoContent = {
     ],
   },
   gallery: {
-    intro:
-      'Residential projects focused on curb appeal, outdoor living, and cleaner day-to-day use.',
+    intro: 'Residential projects focused on curb appeal, outdoor living, and cleaner day-to-day use.',
     collections: [
       {
-        title: 'Back Patio & Seating Area',
+        title: 'Back Patio & Seating',
         subtitle: 'Backyard entertaining zone',
-        description: 'Backyard patio build with seating, clean circulation, and planting.',
+        description: 'Backyard patio build with seating and planting.',
         facts: ['Rear-yard focus', 'Porcelain paving', 'Planting and circulation'],
         image: {
           src: pexelsPhoto('17240696', 1200, 900),
@@ -358,7 +353,7 @@ export const landscapingContent: DemoContent = {
       {
         title: 'Retaining Wall & Grade Control',
         subtitle: 'Stonework and elevation management',
-        description: 'Stone retaining work that handles elevation cleanly and gives the yard structure.',
+        description: 'Stone retaining work that handles elevation cleanly.',
         facts: ['Retaining wall system', 'Drainage-aware planning', 'Layered garden beds'],
         image: {
           src: pexelsPhoto('33589324', 1200, 900),
@@ -380,8 +375,7 @@ export const landscapingContent: DemoContent = {
     ],
   },
   contact: {
-    intro:
-      'Reach Northline directly to confirm service area, talk through scope, or request a quote.',
+    intro: 'Reach Northline directly to confirm service area, talk through scope, or request a quote.',
     details: [
       {
         label: 'Call for a quote',

@@ -7163,3 +7163,488 @@ body[data-demo-theme='landscaping'] .mobile-primary-cta--service {
     transform: none !important;
   }
 }
+
+body[data-demo-theme='landscaping'] .card,
+body[data-demo-theme='landscaping'] .landscape-home-hero__card,
+body[data-demo-theme='landscaping'] .landscape-service-strip__card,
+body[data-demo-theme='landscaping'] .landscape-gallery-showcase__feature,
+body[data-demo-theme='landscaping'] .landscape-gallery-showcase__card,
+body[data-demo-theme='landscaping'] .landscape-project-gallery__lead,
+body[data-demo-theme='landscaping'] .landscape-project-gallery__card,
+body[data-demo-theme='landscaping'] .landscape-transformation,
+body[data-demo-theme='landscaping'] .land-service-focus,
+body[data-demo-theme='landscaping'] .land-service-section,
+body[data-demo-theme='landscaping'] .land-transformation,
+body[data-demo-theme='landscaping'] .land-quote-band,
+body[data-demo-theme='landscaping'] .land-service-card,
+body[data-demo-theme='landscaping'] .land-project-card,
+body[data-demo-theme='landscaping'] .land-fit-panel,
+body[data-demo-theme='landscaping'] .land-contact-panel,
+body[data-demo-theme='landscaping'] .land-team-panel {
+  background: color-mix(in srgb, var(--color-surface) 94%, white);
+  border-color: color-mix(in srgb, var(--color-border) 88%, white);
+  box-shadow: 0 10px 24px rgb(3 5 3 / 10%);
+}
+
+body[data-demo-theme='landscaping'] .btn--primary {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--color-brand-strong) 38%, white), var(--color-brand));
+  border-color: color-mix(in srgb, var(--color-brand) 54%, white);
+  box-shadow: 0 8px 16px rgb(30 40 12 / 14%);
+  color: var(--color-brand-ink);
+}
+
+body[data-demo-theme='landscaping'] .btn--secondary {
+  background: rgb(24 30 22 / 18%);
+  border-color: color-mix(in srgb, var(--color-border) 90%, white);
+}
+
+body[data-demo-theme='landscaping'] .site-nav--service {
+  background: rgb(16 20 15 / 90%);
+  border-bottom: 1px solid rgb(255 255 255 / 0.06);
+}
+
+body[data-demo-theme='landscaping'] .site-nav__service-shell {
+  padding-block: 0.8rem;
+}
+
+body[data-demo-theme='landscaping'] .site-nav__service-shell .btn--primary {
+  box-shadow: 0 6px 12px rgb(29 38 11 / 14%);
+}
+
+body[data-demo-theme='landscaping'] .site-footer--service {
+  background: linear-gradient(180deg, #1c2218, #141812);
+  border-top-color: color-mix(in srgb, var(--color-border) 88%, white);
+}
+
+body[data-demo-theme='landscaping'] .mobile-primary-cta--service {
+  background: rgb(20 24 18 / 94%);
+  border-top-color: color-mix(in srgb, var(--color-border) 88%, white);
+}
+
+body[data-demo-theme='landscaping'] .landscape-home-hero {
+  border-color: color-mix(in srgb, var(--color-border) 90%, white);
+  border-radius: 26px;
+  box-shadow: 0 18px 44px rgb(3 5 3 / 14%);
+  min-height: clamp(29rem, 66vh, 39rem);
+}
+
+body[data-demo-theme='landscaping'] .landscape-home-hero__overlay {
+  background:
+    linear-gradient(92deg, rgb(14 17 12 / 72%) 0%, rgb(14 17 12 / 42%) 38%, rgb(14 17 12 / 20%) 68%, rgb(14 17 12 / 48%) 100%),
+    linear-gradient(180deg, rgb(14 17 12 / 10%), rgb(14 17 12 / 42%));
+}
+
+body[data-demo-theme='landscaping'] .landscape-home-hero__content {
+  max-width: 42rem;
+}
+
+body[data-demo-theme='landscaping'] .landscape-home-hero__title {
+  max-width: 13ch;
+  text-shadow: none;
+}
+
+body[data-demo-theme='landscaping'] .landscape-home-hero__cards {
+  gap: var(--space-4);
+}
+
+body[data-demo-theme='landscaping'] .landscape-home-hero__card {
+  border-radius: 18px;
+  padding: var(--space-5);
+}
+
+body[data-demo-theme='landscaping'] .landscape-band {
+  margin-bottom: 4.25rem;
+}
+
+body[data-demo-theme='landscaping'] .landscape-band--gallery,
+body[data-demo-theme='landscaping'] .landscape-band--services,
+body[data-demo-theme='landscaping'] .landscape-transformation {
+  grid-template-columns: 1fr;
+}
+
+body[data-demo-theme='landscaping'] .landscape-band--gallery > .landscape-band__header {
+  max-width: 42rem;
+  position: static;
+}
+
+body[data-demo-theme='landscaping'] .landscape-band__title {
+  max-width: 18ch;
+}
+
+body[data-demo-theme='landscaping'] .landscape-band__description {
+  max-width: 46ch;
+}
+
+body[data-demo-theme='landscaping'] .landscape-project-gallery,
+body[data-demo-theme='landscaping'] .landscape-service-strip,
+body[data-demo-theme='landscaping'] .landscape-transformation {
+  gap: var(--space-5);
+}
+
+body[data-demo-theme='landscaping'] .landscape-project-gallery__lead {
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+}
+
+body[data-demo-theme='landscaping'] .landscape-project-gallery__lead,
+body[data-demo-theme='landscaping'] .landscape-project-gallery__card {
+  border-radius: 18px;
+  box-shadow: 0 14px 32px rgb(3 5 3 / 10%);
+}
+
+body[data-demo-theme='landscaping'] .landscape-project-gallery__lead-body,
+body[data-demo-theme='landscaping'] .landscape-project-gallery__card-body,
+body[data-demo-theme='landscaping'] .landscape-service-strip__body,
+body[data-demo-theme='landscaping'] .landscape-transformation,
+body[data-demo-theme='landscaping'] .land-quote-band {
+  padding: var(--space-5);
+}
+
+body[data-demo-theme='landscaping'] .landscape-project-gallery__grid {
+  gap: var(--space-5);
+}
+
+body[data-demo-theme='landscaping'] .landscape-project-gallery__facts li {
+  background: rgb(255 255 255 / 0.04);
+  border-color: rgb(255 255 255 / 0.08);
+}
+
+body[data-demo-theme='landscaping'] .landscape-service-strip__card {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+body[data-demo-theme='landscaping'] .landscape-service-strip__media img {
+  aspect-ratio: 16 / 9;
+  min-height: 13rem;
+}
+
+body[data-demo-theme='landscaping'] .landscape-service-strip__body {
+  gap: var(--space-3);
+}
+
+body[data-demo-theme='landscaping'] .landscape-service-strip__list {
+  gap: 0.6rem;
+}
+
+body[data-demo-theme='landscaping'] .landscape-service-strip__list li {
+  color: var(--color-text-secondary);
+}
+
+body[data-demo-theme='landscaping'] .land-quote-band {
+  align-items: center;
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+body[data-demo-theme='landscaping'] .land-quote-band h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 2.8vw, 2.25rem);
+  line-height: 1.04;
+  max-width: 18ch;
+}
+
+body[data-demo-theme='landscaping'] .land-quote-band p {
+  max-width: 42ch;
+}
+
+body[data-demo-theme='landscaping'] .land-section-actions {
+  justify-content: flex-end;
+}
+
+body[data-demo-brand='roofing'] .btn {
+  font-size: 0.94rem;
+  font-weight: 700;
+  letter-spacing: 0.035em;
+}
+
+body[data-demo-brand='roofing'] .btn--primary {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--color-brand-strong) 28%, white), var(--color-brand));
+  border-color: color-mix(in srgb, var(--color-brand) 64%, white);
+  box-shadow: 0 8px 16px rgb(10 13 17 / 16%);
+  color: var(--color-brand-ink);
+}
+
+body[data-demo-brand='roofing'] .btn--secondary {
+  background: rgb(16 22 29 / 24%);
+  border-color: color-mix(in srgb, var(--color-border) 92%, white);
+}
+
+body[data-demo-brand='roofing'] .card,
+body[data-demo-brand='roofing'] .roof-command-deck,
+body[data-demo-brand='roofing'] .roof-block,
+body[data-demo-brand='roofing'] .roof-dispatch-band,
+body[data-demo-brand='roofing'] .roof-before-after,
+body[data-demo-brand='roofing'] .roof-note-board,
+body[data-demo-brand='roofing'] .roof-visit-lane,
+body[data-demo-brand='roofing'] .roof-scope-ledger__primary,
+body[data-demo-brand='roofing'] .roof-casefile,
+body[data-demo-brand='roofing'] .roof-reference-deck__feature,
+body[data-demo-brand='roofing'] .roof-service-dossier,
+body[data-demo-brand='roofing'] .roof-reference-card,
+body[data-demo-brand='roofing'] .roof-scope-card,
+body[data-demo-brand='roofing'] .roof-case-card,
+body[data-demo-brand='roofing'] .roof-response-card,
+body[data-demo-brand='roofing'] .roof-decision-card,
+body[data-demo-brand='roofing'] .roof-contact-dossier,
+body[data-demo-brand='roofing'] .roof-leadership-card {
+  background: color-mix(in srgb, var(--color-surface) 95%, white);
+  border-color: color-mix(in srgb, var(--color-border) 88%, white);
+  box-shadow: 0 10px 24px rgb(6 9 13 / 10%);
+}
+
+body[data-demo-brand='roofing'] .site-nav__roofing-bar {
+  background: rgb(6 9 14 / 90%);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-border) 82%, black);
+}
+
+body[data-demo-brand='roofing'] .site-nav--roofing {
+  padding-block: 0.8rem;
+}
+
+body[data-demo-brand='roofing'] .site-nav__roofing-shell .btn--primary {
+  min-height: 2.8rem;
+  padding: 0.45rem 1rem;
+}
+
+body[data-demo-brand='roofing'] .site-footer--roofing {
+  background:
+    linear-gradient(180deg, rgb(10 14 20 / 96%), rgb(8 11 16 / 98%)),
+    color-mix(in srgb, var(--color-bg-soft) 96%, black);
+  border-top: 1px solid color-mix(in srgb, var(--color-border) 82%, black);
+}
+
+body[data-demo-brand='roofing'] .roof-home-hero {
+  border-color: color-mix(in srgb, var(--color-border) 90%, black);
+  border-radius: 26px;
+  box-shadow: 0 18px 38px rgb(6 9 13 / 14%);
+  gap: var(--space-6);
+  min-height: clamp(29rem, 70vh, 40rem);
+}
+
+body[data-demo-brand='roofing'] .roof-home-hero__veil {
+  background:
+    linear-gradient(106deg, rgb(8 11 16 / 82%) 0%, rgb(8 11 16 / 64%) 42%, rgb(8 11 16 / 34%) 66%, transparent 100%),
+    linear-gradient(to top, rgb(8 11 16 / 88%), rgb(8 11 16 / 28%));
+}
+
+body[data-demo-brand='roofing'] .roof-home-hero__content {
+  max-width: 40rem;
+  padding: clamp(2rem, 5vw, 3.5rem);
+}
+
+body[data-demo-brand='roofing'] .roof-home-hero__title {
+  max-width: 13ch;
+  text-shadow: none;
+}
+
+body[data-demo-brand='roofing'] .roof-home-hero__panel {
+  background: linear-gradient(180deg, rgb(12 16 22 / 90%), rgb(12 16 22 / 84%));
+  border-left: 1px solid color-mix(in srgb, var(--color-border) 80%, black);
+  padding: clamp(1.4rem, 3vw, 2rem);
+}
+
+body[data-demo-brand='roofing'] .roof-block {
+  gap: var(--space-5);
+  margin-bottom: 4.25rem;
+}
+
+body[data-demo-brand='roofing'] .roof-block__header {
+  max-width: 34rem;
+}
+
+body[data-demo-brand='roofing'] .roof-command-deck {
+  gap: var(--space-5);
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr) minmax(16rem, 0.8fr);
+  padding: clamp(1.45rem, 3vw, 2.2rem);
+}
+
+body[data-demo-brand='roofing'] .roof-command-deck__brief {
+  background: color-mix(in srgb, var(--color-surface) 92%, black);
+  border-color: color-mix(in srgb, var(--color-border) 84%, black);
+  border-radius: 16px;
+}
+
+body[data-demo-brand='roofing'] .roof-command-deck__brief-list li {
+  border-top-color: color-mix(in srgb, var(--color-border) 78%, black);
+}
+
+body[data-demo-brand='roofing'] .roof-command-deck__brief-callout {
+  background: color-mix(in srgb, var(--color-surface-strong) 84%, black);
+  border-color: color-mix(in srgb, var(--color-border) 84%, black);
+}
+
+body[data-demo-brand='roofing'] .roof-scope-ledger {
+  gap: var(--space-5);
+  grid-template-columns: 1fr;
+}
+
+body[data-demo-brand='roofing'] .roof-scope-ledger__primary,
+body[data-demo-brand='roofing'] .roof-casefile,
+body[data-demo-brand='roofing'] .roof-reference-deck__feature {
+  border-radius: 20px;
+}
+
+body[data-demo-brand='roofing'] .roof-scope-ledger__primary {
+  grid-template-columns: 1fr;
+}
+
+body[data-demo-brand='roofing'] .roof-scope-ledger__stack {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+body[data-demo-brand='roofing'] .roof-scope-ledger__primary-media img {
+  min-height: 15rem;
+}
+
+body[data-demo-brand='roofing'] .roof-scope-ledger__primary-body,
+body[data-demo-brand='roofing'] .roof-casefile__body,
+body[data-demo-brand='roofing'] .roof-reference-deck__content {
+  gap: var(--space-4);
+  padding: var(--space-6);
+}
+
+body[data-demo-brand='roofing'] .roof-scope-card,
+body[data-demo-brand='roofing'] .roof-reference-card,
+body[data-demo-brand='roofing'] .roof-case-card,
+body[data-demo-brand='roofing'] .roof-response-card,
+body[data-demo-brand='roofing'] .roof-decision-card,
+body[data-demo-brand='roofing'] .roof-contact-dossier,
+body[data-demo-brand='roofing'] .roof-leadership-card {
+  border-radius: 16px;
+}
+
+body[data-demo-brand='roofing'] .roof-scope-card__body,
+body[data-demo-brand='roofing'] .roof-reference-card__body,
+body[data-demo-brand='roofing'] .roof-case-card__body {
+  gap: var(--space-3);
+  padding: var(--space-4);
+}
+
+body[data-demo-brand='roofing'] .roof-reference-card {
+  grid-template-columns: 10rem 1fr;
+}
+
+body[data-demo-brand='roofing'] .roof-reference-card__media img,
+body[data-demo-brand='roofing'] .roof-scope-card__media img,
+body[data-demo-brand='roofing'] .roof-case-card__media img {
+  aspect-ratio: 16 / 10;
+}
+
+body[data-demo-brand='roofing'] .roof-chip-list li {
+  background: rgb(12 18 24 / 24%);
+  border-color: color-mix(in srgb, var(--color-border) 84%, black);
+}
+
+body[data-demo-brand='roofing'] .roof-before-after {
+  gap: var(--space-4);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(16rem, 0.8fr);
+}
+
+body[data-demo-brand='roofing'] .roof-before-after__panel {
+  border-color: color-mix(in srgb, var(--color-border) 84%, black);
+  border-radius: 16px;
+}
+
+body[data-demo-brand='roofing'] .roof-before-after__summary {
+  background: color-mix(in srgb, var(--color-surface) 92%, black);
+  border: 1px solid color-mix(in srgb, var(--color-border) 84%, black);
+  border-radius: 16px;
+  padding: var(--space-4);
+}
+
+body[data-demo-brand='roofing'] .roof-visit-lane {
+  gap: var(--space-5);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.76fr);
+  padding: var(--space-5);
+}
+
+body[data-demo-brand='roofing'] .roof-visit-step {
+  background: color-mix(in srgb, var(--color-surface) 94%, black);
+  border: 1px solid color-mix(in srgb, var(--color-border) 86%, black);
+  border-radius: 16px;
+  box-shadow: 0 10px 18px rgb(6 9 13 / 8%);
+  padding: var(--space-4);
+}
+
+body[data-demo-brand='roofing'] .roof-visit-lane__support {
+  background: color-mix(in srgb, var(--color-surface) 90%, black);
+  border: 1px solid color-mix(in srgb, var(--color-border) 86%, black);
+  border-radius: 16px;
+  padding: var(--space-4);
+}
+
+body[data-demo-brand='roofing'] .roof-dispatch-band {
+  align-items: center;
+  grid-template-columns: minmax(0, 1fr) auto;
+  padding: var(--space-5);
+}
+
+body[data-demo-brand='roofing'] .roof-dispatch-band__meta {
+  max-width: 36ch;
+}
+
+@media (max-width: 1180px) {
+  body[data-demo-theme='landscaping'] .landscape-band--gallery,
+  body[data-demo-theme='landscaping'] .landscape-band--services,
+  body[data-demo-theme='landscaping'] .landscape-transformation,
+  body[data-demo-theme='landscaping'] .land-quote-band {
+    grid-template-columns: 1fr;
+  }
+
+  body[data-demo-brand='roofing'] .roof-command-deck,
+  body[data-demo-brand='roofing'] .roof-scope-ledger,
+  body[data-demo-brand='roofing'] .roof-before-after,
+  body[data-demo-brand='roofing'] .roof-visit-lane,
+  body[data-demo-brand='roofing'] .roof-dispatch-band {
+    grid-template-columns: 1fr;
+  }
+
+  body[data-demo-brand='roofing'] .roof-command-deck__brief {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 980px) {
+  body[data-demo-theme='landscaping'] .landscape-home-hero,
+  body[data-demo-theme='landscaping'] .landscape-project-gallery__lead,
+  body[data-demo-theme='landscaping'] .landscape-project-gallery__grid,
+  body[data-demo-theme='landscaping'] .landscape-service-strip,
+  body[data-demo-theme='landscaping'] .landscape-home-hero__cards {
+    grid-template-columns: 1fr;
+  }
+
+  body[data-demo-theme='landscaping'] .landscape-home-hero__content,
+  body[data-demo-theme='landscaping'] .landscape-home-hero__cards,
+  body[data-demo-theme='landscaping'] .landscape-project-gallery__lead-body,
+  body[data-demo-theme='landscaping'] .landscape-project-gallery__card-body,
+  body[data-demo-theme='landscaping'] .landscape-service-strip__body,
+  body[data-demo-theme='landscaping'] .land-quote-band {
+    padding: var(--space-5);
+  }
+
+  body[data-demo-theme='landscaping'] .landscape-home-hero__title {
+    max-width: 12ch;
+  }
+
+  body[data-demo-brand='roofing'] .roof-home-hero,
+  body[data-demo-brand='roofing'] .roof-command-deck__brief,
+  body[data-demo-brand='roofing'] .roof-reference-deck__feature,
+  body[data-demo-brand='roofing'] .roof-scope-ledger__primary,
+  body[data-demo-brand='roofing'] .roof-casefile,
+  body[data-demo-brand='roofing'] .roof-dispatch-band {
+    grid-template-columns: 1fr;
+  }
+
+  body[data-demo-brand='roofing'] .roof-home-hero__content,
+  body[data-demo-brand='roofing'] .roof-home-hero__panel,
+  body[data-demo-brand='roofing'] .roof-command-deck__lead,
+  body[data-demo-brand='roofing'] .roof-command-deck__brief,
+  body[data-demo-brand='roofing'] .roof-scope-ledger__primary-body,
+  body[data-demo-brand='roofing'] .roof-casefile__body,
+  body[data-demo-brand='roofing'] .roof-reference-deck__content {
+    padding: var(--space-5);
+  }
+
+  body[data-demo-brand='roofing'] .roof-reference-card {
+    grid-template-columns: 1fr;
+  }
+}

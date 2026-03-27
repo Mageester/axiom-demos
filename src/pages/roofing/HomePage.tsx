@@ -88,15 +88,9 @@ export function HomePage() {
                 <p className="roof-block__eyebrow">{primaryScope.note}</p>
                 <h3>{primaryScope.title}</h3>
                 <p>{primaryScope.items[0]?.description}</p>
-                <ul className="plain-list roof-ledger-list">
-                  {primaryScope.items.map((item) => (
-                    <li key={item.name}>
-                      <div>
-                        <strong>{item.name}</strong>
-                        <span>{item.description}</span>
-                      </div>
-                      <em>{item.price}</em>
-                    </li>
+                <ul className="plain-list roof-chip-list">
+                  {primaryScope.highlights?.map((highlight) => (
+                    <li key={highlight}>{highlight}</li>
                   ))}
                 </ul>
               </div>
@@ -177,42 +171,6 @@ export function HomePage() {
           </article>
         </Reveal>
       ) : null}
-
-      <Reveal as="section" className="roof-visit-lane" variant="firm">
-        <div className="roof-visit-lane__copy">
-          <p className="roof-block__eyebrow">Inspection path</p>
-          <h2 className="roof-block__title">What is checked before work is booked</h2>
-          <p className="roof-block__description">{content.home.experience.description}</p>
-        </div>
-
-        <div className="roof-visit-lane__steps">
-          {content.home.experience.points.slice(0, 3).map((point, index) => (
-            <Reveal
-              as="article"
-              className="roof-visit-step"
-              delay={index * 55}
-              key={point}
-              variant="firm"
-            >
-              <p className="roof-visit-step__index">Step 0{index + 1}</p>
-              <p>{point}</p>
-            </Reveal>
-          ))}
-        </div>
-
-        <aside className="roof-visit-lane__support">
-          <p className="roof-command-deck__brief-label">Before work is booked</p>
-          <ul className="plain-list roof-command-deck__brief-list">
-            {content.reservations.policies.map((policy) => (
-              <li key={policy}>{policy}</li>
-            ))}
-          </ul>
-          <div className="roof-command-deck__brief-callout">
-            <p className="roof-command-deck__brief-title">Best fit</p>
-            <p>Best for active roof issues, aging shingles, drainage failures, or an exterior reset.</p>
-          </div>
-        </aside>
-      </Reveal>
 
       <Reveal as="section" className="roof-dispatch-band" variant="firm">
         <div className="roof-dispatch-band__copy">

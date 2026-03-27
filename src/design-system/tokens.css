@@ -75,49 +75,49 @@ body[data-demo-theme='restaurant'] {
 }
 
 body[data-demo-theme='landscaping'] {
-  --color-bg: #1c211b;
-  --color-bg-soft: #242b22;
-  --color-surface: #20251f;
-  --color-surface-strong: #31382d;
-  --color-border: #4d5948;
-  --color-text-primary: #f0ecdf;
-  --color-text-secondary: #cdc5b3;
-  --color-text-muted: #9e9f8f;
-  --color-brand: #7d9423;
-  --color-brand-strong: #b7cf4f;
-  --color-brand-ink: #17200d;
+  --color-bg: #181d18;
+  --color-bg-soft: #20271f;
+  --color-surface: #232b23;
+  --color-surface-strong: #2f372f;
+  --color-border: #495346;
+  --color-text-primary: #f2efe5;
+  --color-text-secondary: #d4cebe;
+  --color-text-muted: #9b9c8e;
+  --color-brand: #8ead34;
+  --color-brand-strong: #c3db57;
+  --color-brand-ink: #18210d;
   --color-success: #8aa36b;
   --font-nav: 'Manrope', 'Segoe UI', sans-serif;
   --font-button: 'Manrope', 'Segoe UI', sans-serif;
-  --space-section: 4.75rem;
-  --radius-button: 6px;
-  --radius-card: 10px;
-  --radius-panel: 16px;
-  --shadow-soft: 0 16px 34px rgb(3 5 3 / 22%);
-  --shadow-elevated: 0 24px 48px rgb(2 4 2 / 30%);
+  --space-section: 4.5rem;
+  --radius-button: 8px;
+  --radius-card: 14px;
+  --radius-panel: 20px;
+  --shadow-soft: 0 14px 32px rgb(4 7 4 / 18%);
+  --shadow-elevated: 0 24px 52px rgb(2 4 2 / 28%);
   --font-display: 'Fraunces', Georgia, serif;
 }
 
 body[data-demo-theme='roofing'] {
-  --color-bg: #0f1319;
-  --color-bg-soft: #161d26;
-  --color-surface: #202936;
-  --color-surface-strong: #2b3746;
-  --color-border: #435267;
-  --color-text-primary: #edf3f8;
-  --color-text-secondary: #c8d2dc;
-  --color-text-muted: #90a0b2;
-  --color-brand: #d67d42;
-  --color-brand-strong: #f2b266;
-  --color-brand-ink: #22150d;
+  --color-bg: #0d1117;
+  --color-bg-soft: #141b23;
+  --color-surface: #1b2330;
+  --color-surface-strong: #253243;
+  --color-border: #39475a;
+  --color-text-primary: #eff4f8;
+  --color-text-secondary: #ccd6df;
+  --color-text-muted: #92a2b1;
+  --color-brand: #cf7440;
+  --color-brand-strong: #efb169;
+  --color-brand-ink: #21140d;
   --color-success: #84b592;
   --font-display: 'Manrope', 'Segoe UI', sans-serif;
   --font-nav: 'Manrope', 'Segoe UI', sans-serif;
   --font-button: 'Manrope', 'Segoe UI', sans-serif;
-  --space-section: 4.5rem;
+  --space-section: 4.25rem;
   --radius-button: 10px;
-  --radius-card: 10px;
-  --radius-panel: 14px;
-  --shadow-soft: 0 14px 34px rgb(7 10 14 / 30%);
-  --shadow-elevated: 0 20px 46px rgb(5 8 11 / 34%);
+  --radius-card: 14px;
+  --radius-panel: 18px;
+  --shadow-soft: 0 14px 32px rgb(7 10 14 / 24%);
+  --shadow-elevated: 0 22px 50px rgb(5 8 11 / 30%);
 }
