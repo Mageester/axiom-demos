@@ -2,6 +2,7 @@ import { useContext, useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import { DemoConfigContext } from '../../config/demoConfig'
 import { ButtonLink } from '../ui/Button'
+import { AxiomBackLink } from './AxiomBackLink'
 import { SiteFooter } from './SiteFooter'
 import { SiteNav } from './SiteNav'
 
@@ -84,6 +85,7 @@ export function PageLayout() {
 
   return (
     <div className={`app-shell app-shell--${key}`}>
+      <AxiomBackLink />
       <SiteNav key={location.pathname} />
       <main className="page-main">
         <Outlet />
